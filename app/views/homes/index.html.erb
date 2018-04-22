@@ -1,0 +1,6 @@
+<h1>あなたの手札</h1>
+
+<% @player.cards.each do |card| %>
+  <p><%= card.suit %></p>
+  <p><%= card.number %></p>
+<% end%>
