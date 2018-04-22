@@ -813,3 +813,133 @@ Migrating to CreateCards (20180422153846)
   [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(2331793429144760700)[0m
   [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/homes" for 127.0.0.1 at 2018-04-23 00:57:16 +0900
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomesController#index as HTML
+Completed 422 Unprocessable Entity in 37ms (ActiveRecord: 4.1ms)
+
+
+  
+ActiveRecord::RecordNotSaved (You cannot call create unless the parent is saved):
+  
+app/controllers/homes_controller.rb:10:in `index'
+Started GET "/homes" for 127.0.0.1 at 2018-04-23 00:58:13 +0900
+Processing by HomesController#index as HTML
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (19.7ms)[0m  [1m[32mINSERT INTO "players" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2018-04-22 15:58:23.599504"], ["updated_at", "2018-04-22 15:58:23.599504"]]
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Load (9.6ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (21.0ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Player"], ["cardable_id", 1], ["suit", "♥"], ["number", 8], ["created_at", "2018-04-22 15:58:23.671967"], ["updated_at", "2018-04-22 15:58:23.671967"]]
+  [1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Player"], ["cardable_id", 1], ["suit", "♣"], ["number", 10], ["created_at", "2018-04-22 15:58:23.700554"], ["updated_at", "2018-04-22 15:58:23.700554"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 467ms (Views: 354.0ms | ActiveRecord: 61.8ms)
+
+
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT  "cards".* FROM "cards" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCard Load (0.7ms)[0m  [1m[34mSELECT  "cards".* FROM "cards" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT  "cards".* FROM "cards" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCard Load (1.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  [1m[36mCard Load (0.5ms)[0m  [1m[34mSELECT  "cards".* FROM "cards" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCard Load (1.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+Started GET "/homes" for 127.0.0.1 at 2018-04-23 01:11:07 +0900
+Processing by HomesController#index as HTML
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (13.9ms)[0m  [1m[32mINSERT INTO "players" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2018-04-22 16:11:07.083234"], ["updated_at", "2018-04-22 16:11:07.083234"]]
+  [1m[35m (14.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Load (1.8ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Player"], ["cardable_id", 2], ["suit", "♦"], ["number", 7], ["created_at", "2018-04-22 16:11:07.225560"], ["updated_at", "2018-04-22 16:11:07.225560"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Player"], ["cardable_id", 2], ["suit", "♣"], ["number", 4], ["created_at", "2018-04-22 16:11:07.230550"], ["updated_at", "2018-04-22 16:11:07.230550"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  Rendering homes/index.html.erb within layouts/application
+  [1m[36mCard Load (15.0ms)[0m  [1m[34mSELECT  "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2 ORDER BY "cards"."id" ASC LIMIT $3[0m  [["cardable_id", 2], ["cardable_type", "Player"], ["LIMIT", 1]]
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT  "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2 ORDER BY "cards"."id" DESC LIMIT $3[0m  [["cardable_id", 2], ["cardable_type", "Player"], ["LIMIT", 1]]
+  Rendered homes/index.html.erb within layouts/application (24.6ms)
+Completed 200 OK in 340ms (Views: 160.8ms | ActiveRecord: 48.7ms)
+
+
+Started GET "/homes" for 127.0.0.1 at 2018-04-23 01:14:40 +0900
+Processing by HomesController#index as HTML
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "players" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2018-04-22 16:14:40.219508"], ["updated_at", "2018-04-22 16:14:40.219508"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Load (1.2ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (6.0ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Player"], ["cardable_id", 3], ["suit", "♣"], ["number", 8], ["created_at", "2018-04-22 16:14:40.252294"], ["updated_at", "2018-04-22 16:14:40.252294"]]
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Load (0.5ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (5.9ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Player"], ["cardable_id", 3], ["suit", "♣"], ["number", 7], ["created_at", "2018-04-22 16:14:40.273442"], ["updated_at", "2018-04-22 16:14:40.273442"]]
+  [1m[35m (11.2ms)[0m  [1m[35mCOMMIT[0m
+  Rendering homes/index.html.erb within layouts/application
+  [1m[36mCard Load (0.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 3], ["cardable_type", "Player"]]
+  Rendered homes/index.html.erb within layouts/application (22.8ms)
+Completed 200 OK in 192ms (Views: 73.4ms | ActiveRecord: 36.3ms)
+
+
+Started GET "/homes" for 127.0.0.1 at 2018-04-23 01:14:46 +0900
+Processing by HomesController#index as HTML
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (11.3ms)[0m  [1m[32mINSERT INTO "players" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2018-04-22 16:14:46.063921"], ["updated_at", "2018-04-22 16:14:46.063921"]]
+  [1m[35m (5.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Load (0.4ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Player"], ["cardable_id", 4], ["suit", "♦"], ["number", 2], ["created_at", "2018-04-22 16:14:46.085966"], ["updated_at", "2018-04-22 16:14:46.085966"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Load (0.5ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Player"], ["cardable_id", 4], ["suit", "♠"], ["number", 11], ["created_at", "2018-04-22 16:14:46.091682"], ["updated_at", "2018-04-22 16:14:46.091682"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  Rendering homes/index.html.erb within layouts/application
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 4], ["cardable_type", "Player"]]
+  Rendered homes/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 67ms (Views: 27.4ms | ActiveRecord: 20.1ms)
+
+
+Started GET "/homes" for 127.0.0.1 at 2018-04-23 01:14:46 +0900
+Processing by HomesController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "players" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2018-04-22 16:14:46.890366"], ["updated_at", "2018-04-22 16:14:46.890366"]]
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Load (0.4ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Player"], ["cardable_id", 5], ["suit", "♦"], ["number", 3], ["created_at", "2018-04-22 16:14:46.901569"], ["updated_at", "2018-04-22 16:14:46.901569"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Player"], ["cardable_id", 5], ["suit", "♥"], ["number", 3], ["created_at", "2018-04-22 16:14:46.905329"], ["updated_at", "2018-04-22 16:14:46.905329"]]
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+  Rendering homes/index.html.erb within layouts/application
+  [1m[36mCard Load (0.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Player"]]
+  Rendered homes/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 51ms (Views: 23.9ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/homes" for 127.0.0.1 at 2018-04-23 01:14:47 +0900
+Processing by HomesController#index as HTML
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (6.8ms)[0m  [1m[32mINSERT INTO "players" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2018-04-22 16:14:47.713797"], ["updated_at", "2018-04-22 16:14:47.713797"]]
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Load (0.3ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Player"], ["cardable_id", 6], ["suit", "♠"], ["number", 3], ["created_at", "2018-04-22 16:14:47.736455"], ["updated_at", "2018-04-22 16:14:47.736455"]]
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Load (0.3ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Player"], ["cardable_id", 6], ["suit", "♦"], ["number", 11], ["created_at", "2018-04-22 16:14:47.749555"], ["updated_at", "2018-04-22 16:14:47.749555"]]
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+  Rendering homes/index.html.erb within layouts/application
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 6], ["cardable_type", "Player"]]
+  Rendered homes/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 72ms (Views: 22.9ms | ActiveRecord: 28.4ms)
+
+
