@@ -1,5 +1,5 @@
 class Player < ApplicationRecord
-  has_one :hole
+  has_many :cards, :as => :cardable
 
   def initialize
     @hands = []

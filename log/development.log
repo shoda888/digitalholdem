@@ -368,3 +368,448 @@ Migrating to CreateDecks (20180421125904)
   [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "cards" ("number", "suit", "deck_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["number", 13], ["suit", "♣"], ["deck_id", 8], ["created_at", "2018-04-21 13:59:30.777602"], ["updated_at", "2018-04-21 13:59:30.777602"]]
   [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
   [1m[36mCard Load (0.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  [1m[35m (8.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (31.7ms)[0m  [1m[32mINSERT INTO "decks" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2018-04-22 12:21:51.673208"], ["updated_at", "2018-04-22 12:21:51.673208"]]
+  [1m[35m (18.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (28.3ms)[0m  [1m[32mINSERT INTO "cards" ("number", "suit", "deck_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["number", 1], ["suit", "♠"], ["deck_id", 9], ["created_at", "2018-04-22 12:21:51.820558"], ["updated_at", "2018-04-22 12:21:51.820558"]]
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "cards" ("number", "suit", "deck_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["number", 2], ["suit", "♠"], ["deck_id", 9], ["created_at", "2018-04-22 12:21:51.859882"], ["updated_at", "2018-04-22 12:21:51.859882"]]
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (6.5ms)[0m  [1m[32mINSERT INTO "cards" ("number", "suit", "deck_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["number", 3], ["suit", "♠"], ["deck_id", 9], ["created_at", "2018-04-22 12:21:51.872576"], ["updated_at", "2018-04-22 12:21:51.872576"]]
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("number", "suit", "deck_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["number", 4], ["suit", "♠"], ["deck_id", 9], ["created_at", "2018-04-22 12:21:51.913787"], ["updated_at", "2018-04-22 12:21:51.913787"]]
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("number", "suit", "deck_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["number", 5], ["suit", "♠"], ["deck_id", 9], ["created_at", "2018-04-22 12:21:51.922186"], ["updated_at", "2018-04-22 12:21:51.922186"]]
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "cards" ("number", "suit", "deck_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["number", 6], ["suit", "♠"], ["deck_id", 9], ["created_at", "2018-04-22 12:21:51.933833"], ["updated_at", "2018-04-22 12:21:51.933833"]]
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("number", "suit", "deck_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["number", 7], ["suit", "♠"], ["deck_id", 9], ["created_at", "2018-04-22 12:21:51.944203"], ["updated_at", "2018-04-22 12:21:51.944203"]]
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "cards" ("number", "suit", "deck_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["number", 8], ["suit", "♠"], ["deck_id", 9], ["created_at", "2018-04-22 12:21:51.953063"], ["updated_at", "2018-04-22 12:21:51.953063"]]
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "cards" ("number", "suit", "deck_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["number", 9], ["suit", "♠"], ["deck_id", 9], ["created_at", "2018-04-22 12:21:51.961992"], ["updated_at", "2018-04-22 12:21:51.961992"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "cards" ("number", "suit", "deck_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["number", 10], ["suit", "♠"], ["deck_id", 9], ["created_at", "2018-04-22 12:21:51.964807"], ["updated_at", "2018-04-22 12:21:51.964807"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "cards" ("number", "suit", "deck_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["number", 11], ["suit", "♠"], ["deck_id", 9], ["created_at", "2018-04-22 12:21:51.967311"], ["updated_at", "2018-04-22 12:21:51.967311"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "cards" ("number", "suit", "deck_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["number", 12], ["suit", "♠"], ["deck_id", 9], ["created_at", "2018-04-22 12:21:51.969491"], ["updated_at", "2018-04-22 12:21:51.969491"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "cards" ("number", "suit", "deck_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["number", 13], ["suit", "♠"], ["deck_id", 9], ["created_at", "2018-04-22 12:21:51.972032"], ["updated_at", "2018-04-22 12:21:51.972032"]]
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("number", "suit", "deck_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["number", 1], ["suit", "♥"], ["deck_id", 9], ["created_at", "2018-04-22 12:21:51.981429"], ["updated_at", "2018-04-22 12:21:51.981429"]]
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (6.3ms)[0m  [1m[32mINSERT INTO "cards" ("number", "suit", "deck_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["number", 2], ["suit", "♥"], ["deck_id", 9], ["created_at", "2018-04-22 12:21:51.990285"], ["updated_at", "2018-04-22 12:21:51.990285"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("number", "suit", "deck_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["number", 3], ["suit", "♥"], ["deck_id", 9], ["created_at", "2018-04-22 12:21:51.999250"], ["updated_at", "2018-04-22 12:21:51.999250"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("number", "suit", "deck_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["number", 4], ["suit", "♥"], ["deck_id", 9], ["created_at", "2018-04-22 12:21:52.002576"], ["updated_at", "2018-04-22 12:21:52.002576"]]
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("number", "suit", "deck_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["number", 5], ["suit", "♥"], ["deck_id", 9], ["created_at", "2018-04-22 12:21:52.011398"], ["updated_at", "2018-04-22 12:21:52.011398"]]
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("number", "suit", "deck_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["number", 6], ["suit", "♥"], ["deck_id", 9], ["created_at", "2018-04-22 12:21:52.021886"], ["updated_at", "2018-04-22 12:21:52.021886"]]
+  [1m[35m (9.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "cards" ("number", "suit", "deck_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["number", 7], ["suit", "♥"], ["deck_id", 9], ["created_at", "2018-04-22 12:21:52.033571"], ["updated_at", "2018-04-22 12:21:52.033571"]]
+  [1m[35m (6.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("number", "suit", "deck_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["number", 8], ["suit", "♥"], ["deck_id", 9], ["created_at", "2018-04-22 12:21:52.043056"], ["updated_at", "2018-04-22 12:21:52.043056"]]
+  [1m[35m (10.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("number", "suit", "deck_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["number", 9], ["suit", "♥"], ["deck_id", 9], ["created_at", "2018-04-22 12:21:52.057032"], ["updated_at", "2018-04-22 12:21:52.057032"]]
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("number", "suit", "deck_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["number", 10], ["suit", "♥"], ["deck_id", 9], ["created_at", "2018-04-22 12:21:52.066505"], ["updated_at", "2018-04-22 12:21:52.066505"]]
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("number", "suit", "deck_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["number", 11], ["suit", "♥"], ["deck_id", 9], ["created_at", "2018-04-22 12:21:52.075915"], ["updated_at", "2018-04-22 12:21:52.075915"]]
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "cards" ("number", "suit", "deck_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["number", 12], ["suit", "♥"], ["deck_id", 9], ["created_at", "2018-04-22 12:21:52.085898"], ["updated_at", "2018-04-22 12:21:52.085898"]]
+  [1m[35m (6.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("number", "suit", "deck_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["number", 13], ["suit", "♥"], ["deck_id", 9], ["created_at", "2018-04-22 12:21:52.097005"], ["updated_at", "2018-04-22 12:21:52.097005"]]
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "cards" ("number", "suit", "deck_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["number", 1], ["suit", "♦"], ["deck_id", 9], ["created_at", "2018-04-22 12:21:52.104882"], ["updated_at", "2018-04-22 12:21:52.104882"]]
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("number", "suit", "deck_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["number", 2], ["suit", "♦"], ["deck_id", 9], ["created_at", "2018-04-22 12:21:52.112958"], ["updated_at", "2018-04-22 12:21:52.112958"]]
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("number", "suit", "deck_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["number", 3], ["suit", "♦"], ["deck_id", 9], ["created_at", "2018-04-22 12:21:52.121722"], ["updated_at", "2018-04-22 12:21:52.121722"]]
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("number", "suit", "deck_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["number", 4], ["suit", "♦"], ["deck_id", 9], ["created_at", "2018-04-22 12:21:52.131069"], ["updated_at", "2018-04-22 12:21:52.131069"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("number", "suit", "deck_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["number", 5], ["suit", "♦"], ["deck_id", 9], ["created_at", "2018-04-22 12:21:52.133979"], ["updated_at", "2018-04-22 12:21:52.133979"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "cards" ("number", "suit", "deck_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["number", 6], ["suit", "♦"], ["deck_id", 9], ["created_at", "2018-04-22 12:21:52.137555"], ["updated_at", "2018-04-22 12:21:52.137555"]]
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("number", "suit", "deck_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["number", 7], ["suit", "♦"], ["deck_id", 9], ["created_at", "2018-04-22 12:21:52.147347"], ["updated_at", "2018-04-22 12:21:52.147347"]]
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "cards" ("number", "suit", "deck_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["number", 8], ["suit", "♦"], ["deck_id", 9], ["created_at", "2018-04-22 12:21:52.157073"], ["updated_at", "2018-04-22 12:21:52.157073"]]
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("number", "suit", "deck_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["number", 9], ["suit", "♦"], ["deck_id", 9], ["created_at", "2018-04-22 12:21:52.166044"], ["updated_at", "2018-04-22 12:21:52.166044"]]
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("number", "suit", "deck_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["number", 10], ["suit", "♦"], ["deck_id", 9], ["created_at", "2018-04-22 12:21:52.174801"], ["updated_at", "2018-04-22 12:21:52.174801"]]
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("number", "suit", "deck_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["number", 11], ["suit", "♦"], ["deck_id", 9], ["created_at", "2018-04-22 12:21:52.183621"], ["updated_at", "2018-04-22 12:21:52.183621"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "cards" ("number", "suit", "deck_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["number", 12], ["suit", "♦"], ["deck_id", 9], ["created_at", "2018-04-22 12:21:52.186524"], ["updated_at", "2018-04-22 12:21:52.186524"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("number", "suit", "deck_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["number", 13], ["suit", "♦"], ["deck_id", 9], ["created_at", "2018-04-22 12:21:52.190793"], ["updated_at", "2018-04-22 12:21:52.190793"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("number", "suit", "deck_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["number", 1], ["suit", "♣"], ["deck_id", 9], ["created_at", "2018-04-22 12:21:52.193272"], ["updated_at", "2018-04-22 12:21:52.193272"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "cards" ("number", "suit", "deck_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["number", 2], ["suit", "♣"], ["deck_id", 9], ["created_at", "2018-04-22 12:21:52.196724"], ["updated_at", "2018-04-22 12:21:52.196724"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("number", "suit", "deck_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["number", 3], ["suit", "♣"], ["deck_id", 9], ["created_at", "2018-04-22 12:21:52.199054"], ["updated_at", "2018-04-22 12:21:52.199054"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("number", "suit", "deck_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["number", 4], ["suit", "♣"], ["deck_id", 9], ["created_at", "2018-04-22 12:21:52.201557"], ["updated_at", "2018-04-22 12:21:52.201557"]]
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("number", "suit", "deck_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["number", 5], ["suit", "♣"], ["deck_id", 9], ["created_at", "2018-04-22 12:21:52.211550"], ["updated_at", "2018-04-22 12:21:52.211550"]]
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("number", "suit", "deck_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["number", 6], ["suit", "♣"], ["deck_id", 9], ["created_at", "2018-04-22 12:21:52.220680"], ["updated_at", "2018-04-22 12:21:52.220680"]]
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "cards" ("number", "suit", "deck_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["number", 7], ["suit", "♣"], ["deck_id", 9], ["created_at", "2018-04-22 12:21:52.229638"], ["updated_at", "2018-04-22 12:21:52.229638"]]
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (6.1ms)[0m  [1m[32mINSERT INTO "cards" ("number", "suit", "deck_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["number", 8], ["suit", "♣"], ["deck_id", 9], ["created_at", "2018-04-22 12:21:52.239059"], ["updated_at", "2018-04-22 12:21:52.239059"]]
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "cards" ("number", "suit", "deck_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["number", 9], ["suit", "♣"], ["deck_id", 9], ["created_at", "2018-04-22 12:21:52.253841"], ["updated_at", "2018-04-22 12:21:52.253841"]]
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "cards" ("number", "suit", "deck_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["number", 10], ["suit", "♣"], ["deck_id", 9], ["created_at", "2018-04-22 12:21:52.263394"], ["updated_at", "2018-04-22 12:21:52.263394"]]
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("number", "suit", "deck_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["number", 11], ["suit", "♣"], ["deck_id", 9], ["created_at", "2018-04-22 12:21:52.271694"], ["updated_at", "2018-04-22 12:21:52.271694"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "cards" ("number", "suit", "deck_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["number", 12], ["suit", "♣"], ["deck_id", 9], ["created_at", "2018-04-22 12:21:52.274435"], ["updated_at", "2018-04-22 12:21:52.274435"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("number", "suit", "deck_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["number", 13], ["suit", "♣"], ["deck_id", 9], ["created_at", "2018-04-22 12:21:52.277129"], ["updated_at", "2018-04-22 12:21:52.277129"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/ph/proposals" for 127.0.0.1 at 2018-04-22 21:46:25 +0900
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/ph/proposals"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.1) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.1) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.1) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/homes" for 127.0.0.1 at 2018-04-22 21:46:31 +0900
+Processing by HomesController#index as HTML
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 474ms (Views: 471.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/homes" for 127.0.0.1 at 2018-04-22 22:17:55 +0900
+Processing by HomesController#index as HTML
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 47ms (Views: 38.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/homes" for 127.0.0.1 at 2018-04-22 22:18:03 +0900
+Processing by HomesController#index as HTML
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 29ms (Views: 26.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/homes" for 127.0.0.1 at 2018-04-22 22:18:45 +0900
+Processing by HomesController#index as HTML
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 48ms (Views: 27.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/homes" for 127.0.0.1 at 2018-04-22 22:19:45 +0900
+Processing by HomesController#index as HTML
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 37ms (Views: 31.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/homes" for 127.0.0.1 at 2018-04-22 22:20:18 +0900
+Processing by HomesController#index as HTML
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 39ms (Views: 27.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/homes" for 127.0.0.1 at 2018-04-22 22:21:12 +0900
+Processing by HomesController#index as HTML
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 22ms (Views: 20.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/homes" for 127.0.0.1 at 2018-04-22 22:21:57 +0900
+Processing by HomesController#index as HTML
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 52ms (Views: 27.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/homes" for 127.0.0.1 at 2018-04-22 22:27:54 +0900
+Processing by HomesController#index as HTML
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 64ms (Views: 27.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/homes" for 127.0.0.1 at 2018-04-22 22:28:37 +0900
+Processing by HomesController#index as HTML
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 68ms (Views: 55.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/homes" for 127.0.0.1 at 2018-04-22 22:28:42 +0900
+Processing by HomesController#index as HTML
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 28ms (Views: 14.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/homes" for 127.0.0.1 at 2018-04-22 22:28:44 +0900
+Processing by HomesController#index as HTML
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 43ms (Views: 32.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/homes" for 127.0.0.1 at 2018-04-22 22:28:57 +0900
+Processing by HomesController#index as HTML
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 24ms (Views: 13.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/homes" for 127.0.0.1 at 2018-04-22 22:55:20 +0900
+Processing by HomesController#index as HTML
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 136ms (Views: 42.7ms | ActiveRecord: 41.3ms)
+
+
+Started GET "/homes" for 127.0.0.1 at 2018-04-22 22:56:09 +0900
+Processing by HomesController#index as HTML
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 6.7ms)
+
+
+  
+NoMethodError (undefined method `suit' for #<Array:0x00007fc60d36ea18>):
+  
+app/controllers/homes_controller.rb:16:in `index'
+Started GET "/homes" for 127.0.0.1 at 2018-04-22 22:57:10 +0900
+Processing by HomesController#index as HTML
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 87ms (Views: 33.1ms | ActiveRecord: 24.2ms)
+
+
+Started GET "/homes" for 127.0.0.1 at 2018-04-22 22:59:02 +0900
+Processing by HomesController#index as HTML
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 13.0ms)
+
+
+  
+NoMethodError (undefined method `suit' for #<Array:0x00007fc60cfb57c8>):
+  
+app/controllers/homes_controller.rb:16:in `index'
+Started GET "/homes" for 127.0.0.1 at 2018-04-22 22:59:57 +0900
+Processing by HomesController#index as HTML
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 31.1ms)
+
+
+  
+NoMethodError (undefined method `suit' for #<Array:0x00007fc612819400>):
+  
+app/controllers/homes_controller.rb:16:in `index'
+Started GET "/homes" for 127.0.0.1 at 2018-04-23 00:08:17 +0900
+Processing by HomesController#index as HTML
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 14.8ms)
+
+
+  
+NoMethodError (undefined method `suit' for #<Array:0x00007fc6130d0f30>):
+  
+app/controllers/homes_controller.rb:16:in `index'
+Started GET "/homes" for 127.0.0.1 at 2018-04-23 00:09:29 +0900
+Processing by HomesController#index as HTML
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 24.1ms)
+
+
+  
+NoMethodError (undefined method `suit' for #<Array:0x00007fc6133baa20>):
+  
+app/controllers/homes_controller.rb:16:in `index'
+Started GET "/homes" for 127.0.0.1 at 2018-04-23 00:10:02 +0900
+Processing by HomesController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `suit' for #<Array:0x00007fc6133d0758>):
+  
+app/controllers/homes_controller.rb:16:in `index'
+Started GET "/homes" for 127.0.0.1 at 2018-04-23 00:11:12 +0900
+Processing by HomesController#index as HTML
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 1.2ms)
+
+
+  
+NoMethodError (undefined method `suit' for #<Array:0x00007fc611efb508>):
+  
+app/controllers/homes_controller.rb:16:in `index'
+Started GET "/homes" for 127.0.0.1 at 2018-04-23 00:11:40 +0900
+Processing by HomesController#index as HTML
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 6.5ms)
+
+
+  
+NoMethodError (undefined method `suit' for #<Array:0x00007fc60cfbc410>):
+  
+app/controllers/homes_controller.rb:16:in `index'
+Started GET "/homes" for 127.0.0.1 at 2018-04-23 00:12:17 +0900
+Processing by HomesController#index as HTML
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 18.1ms)
+
+
+  
+NoMethodError (undefined method `suit' for #<Array:0x00007fc6133b8dd8>):
+  
+app/controllers/homes_controller.rb:17:in `index'
+Started GET "/homes" for 127.0.0.1 at 2018-04-23 00:12:38 +0900
+Processing by HomesController#index as HTML
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 12.7ms)
+
+
+  
+NoMethodError (undefined method `<<' for nil:NilClass):
+  
+app/controllers/homes_controller.rb:8:in `index'
+Started GET "/homes" for 127.0.0.1 at 2018-04-23 00:12:54 +0900
+Processing by HomesController#index as HTML
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 71ms (Views: 40.4ms | ActiveRecord: 23.1ms)
+
+
+Started GET "/homes" for 127.0.0.1 at 2018-04-23 00:13:22 +0900
+Processing by HomesController#index as HTML
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 24.1ms)
+
+
+  
+NoMethodError (undefined method `suit' for #<CreateDeck::Tranp:0x00007fc6107754d8 @suit="♥", @number=9>):
+  
+app/controllers/homes_controller.rb:14:in `index'
+Started GET "/homes" for 127.0.0.1 at 2018-04-23 00:13:47 +0900
+Processing by HomesController#index as HTML
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 38ms (Views: 30.7ms | ActiveRecord: 1.1ms)
+
+
+  [1m[35m (8.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (20.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (8635.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "digitalholdem_development"[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (464.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "digitalholdem_development"[0m
+  [1m[35m (253.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "digitalholdem_test"[0m
+  [1m[35m (25.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (30.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (10.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2331793429144760700)[0m
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePlayers (20180421122601)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (33.2ms)[0m  [1m[35mCREATE TABLE "players" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (2.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180421122601"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCards (20180422153846)
+  [1m[35m (5.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (20.1ms)[0m  [1m[35mCREATE TABLE "cards" ("id" bigserial primary key, "cardable_type" character varying, "cardable_id" bigint, "suit" character varying, "number" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_cards_on_cardable_type_and_cardable_id" ON "cards"  ("cardable_type", "cardable_id")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180422153846"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-04-22 15:40:56.783334"], ["updated_at", "2018-04-22 15:40:56.783334"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(2331793429144760700)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m

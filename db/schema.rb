@@ -10,29 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180421125904) do
+ActiveRecord::Schema.define(version: 20180422153846) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "cards", force: :cascade do |t|
-    t.integer "number"
+    t.string "cardable_type"
+    t.bigint "cardable_id"
     t.string "suit"
-    t.integer "deck_id"
+    t.integer "number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "decks", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "holes", force: :cascade do |t|
-    t.bigint "player_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["player_id"], name: "index_holes_on_player_id"
+    t.index ["cardable_type", "cardable_id"], name: "index_cards_on_cardable_type_and_cardable_id"
   end
 
   create_table "players", force: :cascade do |t|
@@ -41,5 +31,4 @@ ActiveRecord::Schema.define(version: 20180421125904) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "holes", "players"
 end
