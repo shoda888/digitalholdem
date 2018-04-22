@@ -1,6 +1,9 @@
 <h1>あなたの手札</h1>
-
 <% @player.cards.each do |card| %>
-  <p><%= card.suit %></p>
-  <p><%= card.number %></p>
-<% end%>
+  <% if card.suit == "♦" || card.suit == "♥" %>
+    <a class="red_suit" ><%= card.suit %></a>
+  <% else %>
+    <a class="black_suit"><%= card.suit %></a>
+  <% end %>
+  <a><%= card.number %></a>
+<% end %>
