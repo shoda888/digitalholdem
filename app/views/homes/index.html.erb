@@ -1,10 +1,15 @@
 <h1>コミュニティカード</h1>
-<% @community.cards.each do |card| %>
-  <%= image_tag "/#{card.suit}#{card.number}.png", width:"70", height:"105" %>
+
+<% @community.cards.each_with_index do |card, index| %>
+  <% if index < @hide_counter %>
+    <%= image_tag "/z01.png", width:"70", height:"105" %>
+  <% else %>
+    <%= image_tag "/#{card.suit}#{card.number}.png", width:"70", height:"105" %>
+  <% end %>
 <% end %>
 
 
-<h1>あなたの手札</h1>
+<h1><%= "#{@player.name}の手札" %></h1>
 <% @player.cards.each do |card| %>
   <%= image_tag "/#{card.suit}#{card.number}.png", width:"70", height:"105" %>
 <% end %>

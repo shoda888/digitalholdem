@@ -2,7 +2,7 @@ class HomesController < ApplicationController
   include CreateDeck
 
   def index
-    @player = Player.create #プレイヤー一人作成
+    @player = Player.create(name:'Kohei') #プレイヤー一人作成
     @community = Community.create #コミュニティー作成
     @cards = shuffle(build) #シャッフルされた52枚のカード
 
@@ -15,6 +15,8 @@ class HomesController < ApplicationController
     @community_cards.each do |c|
       @community.cards.create(suit:c.suit, number:c.number)
     end
-    
+
+    @hide_counter = StatusConverter[@community.aasm_state.to_sym]
+
   end
 end
