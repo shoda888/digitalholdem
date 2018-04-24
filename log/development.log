@@ -3828,3 +3828,484 @@ Processing by HomesController#index as HTML
 Completed 200 OK in 153ms (Views: 35.4ms | ActiveRecord: 22.6ms)
 
 
+Started GET "/homes" for 127.0.0.1 at 2018-04-23 18:21:48 +0900
+Processing by HomesController#index as HTML
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (6.7ms)[0m  [1m[32mINSERT INTO "players" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Kohei"], ["created_at", "2018-04-23 09:21:48.361885"], ["updated_at", "2018-04-23 09:21:48.361885"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "communities" ("aasm_state", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["aasm_state", "preflop"], ["created_at", "2018-04-23 09:21:48.397418"], ["updated_at", "2018-04-23 09:21:48.397418"]]
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Load (0.3ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Player"], ["cardable_id", 13], ["suit", "d"], ["number", 4], ["created_at", "2018-04-23 09:21:48.427502"], ["updated_at", "2018-04-23 09:21:48.427502"]]
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Load (0.3ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Player"], ["cardable_id", 13], ["suit", "c"], ["number", 11], ["created_at", "2018-04-23 09:21:48.439009"], ["updated_at", "2018-04-23 09:21:48.439009"]]
+  [1m[35m (5.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCommunity Load (6.4ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Community"], ["cardable_id", 11], ["suit", "s"], ["number", 3], ["created_at", "2018-04-23 09:21:48.462815"], ["updated_at", "2018-04-23 09:21:48.462815"]]
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCommunity Load (0.2ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35mSQL (1.8ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Community"], ["cardable_id", 11], ["suit", "d"], ["number", 10], ["created_at", "2018-04-23 09:21:48.474083"], ["updated_at", "2018-04-23 09:21:48.474083"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCommunity Load (0.2ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Community"], ["cardable_id", 11], ["suit", "c"], ["number", 5], ["created_at", "2018-04-23 09:21:48.480028"], ["updated_at", "2018-04-23 09:21:48.480028"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCommunity Load (0.2ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Community"], ["cardable_id", 11], ["suit", "h"], ["number", 5], ["created_at", "2018-04-23 09:21:48.484480"], ["updated_at", "2018-04-23 09:21:48.484480"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCommunity Load (0.2ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Community"], ["cardable_id", 11], ["suit", "s"], ["number", 2], ["created_at", "2018-04-23 09:21:48.488809"], ["updated_at", "2018-04-23 09:21:48.488809"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  Rendering homes/index.html.erb within layouts/application
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 11], ["cardable_type", "Community"]]
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 13], ["cardable_type", "Player"]]
+  Rendered homes/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 193ms (Views: 42.6ms | ActiveRecord: 48.3ms)
+
+
+Started GET "/homes" for 127.0.0.1 at 2018-04-23 18:21:50 +0900
+Processing by HomesController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (7.2ms)[0m  [1m[32mINSERT INTO "players" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Kohei"], ["created_at", "2018-04-23 09:21:50.198229"], ["updated_at", "2018-04-23 09:21:50.198229"]]
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "communities" ("aasm_state", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["aasm_state", "preflop"], ["created_at", "2018-04-23 09:21:50.214199"], ["updated_at", "2018-04-23 09:21:50.214199"]]
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Load (3.1ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[35mSQL (14.4ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Player"], ["cardable_id", 14], ["suit", "s"], ["number", 5], ["created_at", "2018-04-23 09:21:50.229299"], ["updated_at", "2018-04-23 09:21:50.229299"]]
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[35mSQL (6.2ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Player"], ["cardable_id", 14], ["suit", "s"], ["number", 11], ["created_at", "2018-04-23 09:21:50.254412"], ["updated_at", "2018-04-23 09:21:50.254412"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCommunity Load (5.8ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Community"], ["cardable_id", 12], ["suit", "s"], ["number", 8], ["created_at", "2018-04-23 09:21:50.277171"], ["updated_at", "2018-04-23 09:21:50.277171"]]
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCommunity Load (0.2ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35mSQL (11.3ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Community"], ["cardable_id", 12], ["suit", "c"], ["number", 3], ["created_at", "2018-04-23 09:21:50.287122"], ["updated_at", "2018-04-23 09:21:50.287122"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCommunity Load (0.3ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Community"], ["cardable_id", 12], ["suit", "h"], ["number", 5], ["created_at", "2018-04-23 09:21:50.303682"], ["updated_at", "2018-04-23 09:21:50.303682"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCommunity Load (0.2ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Community"], ["cardable_id", 12], ["suit", "c"], ["number", 6], ["created_at", "2018-04-23 09:21:50.308831"], ["updated_at", "2018-04-23 09:21:50.308831"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCommunity Load (0.8ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Community"], ["cardable_id", 12], ["suit", "h"], ["number", 1], ["created_at", "2018-04-23 09:21:50.314411"], ["updated_at", "2018-04-23 09:21:50.314411"]]
+  [1m[35m (7.9ms)[0m  [1m[35mCOMMIT[0m
+  Rendering homes/index.html.erb within layouts/application
+  [1m[36mCard Load (15.7ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 12], ["cardable_type", "Community"]]
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 14], ["cardable_type", "Player"]]
+  Rendered homes/index.html.erb within layouts/application (21.4ms)
+Completed 200 OK in 173ms (Views: 27.5ms | ActiveRecord: 104.5ms)
+
+
+Started GET "/homes" for 127.0.0.1 at 2018-04-23 19:51:41 +0900
+  [1m[35m (4.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomesController#index as HTML
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (23.4ms)[0m  [1m[32mINSERT INTO "players" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Kohei"], ["created_at", "2018-04-23 10:51:41.875601"], ["updated_at", "2018-04-23 10:51:41.875601"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (6.8ms)[0m  [1m[32mINSERT INTO "communities" ("aasm_state", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["aasm_state", "preflop"], ["created_at", "2018-04-23 10:51:41.935460"], ["updated_at", "2018-04-23 10:51:41.935460"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Load (6.1ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35mSQL (24.7ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Player"], ["cardable_id", 15], ["suit", "c"], ["number", 1], ["created_at", "2018-04-23 10:51:42.005742"], ["updated_at", "2018-04-23 10:51:42.005742"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Load (0.3ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Player"], ["cardable_id", 15], ["suit", "c"], ["number", 7], ["created_at", "2018-04-23 10:51:42.035739"], ["updated_at", "2018-04-23 10:51:42.035739"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCommunity Load (0.5ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Community"], ["cardable_id", 13], ["suit", "c"], ["number", 4], ["created_at", "2018-04-23 10:51:42.046614"], ["updated_at", "2018-04-23 10:51:42.046614"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCommunity Load (0.3ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Community"], ["cardable_id", 13], ["suit", "c"], ["number", 12], ["created_at", "2018-04-23 10:51:42.051612"], ["updated_at", "2018-04-23 10:51:42.051612"]]
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCommunity Load (0.3ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Community"], ["cardable_id", 13], ["suit", "d"], ["number", 12], ["created_at", "2018-04-23 10:51:42.061901"], ["updated_at", "2018-04-23 10:51:42.061901"]]
+  [1m[35m (11.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCommunity Load (0.5ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Community"], ["cardable_id", 13], ["suit", "s"], ["number", 6], ["created_at", "2018-04-23 10:51:42.077899"], ["updated_at", "2018-04-23 10:51:42.077899"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCommunity Load (0.2ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Community"], ["cardable_id", 13], ["suit", "h"], ["number", 9], ["created_at", "2018-04-23 10:51:42.083121"], ["updated_at", "2018-04-23 10:51:42.083121"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  Rendering homes/index.html.erb within layouts/application
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+Hash: e1e85e9223ad3289cd1a
+Version: webpack 3.11.0
+Time: 2199ms
+                                             Asset       Size  Chunks             Chunk Names
+                 hello_vue-ee9d50ce7f4b448ae226.js     248 kB       0  [emitted]  hello_vue
+               application-12a437e15157c0d4029c.js    3.27 kB       1  [emitted]  application
+    hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css  138 bytes       0  [emitted]  hello_vue
+             hello_vue-ee9d50ce7f4b448ae226.js.map     293 kB       0  [emitted]  hello_vue
+hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css.map  561 bytes       0  [emitted]  hello_vue
+           application-12a437e15157c0d4029c.js.map    3.19 kB       1  [emitted]  application
+                                     manifest.json  434 bytes          [emitted]  
+   [0] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [1] ./app/javascript/app.vue?vue&type=script&lang=js 362 bytes {0} [built]
+   [2] ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js 1.53 kB {0} [built] [failed] [1 error]
+   [3] ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 41 bytes {0} [built]
+   [4] ./app/javascript/packs/application.js 515 bytes {1} [built]
+   [5] ./app/javascript/packs/hello_vue.js 1.93 kB {0} [built]
+  [10] ./app/javascript/app.vue 964 bytes {0} [built]
+  [11] ./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 212 bytes {0} [built]
+  [12] ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 721 bytes {0} [built]
+  [13] ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 896 bytes {0} [built]
+    + 5 hidden modules
+
+ERROR in ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js
+Module build failed: ReferenceError: [BABEL] /Users/shoda/digitalholdem/app/javascript/app.vue: Unknown option: base.omit. Check out http://babeljs.io/docs/usage/options/ for more information about options.
+
+A common cause of this error is the presence of a configuration options object without the corresponding preset name. Example:
+
+Invalid:
+  `{ presets: [{option: value}] }`
+Valid:
+  `{ presets: [['presetName', {option: value}]] }`
+
+For more detailed information on preset configuration, please see http://babeljs.io/docs/plugins/#pluginpresets-options.
+    at Logger.error (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/logger.js:41:11)
+    at OptionManager.mergeOptions (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/options/option-manager.js:226:20)
+    at OptionManager.init (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/options/option-manager.js:368:12)
+    at File.initOptions (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/index.js:212:65)
+    at new File (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/index.js:135:24)
+    at Pipeline.transform (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/pipeline.js:46:16)
+    at transpile (/Users/shoda/digitalholdem/node_modules/babel-loader/lib/index.js:50:20)
+    at Object.module.exports (/Users/shoda/digitalholdem/node_modules/babel-loader/lib/index.js:173:20)
+ @ ./app/javascript/app.vue?vue&type=script&lang=js 1:0-172 1:193-362
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+
+ERROR in ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css
+Module build failed: ValidationError: Style Loader Invalid Options
+
+options['ident'] is an invalid additional property
+
+ @ ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 1:0-439 1:460-896
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+Child extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js??ref--1-2!node_modules/vue-loader/lib/loaders/stylePostLoader.js!node_modules/postcss-loader/lib/index.js??ref--1-3!node_modules/vue-loader/lib/index.js??vue-loader-options!app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css:
+       [0] ./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 775 bytes {0} [built]
+        + 1 hidden module
+
+  [1m[36mCard Load (0.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 13], ["cardable_type", "Community"]]
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 15], ["cardable_type", "Player"]]
+  Rendered homes/index.html.erb within layouts/application (4277.2ms)
+Completed 200 OK in 5720ms (Views: 5454.0ms | ActiveRecord: 122.8ms)
+
+
+Started GET "/homes" for 127.0.0.1 at 2018-04-23 19:58:37 +0900
+Processing by HomesController#index as HTML
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "players" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Kohei"], ["created_at", "2018-04-23 10:58:37.877531"], ["updated_at", "2018-04-23 10:58:37.877531"]]
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "communities" ("aasm_state", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["aasm_state", "preflop"], ["created_at", "2018-04-23 10:58:37.889284"], ["updated_at", "2018-04-23 10:58:37.889284"]]
+  [1m[35m (5.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Load (0.8ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Player"], ["cardable_id", 16], ["suit", "h"], ["number", 10], ["created_at", "2018-04-23 10:58:37.901508"], ["updated_at", "2018-04-23 10:58:37.901508"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Load (0.4ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Player"], ["cardable_id", 16], ["suit", "h"], ["number", 7], ["created_at", "2018-04-23 10:58:37.908042"], ["updated_at", "2018-04-23 10:58:37.908042"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCommunity Load (0.3ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Community"], ["cardable_id", 14], ["suit", "d"], ["number", 10], ["created_at", "2018-04-23 10:58:37.912823"], ["updated_at", "2018-04-23 10:58:37.912823"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCommunity Load (0.2ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Community"], ["cardable_id", 14], ["suit", "h"], ["number", 6], ["created_at", "2018-04-23 10:58:37.916800"], ["updated_at", "2018-04-23 10:58:37.916800"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCommunity Load (0.2ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Community"], ["cardable_id", 14], ["suit", "s"], ["number", 3], ["created_at", "2018-04-23 10:58:37.920385"], ["updated_at", "2018-04-23 10:58:37.920385"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCommunity Load (0.2ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[35mSQL (4.5ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Community"], ["cardable_id", 14], ["suit", "s"], ["number", 6], ["created_at", "2018-04-23 10:58:37.924165"], ["updated_at", "2018-04-23 10:58:37.924165"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCommunity Load (0.2ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Community"], ["cardable_id", 14], ["suit", "c"], ["number", 10], ["created_at", "2018-04-23 10:58:37.932443"], ["updated_at", "2018-04-23 10:58:37.932443"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  Rendering homes/index.html.erb within layouts/application
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 14], ["cardable_type", "Community"]]
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 16], ["cardable_type", "Player"]]
+  Rendered homes/index.html.erb within layouts/application (7.4ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+Hash: e1e85e9223ad3289cd1a
+Version: webpack 3.11.0
+Time: 2146ms
+                                             Asset       Size  Chunks             Chunk Names
+                 hello_vue-ee9d50ce7f4b448ae226.js     248 kB       0  [emitted]  hello_vue
+               application-12a437e15157c0d4029c.js    3.27 kB       1  [emitted]  application
+    hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css  138 bytes       0  [emitted]  hello_vue
+             hello_vue-ee9d50ce7f4b448ae226.js.map     293 kB       0  [emitted]  hello_vue
+hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css.map  561 bytes       0  [emitted]  hello_vue
+           application-12a437e15157c0d4029c.js.map    3.19 kB       1  [emitted]  application
+                                     manifest.json  434 bytes          [emitted]  
+   [0] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [1] ./app/javascript/app.vue?vue&type=script&lang=js 362 bytes {0} [built]
+   [2] ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js 1.53 kB {0} [built] [failed] [1 error]
+   [3] ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 41 bytes {0} [built]
+   [4] ./app/javascript/packs/application.js 515 bytes {1} [built]
+   [5] ./app/javascript/packs/hello_vue.js 1.93 kB {0} [built]
+  [10] ./app/javascript/app.vue 964 bytes {0} [built]
+  [11] ./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 212 bytes {0} [built]
+  [12] ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 721 bytes {0} [built]
+  [13] ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 896 bytes {0} [built]
+    + 5 hidden modules
+
+ERROR in ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js
+Module build failed: ReferenceError: [BABEL] /Users/shoda/digitalholdem/app/javascript/app.vue: Unknown option: base.omit. Check out http://babeljs.io/docs/usage/options/ for more information about options.
+
+A common cause of this error is the presence of a configuration options object without the corresponding preset name. Example:
+
+Invalid:
+  `{ presets: [{option: value}] }`
+Valid:
+  `{ presets: [['presetName', {option: value}]] }`
+
+For more detailed information on preset configuration, please see http://babeljs.io/docs/plugins/#pluginpresets-options.
+    at Logger.error (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/logger.js:41:11)
+    at OptionManager.mergeOptions (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/options/option-manager.js:226:20)
+    at OptionManager.init (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/options/option-manager.js:368:12)
+    at File.initOptions (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/index.js:212:65)
+    at new File (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/index.js:135:24)
+    at Pipeline.transform (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/pipeline.js:46:16)
+    at transpile (/Users/shoda/digitalholdem/node_modules/babel-loader/lib/index.js:50:20)
+    at Object.module.exports (/Users/shoda/digitalholdem/node_modules/babel-loader/lib/index.js:173:20)
+ @ ./app/javascript/app.vue?vue&type=script&lang=js 1:0-172 1:193-362
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+
+ERROR in ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css
+Module build failed: ValidationError: Style Loader Invalid Options
+
+options['ident'] is an invalid additional property
+
+ @ ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 1:0-439 1:460-896
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+Child extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js??ref--1-2!node_modules/vue-loader/lib/loaders/stylePostLoader.js!node_modules/postcss-loader/lib/index.js??ref--1-3!node_modules/vue-loader/lib/index.js??vue-loader-options!app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css:
+       [0] ./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 775 bytes {0} [built]
+        + 1 hidden module
+
+Completed 200 OK in 4442ms (Views: 4379.0ms | ActiveRecord: 28.7ms)
+
+
+Started GET "/homes" for 127.0.0.1 at 2018-04-23 20:55:08 +0900
+  [1m[35m (19.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomesController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "players" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Kohei"], ["created_at", "2018-04-23 11:55:08.930482"], ["updated_at", "2018-04-23 11:55:08.930482"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (6.9ms)[0m  [1m[32mINSERT INTO "communities" ("aasm_state", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["aasm_state", "preflop"], ["created_at", "2018-04-23 11:55:08.992216"], ["updated_at", "2018-04-23 11:55:08.992216"]]
+  [1m[35m (11.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Load (0.3ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[35mSQL (24.1ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Player"], ["cardable_id", 17], ["suit", "h"], ["number", 5], ["created_at", "2018-04-23 11:55:09.071167"], ["updated_at", "2018-04-23 11:55:09.071167"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Load (0.3ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Player"], ["cardable_id", 17], ["suit", "h"], ["number", 9], ["created_at", "2018-04-23 11:55:09.099585"], ["updated_at", "2018-04-23 11:55:09.099585"]]
+  [1m[35m (13.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCommunity Load (0.3ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35mSQL (15.6ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Community"], ["cardable_id", 15], ["suit", "s"], ["number", 4], ["created_at", "2018-04-23 11:55:09.121355"], ["updated_at", "2018-04-23 11:55:09.121355"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCommunity Load (0.5ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Community"], ["cardable_id", 15], ["suit", "d"], ["number", 4], ["created_at", "2018-04-23 11:55:09.142370"], ["updated_at", "2018-04-23 11:55:09.142370"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCommunity Load (0.2ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Community"], ["cardable_id", 15], ["suit", "c"], ["number", 3], ["created_at", "2018-04-23 11:55:09.147600"], ["updated_at", "2018-04-23 11:55:09.147600"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCommunity Load (0.2ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Community"], ["cardable_id", 15], ["suit", "h"], ["number", 8], ["created_at", "2018-04-23 11:55:09.151481"], ["updated_at", "2018-04-23 11:55:09.151481"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCommunity Load (0.2ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Community"], ["cardable_id", 15], ["suit", "s"], ["number", 13], ["created_at", "2018-04-23 11:55:09.155100"], ["updated_at", "2018-04-23 11:55:09.155100"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  Rendering homes/index.html.erb within layouts/application
+  [1m[36mCard Load (6.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 15], ["cardable_type", "Community"]]
+  [1m[36mCard Load (0.7ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 17], ["cardable_type", "Player"]]
+  Rendered homes/index.html.erb within layouts/application (21.4ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+Hash: e1e85e9223ad3289cd1a
+Version: webpack 3.11.0
+Time: 2171ms
+                                             Asset       Size  Chunks             Chunk Names
+                 hello_vue-ee9d50ce7f4b448ae226.js     248 kB       0  [emitted]  hello_vue
+               application-12a437e15157c0d4029c.js    3.27 kB       1  [emitted]  application
+    hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css  138 bytes       0  [emitted]  hello_vue
+             hello_vue-ee9d50ce7f4b448ae226.js.map     293 kB       0  [emitted]  hello_vue
+hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css.map  561 bytes       0  [emitted]  hello_vue
+           application-12a437e15157c0d4029c.js.map    3.19 kB       1  [emitted]  application
+                                     manifest.json  434 bytes          [emitted]  
+   [0] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [1] ./app/javascript/app.vue?vue&type=script&lang=js 362 bytes {0} [built]
+   [2] ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js 1.53 kB {0} [built] [failed] [1 error]
+   [3] ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 41 bytes {0} [built]
+   [4] ./app/javascript/packs/application.js 515 bytes {1} [built]
+   [5] ./app/javascript/packs/hello_vue.js 1.93 kB {0} [built]
+  [10] ./app/javascript/app.vue 964 bytes {0} [built]
+  [11] ./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 212 bytes {0} [built]
+  [12] ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 721 bytes {0} [built]
+  [13] ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 896 bytes {0} [built]
+    + 5 hidden modules
+
+ERROR in ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js
+Module build failed: ReferenceError: [BABEL] /Users/shoda/digitalholdem/app/javascript/app.vue: Unknown option: base.omit. Check out http://babeljs.io/docs/usage/options/ for more information about options.
+
+A common cause of this error is the presence of a configuration options object without the corresponding preset name. Example:
+
+Invalid:
+  `{ presets: [{option: value}] }`
+Valid:
+  `{ presets: [['presetName', {option: value}]] }`
+
+For more detailed information on preset configuration, please see http://babeljs.io/docs/plugins/#pluginpresets-options.
+    at Logger.error (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/logger.js:41:11)
+    at OptionManager.mergeOptions (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/options/option-manager.js:226:20)
+    at OptionManager.init (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/options/option-manager.js:368:12)
+    at File.initOptions (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/index.js:212:65)
+    at new File (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/index.js:135:24)
+    at Pipeline.transform (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/pipeline.js:46:16)
+    at transpile (/Users/shoda/digitalholdem/node_modules/babel-loader/lib/index.js:50:20)
+    at Object.module.exports (/Users/shoda/digitalholdem/node_modules/babel-loader/lib/index.js:173:20)
+ @ ./app/javascript/app.vue?vue&type=script&lang=js 1:0-172 1:193-362
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+
+ERROR in ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css
+Module build failed: ValidationError: Style Loader Invalid Options
+
+options['ident'] is an invalid additional property
+
+ @ ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 1:0-439 1:460-896
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+Child extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js??ref--1-2!node_modules/vue-loader/lib/loaders/stylePostLoader.js!node_modules/postcss-loader/lib/index.js??ref--1-3!node_modules/vue-loader/lib/index.js??vue-loader-options!app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css:
+       [0] ./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 775 bytes {0} [built]
+        + 1 hidden module
+
+Completed 200 OK in 6573ms (Views: 6298.3ms | ActiveRecord: 116.1ms)
+
+
+Started GET "/homes" for 127.0.0.1 at 2018-04-23 21:08:40 +0900
+Processing by HomesController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.6ms)[0m  [1m[32mINSERT INTO "players" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Kohei"], ["created_at", "2018-04-23 12:08:40.741291"], ["updated_at", "2018-04-23 12:08:40.741291"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (17.4ms)[0m  [1m[32mINSERT INTO "communities" ("aasm_state", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["aasm_state", "preflop"], ["created_at", "2018-04-23 12:08:40.752009"], ["updated_at", "2018-04-23 12:08:40.752009"]]
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Load (0.5ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Player"], ["cardable_id", 18], ["suit", "c"], ["number", 11], ["created_at", "2018-04-23 12:08:40.784969"], ["updated_at", "2018-04-23 12:08:40.784969"]]
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Load (0.3ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Player"], ["cardable_id", 18], ["suit", "c"], ["number", 1], ["created_at", "2018-04-23 12:08:40.796616"], ["updated_at", "2018-04-23 12:08:40.796616"]]
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCommunity Load (0.5ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[35mSQL (6.5ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Community"], ["cardable_id", 16], ["suit", "h"], ["number", 10], ["created_at", "2018-04-23 12:08:40.809494"], ["updated_at", "2018-04-23 12:08:40.809494"]]
+  [1m[35m (8.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCommunity Load (0.2ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Community"], ["cardable_id", 16], ["suit", "d"], ["number", 8], ["created_at", "2018-04-23 12:08:40.827368"], ["updated_at", "2018-04-23 12:08:40.827368"]]
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCommunity Load (0.2ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Community"], ["cardable_id", 16], ["suit", "d"], ["number", 6], ["created_at", "2018-04-23 12:08:40.836277"], ["updated_at", "2018-04-23 12:08:40.836277"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCommunity Load (0.2ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Community"], ["cardable_id", 16], ["suit", "h"], ["number", 8], ["created_at", "2018-04-23 12:08:40.839813"], ["updated_at", "2018-04-23 12:08:40.839813"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCommunity Load (0.2ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Community"], ["cardable_id", 16], ["suit", "h"], ["number", 7], ["created_at", "2018-04-23 12:08:40.842985"], ["updated_at", "2018-04-23 12:08:40.842985"]]
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+  Rendering homes/index.html.erb within layouts/application
+  [1m[36mCard Load (0.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 16], ["cardable_type", "Community"]]
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 18], ["cardable_type", "Player"]]
+  Rendered homes/index.html.erb within layouts/application (7.3ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+Hash: 84eff81e3f7c6ca1c049
+Version: webpack 3.11.0
+Time: 2325ms
+                                             Asset       Size  Chunks             Chunk Names
+                 hello_vue-c0598a3b25ca32f7891f.js     246 kB       0  [emitted]  hello_vue
+               application-12a437e15157c0d4029c.js    3.27 kB       1  [emitted]  application
+    hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css  138 bytes       0  [emitted]  hello_vue
+             hello_vue-c0598a3b25ca32f7891f.js.map     293 kB       0  [emitted]  hello_vue
+hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css.map  561 bytes       0  [emitted]  hello_vue
+           application-12a437e15157c0d4029c.js.map    3.19 kB       1  [emitted]  application
+                                     manifest.json  434 bytes          [emitted]  
+   [0] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [1] ./app/javascript/app.vue?vue&type=script&lang=js 362 bytes {0} [built]
+   [2] ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js 116 bytes {0} [built]
+   [3] ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 41 bytes {0} [built]
+   [4] ./app/javascript/packs/application.js 515 bytes {1} [built]
+   [5] ./app/javascript/packs/hello_vue.js 1.93 kB {0} [built]
+  [10] ./app/javascript/app.vue 964 bytes {0} [built]
+  [11] ./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 212 bytes {0} [built]
+  [12] ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 721 bytes {0} [built]
+  [13] ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 896 bytes {0} [built]
+    + 5 hidden modules
+
+ERROR in ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css
+Module build failed: ValidationError: Style Loader Invalid Options
+
+options['ident'] is an invalid additional property
+
+ @ ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 1:0-439 1:460-896
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+Child extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js??ref--1-2!node_modules/vue-loader/lib/loaders/stylePostLoader.js!node_modules/postcss-loader/lib/index.js??ref--1-3!node_modules/vue-loader/lib/index.js??vue-loader-options!app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css:
+       [0] ./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 775 bytes {0} [built]
+        + 1 hidden module
+
+Completed 200 OK in 5916ms (Views: 5710.6ms | ActiveRecord: 104.5ms)
+
+
