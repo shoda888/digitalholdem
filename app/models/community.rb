@@ -1,5 +1,6 @@
 class Community < ApplicationRecord
   has_many :cards, :as => :cardable
+  belongs_to :game
   include AASM
 
   aasm do
@@ -10,11 +11,11 @@ class Community < ApplicationRecord
     state :finished
 
     event :to_flop do
-      transitions :from => :preflop, :to => :frop
+      transitions :from => :preflop, :to => :flop
     end
 
     event :to_turn do
-      transitions :from => :frop, :to => :turn
+      transitions :from => :flop, :to => :turn
     end
 
     event :to_river do

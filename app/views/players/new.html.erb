@@ -1,0 +1,19 @@
+<div class="main players-new">
+  <div class="container">
+    <h2 class="form-heading">新規プレイヤー登録</h2>
+    <div class="form players-form">
+      <div class="form-body">
+        <% @player.errors.full_messages.each do |message| %>
+          <div class="form-error">
+            <%= message %>
+          </div>
+        <% end %>
+        <%= form_for(@player, url: players_path) do |f| %>
+        <%= render partial: 'form' , locals: {f: f} %>
+        <br>
+        <%= submit_tag("新規登録", class: 'btn btn-info')%>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

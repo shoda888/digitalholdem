@@ -1,0 +1,10 @@
+<h2>テキサスホールデム<%= @game.id %></h2>
+<div class="participant_table">
+  <h4>参加者</h4>
+  <ul>
+    <% @game.players.each do |player| %>
+      <li><%= player.name %></li>
+    <% end %>    
+  </ul>
+</div>
+<%= link_to '参加する', game_path, method: :put %>

@@ -1,0 +1,6 @@
+<div class="container">
+  <th>ゲーム</th>
+  <% @games.each do |game| %>
+  <td><%= link_to(game.id, game_path(game)) %></td>
+  <% end %>
+</div>
