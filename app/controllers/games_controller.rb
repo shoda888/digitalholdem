@@ -9,8 +9,6 @@ class GamesController < ApplicationController
     @game = Game.new
   end
   def update
-    # @current_player.game_id = params[:id]
-    # @current_player.save
     @current_player.update(game_id: params[:id])
     redirect_to new_community_path
   end

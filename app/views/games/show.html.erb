@@ -4,7 +4,7 @@
   <ul>
     <% @game.players.each do |player| %>
       <li><%= player.name %></li>
-    <% end %>    
+    <% end %>
   </ul>
 </div>
-<%= link_to '参加する', game_path, method: :put %>
+<%= link_to 'このゲームに参加する', game_path, method: :put %>
