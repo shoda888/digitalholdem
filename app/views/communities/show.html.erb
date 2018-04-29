@@ -1,0 +1,21 @@
+<h1>コミュニティカード</h1>
+
+<% @community.cards.each_with_index do |card, index| %>
+  <% if index < @hide_counter %>
+    <%= image_tag "/z01.png", width:"70", height:"105" %>
+  <% else %>
+    <%= image_tag "/#{card.suit}#{card.number}.png", width:"70", height:"105" %>
+  <% end %>
+<% end %>
+
+<%= button_to "ディーラーアクション", community_path(@community), method: :put %>
+
+<h1><%= "#{@current_player.name}の手札" %></h1>
+<% @hole.cards.each do |card| %>
+  <%= image_tag "/#{card.suit}#{card.number}.png", width:"70", height:"105" %>
+<% end %>
+
+<% if @community.finished? %>
+  <h3 class="show_hand_name"><%= @hole.hand %></h3>
+  <%= link_to "Next", new_community_path %>
+<% end %>

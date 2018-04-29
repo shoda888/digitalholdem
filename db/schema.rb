@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180422153846) do
+ActiveRecord::Schema.define(version: 20180429025507) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,8 +25,30 @@ ActiveRecord::Schema.define(version: 20180422153846) do
     t.index ["cardable_type", "cardable_id"], name: "index_cards_on_cardable_type_and_cardable_id"
   end
 
+  create_table "communities", force: :cascade do |t|
+    t.string "aasm_state"
+    t.integer "game_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "games", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "holes", force: :cascade do |t|
+    t.integer "player_id"
+    t.string "hand"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "players", force: :cascade do |t|
     t.string "name"
+    t.string "password"
+    t.integer "game_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

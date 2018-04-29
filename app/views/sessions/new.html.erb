@@ -1,0 +1,22 @@
+<div class="main players-new">
+  <div class="container">
+    <h2 class="form-heading">ログイン</h2>
+    <div class="form players-form">
+      <div class="form-body">
+        <% if @error_message %>
+          <div class="form-error">
+            <%= @error_message %>
+          </div>
+        <% end %>
+        <%=form_tag sessions_path do%>
+          <p>名前</p>
+          <input name= "name" vlaue="<%=@name%>">
+          <p>パスワード</p>
+          <input type="password" name= "password" vlaue="<%=@password%>">
+          <br><br>
+          <%= submit_tag("ログイン", class: 'btn btn-info')%>
+        <%end%>
+      </div>
+    </div>
+  </div>
+</div>

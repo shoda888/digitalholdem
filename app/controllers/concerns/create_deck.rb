@@ -4,7 +4,7 @@ module CreateDeck
   # メソッド
   def build
     @cards = []
-    for s in ["♠","♥", "♦", "♣"] do
+    for s in ['s','h', 'd', 'c'] do
       for v in 1..13 do
         @cards << Tranp.new(s, v)
       end
