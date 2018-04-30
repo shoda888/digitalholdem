@@ -24558,3 +24558,2056 @@ Completed 200 OK in 3572ms (Views: 3566.6ms | ActiveRecord: 1.0ms)
 
 
   [1m[36mCard Load (50.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  [1m[36mGame Load (33.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+Started GET "/games" for 127.0.0.1 at 2018-04-30 16:07:10 +0900
+  [1m[35m (6.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GamesController#index as HTML
+  [1m[36mPlayer Load (17.2ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.slim within layouts/application
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  Rendered games/index.html.slim within layouts/application (36.1ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+Hash: 84eff81e3f7c6ca1c049
+Version: webpack 3.11.0
+Time: 2235ms
+                                             Asset       Size  Chunks             Chunk Names
+                 hello_vue-c0598a3b25ca32f7891f.js     246 kB       0  [emitted]  hello_vue
+               application-12a437e15157c0d4029c.js    3.27 kB       1  [emitted]  application
+    hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css  138 bytes       0  [emitted]  hello_vue
+             hello_vue-c0598a3b25ca32f7891f.js.map     293 kB       0  [emitted]  hello_vue
+hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css.map  561 bytes       0  [emitted]  hello_vue
+           application-12a437e15157c0d4029c.js.map    3.19 kB       1  [emitted]  application
+                                     manifest.json  434 bytes          [emitted]  
+   [0] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [1] ./app/javascript/app.vue?vue&type=script&lang=js 362 bytes {0} [built]
+   [2] ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js 116 bytes {0} [built]
+   [3] ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 41 bytes {0} [built]
+   [4] ./app/javascript/packs/application.js 515 bytes {1} [built]
+   [5] ./app/javascript/packs/hello_vue.js 1.93 kB {0} [built]
+  [10] ./app/javascript/app.vue 964 bytes {0} [built]
+  [11] ./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 212 bytes {0} [built]
+  [12] ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 721 bytes {0} [built]
+  [13] ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 896 bytes {0} [built]
+    + 5 hidden modules
+
+ERROR in ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css
+Module build failed: ValidationError: Style Loader Invalid Options
+
+options['ident'] is an invalid additional property
+
+ @ ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 1:0-439 1:460-896
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+Child extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js??ref--1-2!node_modules/vue-loader/lib/loaders/stylePostLoader.js!node_modules/postcss-loader/lib/index.js??ref--1-3!node_modules/vue-loader/lib/index.js??vue-loader-options!app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css:
+       [0] ./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 775 bytes {0} [built]
+        + 1 hidden module
+
+Completed 200 OK in 5951ms (Views: 5881.6ms | ActiveRecord: 30.5ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-04-30 16:08:14 +0900
+Processing by GamesController#index as HTML
+  [1m[36mPlayer Load (0.5ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.slim within layouts/application
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  Rendered games/index.html.slim within layouts/application (13.5ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+Hash: 84eff81e3f7c6ca1c049
+Version: webpack 3.11.0
+Time: 2167ms
+                                             Asset       Size  Chunks             Chunk Names
+                 hello_vue-c0598a3b25ca32f7891f.js     246 kB       0  [emitted]  hello_vue
+               application-12a437e15157c0d4029c.js    3.27 kB       1  [emitted]  application
+    hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css  138 bytes       0  [emitted]  hello_vue
+             hello_vue-c0598a3b25ca32f7891f.js.map     293 kB       0  [emitted]  hello_vue
+hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css.map  561 bytes       0  [emitted]  hello_vue
+           application-12a437e15157c0d4029c.js.map    3.19 kB       1  [emitted]  application
+                                     manifest.json  434 bytes          [emitted]  
+   [0] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [1] ./app/javascript/app.vue?vue&type=script&lang=js 362 bytes {0} [built]
+   [2] ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js 116 bytes {0} [built]
+   [3] ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 41 bytes {0} [built]
+   [4] ./app/javascript/packs/application.js 515 bytes {1} [built]
+   [5] ./app/javascript/packs/hello_vue.js 1.93 kB {0} [built]
+  [10] ./app/javascript/app.vue 964 bytes {0} [built]
+  [11] ./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 212 bytes {0} [built]
+  [12] ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 721 bytes {0} [built]
+  [13] ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 896 bytes {0} [built]
+    + 5 hidden modules
+
+ERROR in ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css
+Module build failed: ValidationError: Style Loader Invalid Options
+
+options['ident'] is an invalid additional property
+
+ @ ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 1:0-439 1:460-896
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+Child extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js??ref--1-2!node_modules/vue-loader/lib/loaders/stylePostLoader.js!node_modules/postcss-loader/lib/index.js??ref--1-3!node_modules/vue-loader/lib/index.js??vue-loader-options!app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css:
+       [0] ./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 775 bytes {0} [built]
+        + 1 hidden module
+
+Completed 200 OK in 4462ms (Views: 4457.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/games/1" for 127.0.0.1 at 2018-04-30 16:09:12 +0900
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlayer Load (0.4ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGame Load (0.5ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/show.html.erb within layouts/application
+  [1m[36mPlayer Load (0.5ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."game_id" = $1[0m  [["game_id", 1]]
+  Rendered games/show.html.erb within layouts/application (29.1ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+Hash: 84eff81e3f7c6ca1c049
+Version: webpack 3.11.0
+Time: 2128ms
+                                             Asset       Size  Chunks             Chunk Names
+                 hello_vue-c0598a3b25ca32f7891f.js     246 kB       0  [emitted]  hello_vue
+               application-12a437e15157c0d4029c.js    3.27 kB       1  [emitted]  application
+    hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css  138 bytes       0  [emitted]  hello_vue
+             hello_vue-c0598a3b25ca32f7891f.js.map     293 kB       0  [emitted]  hello_vue
+hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css.map  561 bytes       0  [emitted]  hello_vue
+           application-12a437e15157c0d4029c.js.map    3.19 kB       1  [emitted]  application
+                                     manifest.json  434 bytes          [emitted]  
+   [0] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [1] ./app/javascript/app.vue?vue&type=script&lang=js 362 bytes {0} [built]
+   [2] ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js 116 bytes {0} [built]
+   [3] ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 41 bytes {0} [built]
+   [4] ./app/javascript/packs/application.js 515 bytes {1} [built]
+   [5] ./app/javascript/packs/hello_vue.js 1.93 kB {0} [built]
+  [10] ./app/javascript/app.vue 964 bytes {0} [built]
+  [11] ./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 212 bytes {0} [built]
+  [12] ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 721 bytes {0} [built]
+  [13] ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 896 bytes {0} [built]
+    + 5 hidden modules
+
+ERROR in ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css
+Module build failed: ValidationError: Style Loader Invalid Options
+
+options['ident'] is an invalid additional property
+
+ @ ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 1:0-439 1:460-896
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+Child extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js??ref--1-2!node_modules/vue-loader/lib/loaders/stylePostLoader.js!node_modules/postcss-loader/lib/index.js??ref--1-3!node_modules/vue-loader/lib/index.js??vue-loader-options!app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css:
+       [0] ./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 775 bytes {0} [built]
+        + 1 hidden module
+
+Completed 200 OK in 4487ms (Views: 4478.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/games/1" for 127.0.0.1 at 2018-04-30 16:24:06 +0900
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlayer Load (1.0ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/show.html.slim within layouts/application
+  [1m[36mPlayer Load (0.3ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."game_id" = $1[0m  [["game_id", 1]]
+  Rendered games/show.html.slim within layouts/application (48.3ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+Hash: 84eff81e3f7c6ca1c049
+Version: webpack 3.11.0
+Time: 2102ms
+                                             Asset       Size  Chunks             Chunk Names
+                 hello_vue-c0598a3b25ca32f7891f.js     246 kB       0  [emitted]  hello_vue
+               application-12a437e15157c0d4029c.js    3.27 kB       1  [emitted]  application
+    hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css  138 bytes       0  [emitted]  hello_vue
+             hello_vue-c0598a3b25ca32f7891f.js.map     293 kB       0  [emitted]  hello_vue
+hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css.map  561 bytes       0  [emitted]  hello_vue
+           application-12a437e15157c0d4029c.js.map    3.19 kB       1  [emitted]  application
+                                     manifest.json  434 bytes          [emitted]  
+   [0] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [1] ./app/javascript/app.vue?vue&type=script&lang=js 362 bytes {0} [built]
+   [2] ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js 116 bytes {0} [built]
+   [3] ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 41 bytes {0} [built]
+   [4] ./app/javascript/packs/application.js 515 bytes {1} [built]
+   [5] ./app/javascript/packs/hello_vue.js 1.93 kB {0} [built]
+  [10] ./app/javascript/app.vue 964 bytes {0} [built]
+  [11] ./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 212 bytes {0} [built]
+  [12] ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 721 bytes {0} [built]
+  [13] ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 896 bytes {0} [built]
+    + 5 hidden modules
+
+ERROR in ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css
+Module build failed: ValidationError: Style Loader Invalid Options
+
+options['ident'] is an invalid additional property
+
+ @ ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 1:0-439 1:460-896
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+Child extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js??ref--1-2!node_modules/vue-loader/lib/loaders/stylePostLoader.js!node_modules/postcss-loader/lib/index.js??ref--1-3!node_modules/vue-loader/lib/index.js??vue-loader-options!app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css:
+       [0] ./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 775 bytes {0} [built]
+        + 1 hidden module
+
+Completed 200 OK in 4561ms (Views: 4524.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-04-30 16:24:29 +0900
+Processing by GamesController#index as HTML
+  [1m[36mPlayer Load (0.3ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.slim within layouts/application
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  Rendered games/index.html.slim within layouts/application (35.0ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+Hash: 84eff81e3f7c6ca1c049
+Version: webpack 3.11.0
+Time: 2177ms
+                                             Asset       Size  Chunks             Chunk Names
+                 hello_vue-c0598a3b25ca32f7891f.js     246 kB       0  [emitted]  hello_vue
+               application-12a437e15157c0d4029c.js    3.27 kB       1  [emitted]  application
+    hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css  138 bytes       0  [emitted]  hello_vue
+             hello_vue-c0598a3b25ca32f7891f.js.map     293 kB       0  [emitted]  hello_vue
+hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css.map  561 bytes       0  [emitted]  hello_vue
+           application-12a437e15157c0d4029c.js.map    3.19 kB       1  [emitted]  application
+                                     manifest.json  434 bytes          [emitted]  
+   [0] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [1] ./app/javascript/app.vue?vue&type=script&lang=js 362 bytes {0} [built]
+   [2] ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js 116 bytes {0} [built]
+   [3] ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 41 bytes {0} [built]
+   [4] ./app/javascript/packs/application.js 515 bytes {1} [built]
+   [5] ./app/javascript/packs/hello_vue.js 1.93 kB {0} [built]
+  [10] ./app/javascript/app.vue 964 bytes {0} [built]
+  [11] ./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 212 bytes {0} [built]
+  [12] ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 721 bytes {0} [built]
+  [13] ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 896 bytes {0} [built]
+    + 5 hidden modules
+
+ERROR in ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css
+Module build failed: ValidationError: Style Loader Invalid Options
+
+options['ident'] is an invalid additional property
+
+ @ ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 1:0-439 1:460-896
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+Child extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js??ref--1-2!node_modules/vue-loader/lib/loaders/stylePostLoader.js!node_modules/postcss-loader/lib/index.js??ref--1-3!node_modules/vue-loader/lib/index.js??vue-loader-options!app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css:
+       [0] ./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 775 bytes {0} [built]
+        + 1 hidden module
+
+Completed 200 OK in 4637ms (Views: 4630.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/games/1" for 127.0.0.1 at 2018-04-30 16:24:36 +0900
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlayer Load (0.5ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/show.html.slim within layouts/application
+  [1m[36mPlayer Load (0.3ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."game_id" = $1[0m  [["game_id", 1]]
+  Rendered games/show.html.slim within layouts/application (60.2ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+Hash: 84eff81e3f7c6ca1c049
+Version: webpack 3.11.0
+Time: 2071ms
+                                             Asset       Size  Chunks             Chunk Names
+                 hello_vue-c0598a3b25ca32f7891f.js     246 kB       0  [emitted]  hello_vue
+               application-12a437e15157c0d4029c.js    3.27 kB       1  [emitted]  application
+    hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css  138 bytes       0  [emitted]  hello_vue
+             hello_vue-c0598a3b25ca32f7891f.js.map     293 kB       0  [emitted]  hello_vue
+hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css.map  561 bytes       0  [emitted]  hello_vue
+           application-12a437e15157c0d4029c.js.map    3.19 kB       1  [emitted]  application
+                                     manifest.json  434 bytes          [emitted]  
+   [0] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [1] ./app/javascript/app.vue?vue&type=script&lang=js 362 bytes {0} [built]
+   [2] ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js 116 bytes {0} [built]
+   [3] ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 41 bytes {0} [built]
+   [4] ./app/javascript/packs/application.js 515 bytes {1} [built]
+   [5] ./app/javascript/packs/hello_vue.js 1.93 kB {0} [built]
+  [10] ./app/javascript/app.vue 964 bytes {0} [built]
+  [11] ./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 212 bytes {0} [built]
+  [12] ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 721 bytes {0} [built]
+  [13] ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 896 bytes {0} [built]
+    + 5 hidden modules
+
+ERROR in ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css
+Module build failed: ValidationError: Style Loader Invalid Options
+
+options['ident'] is an invalid additional property
+
+ @ ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 1:0-439 1:460-896
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+Child extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js??ref--1-2!node_modules/vue-loader/lib/loaders/stylePostLoader.js!node_modules/postcss-loader/lib/index.js??ref--1-3!node_modules/vue-loader/lib/index.js??vue-loader-options!app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css:
+       [0] ./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 775 bytes {0} [built]
+        + 1 hidden module
+
+Completed 200 OK in 3405ms (Views: 3396.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/games/1" for 127.0.0.1 at 2018-04-30 16:24:59 +0900
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/show.html.slim within layouts/application
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."game_id" = $1[0m  [["game_id", 1]]
+  Rendered games/show.html.slim within layouts/application (15.2ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+Hash: 84eff81e3f7c6ca1c049
+Version: webpack 3.11.0
+Time: 2144ms
+                                             Asset       Size  Chunks             Chunk Names
+                 hello_vue-c0598a3b25ca32f7891f.js     246 kB       0  [emitted]  hello_vue
+               application-12a437e15157c0d4029c.js    3.27 kB       1  [emitted]  application
+    hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css  138 bytes       0  [emitted]  hello_vue
+             hello_vue-c0598a3b25ca32f7891f.js.map     293 kB       0  [emitted]  hello_vue
+hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css.map  561 bytes       0  [emitted]  hello_vue
+           application-12a437e15157c0d4029c.js.map    3.19 kB       1  [emitted]  application
+                                     manifest.json  434 bytes          [emitted]  
+   [0] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [1] ./app/javascript/app.vue?vue&type=script&lang=js 362 bytes {0} [built]
+   [2] ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js 116 bytes {0} [built]
+   [3] ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 41 bytes {0} [built]
+   [4] ./app/javascript/packs/application.js 515 bytes {1} [built]
+   [5] ./app/javascript/packs/hello_vue.js 1.93 kB {0} [built]
+  [10] ./app/javascript/app.vue 964 bytes {0} [built]
+  [11] ./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 212 bytes {0} [built]
+  [12] ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 721 bytes {0} [built]
+  [13] ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 896 bytes {0} [built]
+    + 5 hidden modules
+
+ERROR in ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css
+Module build failed: ValidationError: Style Loader Invalid Options
+
+options['ident'] is an invalid additional property
+
+ @ ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 1:0-439 1:460-896
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+Child extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js??ref--1-2!node_modules/vue-loader/lib/loaders/stylePostLoader.js!node_modules/postcss-loader/lib/index.js??ref--1-3!node_modules/vue-loader/lib/index.js??vue-loader-options!app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css:
+       [0] ./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 775 bytes {0} [built]
+        + 1 hidden module
+
+Completed 200 OK in 4263ms (Views: 4257.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/games/1" for 127.0.0.1 at 2018-04-30 16:26:32 +0900
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/show.html.slim within layouts/application
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."game_id" = $1[0m  [["game_id", 1]]
+  Rendered games/show.html.slim within layouts/application (13.1ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+Hash: 84eff81e3f7c6ca1c049
+Version: webpack 3.11.0
+Time: 2141ms
+                                             Asset       Size  Chunks             Chunk Names
+                 hello_vue-c0598a3b25ca32f7891f.js     246 kB       0  [emitted]  hello_vue
+               application-12a437e15157c0d4029c.js    3.27 kB       1  [emitted]  application
+    hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css  138 bytes       0  [emitted]  hello_vue
+             hello_vue-c0598a3b25ca32f7891f.js.map     293 kB       0  [emitted]  hello_vue
+hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css.map  561 bytes       0  [emitted]  hello_vue
+           application-12a437e15157c0d4029c.js.map    3.19 kB       1  [emitted]  application
+                                     manifest.json  434 bytes          [emitted]  
+   [0] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [1] ./app/javascript/app.vue?vue&type=script&lang=js 362 bytes {0} [built]
+   [2] ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js 116 bytes {0} [built]
+   [3] ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 41 bytes {0} [built]
+   [4] ./app/javascript/packs/application.js 515 bytes {1} [built]
+   [5] ./app/javascript/packs/hello_vue.js 1.93 kB {0} [built]
+  [10] ./app/javascript/app.vue 964 bytes {0} [built]
+  [11] ./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 212 bytes {0} [built]
+  [12] ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 721 bytes {0} [built]
+  [13] ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 896 bytes {0} [built]
+    + 5 hidden modules
+
+ERROR in ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css
+Module build failed: ValidationError: Style Loader Invalid Options
+
+options['ident'] is an invalid additional property
+
+ @ ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 1:0-439 1:460-896
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+Child extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js??ref--1-2!node_modules/vue-loader/lib/loaders/stylePostLoader.js!node_modules/postcss-loader/lib/index.js??ref--1-3!node_modules/vue-loader/lib/index.js??vue-loader-options!app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css:
+       [0] ./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 775 bytes {0} [built]
+        + 1 hidden module
+
+Completed 200 OK in 4506ms (Views: 4502.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/games/1" for 127.0.0.1 at 2018-04-30 16:31:40 +0900
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlayer Load (0.9ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/show.html.slim within layouts/application
+  Rendered games/show.html.slim within layouts/application (118.8ms)
+Completed 500 Internal Server Error in 148ms (ActiveRecord: 1.4ms)
+
+
+  
+SyntaxError (/Users/shoda/digitalholdem/app/views/games/show.html.slim:57: syntax error, unexpected ',', expecting =>
+ "btn btn-success", game_path, method: :put))).to_s)); 
+                              ^):
+  
+app/views/games/show.html.slim:57: syntax error, unexpected ',', expecting =>
+Started GET "/games/1" for 127.0.0.1 at 2018-04-30 16:32:52 +0900
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlayer Load (0.5ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/show.html.slim within layouts/application
+  [1m[36mPlayer Load (0.4ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."game_id" = $1[0m  [["game_id", 1]]
+  Rendered games/show.html.slim within layouts/application (15.0ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+Hash: 84eff81e3f7c6ca1c049
+Version: webpack 3.11.0
+Time: 2277ms
+                                             Asset       Size  Chunks             Chunk Names
+                 hello_vue-c0598a3b25ca32f7891f.js     246 kB       0  [emitted]  hello_vue
+               application-12a437e15157c0d4029c.js    3.27 kB       1  [emitted]  application
+    hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css  138 bytes       0  [emitted]  hello_vue
+             hello_vue-c0598a3b25ca32f7891f.js.map     293 kB       0  [emitted]  hello_vue
+hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css.map  561 bytes       0  [emitted]  hello_vue
+           application-12a437e15157c0d4029c.js.map    3.19 kB       1  [emitted]  application
+                                     manifest.json  434 bytes          [emitted]  
+   [0] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [1] ./app/javascript/app.vue?vue&type=script&lang=js 362 bytes {0} [built]
+   [2] ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js 116 bytes {0} [built]
+   [3] ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 41 bytes {0} [built]
+   [4] ./app/javascript/packs/application.js 515 bytes {1} [built]
+   [5] ./app/javascript/packs/hello_vue.js 1.93 kB {0} [built]
+  [10] ./app/javascript/app.vue 964 bytes {0} [built]
+  [11] ./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 212 bytes {0} [built]
+  [12] ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 721 bytes {0} [built]
+  [13] ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 896 bytes {0} [built]
+    + 5 hidden modules
+
+ERROR in ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css
+Module build failed: ValidationError: Style Loader Invalid Options
+
+options['ident'] is an invalid additional property
+
+ @ ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 1:0-439 1:460-896
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+Child extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js??ref--1-2!node_modules/vue-loader/lib/loaders/stylePostLoader.js!node_modules/postcss-loader/lib/index.js??ref--1-3!node_modules/vue-loader/lib/index.js??vue-loader-options!app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css:
+       [0] ./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 775 bytes {0} [built]
+        + 1 hidden module
+
+Completed 200 OK in 4867ms (Views: 4861.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/games/1" for 127.0.0.1 at 2018-04-30 16:33:48 +0900
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlayer Load (0.3ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/show.html.slim within layouts/application
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."game_id" = $1[0m  [["game_id", 1]]
+  Rendered games/show.html.slim within layouts/application (33.3ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+Hash: 84eff81e3f7c6ca1c049
+Version: webpack 3.11.0
+Time: 2205ms
+                                             Asset       Size  Chunks             Chunk Names
+                 hello_vue-c0598a3b25ca32f7891f.js     246 kB       0  [emitted]  hello_vue
+               application-12a437e15157c0d4029c.js    3.27 kB       1  [emitted]  application
+    hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css  138 bytes       0  [emitted]  hello_vue
+             hello_vue-c0598a3b25ca32f7891f.js.map     293 kB       0  [emitted]  hello_vue
+hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css.map  561 bytes       0  [emitted]  hello_vue
+           application-12a437e15157c0d4029c.js.map    3.19 kB       1  [emitted]  application
+                                     manifest.json  434 bytes          [emitted]  
+   [0] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [1] ./app/javascript/app.vue?vue&type=script&lang=js 362 bytes {0} [built]
+   [2] ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js 116 bytes {0} [built]
+   [3] ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 41 bytes {0} [built]
+   [4] ./app/javascript/packs/application.js 515 bytes {1} [built]
+   [5] ./app/javascript/packs/hello_vue.js 1.93 kB {0} [built]
+  [10] ./app/javascript/app.vue 964 bytes {0} [built]
+  [11] ./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 212 bytes {0} [built]
+  [12] ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 721 bytes {0} [built]
+  [13] ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 896 bytes {0} [built]
+    + 5 hidden modules
+
+ERROR in ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css
+Module build failed: ValidationError: Style Loader Invalid Options
+
+options['ident'] is an invalid additional property
+
+ @ ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 1:0-439 1:460-896
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+Child extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js??ref--1-2!node_modules/vue-loader/lib/loaders/stylePostLoader.js!node_modules/postcss-loader/lib/index.js??ref--1-3!node_modules/vue-loader/lib/index.js??vue-loader-options!app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css:
+       [0] ./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 775 bytes {0} [built]
+        + 1 hidden module
+
+Completed 200 OK in 4588ms (Views: 4583.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-04-30 16:36:10 +0900
+Processing by GamesController#index as HTML
+  [1m[36mPlayer Load (1.1ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.slim within layouts/application
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  Rendered games/index.html.slim within layouts/application (42.2ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+Hash: 84eff81e3f7c6ca1c049
+Version: webpack 3.11.0
+Time: 2188ms
+                                             Asset       Size  Chunks             Chunk Names
+                 hello_vue-c0598a3b25ca32f7891f.js     246 kB       0  [emitted]  hello_vue
+               application-12a437e15157c0d4029c.js    3.27 kB       1  [emitted]  application
+    hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css  138 bytes       0  [emitted]  hello_vue
+             hello_vue-c0598a3b25ca32f7891f.js.map     293 kB       0  [emitted]  hello_vue
+hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css.map  561 bytes       0  [emitted]  hello_vue
+           application-12a437e15157c0d4029c.js.map    3.19 kB       1  [emitted]  application
+                                     manifest.json  434 bytes          [emitted]  
+   [0] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [1] ./app/javascript/app.vue?vue&type=script&lang=js 362 bytes {0} [built]
+   [2] ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js 116 bytes {0} [built]
+   [3] ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 41 bytes {0} [built]
+   [4] ./app/javascript/packs/application.js 515 bytes {1} [built]
+   [5] ./app/javascript/packs/hello_vue.js 1.93 kB {0} [built]
+  [10] ./app/javascript/app.vue 964 bytes {0} [built]
+  [11] ./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 212 bytes {0} [built]
+  [12] ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 721 bytes {0} [built]
+  [13] ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 896 bytes {0} [built]
+    + 5 hidden modules
+
+ERROR in ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css
+Module build failed: ValidationError: Style Loader Invalid Options
+
+options['ident'] is an invalid additional property
+
+ @ ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 1:0-439 1:460-896
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+Child extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js??ref--1-2!node_modules/vue-loader/lib/loaders/stylePostLoader.js!node_modules/postcss-loader/lib/index.js??ref--1-3!node_modules/vue-loader/lib/index.js??vue-loader-options!app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css:
+       [0] ./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 775 bytes {0} [built]
+        + 1 hidden module
+
+Completed 200 OK in 4726ms (Views: 4717.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/games/1" for 127.0.0.1 at 2018-04-30 16:38:27 +0900
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlayer Load (0.4ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGame Load (2.0ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/show.html.slim within layouts/application
+  [1m[36mPlayer Load (0.8ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."game_id" = $1[0m  [["game_id", 1]]
+  Rendered games/show.html.slim within layouts/application (35.7ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+Hash: 84eff81e3f7c6ca1c049
+Version: webpack 3.11.0
+Time: 2239ms
+                                             Asset       Size  Chunks             Chunk Names
+                 hello_vue-c0598a3b25ca32f7891f.js     246 kB       0  [emitted]  hello_vue
+               application-12a437e15157c0d4029c.js    3.27 kB       1  [emitted]  application
+    hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css  138 bytes       0  [emitted]  hello_vue
+             hello_vue-c0598a3b25ca32f7891f.js.map     293 kB       0  [emitted]  hello_vue
+hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css.map  561 bytes       0  [emitted]  hello_vue
+           application-12a437e15157c0d4029c.js.map    3.19 kB       1  [emitted]  application
+                                     manifest.json  434 bytes          [emitted]  
+   [0] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [1] ./app/javascript/app.vue?vue&type=script&lang=js 362 bytes {0} [built]
+   [2] ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js 116 bytes {0} [built]
+   [3] ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 41 bytes {0} [built]
+   [4] ./app/javascript/packs/application.js 515 bytes {1} [built]
+   [5] ./app/javascript/packs/hello_vue.js 1.93 kB {0} [built]
+  [10] ./app/javascript/app.vue 964 bytes {0} [built]
+  [11] ./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 212 bytes {0} [built]
+  [12] ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 721 bytes {0} [built]
+  [13] ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 896 bytes {0} [built]
+    + 5 hidden modules
+
+ERROR in ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css
+Module build failed: ValidationError: Style Loader Invalid Options
+
+options['ident'] is an invalid additional property
+
+ @ ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 1:0-439 1:460-896
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+Child extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js??ref--1-2!node_modules/vue-loader/lib/loaders/stylePostLoader.js!node_modules/postcss-loader/lib/index.js??ref--1-3!node_modules/vue-loader/lib/index.js??vue-loader-options!app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css:
+       [0] ./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 775 bytes {0} [built]
+        + 1 hidden module
+
+Completed 200 OK in 4451ms (Views: 4436.4ms | ActiveRecord: 3.1ms)
+
+
+Started PUT "/games/1" for 127.0.0.1 at 2018-04-30 16:54:31 +0900
+Processing by GamesController#update as HTML
+  Parameters: {"authenticity_token"=>"wbeIfwVtOCEesgKBlGH6wycRkQIDo2kstyj8kOW2+/l+wstsVTO0ijGiwSuNS/9qlXIO1FC3oGoRM5JjzyrH6A==", "id"=>"1"}
+  [1m[36mPlayer Load (3.6ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (6.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/communities/new
+Completed 302 Found in 51ms (ActiveRecord: 10.2ms)
+
+
+Started GET "/communities/new" for 127.0.0.1 at 2018-04-30 16:54:31 +0900
+Processing by CommunitiesController#new as HTML
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering communities/new.html.slim within layouts/application
+  Rendered communities/new.html.slim within layouts/application (379.7ms)
+Completed 500 Internal Server Error in 395ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `btn' for #<#<Class:0x00007f86db8f2e38>:0x00007f86db8f0868>):
+    6:   = @current_player.name
+    7: 
+    8: .text-center
+    9:   = button_to "ゲーム開始", communities_path, method: :post, class:btn-success
+  
+app/views/communities/new.html.slim:9:in `_app_views_communities_new_html_slim___1246383075265783740_70108592970900'
+Started GET "/communities/new" for 127.0.0.1 at 2018-04-30 16:54:43 +0900
+Processing by CommunitiesController#new as HTML
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering communities/new.html.slim within layouts/application
+  Rendered communities/new.html.slim within layouts/application (2.2ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.2ms)
+
+
+  
+SyntaxError (/Users/shoda/digitalholdem/app/views/communities/new.html.slim:9: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+, method: :post, class:btn btn-success))).to_s)); 
+                              ^):
+  
+app/views/communities/new.html.slim:9: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+Started GET "/communities/new" for 127.0.0.1 at 2018-04-30 16:56:07 +0900
+Processing by CommunitiesController#new as HTML
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering communities/new.html.slim within layouts/application
+  Rendered communities/new.html.slim within layouts/application (2.2ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.2ms)
+
+
+  
+SyntaxError (/Users/shoda/digitalholdem/app/views/communities/new.html.slim:9: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+th, method: :post, class:btn 'btn-success'))).to_s)); 
+                              ^):
+  
+app/views/communities/new.html.slim:9: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+Started GET "/communities/new" for 127.0.0.1 at 2018-04-30 16:56:25 +0900
+Processing by CommunitiesController#new as HTML
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering communities/new.html.slim within layouts/application
+  Rendered communities/new.html.slim within layouts/application (4.6ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+Hash: 84eff81e3f7c6ca1c049
+Version: webpack 3.11.0
+Time: 2443ms
+                                             Asset       Size  Chunks             Chunk Names
+                 hello_vue-c0598a3b25ca32f7891f.js     246 kB       0  [emitted]  hello_vue
+               application-12a437e15157c0d4029c.js    3.27 kB       1  [emitted]  application
+    hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css  138 bytes       0  [emitted]  hello_vue
+             hello_vue-c0598a3b25ca32f7891f.js.map     293 kB       0  [emitted]  hello_vue
+hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css.map  561 bytes       0  [emitted]  hello_vue
+           application-12a437e15157c0d4029c.js.map    3.19 kB       1  [emitted]  application
+                                     manifest.json  434 bytes          [emitted]  
+   [0] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [1] ./app/javascript/app.vue?vue&type=script&lang=js 362 bytes {0} [built]
+   [2] ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js 116 bytes {0} [built]
+   [3] ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 41 bytes {0} [built]
+   [4] ./app/javascript/packs/application.js 515 bytes {1} [built]
+   [5] ./app/javascript/packs/hello_vue.js 1.93 kB {0} [built]
+  [10] ./app/javascript/app.vue 964 bytes {0} [built]
+  [11] ./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 212 bytes {0} [built]
+  [12] ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 721 bytes {0} [built]
+  [13] ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 896 bytes {0} [built]
+    + 5 hidden modules
+
+ERROR in ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css
+Module build failed: ValidationError: Style Loader Invalid Options
+
+options['ident'] is an invalid additional property
+
+ @ ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 1:0-439 1:460-896
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+Child extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js??ref--1-2!node_modules/vue-loader/lib/loaders/stylePostLoader.js!node_modules/postcss-loader/lib/index.js??ref--1-3!node_modules/vue-loader/lib/index.js??vue-loader-options!app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css:
+       [0] ./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 775 bytes {0} [built]
+        + 1 hidden module
+
+Completed 200 OK in 4875ms (Views: 4872.2ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/communities" for 127.0.0.1 at 2018-04-30 16:57:27 +0900
+Processing by CommunitiesController#create as HTML
+  Parameters: {"authenticity_token"=>"VJP25AKrU61pTkim8F34N/n4AGDpCFqADD+vNqRLGSzr5rX3UvXfBkZeiwzpd/2eS5uftrock8aqJMHFjtclPQ=="}
+  [1m[36mPlayer Load (0.4ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (12.0ms)[0m  [1m[32mINSERT INTO "communities" ("aasm_state", "game_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["aasm_state", "preflop"], ["game_id", 1], ["created_at", "2018-04-30 07:57:27.113706"], ["updated_at", "2018-04-30 07:57:27.113706"]]
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (12.7ms)[0m  [1m[32mINSERT INTO "holes" ("player_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["player_id", 1], ["created_at", "2018-04-30 07:57:27.143113"], ["updated_at", "2018-04-30 07:57:27.143113"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPlayer Load (0.3ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."game_id" = $1[0m  [["game_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHole Load (5.8ms)[0m  [1m[34mSELECT  "holes".* FROM "holes" WHERE "holes"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (17.6ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Hole"], ["cardable_id", 5], ["suit", "s"], ["number", 3], ["created_at", "2018-04-30 07:57:27.183811"], ["updated_at", "2018-04-30 07:57:27.183811"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHole Load (0.3ms)[0m  [1m[34mSELECT  "holes".* FROM "holes" WHERE "holes"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Hole"], ["cardable_id", 5], ["suit", "s"], ["number", 8], ["created_at", "2018-04-30 07:57:27.207186"], ["updated_at", "2018-04-30 07:57:27.207186"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCommunity Load (0.3ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Community"], ["cardable_id", 5], ["suit", "c"], ["number", 4], ["created_at", "2018-04-30 07:57:27.213805"], ["updated_at", "2018-04-30 07:57:27.213805"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCommunity Load (0.2ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Community"], ["cardable_id", 5], ["suit", "c"], ["number", 9], ["created_at", "2018-04-30 07:57:27.217486"], ["updated_at", "2018-04-30 07:57:27.217486"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCommunity Load (0.2ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Community"], ["cardable_id", 5], ["suit", "c"], ["number", 13], ["created_at", "2018-04-30 07:57:27.221162"], ["updated_at", "2018-04-30 07:57:27.221162"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCommunity Load (0.2ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Community"], ["cardable_id", 5], ["suit", "h"], ["number", 11], ["created_at", "2018-04-30 07:57:27.224411"], ["updated_at", "2018-04-30 07:57:27.224411"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCommunity Load (0.2ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Community"], ["cardable_id", 5], ["suit", "d"], ["number", 7], ["created_at", "2018-04-30 07:57:27.227380"], ["updated_at", "2018-04-30 07:57:27.227380"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/communities/5
+Completed 302 Found in 202ms (ActiveRecord: 78.0ms)
+
+
+Started GET "/communities/5" for 127.0.0.1 at 2018-04-30 16:57:27 +0900
+Processing by CommunitiesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCommunity Load (0.2ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mHole Load (0.7ms)[0m  [1m[34mSELECT  "holes".* FROM "holes" WHERE "holes"."player_id" = $1 ORDER BY "holes"."id" DESC LIMIT $2[0m  [["player_id", 1], ["LIMIT", 1]]
+  Rendering communities/show.html.erb within layouts/application
+  [1m[36mCard Load (7.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Community"]]
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Hole"]]
+  Rendered communities/show.html.erb within layouts/application (19.9ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+Hash: 84eff81e3f7c6ca1c049
+Version: webpack 3.11.0
+Time: 1982ms
+                                             Asset       Size  Chunks             Chunk Names
+                 hello_vue-c0598a3b25ca32f7891f.js     246 kB       0  [emitted]  hello_vue
+               application-12a437e15157c0d4029c.js    3.27 kB       1  [emitted]  application
+    hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css  138 bytes       0  [emitted]  hello_vue
+             hello_vue-c0598a3b25ca32f7891f.js.map     293 kB       0  [emitted]  hello_vue
+hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css.map  561 bytes       0  [emitted]  hello_vue
+           application-12a437e15157c0d4029c.js.map    3.19 kB       1  [emitted]  application
+                                     manifest.json  434 bytes          [emitted]  
+   [0] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [1] ./app/javascript/app.vue?vue&type=script&lang=js 362 bytes {0} [built]
+   [2] ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js 116 bytes {0} [built]
+   [3] ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 41 bytes {0} [built]
+   [4] ./app/javascript/packs/application.js 515 bytes {1} [built]
+   [5] ./app/javascript/packs/hello_vue.js 1.93 kB {0} [built]
+  [10] ./app/javascript/app.vue 964 bytes {0} [built]
+  [11] ./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 212 bytes {0} [built]
+  [12] ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 721 bytes {0} [built]
+  [13] ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 896 bytes {0} [built]
+    + 5 hidden modules
+
+ERROR in ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css
+Module build failed: ValidationError: Style Loader Invalid Options
+
+options['ident'] is an invalid additional property
+
+ @ ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 1:0-439 1:460-896
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+Child extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js??ref--1-2!node_modules/vue-loader/lib/loaders/stylePostLoader.js!node_modules/postcss-loader/lib/index.js??ref--1-3!node_modules/vue-loader/lib/index.js??vue-loader-options!app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css:
+       [0] ./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 775 bytes {0} [built]
+        + 1 hidden module
+
+Completed 200 OK in 3197ms (Views: 3183.4ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/communities/5" for 127.0.0.1 at 2018-04-30 17:06:27 +0900
+Processing by CommunitiesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPlayer Load (0.7ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCommunity Load (0.2ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mHole Load (0.7ms)[0m  [1m[34mSELECT  "holes".* FROM "holes" WHERE "holes"."player_id" = $1 ORDER BY "holes"."id" DESC LIMIT $2[0m  [["player_id", 1], ["LIMIT", 1]]
+  Rendering communities/show.html.slim within layouts/application
+  Rendered communities/show.html.slim within layouts/application (12.6ms)
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 1.6ms)
+
+
+  
+SyntaxError (/Users/shoda/digitalholdem/app/views/communities/show.html.slim:16: syntax error, unexpected tSTRING_DEND, expecting ')'
+ml_safe((@current_player.name}の手札))).to_s)); 
+                              ^):
+  
+app/views/communities/show.html.slim:16: syntax error, unexpected tSTRING_DEND, expecting ')'
+Started GET "/communities/5" for 127.0.0.1 at 2018-04-30 17:07:28 +0900
+Processing by CommunitiesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCommunity Load (0.3ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mHole Load (0.3ms)[0m  [1m[34mSELECT  "holes".* FROM "holes" WHERE "holes"."player_id" = $1 ORDER BY "holes"."id" DESC LIMIT $2[0m  [["player_id", 1], ["LIMIT", 1]]
+  Rendering communities/show.html.slim within layouts/application
+  [1m[36mCard Load (0.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Community"]]
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Hole"]]
+  Rendered communities/show.html.slim within layouts/application (9.8ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+Hash: 84eff81e3f7c6ca1c049
+Version: webpack 3.11.0
+Time: 2319ms
+                                             Asset       Size  Chunks             Chunk Names
+                 hello_vue-c0598a3b25ca32f7891f.js     246 kB       0  [emitted]  hello_vue
+               application-12a437e15157c0d4029c.js    3.27 kB       1  [emitted]  application
+    hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css  138 bytes       0  [emitted]  hello_vue
+             hello_vue-c0598a3b25ca32f7891f.js.map     293 kB       0  [emitted]  hello_vue
+hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css.map  561 bytes       0  [emitted]  hello_vue
+           application-12a437e15157c0d4029c.js.map    3.19 kB       1  [emitted]  application
+                                     manifest.json  434 bytes          [emitted]  
+   [0] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [1] ./app/javascript/app.vue?vue&type=script&lang=js 362 bytes {0} [built]
+   [2] ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js 116 bytes {0} [built]
+   [3] ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 41 bytes {0} [built]
+   [4] ./app/javascript/packs/application.js 515 bytes {1} [built]
+   [5] ./app/javascript/packs/hello_vue.js 1.93 kB {0} [built]
+  [10] ./app/javascript/app.vue 964 bytes {0} [built]
+  [11] ./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 212 bytes {0} [built]
+  [12] ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 721 bytes {0} [built]
+  [13] ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 896 bytes {0} [built]
+    + 5 hidden modules
+
+ERROR in ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css
+Module build failed: ValidationError: Style Loader Invalid Options
+
+options['ident'] is an invalid additional property
+
+ @ ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 1:0-439 1:460-896
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+Child extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js??ref--1-2!node_modules/vue-loader/lib/loaders/stylePostLoader.js!node_modules/postcss-loader/lib/index.js??ref--1-3!node_modules/vue-loader/lib/index.js??vue-loader-options!app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css:
+       [0] ./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 775 bytes {0} [built]
+        + 1 hidden module
+
+Completed 200 OK in 4917ms (Views: 4910.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/communities/5" for 127.0.0.1 at 2018-04-30 17:08:12 +0900
+Processing by CommunitiesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCommunity Load (0.2ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mHole Load (0.3ms)[0m  [1m[34mSELECT  "holes".* FROM "holes" WHERE "holes"."player_id" = $1 ORDER BY "holes"."id" DESC LIMIT $2[0m  [["player_id", 1], ["LIMIT", 1]]
+  Rendering communities/show.html.slim within layouts/application
+  [1m[36mCard Load (0.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Community"]]
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Hole"]]
+  Rendered communities/show.html.slim within layouts/application (8.5ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+Hash: 84eff81e3f7c6ca1c049
+Version: webpack 3.11.0
+Time: 2187ms
+                                             Asset       Size  Chunks             Chunk Names
+                 hello_vue-c0598a3b25ca32f7891f.js     246 kB       0  [emitted]  hello_vue
+               application-12a437e15157c0d4029c.js    3.27 kB       1  [emitted]  application
+    hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css  138 bytes       0  [emitted]  hello_vue
+             hello_vue-c0598a3b25ca32f7891f.js.map     293 kB       0  [emitted]  hello_vue
+hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css.map  561 bytes       0  [emitted]  hello_vue
+           application-12a437e15157c0d4029c.js.map    3.19 kB       1  [emitted]  application
+                                     manifest.json  434 bytes          [emitted]  
+   [0] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [1] ./app/javascript/app.vue?vue&type=script&lang=js 362 bytes {0} [built]
+   [2] ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js 116 bytes {0} [built]
+   [3] ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 41 bytes {0} [built]
+   [4] ./app/javascript/packs/application.js 515 bytes {1} [built]
+   [5] ./app/javascript/packs/hello_vue.js 1.93 kB {0} [built]
+  [10] ./app/javascript/app.vue 964 bytes {0} [built]
+  [11] ./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 212 bytes {0} [built]
+  [12] ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 721 bytes {0} [built]
+  [13] ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 896 bytes {0} [built]
+    + 5 hidden modules
+
+ERROR in ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css
+Module build failed: ValidationError: Style Loader Invalid Options
+
+options['ident'] is an invalid additional property
+
+ @ ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 1:0-439 1:460-896
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+Child extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js??ref--1-2!node_modules/vue-loader/lib/loaders/stylePostLoader.js!node_modules/postcss-loader/lib/index.js??ref--1-3!node_modules/vue-loader/lib/index.js??vue-loader-options!app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css:
+       [0] ./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 775 bytes {0} [built]
+        + 1 hidden module
+
+Completed 200 OK in 4468ms (Views: 4460.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/communities/5" for 127.0.0.1 at 2018-04-30 17:14:23 +0900
+Processing by CommunitiesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPlayer Load (0.7ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCommunity Load (0.5ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mHole Load (6.4ms)[0m  [1m[34mSELECT  "holes".* FROM "holes" WHERE "holes"."player_id" = $1 ORDER BY "holes"."id" DESC LIMIT $2[0m  [["player_id", 1], ["LIMIT", 1]]
+  Rendering communities/show.html.slim within layouts/application
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Community"]]
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Hole"]]
+  Rendered communities/show.html.slim within layouts/application (21.3ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+Hash: 84eff81e3f7c6ca1c049
+Version: webpack 3.11.0
+Time: 2257ms
+                                             Asset       Size  Chunks             Chunk Names
+                 hello_vue-c0598a3b25ca32f7891f.js     246 kB       0  [emitted]  hello_vue
+               application-12a437e15157c0d4029c.js    3.27 kB       1  [emitted]  application
+    hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css  138 bytes       0  [emitted]  hello_vue
+             hello_vue-c0598a3b25ca32f7891f.js.map     293 kB       0  [emitted]  hello_vue
+hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css.map  561 bytes       0  [emitted]  hello_vue
+           application-12a437e15157c0d4029c.js.map    3.19 kB       1  [emitted]  application
+                                     manifest.json  434 bytes          [emitted]  
+   [0] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [1] ./app/javascript/app.vue?vue&type=script&lang=js 362 bytes {0} [built]
+   [2] ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js 116 bytes {0} [built]
+   [3] ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 41 bytes {0} [built]
+   [4] ./app/javascript/packs/application.js 515 bytes {1} [built]
+   [5] ./app/javascript/packs/hello_vue.js 1.93 kB {0} [built]
+  [10] ./app/javascript/app.vue 964 bytes {0} [built]
+  [11] ./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 212 bytes {0} [built]
+  [12] ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 721 bytes {0} [built]
+  [13] ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 896 bytes {0} [built]
+    + 5 hidden modules
+
+ERROR in ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css
+Module build failed: ValidationError: Style Loader Invalid Options
+
+options['ident'] is an invalid additional property
+
+ @ ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 1:0-439 1:460-896
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+Child extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js??ref--1-2!node_modules/vue-loader/lib/loaders/stylePostLoader.js!node_modules/postcss-loader/lib/index.js??ref--1-3!node_modules/vue-loader/lib/index.js??vue-loader-options!app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css:
+       [0] ./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 775 bytes {0} [built]
+        + 1 hidden module
+
+Completed 200 OK in 5009ms (Views: 4969.5ms | ActiveRecord: 8.4ms)
+
+
+Started GET "/communities/5" for 127.0.0.1 at 2018-04-30 17:14:59 +0900
+Processing by CommunitiesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCommunity Load (0.2ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mHole Load (0.3ms)[0m  [1m[34mSELECT  "holes".* FROM "holes" WHERE "holes"."player_id" = $1 ORDER BY "holes"."id" DESC LIMIT $2[0m  [["player_id", 1], ["LIMIT", 1]]
+  Rendering communities/show.html.slim within layouts/application
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Community"]]
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Hole"]]
+  Rendered communities/show.html.slim within layouts/application (18.4ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+Hash: 84eff81e3f7c6ca1c049
+Version: webpack 3.11.0
+Time: 2014ms
+                                             Asset       Size  Chunks             Chunk Names
+                 hello_vue-c0598a3b25ca32f7891f.js     246 kB       0  [emitted]  hello_vue
+               application-12a437e15157c0d4029c.js    3.27 kB       1  [emitted]  application
+    hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css  138 bytes       0  [emitted]  hello_vue
+             hello_vue-c0598a3b25ca32f7891f.js.map     293 kB       0  [emitted]  hello_vue
+hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css.map  561 bytes       0  [emitted]  hello_vue
+           application-12a437e15157c0d4029c.js.map    3.19 kB       1  [emitted]  application
+                                     manifest.json  434 bytes          [emitted]  
+   [0] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [1] ./app/javascript/app.vue?vue&type=script&lang=js 362 bytes {0} [built]
+   [2] ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js 116 bytes {0} [built]
+   [3] ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 41 bytes {0} [built]
+   [4] ./app/javascript/packs/application.js 515 bytes {1} [built]
+   [5] ./app/javascript/packs/hello_vue.js 1.93 kB {0} [built]
+  [10] ./app/javascript/app.vue 964 bytes {0} [built]
+  [11] ./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 212 bytes {0} [built]
+  [12] ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 721 bytes {0} [built]
+  [13] ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 896 bytes {0} [built]
+    + 5 hidden modules
+
+ERROR in ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css
+Module build failed: ValidationError: Style Loader Invalid Options
+
+options['ident'] is an invalid additional property
+
+ @ ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 1:0-439 1:460-896
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+Child extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js??ref--1-2!node_modules/vue-loader/lib/loaders/stylePostLoader.js!node_modules/postcss-loader/lib/index.js??ref--1-3!node_modules/vue-loader/lib/index.js??vue-loader-options!app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css:
+       [0] ./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 775 bytes {0} [built]
+        + 1 hidden module
+
+Completed 200 OK in 4503ms (Views: 4495.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/communities/5" for 127.0.0.1 at 2018-04-30 17:18:01 +0900
+Processing by CommunitiesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPlayer Load (1.0ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCommunity Load (0.2ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mHole Load (0.8ms)[0m  [1m[34mSELECT  "holes".* FROM "holes" WHERE "holes"."player_id" = $1 ORDER BY "holes"."id" DESC LIMIT $2[0m  [["player_id", 1], ["LIMIT", 1]]
+  Rendering communities/show.html.slim within layouts/application
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Community"]]
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Hole"]]
+  Rendered communities/show.html.slim within layouts/application (36.3ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+Hash: 84eff81e3f7c6ca1c049
+Version: webpack 3.11.0
+Time: 2324ms
+                                             Asset       Size  Chunks             Chunk Names
+                 hello_vue-c0598a3b25ca32f7891f.js     246 kB       0  [emitted]  hello_vue
+               application-12a437e15157c0d4029c.js    3.27 kB       1  [emitted]  application
+    hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css  138 bytes       0  [emitted]  hello_vue
+             hello_vue-c0598a3b25ca32f7891f.js.map     293 kB       0  [emitted]  hello_vue
+hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css.map  561 bytes       0  [emitted]  hello_vue
+           application-12a437e15157c0d4029c.js.map    3.19 kB       1  [emitted]  application
+                                     manifest.json  434 bytes          [emitted]  
+   [0] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [1] ./app/javascript/app.vue?vue&type=script&lang=js 362 bytes {0} [built]
+   [2] ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js 116 bytes {0} [built]
+   [3] ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 41 bytes {0} [built]
+   [4] ./app/javascript/packs/application.js 515 bytes {1} [built]
+   [5] ./app/javascript/packs/hello_vue.js 1.93 kB {0} [built]
+  [10] ./app/javascript/app.vue 964 bytes {0} [built]
+  [11] ./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 212 bytes {0} [built]
+  [12] ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 721 bytes {0} [built]
+  [13] ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 896 bytes {0} [built]
+    + 5 hidden modules
+
+ERROR in ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css
+Module build failed: ValidationError: Style Loader Invalid Options
+
+options['ident'] is an invalid additional property
+
+ @ ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 1:0-439 1:460-896
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+Child extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js??ref--1-2!node_modules/vue-loader/lib/loaders/stylePostLoader.js!node_modules/postcss-loader/lib/index.js??ref--1-3!node_modules/vue-loader/lib/index.js??vue-loader-options!app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css:
+       [0] ./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 775 bytes {0} [built]
+        + 1 hidden module
+
+Completed 200 OK in 4815ms (Views: 4780.3ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/communities/5" for 127.0.0.1 at 2018-04-30 17:21:28 +0900
+Processing by CommunitiesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPlayer Load (2.1ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCommunity Load (0.3ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mHole Load (0.7ms)[0m  [1m[34mSELECT  "holes".* FROM "holes" WHERE "holes"."player_id" = $1 ORDER BY "holes"."id" DESC LIMIT $2[0m  [["player_id", 1], ["LIMIT", 1]]
+  Rendering communities/show.html.slim within layouts/application
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Community"]]
+  [1m[36mCard Load (0.8ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Hole"]]
+  Rendered communities/show.html.slim within layouts/application (32.3ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+Hash: 84eff81e3f7c6ca1c049
+Version: webpack 3.11.0
+Time: 2311ms
+                                             Asset       Size  Chunks             Chunk Names
+                 hello_vue-c0598a3b25ca32f7891f.js     246 kB       0  [emitted]  hello_vue
+               application-12a437e15157c0d4029c.js    3.27 kB       1  [emitted]  application
+    hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css  138 bytes       0  [emitted]  hello_vue
+             hello_vue-c0598a3b25ca32f7891f.js.map     293 kB       0  [emitted]  hello_vue
+hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css.map  561 bytes       0  [emitted]  hello_vue
+           application-12a437e15157c0d4029c.js.map    3.19 kB       1  [emitted]  application
+                                     manifest.json  434 bytes          [emitted]  
+   [0] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [1] ./app/javascript/app.vue?vue&type=script&lang=js 362 bytes {0} [built]
+   [2] ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js 116 bytes {0} [built]
+   [3] ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 41 bytes {0} [built]
+   [4] ./app/javascript/packs/application.js 515 bytes {1} [built]
+   [5] ./app/javascript/packs/hello_vue.js 1.93 kB {0} [built]
+  [10] ./app/javascript/app.vue 964 bytes {0} [built]
+  [11] ./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 212 bytes {0} [built]
+  [12] ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 721 bytes {0} [built]
+  [13] ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 896 bytes {0} [built]
+    + 5 hidden modules
+
+ERROR in ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css
+Module build failed: ValidationError: Style Loader Invalid Options
+
+options['ident'] is an invalid additional property
+
+ @ ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 1:0-439 1:460-896
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+Child extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js??ref--1-2!node_modules/vue-loader/lib/loaders/stylePostLoader.js!node_modules/postcss-loader/lib/index.js??ref--1-3!node_modules/vue-loader/lib/index.js??vue-loader-options!app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css:
+       [0] ./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 775 bytes {0} [built]
+        + 1 hidden module
+
+Completed 200 OK in 4968ms (Views: 4927.8ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/communities/5" for 127.0.0.1 at 2018-04-30 17:22:52 +0900
+Processing by CommunitiesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCommunity Load (0.1ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mHole Load (0.3ms)[0m  [1m[34mSELECT  "holes".* FROM "holes" WHERE "holes"."player_id" = $1 ORDER BY "holes"."id" DESC LIMIT $2[0m  [["player_id", 1], ["LIMIT", 1]]
+  Rendering communities/show.html.slim within layouts/application
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Community"]]
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Hole"]]
+  Rendered communities/show.html.slim within layouts/application (10.9ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+Hash: 84eff81e3f7c6ca1c049
+Version: webpack 3.11.0
+Time: 2201ms
+                                             Asset       Size  Chunks             Chunk Names
+                 hello_vue-c0598a3b25ca32f7891f.js     246 kB       0  [emitted]  hello_vue
+               application-12a437e15157c0d4029c.js    3.27 kB       1  [emitted]  application
+    hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css  138 bytes       0  [emitted]  hello_vue
+             hello_vue-c0598a3b25ca32f7891f.js.map     293 kB       0  [emitted]  hello_vue
+hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css.map  561 bytes       0  [emitted]  hello_vue
+           application-12a437e15157c0d4029c.js.map    3.19 kB       1  [emitted]  application
+                                     manifest.json  434 bytes          [emitted]  
+   [0] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [1] ./app/javascript/app.vue?vue&type=script&lang=js 362 bytes {0} [built]
+   [2] ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js 116 bytes {0} [built]
+   [3] ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 41 bytes {0} [built]
+   [4] ./app/javascript/packs/application.js 515 bytes {1} [built]
+   [5] ./app/javascript/packs/hello_vue.js 1.93 kB {0} [built]
+  [10] ./app/javascript/app.vue 964 bytes {0} [built]
+  [11] ./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 212 bytes {0} [built]
+  [12] ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 721 bytes {0} [built]
+  [13] ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 896 bytes {0} [built]
+    + 5 hidden modules
+
+ERROR in ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css
+Module build failed: ValidationError: Style Loader Invalid Options
+
+options['ident'] is an invalid additional property
+
+ @ ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 1:0-439 1:460-896
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+Child extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js??ref--1-2!node_modules/vue-loader/lib/loaders/stylePostLoader.js!node_modules/postcss-loader/lib/index.js??ref--1-3!node_modules/vue-loader/lib/index.js??vue-loader-options!app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css:
+       [0] ./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 775 bytes {0} [built]
+        + 1 hidden module
+
+Completed 200 OK in 4525ms (Views: 4511.9ms | ActiveRecord: 1.2ms)
+
+
+Started PUT "/communities/5" for 127.0.0.1 at 2018-04-30 17:23:02 +0900
+Processing by CommunitiesController#update as HTML
+  Parameters: {"authenticity_token"=>"WEn2Ld1JxAgqzMdx3jwcbs4EYnfrUr7DR9AtJGfMgj7nPLU+jRdIowXcBNvHFhnHfGf9obhGd4Xhy0PXTVC+Lw==", "id"=>"5"}
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCommunity Load (0.2ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mHole Load (0.4ms)[0m  [1m[34mSELECT  "holes".* FROM "holes" WHERE "holes"."player_id" = $1 ORDER BY "holes"."id" DESC LIMIT $2[0m  [["player_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (26.7ms)[0m  [1m[33mUPDATE "communities" SET "aasm_state" = $1, "updated_at" = $2 WHERE "communities"."id" = $3[0m  [["aasm_state", "flop"], ["updated_at", "2018-04-30 08:23:02.983534"], ["id", 5]]
+  [1m[35m (7.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/communities/5
+Completed 302 Found in 65ms (ActiveRecord: 35.6ms)
+
+
+Started GET "/communities/5" for 127.0.0.1 at 2018-04-30 17:23:03 +0900
+Processing by CommunitiesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCommunity Load (0.1ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mHole Load (5.8ms)[0m  [1m[34mSELECT  "holes".* FROM "holes" WHERE "holes"."player_id" = $1 ORDER BY "holes"."id" DESC LIMIT $2[0m  [["player_id", 1], ["LIMIT", 1]]
+  Rendering communities/show.html.slim within layouts/application
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Community"]]
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Hole"]]
+  Rendered communities/show.html.slim within layouts/application (20.1ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+Hash: 84eff81e3f7c6ca1c049
+Version: webpack 3.11.0
+Time: 1979ms
+                                             Asset       Size  Chunks             Chunk Names
+                 hello_vue-c0598a3b25ca32f7891f.js     246 kB       0  [emitted]  hello_vue
+               application-12a437e15157c0d4029c.js    3.27 kB       1  [emitted]  application
+    hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css  138 bytes       0  [emitted]  hello_vue
+             hello_vue-c0598a3b25ca32f7891f.js.map     293 kB       0  [emitted]  hello_vue
+hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css.map  561 bytes       0  [emitted]  hello_vue
+           application-12a437e15157c0d4029c.js.map    3.19 kB       1  [emitted]  application
+                                     manifest.json  434 bytes          [emitted]  
+   [0] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [1] ./app/javascript/app.vue?vue&type=script&lang=js 362 bytes {0} [built]
+   [2] ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js 116 bytes {0} [built]
+   [3] ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 41 bytes {0} [built]
+   [4] ./app/javascript/packs/application.js 515 bytes {1} [built]
+   [5] ./app/javascript/packs/hello_vue.js 1.93 kB {0} [built]
+  [10] ./app/javascript/app.vue 964 bytes {0} [built]
+  [11] ./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 212 bytes {0} [built]
+  [12] ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 721 bytes {0} [built]
+  [13] ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 896 bytes {0} [built]
+    + 5 hidden modules
+
+ERROR in ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css
+Module build failed: ValidationError: Style Loader Invalid Options
+
+options['ident'] is an invalid additional property
+
+ @ ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 1:0-439 1:460-896
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+Child extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js??ref--1-2!node_modules/vue-loader/lib/loaders/stylePostLoader.js!node_modules/postcss-loader/lib/index.js??ref--1-3!node_modules/vue-loader/lib/index.js??vue-loader-options!app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css:
+       [0] ./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 775 bytes {0} [built]
+        + 1 hidden module
+
+Completed 200 OK in 3218ms (Views: 3204.1ms | ActiveRecord: 6.8ms)
+
+
+Started PUT "/communities/5" for 127.0.0.1 at 2018-04-30 17:23:08 +0900
+Processing by CommunitiesController#update as HTML
+  Parameters: {"authenticity_token"=>"DQ84a25utOF+DOMX/en0DH+GW0WORLhFTt+zb8EZz5uyent4PjA4SlEcIL3kw/GlzeXEk91QcQPoxN2c64Xzig==", "id"=>"5"}
+  [1m[36mPlayer Load (0.3ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCommunity Load (0.2ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mHole Load (0.3ms)[0m  [1m[34mSELECT  "holes".* FROM "holes" WHERE "holes"."player_id" = $1 ORDER BY "holes"."id" DESC LIMIT $2[0m  [["player_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "communities" SET "aasm_state" = $1, "updated_at" = $2 WHERE "communities"."id" = $3[0m  [["aasm_state", "turn"], ["updated_at", "2018-04-30 08:23:08.957865"], ["id", 5]]
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/communities/5
+Completed 302 Found in 16ms (ActiveRecord: 7.2ms)
+
+
+Started GET "/communities/5" for 127.0.0.1 at 2018-04-30 17:23:08 +0900
+Processing by CommunitiesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPlayer Load (0.3ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCommunity Load (0.4ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mHole Load (0.4ms)[0m  [1m[34mSELECT  "holes".* FROM "holes" WHERE "holes"."player_id" = $1 ORDER BY "holes"."id" DESC LIMIT $2[0m  [["player_id", 1], ["LIMIT", 1]]
+  Rendering communities/show.html.slim within layouts/application
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Community"]]
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Hole"]]
+  Rendered communities/show.html.slim within layouts/application (9.1ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+Hash: 84eff81e3f7c6ca1c049
+Version: webpack 3.11.0
+Time: 2145ms
+                                             Asset       Size  Chunks             Chunk Names
+                 hello_vue-c0598a3b25ca32f7891f.js     246 kB       0  [emitted]  hello_vue
+               application-12a437e15157c0d4029c.js    3.27 kB       1  [emitted]  application
+    hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css  138 bytes       0  [emitted]  hello_vue
+             hello_vue-c0598a3b25ca32f7891f.js.map     293 kB       0  [emitted]  hello_vue
+hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css.map  561 bytes       0  [emitted]  hello_vue
+           application-12a437e15157c0d4029c.js.map    3.19 kB       1  [emitted]  application
+                                     manifest.json  434 bytes          [emitted]  
+   [0] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [1] ./app/javascript/app.vue?vue&type=script&lang=js 362 bytes {0} [built]
+   [2] ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js 116 bytes {0} [built]
+   [3] ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 41 bytes {0} [built]
+   [4] ./app/javascript/packs/application.js 515 bytes {1} [built]
+   [5] ./app/javascript/packs/hello_vue.js 1.93 kB {0} [built]
+  [10] ./app/javascript/app.vue 964 bytes {0} [built]
+  [11] ./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 212 bytes {0} [built]
+  [12] ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 721 bytes {0} [built]
+  [13] ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 896 bytes {0} [built]
+    + 5 hidden modules
+
+ERROR in ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css
+Module build failed: ValidationError: Style Loader Invalid Options
+
+options['ident'] is an invalid additional property
+
+ @ ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 1:0-439 1:460-896
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+Child extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js??ref--1-2!node_modules/vue-loader/lib/loaders/stylePostLoader.js!node_modules/postcss-loader/lib/index.js??ref--1-3!node_modules/vue-loader/lib/index.js??vue-loader-options!app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css:
+       [0] ./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 775 bytes {0} [built]
+        + 1 hidden module
+
+Completed 200 OK in 3366ms (Views: 3359.0ms | ActiveRecord: 1.7ms)
+
+
+Started PUT "/communities/5" for 127.0.0.1 at 2018-04-30 17:23:18 +0900
+Processing by CommunitiesController#update as HTML
+  Parameters: {"authenticity_token"=>"TUWZiFCiMF1ZBAQfXHpCcSWe0oXnvHKqZjbDPL5G0cPyMNqbAPy89nYUx7VFUEfYl/1NU7Sou+zALa3PlNrt0g==", "id"=>"5"}
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCommunity Load (0.2ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mHole Load (0.3ms)[0m  [1m[34mSELECT  "holes".* FROM "holes" WHERE "holes"."player_id" = $1 ORDER BY "holes"."id" DESC LIMIT $2[0m  [["player_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "communities" SET "aasm_state" = $1, "updated_at" = $2 WHERE "communities"."id" = $3[0m  [["aasm_state", "river"], ["updated_at", "2018-04-30 08:23:18.758138"], ["id", 5]]
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/communities/5
+Completed 302 Found in 15ms (ActiveRecord: 6.8ms)
+
+
+Started GET "/communities/5" for 127.0.0.1 at 2018-04-30 17:23:18 +0900
+Processing by CommunitiesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCommunity Load (0.1ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mHole Load (0.2ms)[0m  [1m[34mSELECT  "holes".* FROM "holes" WHERE "holes"."player_id" = $1 ORDER BY "holes"."id" DESC LIMIT $2[0m  [["player_id", 1], ["LIMIT", 1]]
+  Rendering communities/show.html.slim within layouts/application
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Community"]]
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Hole"]]
+  Rendered communities/show.html.slim within layouts/application (9.1ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+Hash: 84eff81e3f7c6ca1c049
+Version: webpack 3.11.0
+Time: 1754ms
+                                             Asset       Size  Chunks             Chunk Names
+                 hello_vue-c0598a3b25ca32f7891f.js     246 kB       0  [emitted]  hello_vue
+               application-12a437e15157c0d4029c.js    3.27 kB       1  [emitted]  application
+    hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css  138 bytes       0  [emitted]  hello_vue
+             hello_vue-c0598a3b25ca32f7891f.js.map     293 kB       0  [emitted]  hello_vue
+hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css.map  561 bytes       0  [emitted]  hello_vue
+           application-12a437e15157c0d4029c.js.map    3.19 kB       1  [emitted]  application
+                                     manifest.json  434 bytes          [emitted]  
+   [0] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [1] ./app/javascript/app.vue?vue&type=script&lang=js 362 bytes {0} [built]
+   [2] ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js 116 bytes {0} [built]
+   [3] ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 41 bytes {0} [built]
+   [4] ./app/javascript/packs/application.js 515 bytes {1} [built]
+   [5] ./app/javascript/packs/hello_vue.js 1.93 kB {0} [built]
+  [10] ./app/javascript/app.vue 964 bytes {0} [built]
+  [11] ./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 212 bytes {0} [built]
+  [12] ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 721 bytes {0} [built]
+  [13] ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 896 bytes {0} [built]
+    + 5 hidden modules
+
+ERROR in ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css
+Module build failed: ValidationError: Style Loader Invalid Options
+
+options['ident'] is an invalid additional property
+
+ @ ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 1:0-439 1:460-896
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+Child extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js??ref--1-2!node_modules/vue-loader/lib/loaders/stylePostLoader.js!node_modules/postcss-loader/lib/index.js??ref--1-3!node_modules/vue-loader/lib/index.js??vue-loader-options!app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css:
+       [0] ./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 775 bytes {0} [built]
+        + 1 hidden module
+
+Completed 200 OK in 2944ms (Views: 2939.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/communities/5" for 127.0.0.1 at 2018-04-30 17:26:13 +0900
+Processing by CommunitiesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCommunity Load (0.2ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mHole Load (6.3ms)[0m  [1m[34mSELECT  "holes".* FROM "holes" WHERE "holes"."player_id" = $1 ORDER BY "holes"."id" DESC LIMIT $2[0m  [["player_id", 1], ["LIMIT", 1]]
+  Rendering communities/show.html.slim within layouts/application
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Community"]]
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Hole"]]
+  Rendered communities/show.html.slim within layouts/application (12.8ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+Hash: 84eff81e3f7c6ca1c049
+Version: webpack 3.11.0
+Time: 2165ms
+                                             Asset       Size  Chunks             Chunk Names
+                 hello_vue-c0598a3b25ca32f7891f.js     246 kB       0  [emitted]  hello_vue
+               application-12a437e15157c0d4029c.js    3.27 kB       1  [emitted]  application
+    hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css  138 bytes       0  [emitted]  hello_vue
+             hello_vue-c0598a3b25ca32f7891f.js.map     293 kB       0  [emitted]  hello_vue
+hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css.map  561 bytes       0  [emitted]  hello_vue
+           application-12a437e15157c0d4029c.js.map    3.19 kB       1  [emitted]  application
+                                     manifest.json  434 bytes          [emitted]  
+   [0] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [1] ./app/javascript/app.vue?vue&type=script&lang=js 362 bytes {0} [built]
+   [2] ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js 116 bytes {0} [built]
+   [3] ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 41 bytes {0} [built]
+   [4] ./app/javascript/packs/application.js 515 bytes {1} [built]
+   [5] ./app/javascript/packs/hello_vue.js 1.93 kB {0} [built]
+  [10] ./app/javascript/app.vue 964 bytes {0} [built]
+  [11] ./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 212 bytes {0} [built]
+  [12] ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 721 bytes {0} [built]
+  [13] ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 896 bytes {0} [built]
+    + 5 hidden modules
+
+ERROR in ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css
+Module build failed: ValidationError: Style Loader Invalid Options
+
+options['ident'] is an invalid additional property
+
+ @ ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 1:0-439 1:460-896
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+Child extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js??ref--1-2!node_modules/vue-loader/lib/loaders/stylePostLoader.js!node_modules/postcss-loader/lib/index.js??ref--1-3!node_modules/vue-loader/lib/index.js??vue-loader-options!app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css:
+       [0] ./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 775 bytes {0} [built]
+        + 1 hidden module
+
+Completed 200 OK in 4617ms (Views: 4603.1ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/communities/5" for 127.0.0.1 at 2018-04-30 17:26:44 +0900
+Processing by CommunitiesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPlayer Load (0.3ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCommunity Load (0.2ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mHole Load (6.7ms)[0m  [1m[34mSELECT  "holes".* FROM "holes" WHERE "holes"."player_id" = $1 ORDER BY "holes"."id" DESC LIMIT $2[0m  [["player_id", 1], ["LIMIT", 1]]
+  Rendering communities/show.html.slim within layouts/application
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Community"]]
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Hole"]]
+  Rendered communities/show.html.slim within layouts/application (11.6ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+Hash: 84eff81e3f7c6ca1c049
+Version: webpack 3.11.0
+Time: 2205ms
+                                             Asset       Size  Chunks             Chunk Names
+                 hello_vue-c0598a3b25ca32f7891f.js     246 kB       0  [emitted]  hello_vue
+               application-12a437e15157c0d4029c.js    3.27 kB       1  [emitted]  application
+    hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css  138 bytes       0  [emitted]  hello_vue
+             hello_vue-c0598a3b25ca32f7891f.js.map     293 kB       0  [emitted]  hello_vue
+hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css.map  561 bytes       0  [emitted]  hello_vue
+           application-12a437e15157c0d4029c.js.map    3.19 kB       1  [emitted]  application
+                                     manifest.json  434 bytes          [emitted]  
+   [0] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [1] ./app/javascript/app.vue?vue&type=script&lang=js 362 bytes {0} [built]
+   [2] ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js 116 bytes {0} [built]
+   [3] ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 41 bytes {0} [built]
+   [4] ./app/javascript/packs/application.js 515 bytes {1} [built]
+   [5] ./app/javascript/packs/hello_vue.js 1.93 kB {0} [built]
+  [10] ./app/javascript/app.vue 964 bytes {0} [built]
+  [11] ./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 212 bytes {0} [built]
+  [12] ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 721 bytes {0} [built]
+  [13] ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 896 bytes {0} [built]
+    + 5 hidden modules
+
+ERROR in ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css
+Module build failed: ValidationError: Style Loader Invalid Options
+
+options['ident'] is an invalid additional property
+
+ @ ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 1:0-439 1:460-896
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+Child extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js??ref--1-2!node_modules/vue-loader/lib/loaders/stylePostLoader.js!node_modules/postcss-loader/lib/index.js??ref--1-3!node_modules/vue-loader/lib/index.js??vue-loader-options!app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css:
+       [0] ./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 775 bytes {0} [built]
+        + 1 hidden module
+
+Completed 200 OK in 4234ms (Views: 4219.2ms | ActiveRecord: 7.8ms)
+
+
+Started PUT "/communities/5" for 127.0.0.1 at 2018-04-30 17:26:55 +0900
+Processing by CommunitiesController#update as HTML
+  Parameters: {"authenticity_token"=>"kDxtJCK/AoXOc+nAsXbEDbDI/4P5TAEPksReeyQqxm4vSS43cuGOLuFjKmqoXMGkAqtgVapYyEk03zCIDrb6fw==", "id"=>"5"}
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCommunity Load (0.3ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mHole Load (0.4ms)[0m  [1m[34mSELECT  "holes".* FROM "holes" WHERE "holes"."player_id" = $1 ORDER BY "holes"."id" DESC LIMIT $2[0m  [["player_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (12.8ms)[0m  [1m[33mUPDATE "communities" SET "aasm_state" = $1, "updated_at" = $2 WHERE "communities"."id" = $3[0m  [["aasm_state", "showdown"], ["updated_at", "2018-04-30 08:26:55.283830"], ["id", 5]]
+  [1m[35m (4.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/communities/5
+Completed 302 Found in 35ms (ActiveRecord: 19.1ms)
+
+
+Started GET "/communities/5" for 127.0.0.1 at 2018-04-30 17:26:55 +0900
+Processing by CommunitiesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPlayer Load (0.3ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCommunity Load (0.1ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mHole Load (0.3ms)[0m  [1m[34mSELECT  "holes".* FROM "holes" WHERE "holes"."player_id" = $1 ORDER BY "holes"."id" DESC LIMIT $2[0m  [["player_id", 1], ["LIMIT", 1]]
+  Rendering communities/show.html.slim within layouts/application
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Community"]]
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Hole"]]
+  Rendered communities/show.html.slim within layouts/application (11.4ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+Hash: 84eff81e3f7c6ca1c049
+Version: webpack 3.11.0
+Time: 1266ms
+                                             Asset       Size  Chunks             Chunk Names
+                 hello_vue-c0598a3b25ca32f7891f.js     246 kB       0  [emitted]  hello_vue
+               application-12a437e15157c0d4029c.js    3.27 kB       1  [emitted]  application
+    hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css  138 bytes       0  [emitted]  hello_vue
+             hello_vue-c0598a3b25ca32f7891f.js.map     293 kB       0  [emitted]  hello_vue
+hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css.map  561 bytes       0  [emitted]  hello_vue
+           application-12a437e15157c0d4029c.js.map    3.19 kB       1  [emitted]  application
+                                     manifest.json  434 bytes          [emitted]  
+   [0] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [1] ./app/javascript/app.vue?vue&type=script&lang=js 362 bytes {0} [built]
+   [2] ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js 116 bytes {0} [built]
+   [3] ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 41 bytes {0} [built]
+   [4] ./app/javascript/packs/application.js 515 bytes {1} [built]
+   [5] ./app/javascript/packs/hello_vue.js 1.93 kB {0} [built]
+  [10] ./app/javascript/app.vue 964 bytes {0} [built]
+  [11] ./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 212 bytes {0} [built]
+  [12] ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 721 bytes {0} [built]
+  [13] ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 896 bytes {0} [built]
+    + 5 hidden modules
+
+ERROR in ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css
+Module build failed: ValidationError: Style Loader Invalid Options
+
+options['ident'] is an invalid additional property
+
+ @ ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 1:0-439 1:460-896
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+Child extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js??ref--1-2!node_modules/vue-loader/lib/loaders/stylePostLoader.js!node_modules/postcss-loader/lib/index.js??ref--1-3!node_modules/vue-loader/lib/index.js??vue-loader-options!app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css:
+       [0] ./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 775 bytes {0} [built]
+        + 1 hidden module
+
+Completed 200 OK in 2461ms (Views: 2454.9ms | ActiveRecord: 1.3ms)
+
+
+Started PUT "/communities/5" for 127.0.0.1 at 2018-04-30 17:27:02 +0900
+Processing by CommunitiesController#update as HTML
+  Parameters: {"authenticity_token"=>"dZd9wwcRbCO2qva8p3LfJBeai8Z5AZSr+ry8s1FMi1bK4j7QV0/giJm6NRa+WNqNpfkUECoVXe1cp9JAe9C3Rw==", "id"=>"5"}
+  [1m[36mPlayer Load (0.3ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCommunity Load (0.3ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mHole Load (0.3ms)[0m  [1m[34mSELECT  "holes".* FROM "holes" WHERE "holes"."player_id" = $1 ORDER BY "holes"."id" DESC LIMIT $2[0m  [["player_id", 1], ["LIMIT", 1]]
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Community"]]
+  [1m[36mCard Load (0.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Hole"]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "holes" SET "hand" = $1, "updated_at" = $2 WHERE "holes"."id" = $3[0m  [["hand", "Highhand"], ["updated_at", "2018-04-30 08:27:02.067508"], ["id", 5]]
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "communities" SET "aasm_state" = $1, "updated_at" = $2 WHERE "communities"."id" = $3[0m  [["aasm_state", "finished"], ["updated_at", "2018-04-30 08:27:02.077945"], ["id", 5]]
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/communities/5
+Completed 302 Found in 29ms (ActiveRecord: 14.2ms)
+
+
+Started GET "/communities/5" for 127.0.0.1 at 2018-04-30 17:27:02 +0900
+Processing by CommunitiesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPlayer Load (0.3ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCommunity Load (0.2ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mHole Load (0.3ms)[0m  [1m[34mSELECT  "holes".* FROM "holes" WHERE "holes"."player_id" = $1 ORDER BY "holes"."id" DESC LIMIT $2[0m  [["player_id", 1], ["LIMIT", 1]]
+  Rendering communities/show.html.slim within layouts/application
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Community"]]
+  [1m[36mCard Load (0.9ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Hole"]]
+  Rendered communities/show.html.slim within layouts/application (10.1ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+Hash: 84eff81e3f7c6ca1c049
+Version: webpack 3.11.0
+Time: 1302ms
+                                             Asset       Size  Chunks             Chunk Names
+                 hello_vue-c0598a3b25ca32f7891f.js     246 kB       0  [emitted]  hello_vue
+               application-12a437e15157c0d4029c.js    3.27 kB       1  [emitted]  application
+    hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css  138 bytes       0  [emitted]  hello_vue
+             hello_vue-c0598a3b25ca32f7891f.js.map     293 kB       0  [emitted]  hello_vue
+hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css.map  561 bytes       0  [emitted]  hello_vue
+           application-12a437e15157c0d4029c.js.map    3.19 kB       1  [emitted]  application
+                                     manifest.json  434 bytes          [emitted]  
+   [0] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [1] ./app/javascript/app.vue?vue&type=script&lang=js 362 bytes {0} [built]
+   [2] ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js 116 bytes {0} [built]
+   [3] ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 41 bytes {0} [built]
+   [4] ./app/javascript/packs/application.js 515 bytes {1} [built]
+   [5] ./app/javascript/packs/hello_vue.js 1.93 kB {0} [built]
+  [10] ./app/javascript/app.vue 964 bytes {0} [built]
+  [11] ./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 212 bytes {0} [built]
+  [12] ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 721 bytes {0} [built]
+  [13] ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 896 bytes {0} [built]
+    + 5 hidden modules
+
+ERROR in ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css
+Module build failed: ValidationError: Style Loader Invalid Options
+
+options['ident'] is an invalid additional property
+
+ @ ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 1:0-439 1:460-896
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+Child extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js??ref--1-2!node_modules/vue-loader/lib/loaders/stylePostLoader.js!node_modules/postcss-loader/lib/index.js??ref--1-3!node_modules/vue-loader/lib/index.js??vue-loader-options!app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css:
+       [0] ./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 775 bytes {0} [built]
+        + 1 hidden module
+
+Completed 200 OK in 2535ms (Views: 2528.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/communities/5" for 127.0.0.1 at 2018-04-30 17:28:39 +0900
+Processing by CommunitiesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPlayer Load (0.3ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCommunity Load (0.3ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mHole Load (2.9ms)[0m  [1m[34mSELECT  "holes".* FROM "holes" WHERE "holes"."player_id" = $1 ORDER BY "holes"."id" DESC LIMIT $2[0m  [["player_id", 1], ["LIMIT", 1]]
+  Rendering communities/show.html.slim within layouts/application
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Community"]]
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Hole"]]
+  Rendered communities/show.html.slim within layouts/application (10.3ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+Hash: 84eff81e3f7c6ca1c049
+Version: webpack 3.11.0
+Time: 2226ms
+                                             Asset       Size  Chunks             Chunk Names
+                 hello_vue-c0598a3b25ca32f7891f.js     246 kB       0  [emitted]  hello_vue
+               application-12a437e15157c0d4029c.js    3.27 kB       1  [emitted]  application
+    hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css  138 bytes       0  [emitted]  hello_vue
+             hello_vue-c0598a3b25ca32f7891f.js.map     293 kB       0  [emitted]  hello_vue
+hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css.map  561 bytes       0  [emitted]  hello_vue
+           application-12a437e15157c0d4029c.js.map    3.19 kB       1  [emitted]  application
+                                     manifest.json  434 bytes          [emitted]  
+   [0] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [1] ./app/javascript/app.vue?vue&type=script&lang=js 362 bytes {0} [built]
+   [2] ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js 116 bytes {0} [built]
+   [3] ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 41 bytes {0} [built]
+   [4] ./app/javascript/packs/application.js 515 bytes {1} [built]
+   [5] ./app/javascript/packs/hello_vue.js 1.93 kB {0} [built]
+  [10] ./app/javascript/app.vue 964 bytes {0} [built]
+  [11] ./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 212 bytes {0} [built]
+  [12] ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 721 bytes {0} [built]
+  [13] ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 896 bytes {0} [built]
+    + 5 hidden modules
+
+ERROR in ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css
+Module build failed: ValidationError: Style Loader Invalid Options
+
+options['ident'] is an invalid additional property
+
+ @ ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 1:0-439 1:460-896
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+Child extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js??ref--1-2!node_modules/vue-loader/lib/loaders/stylePostLoader.js!node_modules/postcss-loader/lib/index.js??ref--1-3!node_modules/vue-loader/lib/index.js??vue-loader-options!app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css:
+       [0] ./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 775 bytes {0} [built]
+        + 1 hidden module
+
+Completed 200 OK in 4684ms (Views: 4672.9ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/communities/new" for 127.0.0.1 at 2018-04-30 17:28:58 +0900
+Processing by CommunitiesController#new as HTML
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering communities/new.html.slim within layouts/application
+  Rendered communities/new.html.slim within layouts/application (7.5ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+Hash: 84eff81e3f7c6ca1c049
+Version: webpack 3.11.0
+Time: 1540ms
+                                             Asset       Size  Chunks             Chunk Names
+                 hello_vue-c0598a3b25ca32f7891f.js     246 kB       0  [emitted]  hello_vue
+               application-12a437e15157c0d4029c.js    3.27 kB       1  [emitted]  application
+    hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css  138 bytes       0  [emitted]  hello_vue
+             hello_vue-c0598a3b25ca32f7891f.js.map     293 kB       0  [emitted]  hello_vue
+hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css.map  561 bytes       0  [emitted]  hello_vue
+           application-12a437e15157c0d4029c.js.map    3.19 kB       1  [emitted]  application
+                                     manifest.json  434 bytes          [emitted]  
+   [0] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [1] ./app/javascript/app.vue?vue&type=script&lang=js 362 bytes {0} [built]
+   [2] ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js 116 bytes {0} [built]
+   [3] ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 41 bytes {0} [built]
+   [4] ./app/javascript/packs/application.js 515 bytes {1} [built]
+   [5] ./app/javascript/packs/hello_vue.js 1.93 kB {0} [built]
+  [10] ./app/javascript/app.vue 964 bytes {0} [built]
+  [11] ./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 212 bytes {0} [built]
+  [12] ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 721 bytes {0} [built]
+  [13] ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 896 bytes {0} [built]
+    + 5 hidden modules
+
+ERROR in ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css
+Module build failed: ValidationError: Style Loader Invalid Options
+
+options['ident'] is an invalid additional property
+
+ @ ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 1:0-439 1:460-896
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+Child extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js??ref--1-2!node_modules/vue-loader/lib/loaders/stylePostLoader.js!node_modules/postcss-loader/lib/index.js??ref--1-3!node_modules/vue-loader/lib/index.js??vue-loader-options!app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css:
+       [0] ./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 775 bytes {0} [built]
+        + 1 hidden module
+
+Completed 200 OK in 2848ms (Views: 2842.9ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/communities" for 127.0.0.1 at 2018-04-30 17:29:05 +0900
+Processing by CommunitiesController#create as HTML
+  Parameters: {"authenticity_token"=>"df9b9LvG+hTuaGHSPtnRz6/SArZF9z2O5r3rLC8l3LyPOj3eb9eqKbEYffabVHnwU3nUKRIC31BJaAngucpojQ=="}
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (5.7ms)[0m  [1m[32mINSERT INTO "communities" ("aasm_state", "game_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["aasm_state", "preflop"], ["game_id", 1], ["created_at", "2018-04-30 08:29:05.714610"], ["updated_at", "2018-04-30 08:29:05.714610"]]
+  [1m[35m (6.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (5.5ms)[0m  [1m[32mINSERT INTO "holes" ("player_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["player_id", 1], ["created_at", "2018-04-30 08:29:05.731850"], ["updated_at", "2018-04-30 08:29:05.731850"]]
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."game_id" = $1[0m  [["game_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHole Load (0.8ms)[0m  [1m[34mSELECT  "holes".* FROM "holes" WHERE "holes"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Hole"], ["cardable_id", 6], ["suit", "c"], ["number", 7], ["created_at", "2018-04-30 08:29:05.749786"], ["updated_at", "2018-04-30 08:29:05.749786"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHole Load (0.2ms)[0m  [1m[34mSELECT  "holes".* FROM "holes" WHERE "holes"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Hole"], ["cardable_id", 6], ["suit", "h"], ["number", 11], ["created_at", "2018-04-30 08:29:05.754663"], ["updated_at", "2018-04-30 08:29:05.754663"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCommunity Load (0.2ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Community"], ["cardable_id", 6], ["suit", "s"], ["number", 9], ["created_at", "2018-04-30 08:29:05.761440"], ["updated_at", "2018-04-30 08:29:05.761440"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCommunity Load (0.2ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Community"], ["cardable_id", 6], ["suit", "s"], ["number", 5], ["created_at", "2018-04-30 08:29:05.765334"], ["updated_at", "2018-04-30 08:29:05.765334"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCommunity Load (0.2ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Community"], ["cardable_id", 6], ["suit", "h"], ["number", 1], ["created_at", "2018-04-30 08:29:05.769267"], ["updated_at", "2018-04-30 08:29:05.769267"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCommunity Load (0.2ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Community"], ["cardable_id", 6], ["suit", "d"], ["number", 5], ["created_at", "2018-04-30 08:29:05.773195"], ["updated_at", "2018-04-30 08:29:05.773195"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCommunity Load (0.2ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Community"], ["cardable_id", 6], ["suit", "h"], ["number", 12], ["created_at", "2018-04-30 08:29:05.778726"], ["updated_at", "2018-04-30 08:29:05.778726"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/communities/6
+Completed 302 Found in 75ms (ActiveRecord: 34.8ms)
+
+
+Started GET "/communities/6" for 127.0.0.1 at 2018-04-30 17:29:05 +0900
+Processing by CommunitiesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCommunity Load (0.1ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mHole Load (0.3ms)[0m  [1m[34mSELECT  "holes".* FROM "holes" WHERE "holes"."player_id" = $1 ORDER BY "holes"."id" DESC LIMIT $2[0m  [["player_id", 1], ["LIMIT", 1]]
+  Rendering communities/show.html.slim within layouts/application
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 6], ["cardable_type", "Community"]]
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 6], ["cardable_type", "Hole"]]
+  Rendered communities/show.html.slim within layouts/application (7.9ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+Hash: 84eff81e3f7c6ca1c049
+Version: webpack 3.11.0
+Time: 1265ms
+                                             Asset       Size  Chunks             Chunk Names
+                 hello_vue-c0598a3b25ca32f7891f.js     246 kB       0  [emitted]  hello_vue
+               application-12a437e15157c0d4029c.js    3.27 kB       1  [emitted]  application
+    hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css  138 bytes       0  [emitted]  hello_vue
+             hello_vue-c0598a3b25ca32f7891f.js.map     293 kB       0  [emitted]  hello_vue
+hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css.map  561 bytes       0  [emitted]  hello_vue
+           application-12a437e15157c0d4029c.js.map    3.19 kB       1  [emitted]  application
+                                     manifest.json  434 bytes          [emitted]  
+   [0] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [1] ./app/javascript/app.vue?vue&type=script&lang=js 362 bytes {0} [built]
+   [2] ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js 116 bytes {0} [built]
+   [3] ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 41 bytes {0} [built]
+   [4] ./app/javascript/packs/application.js 515 bytes {1} [built]
+   [5] ./app/javascript/packs/hello_vue.js 1.93 kB {0} [built]
+  [10] ./app/javascript/app.vue 964 bytes {0} [built]
+  [11] ./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 212 bytes {0} [built]
+  [12] ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 721 bytes {0} [built]
+  [13] ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 896 bytes {0} [built]
+    + 5 hidden modules
+
+ERROR in ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css
+Module build failed: ValidationError: Style Loader Invalid Options
+
+options['ident'] is an invalid additional property
+
+ @ ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 1:0-439 1:460-896
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+Child extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js??ref--1-2!node_modules/vue-loader/lib/loaders/stylePostLoader.js!node_modules/postcss-loader/lib/index.js??ref--1-3!node_modules/vue-loader/lib/index.js??vue-loader-options!app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css:
+       [0] ./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 775 bytes {0} [built]
+        + 1 hidden module
+
+Completed 200 OK in 2471ms (Views: 2464.5ms | ActiveRecord: 1.1ms)
+
+
+Started PUT "/communities/6" for 127.0.0.1 at 2018-04-30 17:29:10 +0900
+Processing by CommunitiesController#update as HTML
+  Parameters: {"authenticity_token"=>"DgB2sjBDTASE2cJYId6S4Q3zYBsvn/EPl2FrN9KgCPGxdTWhYB3Ar6vJAfI49JdIv5D/zXyLOEkxegXE+Dw04A==", "id"=>"6"}
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCommunity Load (0.3ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mHole Load (0.5ms)[0m  [1m[34mSELECT  "holes".* FROM "holes" WHERE "holes"."player_id" = $1 ORDER BY "holes"."id" DESC LIMIT $2[0m  [["player_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "communities" SET "aasm_state" = $1, "updated_at" = $2 WHERE "communities"."id" = $3[0m  [["aasm_state", "flop"], ["updated_at", "2018-04-30 08:29:10.081093"], ["id", 6]]
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/communities/6
+Completed 302 Found in 17ms (ActiveRecord: 7.5ms)
+
+
+Started GET "/communities/6" for 127.0.0.1 at 2018-04-30 17:29:10 +0900
+Processing by CommunitiesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCommunity Load (0.1ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mHole Load (0.3ms)[0m  [1m[34mSELECT  "holes".* FROM "holes" WHERE "holes"."player_id" = $1 ORDER BY "holes"."id" DESC LIMIT $2[0m  [["player_id", 1], ["LIMIT", 1]]
+  Rendering communities/show.html.slim within layouts/application
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 6], ["cardable_type", "Community"]]
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 6], ["cardable_type", "Hole"]]
+  Rendered communities/show.html.slim within layouts/application (8.7ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+Hash: 84eff81e3f7c6ca1c049
+Version: webpack 3.11.0
+Time: 1212ms
+                                             Asset       Size  Chunks             Chunk Names
+                 hello_vue-c0598a3b25ca32f7891f.js     246 kB       0  [emitted]  hello_vue
+               application-12a437e15157c0d4029c.js    3.27 kB       1  [emitted]  application
+    hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css  138 bytes       0  [emitted]  hello_vue
+             hello_vue-c0598a3b25ca32f7891f.js.map     293 kB       0  [emitted]  hello_vue
+hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css.map  561 bytes       0  [emitted]  hello_vue
+           application-12a437e15157c0d4029c.js.map    3.19 kB       1  [emitted]  application
+                                     manifest.json  434 bytes          [emitted]  
+   [0] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [1] ./app/javascript/app.vue?vue&type=script&lang=js 362 bytes {0} [built]
+   [2] ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js 116 bytes {0} [built]
+   [3] ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 41 bytes {0} [built]
+   [4] ./app/javascript/packs/application.js 515 bytes {1} [built]
+   [5] ./app/javascript/packs/hello_vue.js 1.93 kB {0} [built]
+  [10] ./app/javascript/app.vue 964 bytes {0} [built]
+  [11] ./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 212 bytes {0} [built]
+  [12] ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 721 bytes {0} [built]
+  [13] ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 896 bytes {0} [built]
+    + 5 hidden modules
+
+ERROR in ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css
+Module build failed: ValidationError: Style Loader Invalid Options
+
+options['ident'] is an invalid additional property
+
+ @ ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 1:0-439 1:460-896
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+Child extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js??ref--1-2!node_modules/vue-loader/lib/loaders/stylePostLoader.js!node_modules/postcss-loader/lib/index.js??ref--1-3!node_modules/vue-loader/lib/index.js??vue-loader-options!app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css:
+       [0] ./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 775 bytes {0} [built]
+        + 1 hidden module
+
+Completed 200 OK in 2397ms (Views: 2391.9ms | ActiveRecord: 0.9ms)
+
+
+Started PUT "/communities/6" for 127.0.0.1 at 2018-04-30 17:29:14 +0900
+Processing by CommunitiesController#update as HTML
+  Parameters: {"authenticity_token"=>"byK+hyUOjDAZXyDN0WVxxf6S8BEsZFPIZ7IgqKBaniDQV/2UdVAAmzZP42fIT3RsTPFvx39wmo7BqU5bisaiMQ==", "id"=>"6"}
+  [1m[36mPlayer Load (0.5ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCommunity Load (0.3ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mHole Load (0.3ms)[0m  [1m[34mSELECT  "holes".* FROM "holes" WHERE "holes"."player_id" = $1 ORDER BY "holes"."id" DESC LIMIT $2[0m  [["player_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "communities" SET "aasm_state" = $1, "updated_at" = $2 WHERE "communities"."id" = $3[0m  [["aasm_state", "turn"], ["updated_at", "2018-04-30 08:29:14.551907"], ["id", 6]]
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/communities/6
+Completed 302 Found in 16ms (ActiveRecord: 7.4ms)
+
+
+Started GET "/communities/6" for 127.0.0.1 at 2018-04-30 17:29:14 +0900
+Processing by CommunitiesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCommunity Load (0.1ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mHole Load (0.2ms)[0m  [1m[34mSELECT  "holes".* FROM "holes" WHERE "holes"."player_id" = $1 ORDER BY "holes"."id" DESC LIMIT $2[0m  [["player_id", 1], ["LIMIT", 1]]
+  Rendering communities/show.html.slim within layouts/application
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 6], ["cardable_type", "Community"]]
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 6], ["cardable_type", "Hole"]]
+  Rendered communities/show.html.slim within layouts/application (8.0ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+Hash: 84eff81e3f7c6ca1c049
+Version: webpack 3.11.0
+Time: 1214ms
+                                             Asset       Size  Chunks             Chunk Names
+                 hello_vue-c0598a3b25ca32f7891f.js     246 kB       0  [emitted]  hello_vue
+               application-12a437e15157c0d4029c.js    3.27 kB       1  [emitted]  application
+    hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css  138 bytes       0  [emitted]  hello_vue
+             hello_vue-c0598a3b25ca32f7891f.js.map     293 kB       0  [emitted]  hello_vue
+hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css.map  561 bytes       0  [emitted]  hello_vue
+           application-12a437e15157c0d4029c.js.map    3.19 kB       1  [emitted]  application
+                                     manifest.json  434 bytes          [emitted]  
+   [0] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [1] ./app/javascript/app.vue?vue&type=script&lang=js 362 bytes {0} [built]
+   [2] ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js 116 bytes {0} [built]
+   [3] ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 41 bytes {0} [built]
+   [4] ./app/javascript/packs/application.js 515 bytes {1} [built]
+   [5] ./app/javascript/packs/hello_vue.js 1.93 kB {0} [built]
+  [10] ./app/javascript/app.vue 964 bytes {0} [built]
+  [11] ./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 212 bytes {0} [built]
+  [12] ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 721 bytes {0} [built]
+  [13] ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 896 bytes {0} [built]
+    + 5 hidden modules
+
+ERROR in ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css
+Module build failed: ValidationError: Style Loader Invalid Options
+
+options['ident'] is an invalid additional property
+
+ @ ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 1:0-439 1:460-896
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+Child extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js??ref--1-2!node_modules/vue-loader/lib/loaders/stylePostLoader.js!node_modules/postcss-loader/lib/index.js??ref--1-3!node_modules/vue-loader/lib/index.js??vue-loader-options!app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css:
+       [0] ./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 775 bytes {0} [built]
+        + 1 hidden module
+
+Completed 200 OK in 2412ms (Views: 2407.2ms | ActiveRecord: 0.9ms)
+
+
+Started PUT "/communities/6" for 127.0.0.1 at 2018-04-30 17:29:19 +0900
+Processing by CommunitiesController#update as HTML
+  Parameters: {"authenticity_token"=>"3g1f6khZ4Ccl0FdACmd+wrVfLm0aGlcPSx+7nwEUku9heBz5GAdsjArAlOoTTXtrBzyxu0kOnkntBNVsK4iu/g==", "id"=>"6"}
+  [1m[36mPlayer Load (0.3ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCommunity Load (0.3ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mHole Load (0.3ms)[0m  [1m[34mSELECT  "holes".* FROM "holes" WHERE "holes"."player_id" = $1 ORDER BY "holes"."id" DESC LIMIT $2[0m  [["player_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.1ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "communities" SET "aasm_state" = $1, "updated_at" = $2 WHERE "communities"."id" = $3[0m  [["aasm_state", "river"], ["updated_at", "2018-04-30 08:29:19.217125"], ["id", 6]]
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/communities/6
+Completed 302 Found in 17ms (ActiveRecord: 7.3ms)
+
+
+Started GET "/communities/6" for 127.0.0.1 at 2018-04-30 17:29:19 +0900
+Processing by CommunitiesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCommunity Load (0.1ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mHole Load (0.3ms)[0m  [1m[34mSELECT  "holes".* FROM "holes" WHERE "holes"."player_id" = $1 ORDER BY "holes"."id" DESC LIMIT $2[0m  [["player_id", 1], ["LIMIT", 1]]
+  Rendering communities/show.html.slim within layouts/application
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 6], ["cardable_type", "Community"]]
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 6], ["cardable_type", "Hole"]]
+  Rendered communities/show.html.slim within layouts/application (12.0ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+Hash: 84eff81e3f7c6ca1c049
+Version: webpack 3.11.0
+Time: 1202ms
+                                             Asset       Size  Chunks             Chunk Names
+                 hello_vue-c0598a3b25ca32f7891f.js     246 kB       0  [emitted]  hello_vue
+               application-12a437e15157c0d4029c.js    3.27 kB       1  [emitted]  application
+    hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css  138 bytes       0  [emitted]  hello_vue
+             hello_vue-c0598a3b25ca32f7891f.js.map     293 kB       0  [emitted]  hello_vue
+hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css.map  561 bytes       0  [emitted]  hello_vue
+           application-12a437e15157c0d4029c.js.map    3.19 kB       1  [emitted]  application
+                                     manifest.json  434 bytes          [emitted]  
+   [0] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [1] ./app/javascript/app.vue?vue&type=script&lang=js 362 bytes {0} [built]
+   [2] ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js 116 bytes {0} [built]
+   [3] ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 41 bytes {0} [built]
+   [4] ./app/javascript/packs/application.js 515 bytes {1} [built]
+   [5] ./app/javascript/packs/hello_vue.js 1.93 kB {0} [built]
+  [10] ./app/javascript/app.vue 964 bytes {0} [built]
+  [11] ./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 212 bytes {0} [built]
+  [12] ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 721 bytes {0} [built]
+  [13] ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 896 bytes {0} [built]
+    + 5 hidden modules
+
+ERROR in ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css
+Module build failed: ValidationError: Style Loader Invalid Options
+
+options['ident'] is an invalid additional property
+
+ @ ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 1:0-439 1:460-896
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+Child extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js??ref--1-2!node_modules/vue-loader/lib/loaders/stylePostLoader.js!node_modules/postcss-loader/lib/index.js??ref--1-3!node_modules/vue-loader/lib/index.js??vue-loader-options!app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css:
+       [0] ./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 775 bytes {0} [built]
+        + 1 hidden module
+
+Completed 200 OK in 2430ms (Views: 2425.2ms | ActiveRecord: 1.0ms)
+
+
+Started PUT "/communities/6" for 127.0.0.1 at 2018-04-30 17:29:23 +0900
+Processing by CommunitiesController#update as HTML
+  Parameters: {"authenticity_token"=>"wwTHW+4Ck2meNig89yZgXHtfCLX5Poqjtb72l4TAPT58cYRIvlwfwrEm65buDGX1yTyXY6oqQ+UTpZhkrlwBLw==", "id"=>"6"}
+  [1m[36mPlayer Load (0.5ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCommunity Load (0.2ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mHole Load (0.3ms)[0m  [1m[34mSELECT  "holes".* FROM "holes" WHERE "holes"."player_id" = $1 ORDER BY "holes"."id" DESC LIMIT $2[0m  [["player_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "communities" SET "aasm_state" = $1, "updated_at" = $2 WHERE "communities"."id" = $3[0m  [["aasm_state", "showdown"], ["updated_at", "2018-04-30 08:29:23.509120"], ["id", 6]]
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/communities/6
+Completed 302 Found in 17ms (ActiveRecord: 7.9ms)
+
+
+Started GET "/communities/6" for 127.0.0.1 at 2018-04-30 17:29:23 +0900
+Processing by CommunitiesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPlayer Load (0.4ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCommunity Load (0.2ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mHole Load (0.4ms)[0m  [1m[34mSELECT  "holes".* FROM "holes" WHERE "holes"."player_id" = $1 ORDER BY "holes"."id" DESC LIMIT $2[0m  [["player_id", 1], ["LIMIT", 1]]
+  Rendering communities/show.html.slim within layouts/application
+  [1m[36mCard Load (0.8ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 6], ["cardable_type", "Community"]]
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 6], ["cardable_type", "Hole"]]
+  Rendered communities/show.html.slim within layouts/application (9.7ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+Hash: 84eff81e3f7c6ca1c049
+Version: webpack 3.11.0
+Time: 1187ms
+                                             Asset       Size  Chunks             Chunk Names
+                 hello_vue-c0598a3b25ca32f7891f.js     246 kB       0  [emitted]  hello_vue
+               application-12a437e15157c0d4029c.js    3.27 kB       1  [emitted]  application
+    hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css  138 bytes       0  [emitted]  hello_vue
+             hello_vue-c0598a3b25ca32f7891f.js.map     293 kB       0  [emitted]  hello_vue
+hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css.map  561 bytes       0  [emitted]  hello_vue
+           application-12a437e15157c0d4029c.js.map    3.19 kB       1  [emitted]  application
+                                     manifest.json  434 bytes          [emitted]  
+   [0] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [1] ./app/javascript/app.vue?vue&type=script&lang=js 362 bytes {0} [built]
+   [2] ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js 116 bytes {0} [built]
+   [3] ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 41 bytes {0} [built]
+   [4] ./app/javascript/packs/application.js 515 bytes {1} [built]
+   [5] ./app/javascript/packs/hello_vue.js 1.93 kB {0} [built]
+  [10] ./app/javascript/app.vue 964 bytes {0} [built]
+  [11] ./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 212 bytes {0} [built]
+  [12] ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 721 bytes {0} [built]
+  [13] ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 896 bytes {0} [built]
+    + 5 hidden modules
+
+ERROR in ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css
+Module build failed: ValidationError: Style Loader Invalid Options
+
+options['ident'] is an invalid additional property
+
+ @ ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 1:0-439 1:460-896
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+Child extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js??ref--1-2!node_modules/vue-loader/lib/loaders/stylePostLoader.js!node_modules/postcss-loader/lib/index.js??ref--1-3!node_modules/vue-loader/lib/index.js??vue-loader-options!app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css:
+       [0] ./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 775 bytes {0} [built]
+        + 1 hidden module
+
+Completed 200 OK in 2411ms (Views: 2401.9ms | ActiveRecord: 2.1ms)
+
+

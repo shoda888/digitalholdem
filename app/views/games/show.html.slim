@@ -36,21 +36,25 @@ body.hold-transition.sidebar-mini
           .row.mb-2
             .col-sm-6
               h1.m-0.text-dark
-                | Game Table
+                | ゲーム詳細
       .content
         .container-fluid
           .row
-            .col-lg-12
-              table.table.table-bordered.table-striped.dataTable role="grid"
-                thead
-                  tr role="row"
-                    th ID
-                    th タイトル
-                tbody
-                  - @games.each do |game|
-                    tr role="row"
-                      td = game.id
-                      td = link_to(game.name, game_path(game))
+            .card-body
+              .col-lg-12
+                table.table.table-striped
+                  tbody
+                    tr
+                      th タイトル
+                      td = @game.name
+                    tr
+                      th 参加者
+                      td
+                        - @game.players.each do |player|
+                          = player.name
+                    tr
+                       th
+                       td = link_to 'このゲームに参加する', game_path, method: :put, class: "btn btn-success"
 
     aside.control-sidebar.control-sidebar-dark
       .p-3
