@@ -1,9 +1,10 @@
-h2.text-center
-  | コミュニティカード
+.container
+  h2.text-center
+    | コミュニティカード
 
 
-h4.text-center
-  = @current_player.name
+  h4.text-center
+    = @current_player.name
 
-.text-center
-  = button_to "ゲーム開始", communities_path, method: :post, class:'btn btn-success'
+  .text-center
+    = button_to "ゲーム開始", communities_path, method: :post, class:'btn btn-success'

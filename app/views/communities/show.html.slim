@@ -6,19 +6,22 @@
   .text-center
     - @community.cards.each_with_index do |card, index|
       - if index < @hide_counter
-        = image_tag "/z01.png", width:"70", height:"105"
+        = image_tag "/z01.png", width:"70", height:"105", class:'tranp_field'
       - else
-        = image_tag "/#{card.suit}#{card.number}.png", width:"70", height:"105"
+        = image_tag "/#{card.suit}#{card.number}.png", width:"70", height:"105", class:'tranp_field'
 
   .dealer-action.text-center
-    = button_to "ディーラーアクション", community_path(@community), method: :put, class:'btn btn-danger'
+    .row
+      .col-sm-6
+        = link_to "#{@btn_name}", community_path(@community), class:'btn btn-block btn-success', method: :put if @btn_name
+      .col-sm-6
+        = link_to 'Finish', new_community_path, class:'btn btn-block btn-danger'
 
   .text-center
     = "#{@current_player.name}の手札"
   .text-center
     - @hole.cards.each do |card|
-      = image_tag "/#{card.suit}#{card.number}.png", width:"70", height:"105"
-    - if @community.finished?
-      h3.show_hand_name
+      = image_tag "/#{card.suit}#{card.number}.png", width:"70", height:"105", class:'tranp_field2'
+    - if @community.showdown?
+      .show_hand_name
         = @hole.hand
-      = link_to "Next Round", new_community_path, class:'btn btn-success'

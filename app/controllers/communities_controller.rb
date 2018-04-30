@@ -30,6 +30,18 @@ class CommunitiesController < ApplicationController
     @community = Community.find(params[:id])
     @hole = @current_player.holes.last
     @hide_counter = StatusConverter[@community.aasm_state.to_sym] #communityのステータスによって表示カードを決定
+    case @community.aasm_state
+    when 'preflop'
+      @btn_name = 'to Flop'
+    when 'flop'
+      @btn_name = 'to Turn'
+    when 'turn'
+      @btn_name = 'to River'
+    when 'river'
+      @btn_name = 'Show down!!'
+    else
+      @btn_name = nil
+    end
   end
 
   def update
@@ -44,12 +56,10 @@ class CommunitiesController < ApplicationController
       @community.to_river
     when 'river'
       @community.open
-    when 'showdown'
       targetcards = @community.cards + @hole.cards
       @hole.hand = hand_judge(targetcards)
       @hole.save
-      @community.finish
-    when 'finished'
+    else
     end
     @community.save
     redirect_to community_path(@community)
