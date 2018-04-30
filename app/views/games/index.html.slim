@@ -1,0 +1,147 @@
+body.hold-transition.sidebar-mini
+  .wrapper
+    nav.main-header.navbar.navbar-expand.bg-white.navbar-light.border-bottom
+      ul.navbar-nav
+        li.nav-item
+          a.nav-link[data-widget="pushmenu" href="#"]
+            i.fa.fa-bars
+        li.nav-item.d-none.d-sm-inline-block
+          a.nav-link[href="index3.html"]
+            | Home
+        li.nav-item.d-none.d-sm-inline-block
+          a.nav-link[href="#"]
+            | Contact
+      form.form-inline.ml-3
+        .input-group.input-group-sm
+          input.form-control.form-control-navbar[type="search" placeholder="Search" aria-label="Search"]
+          .input-group-append
+            button.btn.btn-navbar[type="submit"]
+              i.fa.fa-search
+      ul.navbar-nav.ml-auto
+        li.nav-item.dropdown
+          a.nav-link[data-toggle="dropdown" href="#"]
+            i.fa.fa-comments-o
+            span.badge.badge-danger.navbar-badge
+              | 3
+          .dropdown-menu.dropdown-menu-lg.dropdown-menu-right
+            a.dropdown-item[href="#"]
+
+            .media
+              .media-body
+                h3.dropdown-item-title
+                  |  Brad Diesel
+                  span.float-right.text-sm.text-danger
+                    i.fa.fa-star
+                p.text-sm
+                  | Call me whenever you can...
+                p.text-sm.text-muted
+                  i.fa.fa-clock-o.mr-1
+                  |  4 Hours Ago
+            .dropdown-divider
+            a.dropdown-item[href="#"]
+
+            .media
+              .media-body
+                h3.dropdown-item-title
+                  |  John Pierce
+                  span.float-right.text-sm.text-muted
+                    i.fa.fa-star
+                p.text-sm
+                  | I got your message bro
+                p.text-sm.text-muted
+                  i.fa.fa-clock-o.mr-1
+                  |  4 Hours Ago
+            .dropdown-divider
+            a.dropdown-item[href="#"]
+
+            .media
+              .media-body
+                h3.dropdown-item-title
+                  |  Nora Silvester
+                  span.float-right.text-sm.text-warning
+                    i.fa.fa-star
+                p.text-sm
+                  | The subject goes here
+                p.text-sm.text-muted
+                  i.fa.fa-clock-o.mr-1
+                  |  4 Hours Ago
+            .dropdown-divider
+            a.dropdown-item.dropdown-footer[href="#"]
+              | See All Messages
+        li.nav-item.dropdown
+          a.nav-link[data-toggle="dropdown" href="#"]
+            i.fa.fa-bell-o
+            span.badge.badge-warning.navbar-badge
+              | 15
+          .dropdown-menu.dropdown-menu-lg.dropdown-menu-right
+            span.dropdown-header
+              | 15 Notifications
+            .dropdown-divider
+            a.dropdown-item[href="#"]
+              i.fa.fa-envelope.mr-2
+              |  4 new messages
+              span.float-right.text-muted.text-sm
+                | 3 mins
+            .dropdown-divider
+            a.dropdown-item[href="#"]
+              i.fa.fa-users.mr-2
+              |  8 friend requests
+              span.float-right.text-muted.text-sm
+                | 12 hours
+            .dropdown-divider
+            a.dropdown-item[href="#"]
+              i.fa.fa-file.mr-2
+              |  3 new reports
+              span.float-right.text-muted.text-sm
+                | 2 days
+            .dropdown-divider
+            a.dropdown-item.dropdown-footer[href="#"]
+              | See All Notifications
+        li.nav-item
+          a.nav-link[data-widget="control-sidebar" data-slide="true" href="#"]
+            i.fa.fa-th-large
+    aside.main-sidebar.sidebar-dark-primary.elevation-4
+      a.brand-link[href="index3.html"]
+        span.brand-text.font-weight-light
+          | AdminLTE 3
+      .sidebar
+        .user-panel.mt-3.pb-3.mb-3.d-flex
+          .info
+            a.d-block[href="#"]
+              | テキサスホールデムのルール
+        .user-panel.mt-3.pb-3.mb-3.d-flex
+          .info
+            a.d-block[href="#"]
+              | 管理者ページ
+    .content-wrapper
+      .content-header
+        .container-fluid
+          .row.mb-2
+            .col-sm-6
+              h1.m-0.text-dark
+                | Game Table
+      .content
+        .container-fluid
+          .row
+            .col-lg-12
+              table.table.table-bordered.table-striped.dataTable role="grid"
+                thead
+                  tr role="row"
+                    th ID
+                    th タイトル
+                tbody
+                  - @games.each do |game|
+                    tr role="row"
+                      td = game.id
+                      td = link_to(game.name, game_path(game))
+                
+
+    aside.control-sidebar.control-sidebar-dark
+      .p-3
+        h5
+          | 東工大
+        p
+          | 中山研
+    footer.main-footer
+      .float-right.d-none.d-sm-inline
+        |  東工大情報通信系　中山研
