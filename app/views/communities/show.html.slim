@@ -1,0 +1,24 @@
+.container
+  h2.text-center
+    | コミュニティカード
+
+
+  .text-center
+    - @community.cards.each_with_index do |card, index|
+      - if index < @hide_counter
+        = image_tag "/z01.png", width:"70", height:"105"
+      - else
+        = image_tag "/#{card.suit}#{card.number}.png", width:"70", height:"105"
+
+  .dealer-action.text-center
+    = button_to "ディーラーアクション", community_path(@community), method: :put, class:'btn btn-danger'
+
+  .text-center
+    = "#{@current_player.name}の手札"
+  .text-center
+    - @hole.cards.each do |card|
+      = image_tag "/#{card.suit}#{card.number}.png", width:"70", height:"105"
+    - if @community.finished?
+      h3.show_hand_name
+        = @hole.hand
+      = link_to "Next Round", new_community_path, class:'btn btn-success'

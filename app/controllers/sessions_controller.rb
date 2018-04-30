@@ -15,9 +15,7 @@ class SessionsController < ApplicationController
       redirect_to games_path
     else
       @error_message = "メールアドレスまたはパスワードが間違っています"
-      @name = params[:name]
-      @password = params[:password]
-      render new_session_path
+      render new_session_path, name:params[:name]
     end
   end
 
