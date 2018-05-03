@@ -35689,3 +35689,1771 @@ Completed 200 OK in 2344ms (Views: 2338.7ms | ActiveRecord: 1.1ms)
   [1m[36mCommunity Load (2.2ms)[0m  [1m[34mSELECT "communities".* FROM "communities"[0m
   [1m[36mCard Load (1.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
   [1m[36mHole Load (1.3ms)[0m  [1m[34mSELECT "holes".* FROM "holes"[0m
+Started GET "/sessions/new" for 127.0.0.1 at 2018-05-03 22:30:35 +0900
+  [1m[35m (7.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  [1m[36mPlayer Load (0.5ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.2ms)
+[Webpacker] Compiling…
+Started GET "/sessions/new" for 127.0.0.1 at 2018-05-03 22:30:39 +0900
+Processing by SessionsController#new as HTML
+  [1m[36mPlayer Load (0.5ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 76ms (Views: 54.5ms | ActiveRecord: 6.6ms)
+
+
+[Webpacker] Compilation failed:
+
+Hash: b71dcb84cde163307b74
+Version: webpack 3.11.0
+Time: 2077ms
+                                             Asset       Size  Chunks             Chunk Names
+                 hello_vue-08543bc77cf16798d112.js     248 kB       0  [emitted]  hello_vue
+               application-12a437e15157c0d4029c.js    3.27 kB       1  [emitted]  application
+    hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css  138 bytes       0  [emitted]  hello_vue
+             hello_vue-08543bc77cf16798d112.js.map     293 kB       0  [emitted]  hello_vue
+hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css.map  561 bytes       0  [emitted]  hello_vue
+           application-12a437e15157c0d4029c.js.map    3.19 kB       1  [emitted]  application
+                                     manifest.json  434 bytes          [emitted]  
+   [0] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [1] ./app/javascript/app.vue?vue&type=script&lang=js 362 bytes {0} [built]
+   [2] ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js 1.53 kB {0} [built] [failed] [1 error]
+   [3] ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 41 bytes {0} [built]
+   [4] ./app/javascript/packs/application.js 515 bytes {1} [built]
+   [5] ./app/javascript/packs/hello_vue.js 1.93 kB {0} [built]
+  [10] ./app/javascript/app.vue 964 bytes {0} [built]
+  [11] ./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 212 bytes {0} [built]
+  [12] ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 721 bytes {0} [built]
+  [13] ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 896 bytes {0} [built]
+    + 5 hidden modules
+
+ERROR in ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js
+Module build failed: ReferenceError: [BABEL] /Users/shoda/digitalholdem/app/javascript/app.vue: Unknown option: base.omit. Check out http://babeljs.io/docs/usage/options/ for more information about options.
+
+A common cause of this error is the presence of a configuration options object without the corresponding preset name. Example:
+
+Invalid:
+  `{ presets: [{option: value}] }`
+Valid:
+  `{ presets: [['presetName', {option: value}]] }`
+
+For more detailed information on preset configuration, please see https://babeljs.io/docs/en/plugins#pluginpresets-options.
+    at Logger.error (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/logger.js:41:11)
+    at OptionManager.mergeOptions (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/options/option-manager.js:226:20)
+    at OptionManager.init (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/options/option-manager.js:368:12)
+    at File.initOptions (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/index.js:212:65)
+    at new File (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/index.js:135:24)
+    at Pipeline.transform (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/pipeline.js:46:16)
+    at transpile (/Users/shoda/digitalholdem/node_modules/babel-loader/lib/index.js:50:20)
+    at Object.module.exports (/Users/shoda/digitalholdem/node_modules/babel-loader/lib/index.js:173:20)
+ @ ./app/javascript/app.vue?vue&type=script&lang=js 1:0-172 1:193-362
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+
+ERROR in ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css
+Module build failed: ValidationError: Style Loader Invalid Options
+
+options['ident'] is an invalid additional property
+
+ @ ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 1:0-439 1:460-896
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+Child extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js??ref--1-2!node_modules/vue-loader/lib/loaders/stylePostLoader.js!node_modules/postcss-loader/lib/index.js??ref--1-3!node_modules/vue-loader/lib/index.js??vue-loader-options!app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css:
+       [0] ./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 775 bytes {0} [built]
+        + 1 hidden module
+
+Completed 200 OK in 5648ms (Views: 5612.5ms | ActiveRecord: 5.3ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2018-05-03 22:30:45 +0900
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"M+Z1/hZjaN9/Ti0g/VXFvbzRBOOMNC6GNzvhVXAD1is/WFTrlzOy6Vv1f/ok93CetFkHNlIiI0zqVnNaS8gf+Q==", "name"=>"K", "password"=>"[FILTERED]", "commit"=>"ログイン"}
+  [1m[36mPlayer Load (0.3ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPlayer Load (1.3ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."name" = $1 AND "players"."password" = $2 LIMIT $3[0m  [["name", "K"], ["password", "K"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/games
+Completed 302 Found in 7ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/games" for 127.0.0.1 at 2018-05-03 22:30:45 +0900
+Processing by GamesController#index as HTML
+  [1m[36mPlayer Load (0.3ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/index.html.slim within layouts/application
+  [1m[36mGame Load (0.5ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  Rendered games/index.html.slim within layouts/application (35.4ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+Hash: b71dcb84cde163307b74
+Version: webpack 3.11.0
+Time: 1279ms
+                                             Asset       Size  Chunks             Chunk Names
+                 hello_vue-08543bc77cf16798d112.js     248 kB       0  [emitted]  hello_vue
+               application-12a437e15157c0d4029c.js    3.27 kB       1  [emitted]  application
+    hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css  138 bytes       0  [emitted]  hello_vue
+             hello_vue-08543bc77cf16798d112.js.map     293 kB       0  [emitted]  hello_vue
+hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css.map  561 bytes       0  [emitted]  hello_vue
+           application-12a437e15157c0d4029c.js.map    3.19 kB       1  [emitted]  application
+                                     manifest.json  434 bytes          [emitted]  
+   [0] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [1] ./app/javascript/app.vue?vue&type=script&lang=js 362 bytes {0} [built]
+   [2] ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js 1.53 kB {0} [built] [failed] [1 error]
+   [3] ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 41 bytes {0} [built]
+   [4] ./app/javascript/packs/application.js 515 bytes {1} [built]
+   [5] ./app/javascript/packs/hello_vue.js 1.93 kB {0} [built]
+  [10] ./app/javascript/app.vue 964 bytes {0} [built]
+  [11] ./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 212 bytes {0} [built]
+  [12] ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 721 bytes {0} [built]
+  [13] ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 896 bytes {0} [built]
+    + 5 hidden modules
+
+ERROR in ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js
+Module build failed: ReferenceError: [BABEL] /Users/shoda/digitalholdem/app/javascript/app.vue: Unknown option: base.omit. Check out http://babeljs.io/docs/usage/options/ for more information about options.
+
+A common cause of this error is the presence of a configuration options object without the corresponding preset name. Example:
+
+Invalid:
+  `{ presets: [{option: value}] }`
+Valid:
+  `{ presets: [['presetName', {option: value}]] }`
+
+For more detailed information on preset configuration, please see https://babeljs.io/docs/en/plugins#pluginpresets-options.
+    at Logger.error (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/logger.js:41:11)
+    at OptionManager.mergeOptions (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/options/option-manager.js:226:20)
+    at OptionManager.init (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/options/option-manager.js:368:12)
+    at File.initOptions (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/index.js:212:65)
+    at new File (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/index.js:135:24)
+    at Pipeline.transform (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/pipeline.js:46:16)
+    at transpile (/Users/shoda/digitalholdem/node_modules/babel-loader/lib/index.js:50:20)
+    at Object.module.exports (/Users/shoda/digitalholdem/node_modules/babel-loader/lib/index.js:173:20)
+ @ ./app/javascript/app.vue?vue&type=script&lang=js 1:0-172 1:193-362
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+
+ERROR in ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css
+Module build failed: ValidationError: Style Loader Invalid Options
+
+options['ident'] is an invalid additional property
+
+ @ ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 1:0-439 1:460-896
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+Child extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js??ref--1-2!node_modules/vue-loader/lib/loaders/stylePostLoader.js!node_modules/postcss-loader/lib/index.js??ref--1-3!node_modules/vue-loader/lib/index.js??vue-loader-options!app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css:
+       [0] ./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 775 bytes {0} [built]
+        + 1 hidden module
+
+Completed 200 OK in 2454ms (Views: 2439.3ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/games/1" for 127.0.0.1 at 2018-05-03 22:30:49 +0900
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlayer Load (0.3ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGame Load (0.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering games/show.html.slim within layouts/application
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."game_id" = $1[0m  [["game_id", 1]]
+  Rendered games/show.html.slim within layouts/application (40.7ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+Hash: b71dcb84cde163307b74
+Version: webpack 3.11.0
+Time: 1160ms
+                                             Asset       Size  Chunks             Chunk Names
+                 hello_vue-08543bc77cf16798d112.js     248 kB       0  [emitted]  hello_vue
+               application-12a437e15157c0d4029c.js    3.27 kB       1  [emitted]  application
+    hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css  138 bytes       0  [emitted]  hello_vue
+             hello_vue-08543bc77cf16798d112.js.map     293 kB       0  [emitted]  hello_vue
+hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css.map  561 bytes       0  [emitted]  hello_vue
+           application-12a437e15157c0d4029c.js.map    3.19 kB       1  [emitted]  application
+                                     manifest.json  434 bytes          [emitted]  
+   [0] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [1] ./app/javascript/app.vue?vue&type=script&lang=js 362 bytes {0} [built]
+   [2] ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js 1.53 kB {0} [built] [failed] [1 error]
+   [3] ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 41 bytes {0} [built]
+   [4] ./app/javascript/packs/application.js 515 bytes {1} [built]
+   [5] ./app/javascript/packs/hello_vue.js 1.93 kB {0} [built]
+  [10] ./app/javascript/app.vue 964 bytes {0} [built]
+  [11] ./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 212 bytes {0} [built]
+  [12] ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 721 bytes {0} [built]
+  [13] ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 896 bytes {0} [built]
+    + 5 hidden modules
+
+ERROR in ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js
+Module build failed: ReferenceError: [BABEL] /Users/shoda/digitalholdem/app/javascript/app.vue: Unknown option: base.omit. Check out http://babeljs.io/docs/usage/options/ for more information about options.
+
+A common cause of this error is the presence of a configuration options object without the corresponding preset name. Example:
+
+Invalid:
+  `{ presets: [{option: value}] }`
+Valid:
+  `{ presets: [['presetName', {option: value}]] }`
+
+For more detailed information on preset configuration, please see https://babeljs.io/docs/en/plugins#pluginpresets-options.
+    at Logger.error (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/logger.js:41:11)
+    at OptionManager.mergeOptions (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/options/option-manager.js:226:20)
+    at OptionManager.init (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/options/option-manager.js:368:12)
+    at File.initOptions (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/index.js:212:65)
+    at new File (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/index.js:135:24)
+    at Pipeline.transform (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/pipeline.js:46:16)
+    at transpile (/Users/shoda/digitalholdem/node_modules/babel-loader/lib/index.js:50:20)
+    at Object.module.exports (/Users/shoda/digitalholdem/node_modules/babel-loader/lib/index.js:173:20)
+ @ ./app/javascript/app.vue?vue&type=script&lang=js 1:0-172 1:193-362
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+
+ERROR in ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css
+Module build failed: ValidationError: Style Loader Invalid Options
+
+options['ident'] is an invalid additional property
+
+ @ ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 1:0-439 1:460-896
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+Child extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js??ref--1-2!node_modules/vue-loader/lib/loaders/stylePostLoader.js!node_modules/postcss-loader/lib/index.js??ref--1-3!node_modules/vue-loader/lib/index.js??vue-loader-options!app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css:
+       [0] ./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 775 bytes {0} [built]
+        + 1 hidden module
+
+Completed 200 OK in 2348ms (Views: 2339.8ms | ActiveRecord: 0.8ms)
+
+
+Started PUT "/games/1" for 127.0.0.1 at 2018-05-03 22:30:56 +0900
+Processing by GamesController#update as HTML
+  Parameters: {"authenticity_token"=>"fAmtrqcyEVwwvUB2hdde0BtWDTnucwGIr8euHkgHud5wt4y7JmLLahQGEqxcdevzE94O7DBlDEJyqjwRc8xwDA==", "id"=>"1"}
+  [1m[36mPlayer Load (0.4ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/communities/new
+Completed 302 Found in 6ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/communities/new" for 127.0.0.1 at 2018-05-03 22:30:56 +0900
+Processing by CommunitiesController#new as HTML
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering communities/new.html.slim within layouts/application
+  Rendered communities/new.html.slim within layouts/application (7.7ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+Hash: b71dcb84cde163307b74
+Version: webpack 3.11.0
+Time: 1134ms
+                                             Asset       Size  Chunks             Chunk Names
+                 hello_vue-08543bc77cf16798d112.js     248 kB       0  [emitted]  hello_vue
+               application-12a437e15157c0d4029c.js    3.27 kB       1  [emitted]  application
+    hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css  138 bytes       0  [emitted]  hello_vue
+             hello_vue-08543bc77cf16798d112.js.map     293 kB       0  [emitted]  hello_vue
+hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css.map  561 bytes       0  [emitted]  hello_vue
+           application-12a437e15157c0d4029c.js.map    3.19 kB       1  [emitted]  application
+                                     manifest.json  434 bytes          [emitted]  
+   [0] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [1] ./app/javascript/app.vue?vue&type=script&lang=js 362 bytes {0} [built]
+   [2] ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js 1.53 kB {0} [built] [failed] [1 error]
+   [3] ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 41 bytes {0} [built]
+   [4] ./app/javascript/packs/application.js 515 bytes {1} [built]
+   [5] ./app/javascript/packs/hello_vue.js 1.93 kB {0} [built]
+  [10] ./app/javascript/app.vue 964 bytes {0} [built]
+  [11] ./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 212 bytes {0} [built]
+  [12] ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 721 bytes {0} [built]
+  [13] ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 896 bytes {0} [built]
+    + 5 hidden modules
+
+ERROR in ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js
+Module build failed: ReferenceError: [BABEL] /Users/shoda/digitalholdem/app/javascript/app.vue: Unknown option: base.omit. Check out http://babeljs.io/docs/usage/options/ for more information about options.
+
+A common cause of this error is the presence of a configuration options object without the corresponding preset name. Example:
+
+Invalid:
+  `{ presets: [{option: value}] }`
+Valid:
+  `{ presets: [['presetName', {option: value}]] }`
+
+For more detailed information on preset configuration, please see https://babeljs.io/docs/en/plugins#pluginpresets-options.
+    at Logger.error (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/logger.js:41:11)
+    at OptionManager.mergeOptions (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/options/option-manager.js:226:20)
+    at OptionManager.init (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/options/option-manager.js:368:12)
+    at File.initOptions (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/index.js:212:65)
+    at new File (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/index.js:135:24)
+    at Pipeline.transform (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/pipeline.js:46:16)
+    at transpile (/Users/shoda/digitalholdem/node_modules/babel-loader/lib/index.js:50:20)
+    at Object.module.exports (/Users/shoda/digitalholdem/node_modules/babel-loader/lib/index.js:173:20)
+ @ ./app/javascript/app.vue?vue&type=script&lang=js 1:0-172 1:193-362
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+
+ERROR in ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css
+Module build failed: ValidationError: Style Loader Invalid Options
+
+options['ident'] is an invalid additional property
+
+ @ ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 1:0-439 1:460-896
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+Child extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js??ref--1-2!node_modules/vue-loader/lib/loaders/stylePostLoader.js!node_modules/postcss-loader/lib/index.js??ref--1-3!node_modules/vue-loader/lib/index.js??vue-loader-options!app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css:
+       [0] ./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 775 bytes {0} [built]
+        + 1 hidden module
+
+Completed 200 OK in 2268ms (Views: 2264.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/communities" for 127.0.0.1 at 2018-05-03 22:31:00 +0900
+Processing by CommunitiesController#create as HTML
+  Parameters: {"authenticity_token"=>"e9KcSWOSFzftcUrVrxAx7PctD6ll8kuRBiRqg1VnrK13bL1c4sLNAcnKGA92soTP/6UMfLvkRlvbSfiMbqxlfw=="}
+  [1m[36mPlayer Load (0.4ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (6.1ms)[0m  [1m[32mINSERT INTO "communities" ("aasm_state", "game_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["aasm_state", "preflop"], ["game_id", 1], ["created_at", "2018-05-03 13:31:00.327208"], ["updated_at", "2018-05-03 13:31:00.327208"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPlayer Load (0.5ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (5.5ms)[0m  [1m[32mINSERT INTO "holes" ("player_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["player_id", 1], ["created_at", "2018-05-03 13:31:00.356726"], ["updated_at", "2018-05-03 13:31:00.356726"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPlayer Load (0.3ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."game_id" = $1[0m  [["game_id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHole Load (0.3ms)[0m  [1m[34mSELECT  "holes".* FROM "holes" WHERE "holes"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Hole"], ["cardable_id", 5], ["suit", "h"], ["number", 2], ["created_at", "2018-05-03 13:31:00.391912"], ["updated_at", "2018-05-03 13:31:00.391912"]]
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHole Load (0.3ms)[0m  [1m[34mSELECT  "holes".* FROM "holes" WHERE "holes"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Hole"], ["cardable_id", 5], ["suit", "s"], ["number", 10], ["created_at", "2018-05-03 13:31:00.402123"], ["updated_at", "2018-05-03 13:31:00.402123"]]
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHole Load (0.3ms)[0m  [1m[34mSELECT  "holes".* FROM "holes" WHERE "holes"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Hole"], ["cardable_id", 5], ["suit", "h"], ["number", 3], ["created_at", "2018-05-03 13:31:00.416863"], ["updated_at", "2018-05-03 13:31:00.416863"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mHole Load (0.3ms)[0m  [1m[34mSELECT  "holes".* FROM "holes" WHERE "holes"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Hole"], ["cardable_id", 5], ["suit", "s"], ["number", 4], ["created_at", "2018-05-03 13:31:00.422240"], ["updated_at", "2018-05-03 13:31:00.422240"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCommunity Load (0.3ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Community"], ["cardable_id", 5], ["suit", "h"], ["number", 7], ["created_at", "2018-05-03 13:31:00.428124"], ["updated_at", "2018-05-03 13:31:00.428124"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCommunity Load (0.2ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Community"], ["cardable_id", 5], ["suit", "h"], ["number", 6], ["created_at", "2018-05-03 13:31:00.431747"], ["updated_at", "2018-05-03 13:31:00.431747"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCommunity Load (0.4ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Community"], ["cardable_id", 5], ["suit", "d"], ["number", 12], ["created_at", "2018-05-03 13:31:00.462357"], ["updated_at", "2018-05-03 13:31:00.462357"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCommunity Load (0.4ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Community"], ["cardable_id", 5], ["suit", "c"], ["number", 3], ["created_at", "2018-05-03 13:31:00.467173"], ["updated_at", "2018-05-03 13:31:00.467173"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCommunity Load (0.3ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "cards" ("cardable_type", "cardable_id", "suit", "number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cardable_type", "Community"], ["cardable_id", 5], ["suit", "d"], ["number", 7], ["created_at", "2018-05-03 13:31:00.472480"], ["updated_at", "2018-05-03 13:31:00.472480"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/communities/5
+Completed 302 Found in 190ms (ActiveRecord: 48.0ms)
+
+
+Started GET "/communities/5" for 127.0.0.1 at 2018-05-03 22:31:00 +0900
+Processing by CommunitiesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPlayer Load (0.3ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCommunity Load (0.2ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mHole Load (0.5ms)[0m  [1m[34mSELECT  "holes".* FROM "holes" WHERE "holes"."player_id" = $1 ORDER BY "holes"."id" DESC LIMIT $2[0m  [["player_id", 1], ["LIMIT", 1]]
+  Rendering communities/show.html.slim within layouts/application
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Community"]]
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Hole"]]
+  Rendered communities/show.html.slim within layouts/application (22.7ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+Hash: b71dcb84cde163307b74
+Version: webpack 3.11.0
+Time: 1128ms
+                                             Asset       Size  Chunks             Chunk Names
+                 hello_vue-08543bc77cf16798d112.js     248 kB       0  [emitted]  hello_vue
+               application-12a437e15157c0d4029c.js    3.27 kB       1  [emitted]  application
+    hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css  138 bytes       0  [emitted]  hello_vue
+             hello_vue-08543bc77cf16798d112.js.map     293 kB       0  [emitted]  hello_vue
+hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css.map  561 bytes       0  [emitted]  hello_vue
+           application-12a437e15157c0d4029c.js.map    3.19 kB       1  [emitted]  application
+                                     manifest.json  434 bytes          [emitted]  
+   [0] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [1] ./app/javascript/app.vue?vue&type=script&lang=js 362 bytes {0} [built]
+   [2] ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js 1.53 kB {0} [built] [failed] [1 error]
+   [3] ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 41 bytes {0} [built]
+   [4] ./app/javascript/packs/application.js 515 bytes {1} [built]
+   [5] ./app/javascript/packs/hello_vue.js 1.93 kB {0} [built]
+  [10] ./app/javascript/app.vue 964 bytes {0} [built]
+  [11] ./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 212 bytes {0} [built]
+  [12] ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 721 bytes {0} [built]
+  [13] ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 896 bytes {0} [built]
+    + 5 hidden modules
+
+ERROR in ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js
+Module build failed: ReferenceError: [BABEL] /Users/shoda/digitalholdem/app/javascript/app.vue: Unknown option: base.omit. Check out http://babeljs.io/docs/usage/options/ for more information about options.
+
+A common cause of this error is the presence of a configuration options object without the corresponding preset name. Example:
+
+Invalid:
+  `{ presets: [{option: value}] }`
+Valid:
+  `{ presets: [['presetName', {option: value}]] }`
+
+For more detailed information on preset configuration, please see https://babeljs.io/docs/en/plugins#pluginpresets-options.
+    at Logger.error (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/logger.js:41:11)
+    at OptionManager.mergeOptions (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/options/option-manager.js:226:20)
+    at OptionManager.init (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/options/option-manager.js:368:12)
+    at File.initOptions (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/index.js:212:65)
+    at new File (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/index.js:135:24)
+    at Pipeline.transform (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/pipeline.js:46:16)
+    at transpile (/Users/shoda/digitalholdem/node_modules/babel-loader/lib/index.js:50:20)
+    at Object.module.exports (/Users/shoda/digitalholdem/node_modules/babel-loader/lib/index.js:173:20)
+ @ ./app/javascript/app.vue?vue&type=script&lang=js 1:0-172 1:193-362
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+
+ERROR in ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css
+Module build failed: ValidationError: Style Loader Invalid Options
+
+options['ident'] is an invalid additional property
+
+ @ ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 1:0-439 1:460-896
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+Child extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js??ref--1-2!node_modules/vue-loader/lib/loaders/stylePostLoader.js!node_modules/postcss-loader/lib/index.js??ref--1-3!node_modules/vue-loader/lib/index.js??vue-loader-options!app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css:
+       [0] ./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 775 bytes {0} [built]
+        + 1 hidden module
+
+Completed 200 OK in 2280ms (Views: 2272.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/communities/5" for 127.0.0.1 at 2018-05-03 22:38:19 +0900
+Processing by CommunitiesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPlayer Load (0.5ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCommunity Load (0.3ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mHole Load (0.9ms)[0m  [1m[34mSELECT  "holes".* FROM "holes" WHERE "holes"."player_id" = $1 ORDER BY "holes"."id" DESC LIMIT $2[0m  [["player_id", 1], ["LIMIT", 1]]
+  Rendering communities/show.html.slim within layouts/application
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Community"]]
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Hole"]]
+  Rendered communities/show.html.slim within layouts/application (14.6ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+Hash: b71dcb84cde163307b74
+Version: webpack 3.11.0
+Time: 2008ms
+                                             Asset       Size  Chunks             Chunk Names
+                 hello_vue-08543bc77cf16798d112.js     248 kB       0  [emitted]  hello_vue
+               application-12a437e15157c0d4029c.js    3.27 kB       1  [emitted]  application
+    hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css  138 bytes       0  [emitted]  hello_vue
+             hello_vue-08543bc77cf16798d112.js.map     293 kB       0  [emitted]  hello_vue
+hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css.map  561 bytes       0  [emitted]  hello_vue
+           application-12a437e15157c0d4029c.js.map    3.19 kB       1  [emitted]  application
+                                     manifest.json  434 bytes          [emitted]  
+   [0] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [1] ./app/javascript/app.vue?vue&type=script&lang=js 362 bytes {0} [built]
+   [2] ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js 1.53 kB {0} [built] [failed] [1 error]
+   [3] ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 41 bytes {0} [built]
+   [4] ./app/javascript/packs/application.js 515 bytes {1} [built]
+   [5] ./app/javascript/packs/hello_vue.js 1.93 kB {0} [built]
+  [10] ./app/javascript/app.vue 964 bytes {0} [built]
+  [11] ./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 212 bytes {0} [built]
+  [12] ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 721 bytes {0} [built]
+  [13] ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 896 bytes {0} [built]
+    + 5 hidden modules
+
+ERROR in ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js
+Module build failed: ReferenceError: [BABEL] /Users/shoda/digitalholdem/app/javascript/app.vue: Unknown option: base.omit. Check out http://babeljs.io/docs/usage/options/ for more information about options.
+
+A common cause of this error is the presence of a configuration options object without the corresponding preset name. Example:
+
+Invalid:
+  `{ presets: [{option: value}] }`
+Valid:
+  `{ presets: [['presetName', {option: value}]] }`
+
+For more detailed information on preset configuration, please see https://babeljs.io/docs/en/plugins#pluginpresets-options.
+    at Logger.error (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/logger.js:41:11)
+    at OptionManager.mergeOptions (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/options/option-manager.js:226:20)
+    at OptionManager.init (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/options/option-manager.js:368:12)
+    at File.initOptions (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/index.js:212:65)
+    at new File (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/index.js:135:24)
+    at Pipeline.transform (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/pipeline.js:46:16)
+    at transpile (/Users/shoda/digitalholdem/node_modules/babel-loader/lib/index.js:50:20)
+    at Object.module.exports (/Users/shoda/digitalholdem/node_modules/babel-loader/lib/index.js:173:20)
+ @ ./app/javascript/app.vue?vue&type=script&lang=js 1:0-172 1:193-362
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+
+ERROR in ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css
+Module build failed: ValidationError: Style Loader Invalid Options
+
+options['ident'] is an invalid additional property
+
+ @ ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 1:0-439 1:460-896
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+Child extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js??ref--1-2!node_modules/vue-loader/lib/loaders/stylePostLoader.js!node_modules/postcss-loader/lib/index.js??ref--1-3!node_modules/vue-loader/lib/index.js??vue-loader-options!app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css:
+       [0] ./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 775 bytes {0} [built]
+        + 1 hidden module
+
+Completed 200 OK in 4193ms (Views: 4174.1ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/communities/5" for 127.0.0.1 at 2018-05-03 22:38:48 +0900
+Processing by CommunitiesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPlayer Load (0.3ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCommunity Load (0.3ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mHole Load (0.4ms)[0m  [1m[34mSELECT  "holes".* FROM "holes" WHERE "holes"."player_id" = $1 ORDER BY "holes"."id" DESC LIMIT $2[0m  [["player_id", 1], ["LIMIT", 1]]
+  Rendering communities/show.html.slim within layouts/application
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Community"]]
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Hole"]]
+  Rendered communities/show.html.slim within layouts/application (8.6ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+Hash: b71dcb84cde163307b74
+Version: webpack 3.11.0
+Time: 1113ms
+                                             Asset       Size  Chunks             Chunk Names
+                 hello_vue-08543bc77cf16798d112.js     248 kB       0  [emitted]  hello_vue
+               application-12a437e15157c0d4029c.js    3.27 kB       1  [emitted]  application
+    hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css  138 bytes       0  [emitted]  hello_vue
+             hello_vue-08543bc77cf16798d112.js.map     293 kB       0  [emitted]  hello_vue
+hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css.map  561 bytes       0  [emitted]  hello_vue
+           application-12a437e15157c0d4029c.js.map    3.19 kB       1  [emitted]  application
+                                     manifest.json  434 bytes          [emitted]  
+   [0] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [1] ./app/javascript/app.vue?vue&type=script&lang=js 362 bytes {0} [built]
+   [2] ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js 1.53 kB {0} [built] [failed] [1 error]
+   [3] ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 41 bytes {0} [built]
+   [4] ./app/javascript/packs/application.js 515 bytes {1} [built]
+   [5] ./app/javascript/packs/hello_vue.js 1.93 kB {0} [built]
+  [10] ./app/javascript/app.vue 964 bytes {0} [built]
+  [11] ./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 212 bytes {0} [built]
+  [12] ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 721 bytes {0} [built]
+  [13] ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 896 bytes {0} [built]
+    + 5 hidden modules
+
+ERROR in ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js
+Module build failed: ReferenceError: [BABEL] /Users/shoda/digitalholdem/app/javascript/app.vue: Unknown option: base.omit. Check out http://babeljs.io/docs/usage/options/ for more information about options.
+
+A common cause of this error is the presence of a configuration options object without the corresponding preset name. Example:
+
+Invalid:
+  `{ presets: [{option: value}] }`
+Valid:
+  `{ presets: [['presetName', {option: value}]] }`
+
+For more detailed information on preset configuration, please see https://babeljs.io/docs/en/plugins#pluginpresets-options.
+    at Logger.error (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/logger.js:41:11)
+    at OptionManager.mergeOptions (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/options/option-manager.js:226:20)
+    at OptionManager.init (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/options/option-manager.js:368:12)
+    at File.initOptions (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/index.js:212:65)
+    at new File (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/index.js:135:24)
+    at Pipeline.transform (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/pipeline.js:46:16)
+    at transpile (/Users/shoda/digitalholdem/node_modules/babel-loader/lib/index.js:50:20)
+    at Object.module.exports (/Users/shoda/digitalholdem/node_modules/babel-loader/lib/index.js:173:20)
+ @ ./app/javascript/app.vue?vue&type=script&lang=js 1:0-172 1:193-362
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+
+ERROR in ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css
+Module build failed: ValidationError: Style Loader Invalid Options
+
+options['ident'] is an invalid additional property
+
+ @ ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 1:0-439 1:460-896
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+Child extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js??ref--1-2!node_modules/vue-loader/lib/loaders/stylePostLoader.js!node_modules/postcss-loader/lib/index.js??ref--1-3!node_modules/vue-loader/lib/index.js??vue-loader-options!app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css:
+       [0] ./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 775 bytes {0} [built]
+        + 1 hidden module
+
+Completed 200 OK in 2301ms (Views: 2293.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/communities/5" for 127.0.0.1 at 2018-05-03 22:40:14 +0900
+Processing by CommunitiesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPlayer Load (0.3ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCommunity Load (0.2ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mHole Load (0.5ms)[0m  [1m[34mSELECT  "holes".* FROM "holes" WHERE "holes"."player_id" = $1 ORDER BY "holes"."id" DESC LIMIT $2[0m  [["player_id", 1], ["LIMIT", 1]]
+  Rendering communities/show.html.slim within layouts/application
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Community"]]
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Hole"]]
+  Rendered communities/show.html.slim within layouts/application (8.9ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+Hash: b71dcb84cde163307b74
+Version: webpack 3.11.0
+Time: 1988ms
+                                             Asset       Size  Chunks             Chunk Names
+                 hello_vue-08543bc77cf16798d112.js     248 kB       0  [emitted]  hello_vue
+               application-12a437e15157c0d4029c.js    3.27 kB       1  [emitted]  application
+    hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css  138 bytes       0  [emitted]  hello_vue
+             hello_vue-08543bc77cf16798d112.js.map     293 kB       0  [emitted]  hello_vue
+hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css.map  561 bytes       0  [emitted]  hello_vue
+           application-12a437e15157c0d4029c.js.map    3.19 kB       1  [emitted]  application
+                                     manifest.json  434 bytes          [emitted]  
+   [0] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [1] ./app/javascript/app.vue?vue&type=script&lang=js 362 bytes {0} [built]
+   [2] ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js 1.53 kB {0} [built] [failed] [1 error]
+   [3] ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 41 bytes {0} [built]
+   [4] ./app/javascript/packs/application.js 515 bytes {1} [built]
+   [5] ./app/javascript/packs/hello_vue.js 1.93 kB {0} [built]
+  [10] ./app/javascript/app.vue 964 bytes {0} [built]
+  [11] ./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 212 bytes {0} [built]
+  [12] ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 721 bytes {0} [built]
+  [13] ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 896 bytes {0} [built]
+    + 5 hidden modules
+
+ERROR in ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js
+Module build failed: ReferenceError: [BABEL] /Users/shoda/digitalholdem/app/javascript/app.vue: Unknown option: base.omit. Check out http://babeljs.io/docs/usage/options/ for more information about options.
+
+A common cause of this error is the presence of a configuration options object without the corresponding preset name. Example:
+
+Invalid:
+  `{ presets: [{option: value}] }`
+Valid:
+  `{ presets: [['presetName', {option: value}]] }`
+
+For more detailed information on preset configuration, please see https://babeljs.io/docs/en/plugins#pluginpresets-options.
+    at Logger.error (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/logger.js:41:11)
+    at OptionManager.mergeOptions (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/options/option-manager.js:226:20)
+    at OptionManager.init (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/options/option-manager.js:368:12)
+    at File.initOptions (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/index.js:212:65)
+    at new File (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/index.js:135:24)
+    at Pipeline.transform (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/pipeline.js:46:16)
+    at transpile (/Users/shoda/digitalholdem/node_modules/babel-loader/lib/index.js:50:20)
+    at Object.module.exports (/Users/shoda/digitalholdem/node_modules/babel-loader/lib/index.js:173:20)
+ @ ./app/javascript/app.vue?vue&type=script&lang=js 1:0-172 1:193-362
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+
+ERROR in ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css
+Module build failed: ValidationError: Style Loader Invalid Options
+
+options['ident'] is an invalid additional property
+
+ @ ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 1:0-439 1:460-896
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+Child extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js??ref--1-2!node_modules/vue-loader/lib/loaders/stylePostLoader.js!node_modules/postcss-loader/lib/index.js??ref--1-3!node_modules/vue-loader/lib/index.js??vue-loader-options!app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css:
+       [0] ./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 775 bytes {0} [built]
+        + 1 hidden module
+
+Completed 200 OK in 3699ms (Views: 3690.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/communities/5" for 127.0.0.1 at 2018-05-03 22:41:54 +0900
+Processing by CommunitiesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPlayer Load (0.4ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCommunity Load (0.3ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mHole Load (0.4ms)[0m  [1m[34mSELECT  "holes".* FROM "holes" WHERE "holes"."player_id" = $1 ORDER BY "holes"."id" DESC LIMIT $2[0m  [["player_id", 1], ["LIMIT", 1]]
+  Rendering communities/show.html.slim within layouts/application
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Community"]]
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Hole"]]
+  Rendered communities/show.html.slim within layouts/application (8.9ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+Hash: b71dcb84cde163307b74
+Version: webpack 3.11.0
+Time: 1118ms
+                                             Asset       Size  Chunks             Chunk Names
+                 hello_vue-08543bc77cf16798d112.js     248 kB       0  [emitted]  hello_vue
+               application-12a437e15157c0d4029c.js    3.27 kB       1  [emitted]  application
+    hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css  138 bytes       0  [emitted]  hello_vue
+             hello_vue-08543bc77cf16798d112.js.map     293 kB       0  [emitted]  hello_vue
+hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css.map  561 bytes       0  [emitted]  hello_vue
+           application-12a437e15157c0d4029c.js.map    3.19 kB       1  [emitted]  application
+                                     manifest.json  434 bytes          [emitted]  
+   [0] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [1] ./app/javascript/app.vue?vue&type=script&lang=js 362 bytes {0} [built]
+   [2] ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js 1.53 kB {0} [built] [failed] [1 error]
+   [3] ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 41 bytes {0} [built]
+   [4] ./app/javascript/packs/application.js 515 bytes {1} [built]
+   [5] ./app/javascript/packs/hello_vue.js 1.93 kB {0} [built]
+  [10] ./app/javascript/app.vue 964 bytes {0} [built]
+  [11] ./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 212 bytes {0} [built]
+  [12] ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 721 bytes {0} [built]
+  [13] ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 896 bytes {0} [built]
+    + 5 hidden modules
+
+ERROR in ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js
+Module build failed: ReferenceError: [BABEL] /Users/shoda/digitalholdem/app/javascript/app.vue: Unknown option: base.omit. Check out http://babeljs.io/docs/usage/options/ for more information about options.
+
+A common cause of this error is the presence of a configuration options object without the corresponding preset name. Example:
+
+Invalid:
+  `{ presets: [{option: value}] }`
+Valid:
+  `{ presets: [['presetName', {option: value}]] }`
+
+For more detailed information on preset configuration, please see https://babeljs.io/docs/en/plugins#pluginpresets-options.
+    at Logger.error (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/logger.js:41:11)
+    at OptionManager.mergeOptions (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/options/option-manager.js:226:20)
+    at OptionManager.init (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/options/option-manager.js:368:12)
+    at File.initOptions (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/index.js:212:65)
+    at new File (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/index.js:135:24)
+    at Pipeline.transform (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/pipeline.js:46:16)
+    at transpile (/Users/shoda/digitalholdem/node_modules/babel-loader/lib/index.js:50:20)
+    at Object.module.exports (/Users/shoda/digitalholdem/node_modules/babel-loader/lib/index.js:173:20)
+ @ ./app/javascript/app.vue?vue&type=script&lang=js 1:0-172 1:193-362
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+
+ERROR in ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css
+Module build failed: ValidationError: Style Loader Invalid Options
+
+options['ident'] is an invalid additional property
+
+ @ ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 1:0-439 1:460-896
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+Child extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js??ref--1-2!node_modules/vue-loader/lib/loaders/stylePostLoader.js!node_modules/postcss-loader/lib/index.js??ref--1-3!node_modules/vue-loader/lib/index.js??vue-loader-options!app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css:
+       [0] ./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 775 bytes {0} [built]
+        + 1 hidden module
+
+Completed 200 OK in 2490ms (Views: 2482.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/communities/5" for 127.0.0.1 at 2018-05-03 22:43:22 +0900
+Processing by CommunitiesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCommunity Load (0.2ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mHole Load (0.6ms)[0m  [1m[34mSELECT  "holes".* FROM "holes" WHERE "holes"."player_id" = $1 ORDER BY "holes"."id" DESC LIMIT $2[0m  [["player_id", 1], ["LIMIT", 1]]
+  Rendering communities/show.html.slim within layouts/application
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Community"]]
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Hole"]]
+  Rendered communities/show.html.slim within layouts/application (10.6ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+Hash: b71dcb84cde163307b74
+Version: webpack 3.11.0
+Time: 2047ms
+                                             Asset       Size  Chunks             Chunk Names
+                 hello_vue-08543bc77cf16798d112.js     248 kB       0  [emitted]  hello_vue
+               application-12a437e15157c0d4029c.js    3.27 kB       1  [emitted]  application
+    hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css  138 bytes       0  [emitted]  hello_vue
+             hello_vue-08543bc77cf16798d112.js.map     293 kB       0  [emitted]  hello_vue
+hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css.map  561 bytes       0  [emitted]  hello_vue
+           application-12a437e15157c0d4029c.js.map    3.19 kB       1  [emitted]  application
+                                     manifest.json  434 bytes          [emitted]  
+   [0] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [1] ./app/javascript/app.vue?vue&type=script&lang=js 362 bytes {0} [built]
+   [2] ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js 1.53 kB {0} [built] [failed] [1 error]
+   [3] ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 41 bytes {0} [built]
+   [4] ./app/javascript/packs/application.js 515 bytes {1} [built]
+   [5] ./app/javascript/packs/hello_vue.js 1.93 kB {0} [built]
+  [10] ./app/javascript/app.vue 964 bytes {0} [built]
+  [11] ./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 212 bytes {0} [built]
+  [12] ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 721 bytes {0} [built]
+  [13] ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 896 bytes {0} [built]
+    + 5 hidden modules
+
+ERROR in ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js
+Module build failed: ReferenceError: [BABEL] /Users/shoda/digitalholdem/app/javascript/app.vue: Unknown option: base.omit. Check out http://babeljs.io/docs/usage/options/ for more information about options.
+
+A common cause of this error is the presence of a configuration options object without the corresponding preset name. Example:
+
+Invalid:
+  `{ presets: [{option: value}] }`
+Valid:
+  `{ presets: [['presetName', {option: value}]] }`
+
+For more detailed information on preset configuration, please see https://babeljs.io/docs/en/plugins#pluginpresets-options.
+    at Logger.error (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/logger.js:41:11)
+    at OptionManager.mergeOptions (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/options/option-manager.js:226:20)
+    at OptionManager.init (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/options/option-manager.js:368:12)
+    at File.initOptions (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/index.js:212:65)
+    at new File (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/index.js:135:24)
+    at Pipeline.transform (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/pipeline.js:46:16)
+    at transpile (/Users/shoda/digitalholdem/node_modules/babel-loader/lib/index.js:50:20)
+    at Object.module.exports (/Users/shoda/digitalholdem/node_modules/babel-loader/lib/index.js:173:20)
+ @ ./app/javascript/app.vue?vue&type=script&lang=js 1:0-172 1:193-362
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+
+ERROR in ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css
+Module build failed: ValidationError: Style Loader Invalid Options
+
+options['ident'] is an invalid additional property
+
+ @ ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 1:0-439 1:460-896
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+Child extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js??ref--1-2!node_modules/vue-loader/lib/loaders/stylePostLoader.js!node_modules/postcss-loader/lib/index.js??ref--1-3!node_modules/vue-loader/lib/index.js??vue-loader-options!app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css:
+       [0] ./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 775 bytes {0} [built]
+        + 1 hidden module
+
+Completed 200 OK in 4190ms (Views: 4182.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/communities/5" for 127.0.0.1 at 2018-05-03 23:09:00 +0900
+Processing by CommunitiesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPlayer Load (1.0ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCommunity Load (0.4ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mHole Load (0.6ms)[0m  [1m[34mSELECT  "holes".* FROM "holes" WHERE "holes"."player_id" = $1 ORDER BY "holes"."id" DESC LIMIT $2[0m  [["player_id", 1], ["LIMIT", 1]]
+  Rendering communities/show.html.slim within layouts/application
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Community"]]
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Hole"]]
+  Rendered communities/show.html.slim within layouts/application (28.9ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+Hash: b71dcb84cde163307b74
+Version: webpack 3.11.0
+Time: 2074ms
+                                             Asset       Size  Chunks             Chunk Names
+                 hello_vue-08543bc77cf16798d112.js     248 kB       0  [emitted]  hello_vue
+               application-12a437e15157c0d4029c.js    3.27 kB       1  [emitted]  application
+    hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css  138 bytes       0  [emitted]  hello_vue
+             hello_vue-08543bc77cf16798d112.js.map     293 kB       0  [emitted]  hello_vue
+hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css.map  561 bytes       0  [emitted]  hello_vue
+           application-12a437e15157c0d4029c.js.map    3.19 kB       1  [emitted]  application
+                                     manifest.json  434 bytes          [emitted]  
+   [0] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [1] ./app/javascript/app.vue?vue&type=script&lang=js 362 bytes {0} [built]
+   [2] ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js 1.53 kB {0} [built] [failed] [1 error]
+   [3] ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 41 bytes {0} [built]
+   [4] ./app/javascript/packs/application.js 515 bytes {1} [built]
+   [5] ./app/javascript/packs/hello_vue.js 1.93 kB {0} [built]
+  [10] ./app/javascript/app.vue 964 bytes {0} [built]
+  [11] ./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 212 bytes {0} [built]
+  [12] ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 721 bytes {0} [built]
+  [13] ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 896 bytes {0} [built]
+    + 5 hidden modules
+
+ERROR in ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js
+Module build failed: ReferenceError: [BABEL] /Users/shoda/digitalholdem/app/javascript/app.vue: Unknown option: base.omit. Check out http://babeljs.io/docs/usage/options/ for more information about options.
+
+A common cause of this error is the presence of a configuration options object without the corresponding preset name. Example:
+
+Invalid:
+  `{ presets: [{option: value}] }`
+Valid:
+  `{ presets: [['presetName', {option: value}]] }`
+
+For more detailed information on preset configuration, please see https://babeljs.io/docs/en/plugins#pluginpresets-options.
+    at Logger.error (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/logger.js:41:11)
+    at OptionManager.mergeOptions (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/options/option-manager.js:226:20)
+    at OptionManager.init (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/options/option-manager.js:368:12)
+    at File.initOptions (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/index.js:212:65)
+    at new File (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/index.js:135:24)
+    at Pipeline.transform (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/pipeline.js:46:16)
+    at transpile (/Users/shoda/digitalholdem/node_modules/babel-loader/lib/index.js:50:20)
+    at Object.module.exports (/Users/shoda/digitalholdem/node_modules/babel-loader/lib/index.js:173:20)
+ @ ./app/javascript/app.vue?vue&type=script&lang=js 1:0-172 1:193-362
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+
+ERROR in ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css
+Module build failed: ValidationError: Style Loader Invalid Options
+
+options['ident'] is an invalid additional property
+
+ @ ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 1:0-439 1:460-896
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+Child extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js??ref--1-2!node_modules/vue-loader/lib/loaders/stylePostLoader.js!node_modules/postcss-loader/lib/index.js??ref--1-3!node_modules/vue-loader/lib/index.js??vue-loader-options!app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css:
+       [0] ./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 775 bytes {0} [built]
+        + 1 hidden module
+
+Completed 200 OK in 4503ms (Views: 4470.2ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/communities/5" for 127.0.0.1 at 2018-05-04 00:14:05 +0900
+Processing by CommunitiesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPlayer Load (0.8ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCommunity Load (0.4ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mHole Load (0.8ms)[0m  [1m[34mSELECT  "holes".* FROM "holes" WHERE "holes"."player_id" = $1 ORDER BY "holes"."id" DESC LIMIT $2[0m  [["player_id", 1], ["LIMIT", 1]]
+  Rendering communities/show.html.slim within layouts/application
+  [1m[36mCard Load (0.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Community"]]
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Hole"]]
+  Rendered communities/show.html.slim within layouts/application (30.8ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+Hash: b71dcb84cde163307b74
+Version: webpack 3.11.0
+Time: 2124ms
+                                             Asset       Size  Chunks             Chunk Names
+                 hello_vue-08543bc77cf16798d112.js     248 kB       0  [emitted]  hello_vue
+               application-12a437e15157c0d4029c.js    3.27 kB       1  [emitted]  application
+    hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css  138 bytes       0  [emitted]  hello_vue
+             hello_vue-08543bc77cf16798d112.js.map     293 kB       0  [emitted]  hello_vue
+hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css.map  561 bytes       0  [emitted]  hello_vue
+           application-12a437e15157c0d4029c.js.map    3.19 kB       1  [emitted]  application
+                                     manifest.json  434 bytes          [emitted]  
+   [0] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [1] ./app/javascript/app.vue?vue&type=script&lang=js 362 bytes {0} [built]
+   [2] ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js 1.53 kB {0} [built] [failed] [1 error]
+   [3] ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 41 bytes {0} [built]
+   [4] ./app/javascript/packs/application.js 515 bytes {1} [built]
+   [5] ./app/javascript/packs/hello_vue.js 1.93 kB {0} [built]
+  [10] ./app/javascript/app.vue 964 bytes {0} [built]
+  [11] ./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 212 bytes {0} [built]
+  [12] ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 721 bytes {0} [built]
+  [13] ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 896 bytes {0} [built]
+    + 5 hidden modules
+
+ERROR in ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js
+Module build failed: ReferenceError: [BABEL] /Users/shoda/digitalholdem/app/javascript/app.vue: Unknown option: base.omit. Check out http://babeljs.io/docs/usage/options/ for more information about options.
+
+A common cause of this error is the presence of a configuration options object without the corresponding preset name. Example:
+
+Invalid:
+  `{ presets: [{option: value}] }`
+Valid:
+  `{ presets: [['presetName', {option: value}]] }`
+
+For more detailed information on preset configuration, please see https://babeljs.io/docs/en/plugins#pluginpresets-options.
+    at Logger.error (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/logger.js:41:11)
+    at OptionManager.mergeOptions (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/options/option-manager.js:226:20)
+    at OptionManager.init (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/options/option-manager.js:368:12)
+    at File.initOptions (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/index.js:212:65)
+    at new File (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/index.js:135:24)
+    at Pipeline.transform (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/pipeline.js:46:16)
+    at transpile (/Users/shoda/digitalholdem/node_modules/babel-loader/lib/index.js:50:20)
+    at Object.module.exports (/Users/shoda/digitalholdem/node_modules/babel-loader/lib/index.js:173:20)
+ @ ./app/javascript/app.vue?vue&type=script&lang=js 1:0-172 1:193-362
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+
+ERROR in ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css
+Module build failed: ValidationError: Style Loader Invalid Options
+
+options['ident'] is an invalid additional property
+
+ @ ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 1:0-439 1:460-896
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+Child extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js??ref--1-2!node_modules/vue-loader/lib/loaders/stylePostLoader.js!node_modules/postcss-loader/lib/index.js??ref--1-3!node_modules/vue-loader/lib/index.js??vue-loader-options!app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css:
+       [0] ./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 775 bytes {0} [built]
+        + 1 hidden module
+
+Completed 200 OK in 4425ms (Views: 4390.7ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/communities/5" for 127.0.0.1 at 2018-05-04 00:15:20 +0900
+Processing by CommunitiesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPlayer Load (0.7ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCommunity Load (0.5ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mHole Load (0.6ms)[0m  [1m[34mSELECT  "holes".* FROM "holes" WHERE "holes"."player_id" = $1 ORDER BY "holes"."id" DESC LIMIT $2[0m  [["player_id", 1], ["LIMIT", 1]]
+  Rendering communities/show.html.slim within layouts/application
+  [1m[36mCard Load (0.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Community"]]
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Hole"]]
+  Rendered communities/show.html.slim within layouts/application (15.6ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+Hash: b71dcb84cde163307b74
+Version: webpack 3.11.0
+Time: 2033ms
+                                             Asset       Size  Chunks             Chunk Names
+                 hello_vue-08543bc77cf16798d112.js     248 kB       0  [emitted]  hello_vue
+               application-12a437e15157c0d4029c.js    3.27 kB       1  [emitted]  application
+    hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css  138 bytes       0  [emitted]  hello_vue
+             hello_vue-08543bc77cf16798d112.js.map     293 kB       0  [emitted]  hello_vue
+hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css.map  561 bytes       0  [emitted]  hello_vue
+           application-12a437e15157c0d4029c.js.map    3.19 kB       1  [emitted]  application
+                                     manifest.json  434 bytes          [emitted]  
+   [0] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [1] ./app/javascript/app.vue?vue&type=script&lang=js 362 bytes {0} [built]
+   [2] ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js 1.53 kB {0} [built] [failed] [1 error]
+   [3] ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 41 bytes {0} [built]
+   [4] ./app/javascript/packs/application.js 515 bytes {1} [built]
+   [5] ./app/javascript/packs/hello_vue.js 1.93 kB {0} [built]
+  [10] ./app/javascript/app.vue 964 bytes {0} [built]
+  [11] ./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 212 bytes {0} [built]
+  [12] ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 721 bytes {0} [built]
+  [13] ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 896 bytes {0} [built]
+    + 5 hidden modules
+
+ERROR in ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js
+Module build failed: ReferenceError: [BABEL] /Users/shoda/digitalholdem/app/javascript/app.vue: Unknown option: base.omit. Check out http://babeljs.io/docs/usage/options/ for more information about options.
+
+A common cause of this error is the presence of a configuration options object without the corresponding preset name. Example:
+
+Invalid:
+  `{ presets: [{option: value}] }`
+Valid:
+  `{ presets: [['presetName', {option: value}]] }`
+
+For more detailed information on preset configuration, please see https://babeljs.io/docs/en/plugins#pluginpresets-options.
+    at Logger.error (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/logger.js:41:11)
+    at OptionManager.mergeOptions (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/options/option-manager.js:226:20)
+    at OptionManager.init (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/options/option-manager.js:368:12)
+    at File.initOptions (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/index.js:212:65)
+    at new File (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/index.js:135:24)
+    at Pipeline.transform (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/pipeline.js:46:16)
+    at transpile (/Users/shoda/digitalholdem/node_modules/babel-loader/lib/index.js:50:20)
+    at Object.module.exports (/Users/shoda/digitalholdem/node_modules/babel-loader/lib/index.js:173:20)
+ @ ./app/javascript/app.vue?vue&type=script&lang=js 1:0-172 1:193-362
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+
+ERROR in ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css
+Module build failed: ValidationError: Style Loader Invalid Options
+
+options['ident'] is an invalid additional property
+
+ @ ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 1:0-439 1:460-896
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+Child extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js??ref--1-2!node_modules/vue-loader/lib/loaders/stylePostLoader.js!node_modules/postcss-loader/lib/index.js??ref--1-3!node_modules/vue-loader/lib/index.js??vue-loader-options!app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css:
+       [0] ./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 775 bytes {0} [built]
+        + 1 hidden module
+
+Completed 200 OK in 4220ms (Views: 4210.9ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/communities/5" for 127.0.0.1 at 2018-05-04 00:15:47 +0900
+Processing by CommunitiesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPlayer Load (0.4ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCommunity Load (0.2ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mHole Load (0.5ms)[0m  [1m[34mSELECT  "holes".* FROM "holes" WHERE "holes"."player_id" = $1 ORDER BY "holes"."id" DESC LIMIT $2[0m  [["player_id", 1], ["LIMIT", 1]]
+  Rendering communities/show.html.slim within layouts/application
+  [1m[36mCard Load (0.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Community"]]
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Hole"]]
+  Rendered communities/show.html.slim within layouts/application (10.8ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+Hash: b71dcb84cde163307b74
+Version: webpack 3.11.0
+Time: 2061ms
+                                             Asset       Size  Chunks             Chunk Names
+                 hello_vue-08543bc77cf16798d112.js     248 kB       0  [emitted]  hello_vue
+               application-12a437e15157c0d4029c.js    3.27 kB       1  [emitted]  application
+    hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css  138 bytes       0  [emitted]  hello_vue
+             hello_vue-08543bc77cf16798d112.js.map     293 kB       0  [emitted]  hello_vue
+hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css.map  561 bytes       0  [emitted]  hello_vue
+           application-12a437e15157c0d4029c.js.map    3.19 kB       1  [emitted]  application
+                                     manifest.json  434 bytes          [emitted]  
+   [0] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [1] ./app/javascript/app.vue?vue&type=script&lang=js 362 bytes {0} [built]
+   [2] ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js 1.53 kB {0} [built] [failed] [1 error]
+   [3] ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 41 bytes {0} [built]
+   [4] ./app/javascript/packs/application.js 515 bytes {1} [built]
+   [5] ./app/javascript/packs/hello_vue.js 1.93 kB {0} [built]
+  [10] ./app/javascript/app.vue 964 bytes {0} [built]
+  [11] ./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 212 bytes {0} [built]
+  [12] ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 721 bytes {0} [built]
+  [13] ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 896 bytes {0} [built]
+    + 5 hidden modules
+
+ERROR in ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js
+Module build failed: ReferenceError: [BABEL] /Users/shoda/digitalholdem/app/javascript/app.vue: Unknown option: base.omit. Check out http://babeljs.io/docs/usage/options/ for more information about options.
+
+A common cause of this error is the presence of a configuration options object without the corresponding preset name. Example:
+
+Invalid:
+  `{ presets: [{option: value}] }`
+Valid:
+  `{ presets: [['presetName', {option: value}]] }`
+
+For more detailed information on preset configuration, please see https://babeljs.io/docs/en/plugins#pluginpresets-options.
+    at Logger.error (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/logger.js:41:11)
+    at OptionManager.mergeOptions (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/options/option-manager.js:226:20)
+    at OptionManager.init (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/options/option-manager.js:368:12)
+    at File.initOptions (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/index.js:212:65)
+    at new File (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/index.js:135:24)
+    at Pipeline.transform (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/pipeline.js:46:16)
+    at transpile (/Users/shoda/digitalholdem/node_modules/babel-loader/lib/index.js:50:20)
+    at Object.module.exports (/Users/shoda/digitalholdem/node_modules/babel-loader/lib/index.js:173:20)
+ @ ./app/javascript/app.vue?vue&type=script&lang=js 1:0-172 1:193-362
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+
+ERROR in ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css
+Module build failed: ValidationError: Style Loader Invalid Options
+
+options['ident'] is an invalid additional property
+
+ @ ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 1:0-439 1:460-896
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+Child extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js??ref--1-2!node_modules/vue-loader/lib/loaders/stylePostLoader.js!node_modules/postcss-loader/lib/index.js??ref--1-3!node_modules/vue-loader/lib/index.js??vue-loader-options!app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css:
+       [0] ./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 775 bytes {0} [built]
+        + 1 hidden module
+
+Completed 200 OK in 4114ms (Views: 4107.1ms | ActiveRecord: 1.6ms)
+
+
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT  "cards".* FROM "cards" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCard Load (1.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+Started GET "/communities/5" for 127.0.0.1 at 2018-05-04 00:19:51 +0900
+Processing by CommunitiesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPlayer Load (0.5ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCommunity Load (0.3ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mHole Load (0.6ms)[0m  [1m[34mSELECT  "holes".* FROM "holes" WHERE "holes"."player_id" = $1 ORDER BY "holes"."id" DESC LIMIT $2[0m  [["player_id", 1], ["LIMIT", 1]]
+  Rendering communities/show.html.slim within layouts/application
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Community"]]
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Hole"]]
+  Rendered communities/show.html.slim within layouts/application (9.7ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+Hash: b71dcb84cde163307b74
+Version: webpack 3.11.0
+Time: 2191ms
+                                             Asset       Size  Chunks             Chunk Names
+                 hello_vue-08543bc77cf16798d112.js     248 kB       0  [emitted]  hello_vue
+               application-12a437e15157c0d4029c.js    3.27 kB       1  [emitted]  application
+    hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css  138 bytes       0  [emitted]  hello_vue
+             hello_vue-08543bc77cf16798d112.js.map     293 kB       0  [emitted]  hello_vue
+hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css.map  561 bytes       0  [emitted]  hello_vue
+           application-12a437e15157c0d4029c.js.map    3.19 kB       1  [emitted]  application
+                                     manifest.json  434 bytes          [emitted]  
+   [0] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [1] ./app/javascript/app.vue?vue&type=script&lang=js 362 bytes {0} [built]
+   [2] ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js 1.53 kB {0} [built] [failed] [1 error]
+   [3] ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 41 bytes {0} [built]
+   [4] ./app/javascript/packs/application.js 515 bytes {1} [built]
+   [5] ./app/javascript/packs/hello_vue.js 1.93 kB {0} [built]
+  [10] ./app/javascript/app.vue 964 bytes {0} [built]
+  [11] ./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 212 bytes {0} [built]
+  [12] ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 721 bytes {0} [built]
+  [13] ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 896 bytes {0} [built]
+    + 5 hidden modules
+
+ERROR in ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js
+Module build failed: ReferenceError: [BABEL] /Users/shoda/digitalholdem/app/javascript/app.vue: Unknown option: base.omit. Check out http://babeljs.io/docs/usage/options/ for more information about options.
+
+A common cause of this error is the presence of a configuration options object without the corresponding preset name. Example:
+
+Invalid:
+  `{ presets: [{option: value}] }`
+Valid:
+  `{ presets: [['presetName', {option: value}]] }`
+
+For more detailed information on preset configuration, please see https://babeljs.io/docs/en/plugins#pluginpresets-options.
+    at Logger.error (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/logger.js:41:11)
+    at OptionManager.mergeOptions (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/options/option-manager.js:226:20)
+    at OptionManager.init (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/options/option-manager.js:368:12)
+    at File.initOptions (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/index.js:212:65)
+    at new File (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/index.js:135:24)
+    at Pipeline.transform (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/pipeline.js:46:16)
+    at transpile (/Users/shoda/digitalholdem/node_modules/babel-loader/lib/index.js:50:20)
+    at Object.module.exports (/Users/shoda/digitalholdem/node_modules/babel-loader/lib/index.js:173:20)
+ @ ./app/javascript/app.vue?vue&type=script&lang=js 1:0-172 1:193-362
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+
+ERROR in ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css
+Module build failed: ValidationError: Style Loader Invalid Options
+
+options['ident'] is an invalid additional property
+
+ @ ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 1:0-439 1:460-896
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+Child extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js??ref--1-2!node_modules/vue-loader/lib/loaders/stylePostLoader.js!node_modules/postcss-loader/lib/index.js??ref--1-3!node_modules/vue-loader/lib/index.js??vue-loader-options!app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css:
+       [0] ./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 775 bytes {0} [built]
+        + 1 hidden module
+
+Completed 200 OK in 4329ms (Views: 4319.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/communities/5" for 127.0.0.1 at 2018-05-04 00:21:34 +0900
+Processing by CommunitiesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCommunity Load (0.2ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mHole Load (0.4ms)[0m  [1m[34mSELECT  "holes".* FROM "holes" WHERE "holes"."player_id" = $1 ORDER BY "holes"."id" DESC LIMIT $2[0m  [["player_id", 1], ["LIMIT", 1]]
+  Rendering communities/show.html.slim within layouts/application
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Community"]]
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Hole"]]
+  Rendered communities/show.html.slim within layouts/application (20.5ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+Hash: b71dcb84cde163307b74
+Version: webpack 3.11.0
+Time: 2059ms
+                                             Asset       Size  Chunks             Chunk Names
+                 hello_vue-08543bc77cf16798d112.js     248 kB       0  [emitted]  hello_vue
+               application-12a437e15157c0d4029c.js    3.27 kB       1  [emitted]  application
+    hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css  138 bytes       0  [emitted]  hello_vue
+             hello_vue-08543bc77cf16798d112.js.map     293 kB       0  [emitted]  hello_vue
+hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css.map  561 bytes       0  [emitted]  hello_vue
+           application-12a437e15157c0d4029c.js.map    3.19 kB       1  [emitted]  application
+                                     manifest.json  434 bytes          [emitted]  
+   [0] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [1] ./app/javascript/app.vue?vue&type=script&lang=js 362 bytes {0} [built]
+   [2] ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js 1.53 kB {0} [built] [failed] [1 error]
+   [3] ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 41 bytes {0} [built]
+   [4] ./app/javascript/packs/application.js 515 bytes {1} [built]
+   [5] ./app/javascript/packs/hello_vue.js 1.93 kB {0} [built]
+  [10] ./app/javascript/app.vue 964 bytes {0} [built]
+  [11] ./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 212 bytes {0} [built]
+  [12] ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 721 bytes {0} [built]
+  [13] ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 896 bytes {0} [built]
+    + 5 hidden modules
+
+ERROR in ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js
+Module build failed: ReferenceError: [BABEL] /Users/shoda/digitalholdem/app/javascript/app.vue: Unknown option: base.omit. Check out http://babeljs.io/docs/usage/options/ for more information about options.
+
+A common cause of this error is the presence of a configuration options object without the corresponding preset name. Example:
+
+Invalid:
+  `{ presets: [{option: value}] }`
+Valid:
+  `{ presets: [['presetName', {option: value}]] }`
+
+For more detailed information on preset configuration, please see https://babeljs.io/docs/en/plugins#pluginpresets-options.
+    at Logger.error (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/logger.js:41:11)
+    at OptionManager.mergeOptions (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/options/option-manager.js:226:20)
+    at OptionManager.init (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/options/option-manager.js:368:12)
+    at File.initOptions (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/index.js:212:65)
+    at new File (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/index.js:135:24)
+    at Pipeline.transform (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/pipeline.js:46:16)
+    at transpile (/Users/shoda/digitalholdem/node_modules/babel-loader/lib/index.js:50:20)
+    at Object.module.exports (/Users/shoda/digitalholdem/node_modules/babel-loader/lib/index.js:173:20)
+ @ ./app/javascript/app.vue?vue&type=script&lang=js 1:0-172 1:193-362
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+
+ERROR in ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css
+Module build failed: ValidationError: Style Loader Invalid Options
+
+options['ident'] is an invalid additional property
+
+ @ ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 1:0-439 1:460-896
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+Child extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js??ref--1-2!node_modules/vue-loader/lib/loaders/stylePostLoader.js!node_modules/postcss-loader/lib/index.js??ref--1-3!node_modules/vue-loader/lib/index.js??vue-loader-options!app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css:
+       [0] ./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 775 bytes {0} [built]
+        + 1 hidden module
+
+Completed 200 OK in 4290ms (Views: 4282.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/communities/c3.png" for 127.0.0.1 at 2018-05-04 00:21:40 +0900
+Processing by CommunitiesController#show as PNG
+  Parameters: {"id"=>"c3"}
+  [1m[36mPlayer Load (0.3ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCommunity Load (0.3ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 5ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Community with 'id'=c3):
+  
+app/controllers/communities_controller.rb:30:in `show'
+Started GET "/communities/c3.png" for 127.0.0.1 at 2018-05-04 00:21:42 +0900
+Processing by CommunitiesController#show as PNG
+  Parameters: {"id"=>"c3"}
+  [1m[36mPlayer Load (0.3ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCommunity Load (0.2ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 4ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Community with 'id'=c3):
+  
+app/controllers/communities_controller.rb:30:in `show'
+Started GET "/communities/c3.png" for 127.0.0.1 at 2018-05-04 00:21:45 +0900
+Processing by CommunitiesController#show as PNG
+  Parameters: {"id"=>"c3"}
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCommunity Load (0.2ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Community with 'id'=c3):
+  
+app/controllers/communities_controller.rb:30:in `show'
+Started GET "/communities/c3.png" for 127.0.0.1 at 2018-05-04 00:21:46 +0900
+Processing by CommunitiesController#show as PNG
+  Parameters: {"id"=>"c3"}
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCommunity Load (0.3ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Community with 'id'=c3):
+  
+app/controllers/communities_controller.rb:30:in `show'
+Started GET "/communities/5" for 127.0.0.1 at 2018-05-04 00:21:55 +0900
+Processing by CommunitiesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPlayer Load (0.3ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCommunity Load (0.2ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mHole Load (0.3ms)[0m  [1m[34mSELECT  "holes".* FROM "holes" WHERE "holes"."player_id" = $1 ORDER BY "holes"."id" DESC LIMIT $2[0m  [["player_id", 1], ["LIMIT", 1]]
+  Rendering communities/show.html.slim within layouts/application
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Community"]]
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Hole"]]
+  Rendered communities/show.html.slim within layouts/application (9.9ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+Hash: b71dcb84cde163307b74
+Version: webpack 3.11.0
+Time: 1236ms
+                                             Asset       Size  Chunks             Chunk Names
+                 hello_vue-08543bc77cf16798d112.js     248 kB       0  [emitted]  hello_vue
+               application-12a437e15157c0d4029c.js    3.27 kB       1  [emitted]  application
+    hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css  138 bytes       0  [emitted]  hello_vue
+             hello_vue-08543bc77cf16798d112.js.map     293 kB       0  [emitted]  hello_vue
+hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css.map  561 bytes       0  [emitted]  hello_vue
+           application-12a437e15157c0d4029c.js.map    3.19 kB       1  [emitted]  application
+                                     manifest.json  434 bytes          [emitted]  
+   [0] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [1] ./app/javascript/app.vue?vue&type=script&lang=js 362 bytes {0} [built]
+   [2] ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js 1.53 kB {0} [built] [failed] [1 error]
+   [3] ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 41 bytes {0} [built]
+   [4] ./app/javascript/packs/application.js 515 bytes {1} [built]
+   [5] ./app/javascript/packs/hello_vue.js 1.93 kB {0} [built]
+  [10] ./app/javascript/app.vue 964 bytes {0} [built]
+  [11] ./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 212 bytes {0} [built]
+  [12] ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 721 bytes {0} [built]
+  [13] ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 896 bytes {0} [built]
+    + 5 hidden modules
+
+ERROR in ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js
+Module build failed: ReferenceError: [BABEL] /Users/shoda/digitalholdem/app/javascript/app.vue: Unknown option: base.omit. Check out http://babeljs.io/docs/usage/options/ for more information about options.
+
+A common cause of this error is the presence of a configuration options object without the corresponding preset name. Example:
+
+Invalid:
+  `{ presets: [{option: value}] }`
+Valid:
+  `{ presets: [['presetName', {option: value}]] }`
+
+For more detailed information on preset configuration, please see https://babeljs.io/docs/en/plugins#pluginpresets-options.
+    at Logger.error (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/logger.js:41:11)
+    at OptionManager.mergeOptions (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/options/option-manager.js:226:20)
+    at OptionManager.init (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/options/option-manager.js:368:12)
+    at File.initOptions (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/index.js:212:65)
+    at new File (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/index.js:135:24)
+    at Pipeline.transform (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/pipeline.js:46:16)
+    at transpile (/Users/shoda/digitalholdem/node_modules/babel-loader/lib/index.js:50:20)
+    at Object.module.exports (/Users/shoda/digitalholdem/node_modules/babel-loader/lib/index.js:173:20)
+ @ ./app/javascript/app.vue?vue&type=script&lang=js 1:0-172 1:193-362
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+
+ERROR in ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css
+Module build failed: ValidationError: Style Loader Invalid Options
+
+options['ident'] is an invalid additional property
+
+ @ ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 1:0-439 1:460-896
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+Child extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js??ref--1-2!node_modules/vue-loader/lib/loaders/stylePostLoader.js!node_modules/postcss-loader/lib/index.js??ref--1-3!node_modules/vue-loader/lib/index.js??vue-loader-options!app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css:
+       [0] ./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 775 bytes {0} [built]
+        + 1 hidden module
+
+Completed 200 OK in 3226ms (Views: 3219.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/communities/5" for 127.0.0.1 at 2018-05-04 00:32:50 +0900
+Processing by CommunitiesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPlayer Load (0.4ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCommunity Load (0.3ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mHole Load (0.5ms)[0m  [1m[34mSELECT  "holes".* FROM "holes" WHERE "holes"."player_id" = $1 ORDER BY "holes"."id" DESC LIMIT $2[0m  [["player_id", 1], ["LIMIT", 1]]
+  Rendering communities/show.html.slim within layouts/application
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Community"]]
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Hole"]]
+  Rendered communities/show.html.slim within layouts/application (13.7ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+Hash: b71dcb84cde163307b74
+Version: webpack 3.11.0
+Time: 2104ms
+                                             Asset       Size  Chunks             Chunk Names
+                 hello_vue-08543bc77cf16798d112.js     248 kB       0  [emitted]  hello_vue
+               application-12a437e15157c0d4029c.js    3.27 kB       1  [emitted]  application
+    hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css  138 bytes       0  [emitted]  hello_vue
+             hello_vue-08543bc77cf16798d112.js.map     293 kB       0  [emitted]  hello_vue
+hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css.map  561 bytes       0  [emitted]  hello_vue
+           application-12a437e15157c0d4029c.js.map    3.19 kB       1  [emitted]  application
+                                     manifest.json  434 bytes          [emitted]  
+   [0] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [1] ./app/javascript/app.vue?vue&type=script&lang=js 362 bytes {0} [built]
+   [2] ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js 1.53 kB {0} [built] [failed] [1 error]
+   [3] ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 41 bytes {0} [built]
+   [4] ./app/javascript/packs/application.js 515 bytes {1} [built]
+   [5] ./app/javascript/packs/hello_vue.js 1.93 kB {0} [built]
+  [10] ./app/javascript/app.vue 964 bytes {0} [built]
+  [11] ./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 212 bytes {0} [built]
+  [12] ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 721 bytes {0} [built]
+  [13] ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 896 bytes {0} [built]
+    + 5 hidden modules
+
+ERROR in ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js
+Module build failed: ReferenceError: [BABEL] /Users/shoda/digitalholdem/app/javascript/app.vue: Unknown option: base.omit. Check out http://babeljs.io/docs/usage/options/ for more information about options.
+
+A common cause of this error is the presence of a configuration options object without the corresponding preset name. Example:
+
+Invalid:
+  `{ presets: [{option: value}] }`
+Valid:
+  `{ presets: [['presetName', {option: value}]] }`
+
+For more detailed information on preset configuration, please see https://babeljs.io/docs/en/plugins#pluginpresets-options.
+    at Logger.error (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/logger.js:41:11)
+    at OptionManager.mergeOptions (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/options/option-manager.js:226:20)
+    at OptionManager.init (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/options/option-manager.js:368:12)
+    at File.initOptions (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/index.js:212:65)
+    at new File (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/index.js:135:24)
+    at Pipeline.transform (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/pipeline.js:46:16)
+    at transpile (/Users/shoda/digitalholdem/node_modules/babel-loader/lib/index.js:50:20)
+    at Object.module.exports (/Users/shoda/digitalholdem/node_modules/babel-loader/lib/index.js:173:20)
+ @ ./app/javascript/app.vue?vue&type=script&lang=js 1:0-172 1:193-362
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+
+ERROR in ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css
+Module build failed: ValidationError: Style Loader Invalid Options
+
+options['ident'] is an invalid additional property
+
+ @ ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 1:0-439 1:460-896
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+Child extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js??ref--1-2!node_modules/vue-loader/lib/loaders/stylePostLoader.js!node_modules/postcss-loader/lib/index.js??ref--1-3!node_modules/vue-loader/lib/index.js??vue-loader-options!app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css:
+       [0] ./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 775 bytes {0} [built]
+        + 1 hidden module
+
+Completed 200 OK in 4410ms (Views: 4400.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/communities/5" for 127.0.0.1 at 2018-05-04 00:39:25 +0900
+Processing by CommunitiesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPlayer Load (0.7ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCommunity Load (0.4ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mHole Load (1.0ms)[0m  [1m[34mSELECT  "holes".* FROM "holes" WHERE "holes"."player_id" = $1 ORDER BY "holes"."id" DESC LIMIT $2[0m  [["player_id", 1], ["LIMIT", 1]]
+  Rendering communities/show.html.slim within layouts/application
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Community"]]
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Hole"]]
+  Rendered communities/show.html.slim within layouts/application (23.2ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+Hash: b71dcb84cde163307b74
+Version: webpack 3.11.0
+Time: 2029ms
+                                             Asset       Size  Chunks             Chunk Names
+                 hello_vue-08543bc77cf16798d112.js     248 kB       0  [emitted]  hello_vue
+               application-12a437e15157c0d4029c.js    3.27 kB       1  [emitted]  application
+    hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css  138 bytes       0  [emitted]  hello_vue
+             hello_vue-08543bc77cf16798d112.js.map     293 kB       0  [emitted]  hello_vue
+hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css.map  561 bytes       0  [emitted]  hello_vue
+           application-12a437e15157c0d4029c.js.map    3.19 kB       1  [emitted]  application
+                                     manifest.json  434 bytes          [emitted]  
+   [0] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [1] ./app/javascript/app.vue?vue&type=script&lang=js 362 bytes {0} [built]
+   [2] ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js 1.53 kB {0} [built] [failed] [1 error]
+   [3] ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 41 bytes {0} [built]
+   [4] ./app/javascript/packs/application.js 515 bytes {1} [built]
+   [5] ./app/javascript/packs/hello_vue.js 1.93 kB {0} [built]
+  [10] ./app/javascript/app.vue 964 bytes {0} [built]
+  [11] ./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 212 bytes {0} [built]
+  [12] ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 721 bytes {0} [built]
+  [13] ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 896 bytes {0} [built]
+    + 5 hidden modules
+
+ERROR in ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js
+Module build failed: ReferenceError: [BABEL] /Users/shoda/digitalholdem/app/javascript/app.vue: Unknown option: base.omit. Check out http://babeljs.io/docs/usage/options/ for more information about options.
+
+A common cause of this error is the presence of a configuration options object without the corresponding preset name. Example:
+
+Invalid:
+  `{ presets: [{option: value}] }`
+Valid:
+  `{ presets: [['presetName', {option: value}]] }`
+
+For more detailed information on preset configuration, please see https://babeljs.io/docs/en/plugins#pluginpresets-options.
+    at Logger.error (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/logger.js:41:11)
+    at OptionManager.mergeOptions (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/options/option-manager.js:226:20)
+    at OptionManager.init (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/options/option-manager.js:368:12)
+    at File.initOptions (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/index.js:212:65)
+    at new File (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/index.js:135:24)
+    at Pipeline.transform (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/pipeline.js:46:16)
+    at transpile (/Users/shoda/digitalholdem/node_modules/babel-loader/lib/index.js:50:20)
+    at Object.module.exports (/Users/shoda/digitalholdem/node_modules/babel-loader/lib/index.js:173:20)
+ @ ./app/javascript/app.vue?vue&type=script&lang=js 1:0-172 1:193-362
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+
+ERROR in ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css
+Module build failed: ValidationError: Style Loader Invalid Options
+
+options['ident'] is an invalid additional property
+
+ @ ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 1:0-439 1:460-896
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+Child extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js??ref--1-2!node_modules/vue-loader/lib/loaders/stylePostLoader.js!node_modules/postcss-loader/lib/index.js??ref--1-3!node_modules/vue-loader/lib/index.js??vue-loader-options!app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css:
+       [0] ./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 775 bytes {0} [built]
+        + 1 hidden module
+
+Completed 200 OK in 4204ms (Views: 4171.6ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/c14.png" for 127.0.0.1 at 2018-05-04 00:39:43 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/c14.png"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.1) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.1) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.1) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+/usr/local/lib/ruby/gems/2.4.0/bundler/gems/webpacker-23fba3d07b39/lib/webpacker/dev_server_proxy.rb:22:in `perform_request'
+rack-proxy (0.6.4) lib/rack/proxy.rb:57:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/c14.png" for 127.0.0.1 at 2018-05-04 00:39:48 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/c14.png"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.1) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.1) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.1) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+/usr/local/lib/ruby/gems/2.4.0/bundler/gems/webpacker-23fba3d07b39/lib/webpacker/dev_server_proxy.rb:22:in `perform_request'
+rack-proxy (0.6.4) lib/rack/proxy.rb:57:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/communities/5" for 127.0.0.1 at 2018-05-04 00:39:56 +0900
+Processing by CommunitiesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPlayer Load (0.7ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCommunity Load (0.3ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mHole Load (0.6ms)[0m  [1m[34mSELECT  "holes".* FROM "holes" WHERE "holes"."player_id" = $1 ORDER BY "holes"."id" DESC LIMIT $2[0m  [["player_id", 1], ["LIMIT", 1]]
+  Rendering communities/show.html.slim within layouts/application
+  [1m[36mCard Load (0.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Community"]]
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Hole"]]
+  Rendered communities/show.html.slim within layouts/application (11.2ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+Hash: b71dcb84cde163307b74
+Version: webpack 3.11.0
+Time: 2019ms
+                                             Asset       Size  Chunks             Chunk Names
+                 hello_vue-08543bc77cf16798d112.js     248 kB       0  [emitted]  hello_vue
+               application-12a437e15157c0d4029c.js    3.27 kB       1  [emitted]  application
+    hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css  138 bytes       0  [emitted]  hello_vue
+             hello_vue-08543bc77cf16798d112.js.map     293 kB       0  [emitted]  hello_vue
+hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css.map  561 bytes       0  [emitted]  hello_vue
+           application-12a437e15157c0d4029c.js.map    3.19 kB       1  [emitted]  application
+                                     manifest.json  434 bytes          [emitted]  
+   [0] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [1] ./app/javascript/app.vue?vue&type=script&lang=js 362 bytes {0} [built]
+   [2] ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js 1.53 kB {0} [built] [failed] [1 error]
+   [3] ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 41 bytes {0} [built]
+   [4] ./app/javascript/packs/application.js 515 bytes {1} [built]
+   [5] ./app/javascript/packs/hello_vue.js 1.93 kB {0} [built]
+  [10] ./app/javascript/app.vue 964 bytes {0} [built]
+  [11] ./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 212 bytes {0} [built]
+  [12] ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 721 bytes {0} [built]
+  [13] ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 896 bytes {0} [built]
+    + 5 hidden modules
+
+ERROR in ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js
+Module build failed: ReferenceError: [BABEL] /Users/shoda/digitalholdem/app/javascript/app.vue: Unknown option: base.omit. Check out http://babeljs.io/docs/usage/options/ for more information about options.
+
+A common cause of this error is the presence of a configuration options object without the corresponding preset name. Example:
+
+Invalid:
+  `{ presets: [{option: value}] }`
+Valid:
+  `{ presets: [['presetName', {option: value}]] }`
+
+For more detailed information on preset configuration, please see https://babeljs.io/docs/en/plugins#pluginpresets-options.
+    at Logger.error (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/logger.js:41:11)
+    at OptionManager.mergeOptions (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/options/option-manager.js:226:20)
+    at OptionManager.init (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/options/option-manager.js:368:12)
+    at File.initOptions (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/index.js:212:65)
+    at new File (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/index.js:135:24)
+    at Pipeline.transform (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/pipeline.js:46:16)
+    at transpile (/Users/shoda/digitalholdem/node_modules/babel-loader/lib/index.js:50:20)
+    at Object.module.exports (/Users/shoda/digitalholdem/node_modules/babel-loader/lib/index.js:173:20)
+ @ ./app/javascript/app.vue?vue&type=script&lang=js 1:0-172 1:193-362
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+
+ERROR in ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css
+Module build failed: ValidationError: Style Loader Invalid Options
+
+options['ident'] is an invalid additional property
+
+ @ ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 1:0-439 1:460-896
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+Child extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js??ref--1-2!node_modules/vue-loader/lib/loaders/stylePostLoader.js!node_modules/postcss-loader/lib/index.js??ref--1-3!node_modules/vue-loader/lib/index.js??vue-loader-options!app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css:
+       [0] ./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 775 bytes {0} [built]
+        + 1 hidden module
+
+Completed 200 OK in 4112ms (Views: 4102.0ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/c14.png" for 127.0.0.1 at 2018-05-04 00:40:02 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/c14.png"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.1) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.1) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.1) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+/usr/local/lib/ruby/gems/2.4.0/bundler/gems/webpacker-23fba3d07b39/lib/webpacker/dev_server_proxy.rb:22:in `perform_request'
+rack-proxy (0.6.4) lib/rack/proxy.rb:57:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/communities/5" for 127.0.0.1 at 2018-05-04 00:48:09 +0900
+Processing by CommunitiesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPlayer Load (0.3ms)[0m  [1m[34mSELECT  "players".* FROM "players" WHERE "players"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCommunity Load (0.2ms)[0m  [1m[34mSELECT  "communities".* FROM "communities" WHERE "communities"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mHole Load (0.6ms)[0m  [1m[34mSELECT  "holes".* FROM "holes" WHERE "holes"."player_id" = $1 ORDER BY "holes"."id" DESC LIMIT $2[0m  [["player_id", 1], ["LIMIT", 1]]
+  Rendering communities/show.html.slim within layouts/application
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Community"]]
+  [1m[36mCard Load (0.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."cardable_id" = $1 AND "cards"."cardable_type" = $2[0m  [["cardable_id", 5], ["cardable_type", "Hole"]]
+  Rendered communities/show.html.slim within layouts/application (8.9ms)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+Hash: b71dcb84cde163307b74
+Version: webpack 3.11.0
+Time: 2048ms
+                                             Asset       Size  Chunks             Chunk Names
+                 hello_vue-08543bc77cf16798d112.js     248 kB       0  [emitted]  hello_vue
+               application-12a437e15157c0d4029c.js    3.27 kB       1  [emitted]  application
+    hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css  138 bytes       0  [emitted]  hello_vue
+             hello_vue-08543bc77cf16798d112.js.map     293 kB       0  [emitted]  hello_vue
+hello_vue-9cb5a7334a6577c3422968b9b9970b2f.css.map  561 bytes       0  [emitted]  hello_vue
+           application-12a437e15157c0d4029c.js.map    3.19 kB       1  [emitted]  application
+                                     manifest.json  434 bytes          [emitted]  
+   [0] (webpack)/buildin/global.js 509 bytes {0} [built]
+   [1] ./app/javascript/app.vue?vue&type=script&lang=js 362 bytes {0} [built]
+   [2] ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js 1.53 kB {0} [built] [failed] [1 error]
+   [3] ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 41 bytes {0} [built]
+   [4] ./app/javascript/packs/application.js 515 bytes {1} [built]
+   [5] ./app/javascript/packs/hello_vue.js 1.93 kB {0} [built]
+  [10] ./app/javascript/app.vue 964 bytes {0} [built]
+  [11] ./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 212 bytes {0} [built]
+  [12] ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=template&id=6fb8108a&scoped=true 721 bytes {0} [built]
+  [13] ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 896 bytes {0} [built]
+    + 5 hidden modules
+
+ERROR in ./node_modules/babel-loader/lib??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=script&lang=js
+Module build failed: ReferenceError: [BABEL] /Users/shoda/digitalholdem/app/javascript/app.vue: Unknown option: base.omit. Check out http://babeljs.io/docs/usage/options/ for more information about options.
+
+A common cause of this error is the presence of a configuration options object without the corresponding preset name. Example:
+
+Invalid:
+  `{ presets: [{option: value}] }`
+Valid:
+  `{ presets: [['presetName', {option: value}]] }`
+
+For more detailed information on preset configuration, please see https://babeljs.io/docs/en/plugins#pluginpresets-options.
+    at Logger.error (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/logger.js:41:11)
+    at OptionManager.mergeOptions (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/options/option-manager.js:226:20)
+    at OptionManager.init (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/options/option-manager.js:368:12)
+    at File.initOptions (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/index.js:212:65)
+    at new File (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/file/index.js:135:24)
+    at Pipeline.transform (/Users/shoda/digitalholdem/node_modules/babel-core/lib/transformation/pipeline.js:46:16)
+    at transpile (/Users/shoda/digitalholdem/node_modules/babel-loader/lib/index.js:50:20)
+    at Object.module.exports (/Users/shoda/digitalholdem/node_modules/babel-loader/lib/index.js:173:20)
+ @ ./app/javascript/app.vue?vue&type=script&lang=js 1:0-172 1:193-362
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+
+ERROR in ./node_modules/extract-text-webpack-plugin/dist/loader.js??ref--1-0!./node_modules/style-loader??ref--4-1!./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css
+Module build failed: ValidationError: Style Loader Invalid Options
+
+options['ident'] is an invalid additional property
+
+ @ ./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 1:0-439 1:460-896
+ @ ./app/javascript/app.vue
+ @ ./app/javascript/packs/hello_vue.js
+Child extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js??ref--1-2!node_modules/vue-loader/lib/loaders/stylePostLoader.js!node_modules/postcss-loader/lib/index.js??ref--1-3!node_modules/vue-loader/lib/index.js??vue-loader-options!app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css:
+       [0] ./node_modules/css-loader??ref--1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/lib??ref--1-3!./node_modules/vue-loader/lib??vue-loader-options!./app/javascript/app.vue?vue&type=style&index=0&id=6fb8108a&scoped=true&lang=css 775 bytes {0} [built]
+        + 1 hidden module
+
+Completed 200 OK in 4312ms (Views: 4305.3ms | ActiveRecord: 1.8ms)
+
+

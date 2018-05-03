@@ -6,9 +6,8 @@
   .text-center
     - @community.cards.each_with_index do |card, index|
       - if index < @hide_counter
-        = image_tag "/z01.png", width:"70", height:"105", class:'tranp_field'
-      - else
-        = image_tag "/#{card.suit}#{card.number}.png", width:"70", height:"105", class:'tranp_field'
+        img width="70" height="105" src="/z01.png" class='tranp_field' id='#{card.suit}#{card.number}'
+        / = image_tag "/#{card.suit}#{card.number}.png", width:"70", height:"105", class:'tranp_field'
 
   .dealer-action.text-center
     .row
