@@ -1,0 +1,4 @@
+2018-05-03 16:53:53.533 JST [8037] LOG:  could not translate host name "localhost", service "5432" to address: nodename nor servname provided, or not known
+2018-05-03 16:53:53.533 JST [8037] WARNING:  could not create listen socket for "localhost"
+2018-05-03 16:53:53.533 JST [8037] FATAL:  could not create any TCP/IP sockets
+2018-05-03 16:53:53.534 JST [8037] LOG:  database system is shut down
