@@ -12,19 +12,31 @@
 .dealer-action{
   padding-bottom: 30px;
 }
-.tranp_field{
+.community_card_field{
   box-shadow: 2px 2px 4px gray;
   margin-left: 10px;
   margin-right: 10px;
   border-radius: 5px;
 }
-.tranp_field2{
+.show_hole_card{
+  box-shadow: 2px 2px 4px gray;
+  margin-left: 1px;
+  margin-right: 1px;
+  border-radius: 5px;
+}
+.hole_card{
   box-shadow: 2px 2px 4px gray;
   margin-left: 1px;
   margin-right: 1px;
   border-radius: 5px;
 }
 
+.hole_card_field{
+  display: none;
+}
+.community_card_field{
+  display: none;
+}
 .container{
   margin-top: 30px
 }
