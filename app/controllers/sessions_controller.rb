@@ -11,7 +11,6 @@ class SessionsController < ApplicationController
     @player = Player.find_by(name: params[:name], password: params[:password])
     if @player
       session[:player_id] = @player.id
-      # cookies.signed[:player_id]
       flash[:notice] = "ログインしました"
       redirect_to games_path
     else
