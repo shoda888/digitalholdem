@@ -3,8 +3,13 @@
     | コミュニティカード
 
   .text-center
-    - @community.cards.each do |card|
-      img width="70" height="105" src="/z01.png" class='community_card_field' id='#{card.suit}#{card.number}'
+    .community_card_field
+      - if @community.showdown?
+        - @community.cards.each do |card|
+          img width="70" height="105" src="/#{card.suit}#{card.number}.png" class='show_community_card'
+      - else
+        - @community.cards.each do |card|
+          img width="70" height="105" src="/z01.png" class='community_card' id='#{card.suit}#{card.number}'
 
   / ディーラーアクション
   .dealer-action.text-center

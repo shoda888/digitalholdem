@@ -1,6 +1,6 @@
 $(document).ready(function() {
-  $('.hole_card_field').show(1000);
-  $('.community_card_field').show(1000);
+  $('.community_card').show(1000);
+  $('.hole_card').show(1000);
   $('#c1').dblclick(function(){
     $(this).attr('src', '/c1.png');
   });
