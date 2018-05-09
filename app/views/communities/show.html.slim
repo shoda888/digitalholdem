@@ -17,17 +17,19 @@
       .col-sm-6
         = link_to "Open", community_path(@community), class:'btn btn-block btn-danger', method: :put
       .col-sm-6
-        = link_to 'Finish', new_community_path, class:'btn btn-block btn-danger'
+        = link_to '次のラウンドへ', new_community_path, class:'btn btn-block btn-danger'
+
 
   .text-center
-    = "#{@current_player.name}の手札"
-  .text-center
-    .hole_card_field
-      - if @community.showdown?
-        .show_hand_name
-          = @hole.hand
-        - @hole.cards.each do |card|
-          img width="70" height="105" src="/#{card.suit}#{card.number}.png" class='show_hole_card'
-      - else
-        - @hole.cards.each do |card|
-          img width="70" height="105" src="/z01.png" class='hole_card' id='#{card.suit}#{card.number}_hole'
+    - @holes.each do |hole|
+      .hole_card_field
+        .player_hole_card
+          = "#{hole.player.name}の手札"
+        - if @community.showdown?
+          h5.show_hand_name
+            = hole.hand
+          - hole.cards.each do |card|
+            img width="70" height="105" src="/#{card.suit}#{card.number}.png" class='show_hole_card'
+        - else
+          - hole.cards.each do |card|
+            img width="70" height="105" src="/z01.png" class='hole_card' id='#{card.suit}#{card.number}_hole'

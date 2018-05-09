@@ -37,6 +37,8 @@ body.hold-transition.sidebar-mini
             .col-sm-6
               h1.m-0.text-dark
                 | ゲーム詳細
+            .col-sm-6
+              = link_to 'このゲームに参加する', game_path, method: :put, class: "btn btn-success"
       .content
         .container-fluid
           .row
@@ -45,16 +47,15 @@ body.hold-transition.sidebar-mini
                 table.table.table-striped
                   tbody
                     tr
-                      th タイトル
+                      th ゲーム名
                       td = @game.name
-                    tr
-                      th 参加者
-                      td
-                        - @game.players.each do |player|
-                          = player.name
-                    tr
-                       th
-                       td = link_to 'このゲームに参加する', game_path, method: :put, class: "btn btn-success"
+                    - @game.players.each do |player|
+                      tr
+                        - if player.admin?
+                          th 参加ディーラー ID:#{player.id}
+                        - else
+                          th 参加プレイヤー ID:#{player.id}
+                        td = player.name
 
     aside.control-sidebar.control-sidebar-dark
       .p-3

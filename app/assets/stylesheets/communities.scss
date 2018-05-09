@@ -3,7 +3,6 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .show_hand_name{
-  padding-top: 10px;
   color: red;
 }
 .text-center{
@@ -40,6 +39,11 @@
   margin-right: 1px;
   border-radius: 5px;
 }
+.hole_card_field{
+  text-align: center;
+  display: inline-block;
+  padding: 0px 15px;
+}
 .container{
-  margin-top: 30px
+  margin-top: 30px;
 }
