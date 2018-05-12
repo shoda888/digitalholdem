@@ -46,10 +46,5 @@ class CommunitiesController < ApplicationController
   end
 
   def update
-    @community = Community.find(params[:id])
-    @community.aasm_state = 'showdown'
-    @community.save
-
-    redirect_to community_path(@community)
   end
 end
