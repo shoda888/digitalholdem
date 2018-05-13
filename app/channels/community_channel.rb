@@ -26,4 +26,7 @@ class CommunityChannel < ApplicationCable::Channel
     @community.save
     ActionCable.server.broadcast 'community_channel', message: "#{@community.aasm_state}"
   end
+  def ready
+    ActionCable.server.broadcast 'community_channel', message: 'start'
+  end
 end

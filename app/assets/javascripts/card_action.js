@@ -3,6 +3,9 @@ $(document).ready(function() {
   $('.status_change_btn').dblclick(function(){
     App.community.speak();
   });
+  $('.admin_start_btn').click(function(){
+    App.community.ready();
+  });
   $('.hole_card_field').mouseout(function(){
     $(this).find('.show_hole_card').hide()
   });

@@ -1,4 +1,5 @@
 class CommunitiesController < ApplicationController
+  before_action :authenticate_player
   include CreateDeck
   include HandJudgement
 

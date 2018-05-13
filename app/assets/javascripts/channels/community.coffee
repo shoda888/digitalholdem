@@ -8,9 +8,10 @@ App.community = App.cable.subscriptions.create "CommunityChannel",
     # Called when the subscription has been terminated by the server
 
   received: (data) ->
-    console.log('test')
     console.log(data['message'])
     switch data['message']
+      when 'start'
+        $('player_start_btn').show(500)
       when "flop"
         $('#card4').show(1000)
         $('#card3').show(1000)
@@ -38,3 +39,6 @@ App.community = App.cable.subscriptions.create "CommunityChannel",
 
   speak: (message)->
     @perform 'speak', message: message
+
+  ready: ->
+    @perform 'ready'
