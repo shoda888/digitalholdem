@@ -30,6 +30,7 @@ class CommunitiesController < ApplicationController
         @hole.hand = hand_judge(targetcards)
         @hole.save
       end
+      ActionCable.server.broadcast 'community_channel', message: 'start'
     else
       @game = @current_player.game
       @community = @game.communities.last

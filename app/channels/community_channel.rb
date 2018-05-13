@@ -7,7 +7,7 @@ class CommunityChannel < ApplicationCable::Channel
     # Any cleanup needed when channel is unsubscribed
   end
 
-  def speak(data)
+  def speak
     @game = current_player.game
     @community = @game.communities.last
     case @community.aasm_state
@@ -26,7 +26,11 @@ class CommunityChannel < ApplicationCable::Channel
     @community.save
     ActionCable.server.broadcast 'community_channel', message: "#{@community.aasm_state}"
   end
-  def ready
-    ActionCable.server.broadcast 'community_channel', message: 'start'
+
+  def drop
+    @hole = current_player.holes.last
+    @hole.drop
+    @hole.save
+    ActionCable.server.broadcast 'community_channel', message: 'drop', player: "#{current_player.name}"
   end
 end

@@ -11,7 +11,9 @@ App.community = App.cable.subscriptions.create "CommunityChannel",
     console.log(data['message'])
     switch data['message']
       when 'start'
-        $('player_start_btn').show(500)
+        $('.player_start_btn').show(500)
+      when 'drop'
+        $("##{data['player']}_card_field").slideUp(500)
       when "flop"
         $('#card4').show(1000)
         $('#card3').show(1000)
@@ -40,5 +42,5 @@ App.community = App.cable.subscriptions.create "CommunityChannel",
   speak: (message)->
     @perform 'speak', message: message
 
-  ready: ->
-    @perform 'ready'
+  drop: ->
+    @perform 'drop'

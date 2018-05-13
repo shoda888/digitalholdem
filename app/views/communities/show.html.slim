@@ -13,27 +13,31 @@
   / ディーラーアクション
   .dealer-action.text-center
     .row
-      .col-sm-6
-        .status_change_btn.btn.btn-block.btn-danger
+      .col-sm-3
+        .drop_btn.btn.btn-block.btn-danger
+         | 降りる
+      .col-sm-3
+        .dealer_btn.btn.btn-block.btn-danger
          | ディーラーアクション
       .col-sm-6
         = link_to '次のラウンドへ', new_community_path, class:'btn btn-block btn-danger'
 
   .text-center
     - @holes.each do |hole|
-      .hole_card_field
-        .player_hole_card
-          = "#{hole.player.name}の手札"
-        h5.show_hand_name
-          = hole.hand
-        - hole.cards.each do |card|
-          - if hole.player == @current_player
-            .hole_card
-              img src="/z01.png" width="70" height="105"
-              .show_hole_card
-                img src="/#{card.suit}#{card.number}.png" width="70" height="105"
-          - else
-            .hole_card
-              img src="/z01.png" width="70" height="105"
-              .others_hole_card
-                img src="/#{card.suit}#{card.number}.png" width="70" height="105"
+      div id="#{hole.player.name}_card_field"
+        .hole_card_field
+          .player_hole_card
+            = "#{hole.player.name}の手札"
+          h5.show_hand_name
+            = hole.hand
+          - hole.cards.each do |card|
+            - if hole.player == @current_player
+              .hole_card
+                img src="/z01.png" width="70" height="105"
+                .show_hole_card
+                  img src="/#{card.suit}#{card.number}.png" width="70" height="105"
+            - else
+              .hole_card
+                img src="/z01.png" width="70" height="105"
+                .others_hole_card
+                  img src="/#{card.suit}#{card.number}.png" width="70" height="105"
