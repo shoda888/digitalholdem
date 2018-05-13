@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .show_hand_name{
-  padding-top: 10px;
+  display: none;
   color: red;
 }
 .text-center{
@@ -11,4 +11,58 @@
 }
 .dealer-action{
   padding-bottom: 30px;
+}
+
+.show_community_card{
+  display: inline-block;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  box-shadow: 2px 2px 4px gray;
+  width: 70px;
+  height: 105px;
+  border-radius: 5px;
+  display: none;
+}
+.community_card{
+  display: inline-block;
+  position: relative;
+  width: 70px;
+  height: 105px;
+  box-shadow: 2px 2px 4px gray;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+.show_hole_card, .others_hole_card{
+  display: inline-block;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  box-shadow: 2px 2px 4px gray;
+  margin-left: 1px;
+  margin-right: 1px;
+  width: 70px;
+  height: 105px;
+  border-radius: 5px;
+  display: none;
+}
+.hole_card{
+  display: inline-block;
+  position: relative;
+  width: 70px;
+  height: 105px;
+  box-shadow: 2px 2px 4px gray;
+  margin-left: 1px;
+  margin-right: 1px;
+  border-radius: 5px;
+}
+.hole_card_field{
+  text-align: center;
+  display: inline-block;
+  padding: 0px 15px;
+}
+.container{
+  margin-top: 30px;
 }

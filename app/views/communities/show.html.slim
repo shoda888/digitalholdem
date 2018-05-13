@@ -2,23 +2,38 @@
   h2.text-center
     | コミュニティカード
 
-
   .text-center
-    - @community.cards.each_with_index do |card, index|
-      - if index < @hide_counter
-        = image_tag "/z01.png", width:"70", height:"105"
-      - else
-        = image_tag "/#{card.suit}#{card.number}.png", width:"70", height:"105"
+    .community_card_field
+      - @community.cards.each_with_index do |card, index|
+        .community_card
+          img src="/z01.png" width="70" height="105"
+          div id="card#{index}" class="show_community_card"
+            img src="/#{card.suit}#{card.number}.png" width="70" height="105"
 
+  / ディーラーアクション
   .dealer-action.text-center
-    = button_to "ディーラーアクション", community_path(@community), method: :put, class:'btn btn-danger'
+    .row
+      .col-sm-6
+        .status_change_btn.btn.btn-block.btn-danger
+         | ディーラーアクション
+      .col-sm-6
+        = link_to '次のラウンドへ', new_community_path, class:'btn btn-block btn-danger'
 
   .text-center
-    = "#{@current_player.name}の手札"
-  .text-center
-    - @hole.cards.each do |card|
-      = image_tag "/#{card.suit}#{card.number}.png", width:"70", height:"105"
-    - if @community.finished?
-      h3.show_hand_name
-        = @hole.hand
-      = link_to "Next Round", new_community_path, class:'btn btn-success'
+    - @holes.each do |hole|
+      .hole_card_field
+        .player_hole_card
+          = "#{hole.player.name}の手札"
+        h5.show_hand_name
+          = hole.hand
+        - hole.cards.each do |card|
+          - if hole.player == @current_player
+            .hole_card
+              img src="/z01.png" width="70" height="105"
+              .show_hole_card
+                img src="/#{card.suit}#{card.number}.png" width="70" height="105"
+          - else
+            .hole_card
+              img src="/z01.png" width="70" height="105"
+              .others_hole_card
+                img src="/#{card.suit}#{card.number}.png" width="70" height="105"

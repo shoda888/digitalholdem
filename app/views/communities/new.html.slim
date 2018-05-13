@@ -1,9 +1,11 @@
-h2.text-center
-  | コミュニティカード
+.container
+  h3.text-center
+    | ディーラーの指示をおまちください
 
 
-h4.text-center
-  = @current_player.name
+  h4.text-center
+    = @current_player.name
 
-.text-center
-  = button_to "ゲーム開始", communities_path, method: :post, class:'btn btn-success'
+  .text-center
+    = button_to "ゲーム開始", communities_path, method: :post, class:'btn btn-success' if @current_player.admin?
+    = link_to "ロビーへ戻る", games_path, class:'btn btn-primary'

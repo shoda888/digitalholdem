@@ -5,12 +5,12 @@ body.hold-transition.sidebar-mini
         li.nav-item
           a.nav-link[data-widget="pushmenu" href="#"]
             i.fa.fa-bars
-        li.nav-item.d-none.d-sm-inline-block
-          a.nav-link[href="index3.html"]
-            | Home
+        li#hello.nav-item.d-none.d-sm-inline-block
+          a.nav-link[href="#"]
+            | {{ message }}
         li.nav-item.d-none.d-sm-inline-block
           a.nav-link[href="#"]
-            | Contact
+            = @current_player.name
       form.form-inline.ml-3
         .input-group.input-group-sm
           input.form-control.form-control-navbar[type="search" placeholder="Search" aria-label="Search"]
@@ -28,7 +28,7 @@ body.hold-transition.sidebar-mini
               | テキサスホールデムのルール
         .user-panel.mt-3.pb-3.mb-3.d-flex
           .info
-            a.d-block[href="#"]
+            a.d-block[href=admin_games_path]
               | 管理者ページ
     .content-wrapper
       .content-header
