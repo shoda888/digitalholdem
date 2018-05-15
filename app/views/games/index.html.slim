@@ -11,14 +11,13 @@ body.hold-transition.sidebar-mini
         li.nav-item.d-none.d-sm-inline-block
           a.nav-link[href="#"]
             = @current_player.name
-      form.form-inline.ml-3
-        .input-group.input-group-sm
-          input.form-control.form-control-navbar[type="search" placeholder="Search" aria-label="Search"]
-          .input-group-append
-            button.btn.btn-navbar[type="submit"]
-              i.fa.fa-search
+        li.nav-item.d-none.d-sm-inline-block
+          = link_to session_path(@current_player), method: :delete, class: 'nav-link' do
+            i.fa.fa-sign-out[aria-hidden="true"]
+              | ログアウト
+
     aside.main-sidebar.sidebar-dark-primary.elevation-4
-      a.brand-link[href="index3.html"]
+      a.brand-link[href="games"]
         span.brand-text.font-weight-light
           | Digital Holdem
       .sidebar
@@ -37,6 +36,10 @@ body.hold-transition.sidebar-mini
             .col-sm-6
               h1.m-0.text-dark
                 | Game Table
+            - if flash[:notice]
+              .col-sm-6
+                .alert.alert-info.alert-dismissible
+                  = flash[:notice]
       .content
         .container-fluid
           .row

@@ -9,6 +9,11 @@
           <%= @error_message %>
         </div>
       <% end %>
+      <% if flash[:notice] %>
+        <div class="flash">
+          <%= flash[:notice] %>
+        </div>
+      <% end %>
       <div class="form-body">
         <%=form_tag sessions_path do%>
           <div class="form-group has-feedback">

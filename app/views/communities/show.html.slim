@@ -13,15 +13,19 @@
   / ディーラーアクション
   .dealer-action.text-center
     .row
-      .col-sm-6
-        .status_change_btn.btn.btn-block.btn-danger
-         | ディーラーアクション
+      .col-sm-3
+        .drop_btn.btn.btn-block.btn-danger
+         | 降りる
+      - if @current_player.admin?
+        .col-sm-3
+          .dealer_btn.btn.btn-block.btn-danger
+           | アクション
       .col-sm-6
         = link_to '次のラウンドへ', new_community_path, class:'btn btn-block btn-danger'
 
   .text-center
     - @holes.each do |hole|
-      .hole_card_field
+      div id="#{hole.player.name}_card_field" class='hole_card_field'
         .player_hole_card
           = "#{hole.player.name}の手札"
         h5.show_hand_name

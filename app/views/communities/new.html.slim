@@ -7,5 +7,10 @@
     = @current_player.name
 
   .text-center
-    = button_to "ゲーム開始", communities_path, method: :post, class:'btn btn-success' if @current_player.admin?
+    - if @current_player.admin?
+      .admin_start_btn
+        = button_to "ゲーム開始", communities_path, method: :post, class:'btn btn-success'
+    - else
+      .player_start_btn
+        = button_to "ゲーム開始", communities_path, method: :post, class:'btn btn-success'
     = link_to "ロビーへ戻る", games_path, class:'btn btn-primary'

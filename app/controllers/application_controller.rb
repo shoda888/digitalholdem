@@ -8,16 +8,16 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate_player
-    # if !@current_user
-    #   flash[:notice] = "ログインが必要です"
-    #   redirect_to new_session_path
-    # end
+    if !@current_player
+      flash[:notice] = "ログインが必要です"
+      redirect_to new_session_path
+    end
   end
 
   def forbid_login_player
-    # if @current_user
-    #   flash[:notice] = "すでにログインしています"
-    #   redirect_to posts_path
-    # end
+    if @current_player
+      flash[:notice] = "すでにログインしています"
+      redirect_to games_path
+    end
   end
 end
