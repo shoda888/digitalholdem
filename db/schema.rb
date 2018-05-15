@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 20180429025507) do
 
   create_table "holes", force: :cascade do |t|
     t.integer "player_id"
-    t.string "hand"
+    t.integer "hand"
     t.string "aasm_state"
     t.boolean "out_come", default: false, null: false
     t.datetime "created_at", null: false

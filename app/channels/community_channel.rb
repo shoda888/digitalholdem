@@ -21,16 +21,36 @@ class CommunityChannel < ApplicationCable::Channel
       @community.open
     when 'showdown'
       @community.finish
+      #holeがstayのプレイヤーのhole.handが一番大きいのが勝ち
+      @handlist = {}
+      @game.players.each do |player|
+        @hole = player.holes.last
+        if @hole.stay?
+          @handlist["#{player.name}"] = @hole.hand_before_type_cast
+        end
+      end
+      max_val = (@handlist.max{|x,y| x[1] <=> y[1]})[1]
+      @winners = @handlist.select{|k,v| v == max_val}.keys
+      @winners.each do |winner|
+        player = Player.find_by(name: winner)
+        player.holes.last.out_come = true
+        player.save
+      end
+      #判断できない場合、ディーラーによるキッカー判断がおこなわれる
     else
     end
     @community.save
-    ActionCable.server.broadcast 'community_channel', message: "#{@community.aasm_state}"
+    if @community.finished?
+      ActionCable.server.broadcast 'community_channel', message: 'finished', winner: @winners
+    else
+      ActionCable.server.broadcast 'community_channel', message: @community.aasm_state
+    end
   end
 
   def drop
     @hole = current_player.holes.last
     @hole.drop
     @hole.save
-    ActionCable.server.broadcast 'community_channel', message: 'drop', player: "#{current_player.name}"
+    ActionCable.server.broadcast 'community_channel', message: 'drop', player: current_player.name
   end
 end

@@ -1,9 +1,9 @@
 $(document).ready(function() {
   $('.hole_card').show(1000);
-  $('.dealer_btn').dblclick(function(){
+  $('.dealer_btn').click(function(){
     App.community.speak();
   });
-  $('.drop_btn').dblclick(function(){
+  $('.drop_btn').click(function(){
     $(this).hide();
     App.community.drop();
   });

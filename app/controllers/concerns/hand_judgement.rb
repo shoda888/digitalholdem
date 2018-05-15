@@ -2,11 +2,11 @@ module HandJudgement
   extend ActiveSupport::Concern
 
   def hand_judge(targetcards)
-    # if isRoyal_straight_flush(targetcards)
-    #   return 'RoyalStraightFlush'
-    # elsif isStraight_flush(targetcards)
-    #   return 'StraightFlash'
-    if isSame_number(targetcards, 4)
+    if isRoyal_straight_flush(targetcards)
+      return 'RoyalStraightFlush'
+    elsif isStraight_flush(targetcards)
+      return 'StraightFlash'
+    elsif isSame_number(targetcards, 4)
       return 'FourCards'
     elsif isFull_house(targetcards)
       return 'FullHouse'
@@ -83,6 +83,24 @@ module HandJudgement
   	if numbers[10]>=1 && numbers[11]>=1 && numbers[12]>=1 && numbers[13]>=1 && numbers[1]>=1
   		return true
   	end
+  	return false
+  end
+  def isStraight_flush(targetcards)
+    suits = { 's':[], 'h':[], 'd':[], 'c':[] }
+    targetcards.each do |card|
+      suits[card.suit.to_sym] << card
+    end
+    suits.each_value do |value|
+      return true if value.length >= 5 && isStraight(value)
+    end
+  	return false
+  end
+  def isRoyal_straight_flush(targetcards)
+  	cards = [];
+    targetcards.each do |card|
+      cards << card if card.number >= 10 || card.number == 1
+    end
+  	return true if isStraight_flush(cards)
   	return false
   end
 end
