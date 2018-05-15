@@ -30,6 +30,7 @@ App.community = App.cable.subscriptions.create "CommunityChannel",
         for val, i in data['winner']
           if data['winner'].length == 1
             $("##{data['winner'][0]}_card_field").find('.show_hand_name').append('<div><i class="fa fa-trophy fa-2x faa-wrench animated"></i></div>')
+            $('.hole_card_field').not("##{data['winner'][0]}_card_field").slideUp(500)
           else
             $("##{data['winner'][i]}_card_field").append('<div>select a winner<div>')
 

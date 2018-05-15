@@ -7,6 +7,7 @@ class CommunitiesController < ApplicationController
   end
 
   def new
+    @game = @current_player.game
   end
 
   def create
@@ -30,7 +31,8 @@ class CommunitiesController < ApplicationController
         @hole.hand = hand_judge(targetcards)
         @hole.save
       end
-      ActionCable.server.broadcast 'community_channel', message: 'start'
+      # ActionCable.server.broadcast 'community_channel', message: 'start'
+      CommunityChannel.broadcast_to(@current_player.game, { message: 'start' })
     else
       @game = @current_player.game
       @community = @game.communities.last
