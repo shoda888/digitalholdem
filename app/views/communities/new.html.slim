@@ -4,7 +4,7 @@
 
 
   h4.text-center
-    = @current_player.name
+    = "#{@current_player.name} is in #{@game.name}"
 
   .text-center
     - if @current_player.admin?

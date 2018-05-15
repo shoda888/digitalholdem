@@ -1,6 +1,7 @@
 class CommunityChannel < ApplicationCable::Channel
   def subscribed
     stream_from "community_channel"
+    stream_for current_player.game
   end
 
   def unsubscribed
@@ -41,9 +42,9 @@ class CommunityChannel < ApplicationCable::Channel
     end
     @community.save
     if @community.finished?
-      ActionCable.server.broadcast 'community_channel', message: 'finished', winner: @winners
+      CommunityChannel.broadcast_to(current_player.game, { message: 'finished', winner: @winners })
     else
-      ActionCable.server.broadcast 'community_channel', message: @community.aasm_state
+      CommunityChannel.broadcast_to(current_player.game, { message: @community.aasm_state })
     end
   end
 
@@ -51,6 +52,6 @@ class CommunityChannel < ApplicationCable::Channel
     @hole = current_player.holes.last
     @hole.drop
     @hole.save
-    ActionCable.server.broadcast 'community_channel', message: 'drop', player: current_player.name
+    CommunityChannel.broadcast_to(current_player.game, { message: 'drop', player: current_player.name })
   end
 end

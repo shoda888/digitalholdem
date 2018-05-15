@@ -6,7 +6,7 @@
     .community_card_field
       - @community.cards.each_with_index do |card, index|
         .community_card
-          img src="/z01.png" width="70" height="105"
+          img src="/z02.png" width="70" height="105"
           div id="card#{index}" class="show_community_card"
             img src="/#{card.suit}#{card.number}.png" width="70" height="105"
 
@@ -33,11 +33,11 @@
         - hole.cards.each do |card|
           - if hole.player == @current_player
             .hole_card
-              img src="/z01.png" width="70" height="105"
+              img src="/z02.png" width="70" height="105"
               .show_hole_card
                 img src="/#{card.suit}#{card.number}.png" width="70" height="105"
           - else
             .hole_card
-              img src="/z01.png" width="70" height="105"
+              img src="/z02.png" width="70" height="105"
               .others_hole_card
                 img src="/#{card.suit}#{card.number}.png" width="70" height="105"
