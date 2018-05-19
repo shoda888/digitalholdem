@@ -11,8 +11,8 @@ class CommunitiesController < ApplicationController
   end
 
   def create
+    @game = @current_player.game
     if @current_player.admin?
-      @game = @current_player.game
       @community = @game.communities.create#コミュニティー作成
       @cards = shuffle(build) #シャッフルされた52枚のカード
 
@@ -31,10 +31,8 @@ class CommunitiesController < ApplicationController
         @hole.hand = hand_judge(targetcards)
         @hole.save
       end
-      # ActionCable.server.broadcast 'community_channel', message: 'start'
       CommunityChannel.broadcast_to(@current_player.game, { message: 'start' })
     else
-      @game = @current_player.game
       @community = @game.communities.last
     end
     redirect_to community_path(@community)
