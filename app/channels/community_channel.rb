@@ -31,22 +31,12 @@ class CommunityChannel < ApplicationCable::Channel
       max_val = (@handlist.max{|x,y| x[1] <=> y[1]})[1]
       @winners = @handlist.select{|k,v| v == max_val}.keys
       @losers = @handlist.select{|k,v| v != max_val}.keys
-      if @winners.length == 1
-        @winners.each do |winner|
-          player = Player.find_by(name: winner)
-          player.holes.last.out_come = true
-          player.chip += 5 #勝利プレイヤーのチップ数が5加わる
-          player.save
-        end
-      end
-      @losers.each do |loser|
-        player = Player.find_by(name: loser)
-        player.chip -= 2 #敗者プレイヤーのチップ数が2減る
-        player.save
-      end
+      winner_get_chips  if @winners.length == 1
+      loser_lose_chips
       #判断できない場合、ディーラーによるキッカー判断がおこなわれる
     when 'finished'
       @winners = [data['message']]
+      winner_get_chips
     else
     end
     @community.save
@@ -63,5 +53,23 @@ class CommunityChannel < ApplicationCable::Channel
     @hole.drop
     @hole.save
     CommunityChannel.broadcast_to(current_player.game, { message: 'drop', player: current_player.name })
+  end
+
+  public
+
+  def winner_get_chips
+    @winners.each do |winner|
+      player = Player.find_by(name: winner)
+      player.holes.last.out_come = true
+      player.chip += 24 #勝利プレイヤーのチップ数が5加わる
+      player.save
+    end
+  end
+  def loser_lose_chips
+    @losers.each do |loser|
+      player = Player.find_by(name: loser)
+      player.chip -= 12 #敗者プレイヤーのチップ数が2減る
+      player.save
+    end
   end
 end

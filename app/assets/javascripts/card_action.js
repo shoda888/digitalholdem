@@ -4,8 +4,8 @@ $(document).ready(function() {
     App.community.speak();
   });
   $(document).on("click", ".select_winner", function(){
-    var selected = $(this).attr('id')
-    console.log(selected)
+    $(this).hide();
+    var selected = $(this).attr('id');
     App.community.speak(selected);
   });
   $('.drop_btn').click(function(){

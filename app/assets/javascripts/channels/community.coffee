@@ -23,6 +23,7 @@ App.community = App.cable.subscriptions.create "CommunityChannel",
       when "river"
         $('#card0').show(1000)
       when 'showdown'
+        $('.drop_btn').hide()
         $('.show_hand_name').show(1000)
         $('.show_hole_card').show(1000)
         $('.others_hole_card').show(1000)
