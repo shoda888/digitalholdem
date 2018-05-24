@@ -4,7 +4,7 @@ class CreatePlayers < ActiveRecord::Migration[5.1]
       t.string :name
       t.string :password
       t.integer :game_id
-      t.integer :chip
+      t.integer :chip, default: 500
       t.integer :role, default: 2
       t.timestamps
     end

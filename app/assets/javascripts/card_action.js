@@ -3,6 +3,11 @@ $(document).ready(function() {
   $('.dealer_btn').click(function(){
     App.community.speak();
   });
+  $(document).on("click", ".select_winner", function(){
+    $(this).hide();
+    var selected = $(this).attr('id');
+    App.community.speak(selected);
+  });
   $('.drop_btn').click(function(){
     $(this).hide();
     App.community.drop();
@@ -12,5 +17,5 @@ $(document).ready(function() {
   });
   $('.hole_card_field').mouseover(function(){
     $(this).find('.show_hole_card').show()
-  })
+  });
 });

@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 20180429025507) do
     t.string "name"
     t.string "password"
     t.integer "game_id"
-    t.integer "chip"
+    t.integer "chip", default: 500
     t.integer "role", default: 2
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
