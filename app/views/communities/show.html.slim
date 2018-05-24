@@ -35,7 +35,8 @@
         .player_hole_card
           = "#{hole.player.name}の手札"
         .player_chip_number
-          = "現在のチップ数: #{hole.player.chip}"
+          i.fa.fa-bitcoin
+            = hole.player.chip
         h5.show_hand_name
           = hole.hand
         - hole.cards.each do |card|

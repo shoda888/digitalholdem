@@ -55,7 +55,7 @@ class CommunityChannel < ApplicationCable::Channel
     CommunityChannel.broadcast_to(current_player.game, { message: 'drop', player: current_player.name })
   end
 
-  public
+  private
 
   def winner_get_chips
     @winners.each do |winner|

@@ -6,32 +6,36 @@ module HandJudgement
       return 'RoyalStraightFlush'
     elsif isStraight_flush(targetcards)
       return 'StraightFlash'
-    elsif isSame_number(targetcards, 4)
-      return 'FourCards'
-    elsif isFull_house(targetcards)
-      return 'FullHouse'
-    elsif isFlush(targetcards)
-      return 'Flash'
-    elsif isStraight(targetcards)
-      return 'Straight'
-    elsif isSame_number(targetcards, 3)
-      return 'ThreeCards'
-    elsif isTwo_pairs(targetcards)
-      return 'TwoPairs'
-    elsif isSame_number(targetcards, 2)
-      return 'OnePair'
+    elsif @highcard = isSame_number(targetcards, 4)
+      return select_highcard + 'FourCards'
+    elsif @highcard = isFull_house(targetcards)
+      return select_highcard + 'FullHouse'
+    elsif @highcard = isFlush(targetcards)
+      return select_highcard + 'Flash'
+    elsif @highcard = isStraight(targetcards)
+      return select_highcard + 'Straight'
+    elsif @highcard = isSame_number(targetcards, 3)
+      return select_highcard + 'ThreeCards'
+    elsif @highcard = isTwo_pairs(targetcards)
+      return select_highcard + 'TwoPairs'
+    elsif @highcard = isSame_number(targetcards, 2)
+      return select_highcard + 'OnePair'
     else
-      return 'Highhand'
+      return highHand(targetcards) + 'Hand'
     end
   end
 
   private
+  def highHand(targetcards)
+    @highcard = targetcards.max {|a, b| a.number <=> b.number }.number
+    return select_highcard
+  end
   def isFlush(targetcards)
   	suits = { 's':0, 'h':0, 'd':0, 'c':0 }
     targetcards.each do |card|
       suits[card.suit.to_sym] += 1
     end
-    suits.each_value { |value| if value >= 5 then return true end }
+    suits.each { |key, value| if value >= 5 then return targetcards.select{ |card| card.suit == key.to_s }.max {|a, b| a.number <=> b.number }.number end }
 	  return false
   end
 
@@ -40,7 +44,7 @@ module HandJudgement
     targetcards.each do |card|
       numbers[card.number] += 1
     end
-    numbers.each_value { |value| if value >= sameCount then return true end }
+    numbers.each { |key, value| if value >= sameCount then return key end }
 	  return false
   end
   def isTwo_pairs(targetcards)
@@ -52,7 +56,7 @@ module HandJudgement
     13.times do |i|
       same_count[numbers[i + 1]] += 1
     end
-    return true if same_count[2] >= 2
+    return numbers.select{|k, v| v == 2 }.keys.max if same_count[2] >= 2
     return false
   end
   def isFull_house(targetcards)
@@ -64,8 +68,7 @@ module HandJudgement
     13.times do |i|
       same_count[numbers[i + 1]] += 1
     end
-    return true if same_count[2] >= 1 && same_count[3] >= 1
-    return true if same_count[3] >= 2
+    return numbers.select{|k, v| v == 3 }.keys.max  if (same_count[2] >= 1 && same_count[3] >= 1) || same_count[3] >= 2
     return false
   end
   def isStraight(targetcards)
@@ -76,12 +79,12 @@ module HandJudgement
   	#1から始まるストレート～9から始まるストレートを判定する
     9.times do |i|
   		if numbers[i+1]>=1 && numbers[i+2]>=1 && numbers[i+3]>=1 && numbers[i+4]>=1 && numbers[i+5]>=1
-  			return true
+  			return i + 5
   		end
   	end
   	#10から始まるストレートのみ1（エース）が含まれるため別で判定
   	if numbers[10]>=1 && numbers[11]>=1 && numbers[12]>=1 && numbers[13]>=1 && numbers[1]>=1
-  		return true
+  		return 1
   	end
   	return false
   end
@@ -102,5 +105,22 @@ module HandJudgement
     end
   	return true if isStraight_flush(cards)
   	return false
+  end
+  def select_highcard
+    case @highcard
+    when 1 then return 'A High '
+    when 2 then return '2 High '
+    when 3 then return '3 High '
+    when 4 then return '4 High '
+    when 5 then return '5 High '
+    when 6 then return '6 High '
+    when 7 then return '7 High '
+    when 8 then return '8 High '
+    when 9 then return '9 High '
+    when 10 then return '10 High '
+    when 11 then return 'J High '
+    when 12 then return 'Q High '
+    when 13 then return 'K High '
+    end
   end
 end
