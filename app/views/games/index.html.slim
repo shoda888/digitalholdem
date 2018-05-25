@@ -27,8 +27,9 @@ body.hold-transition.sidebar-mini
               | テキサスホールデムのルール
         .user-panel.mt-3.pb-3.mb-3.d-flex
           .info
-            a.d-block[href=admin_games_path]
-              | 管理者ページ
+            - if @current_player.admin?
+              a.d-block[href=admin_games_path]
+                | 管理者ページ
     .content-wrapper
       .content-header
         .container-fluid

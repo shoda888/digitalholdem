@@ -49,4 +49,9 @@ class CommunitiesController < ApplicationController
 
   def update
   end
+  def destroy
+    @current_player.game_id = nil
+    @current_player.save
+    redirect_to games_path
+  end
 end

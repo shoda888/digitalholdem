@@ -21,13 +21,15 @@
           .dealer_btn.btn.btn-block.btn-danger
            | アクション
         / = link_to '次のラウンドへ', new_community_path, class:'btn btn-block btn-danger'
-        .col-sm-6
+        .col-sm-3
           .admin_start_btn
-            = button_to '次のラウンドへ', communities_path, method: :post, class:'btn btn-success'
+            = button_to '次のラウンドへ', communities_path, method: :post, class:'btn btn-block btn-success'
       - else
-        .col-sm-9
+        .col-sm-6
           .player_start_btn
-            = button_to '次のラウンドへ', communities_path, method: :post, class:'btn btn-success'
+            = button_to '次のラウンドへ', communities_path, method: :post, class:'btn btn-block btn-success'
+      .col-sm-3
+        = button_to 'ロビーへ戻る', community_path, method: :delete, class:'btn btn-block btn-success'
 
   .text-center
     - @holes.each do |hole|
