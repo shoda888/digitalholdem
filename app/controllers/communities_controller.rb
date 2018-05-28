@@ -20,9 +20,8 @@ class CommunitiesController < ApplicationController
       community_cards.each do |c|
         @community.cards.create(suit:c.suit, number:c.number)
       end
-
       @game.players.each do |player|
-        @hole = player.holes.create
+        @hole = player.holes.create(community_id: @community.id)
         hole_cards = drawCard(2) #ホールカード作成
         hole_cards.each do |c|
           @hole.cards.create(suit:c.suit, number:c.number)
@@ -40,13 +39,16 @@ class CommunitiesController < ApplicationController
 
   def show
     @community = Community.find(params[:id])
-    @game = @community.game
     @holes = []
-    @game.players.each do |player|
-      @holes << player.holes.last
+    @community.holes.each do |hole|
+      @holes << hole
     end
   end
-
   def update
+  end
+  def destroy
+    @current_player.game_id = nil
+    @current_player.save
+    redirect_to games_path
   end
 end

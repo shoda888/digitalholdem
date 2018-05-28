@@ -1,6 +1,7 @@
 class Hole < ApplicationRecord
   has_many :cards, :as => :cardable
   belongs_to :player
+  belongs_to :community
   enum hand: {Highhand:0,
               '2 High Hand': 5, '3 High Hand': 10, '4 High Hand': 15, '5 High Hand': 20, '6 High Hand': 25,
               '7 High Hand': 30, '8 High Hand': 35, '9 High Hand': 40, '10 High Hand': 45, 'J High Hand': 50,
