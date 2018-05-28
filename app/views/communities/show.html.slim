@@ -20,7 +20,6 @@
         .col-sm-3
           .dealer_btn.btn.btn-block.btn-danger
            | アクション
-        / = link_to '次のラウンドへ', new_community_path, class:'btn btn-block btn-danger'
         .col-sm-3
           .admin_start_btn
             = button_to '次のラウンドへ', communities_path, method: :post, class:'btn btn-block btn-success'
@@ -33,22 +32,23 @@
 
   .text-center
     - @holes.each do |hole|
-      div id="#{hole.player.name}_card_field" class='hole_card_field'
+      .player_field
         .player_hole_card
-          = "#{hole.player.name}の手札"
+          = hole.player.name
         .player_chip_number
           i.fa.fa-bitcoin
             = hole.player.chip
-        h5.show_hand_name
-          = hole.hand
-        - hole.cards.each do |card|
-          - if hole.player == @current_player
-            .hole_card
-              img src="/z02.png" width="70" height="105"
-              .show_hole_card
-                img src="/#{card.suit}#{card.number}.png" width="70" height="105"
-          - else
-            .hole_card
-              img src="/z02.png" width="70" height="105"
-              .others_hole_card
-                img src="/#{card.suit}#{card.number}.png" width="70" height="105"
+        div id="#{hole.player.name}_card_field" class='hole_card_field'
+          h5.show_hand_name
+            = hole.hand
+          - hole.cards.each do |card|
+            - if hole.player == @current_player
+              .hole_card
+                img src="/z02.png" width="70" height="105"
+                .show_hole_card
+                  img src="/#{card.suit}#{card.number}.png" width="70" height="105"
+            - else
+              .hole_card
+                img src="/z02.png" width="70" height="105"
+                .others_hole_card
+                  img src="/#{card.suit}#{card.number}.png" width="70" height="105"

@@ -24,9 +24,8 @@ class CommunityChannel < ApplicationCable::Channel
       @community.finish
       #holeがstayのプレイヤーのhole.handが一番大きいのが勝ち
       @handlist = {}
-      @game.players.each do |player|
-        @hole = player.holes.last
-        @handlist["#{player.name}"] = @hole.hand_before_type_cast if @hole.stay?
+      @community.holes.each do |hole|
+        @handlist["#{hole.player.name}"] = hole.hand_before_type_cast if hole.stay?
       end
       max_val = (@handlist.max{|x,y| x[1] <=> y[1]})[1]
       @winners = @handlist.select{|k,v| v == max_val}.keys
@@ -52,7 +51,7 @@ class CommunityChannel < ApplicationCable::Channel
 
   def drop
     @hole = current_player.holes.last
-    @community = current_player.game.communities.last #@hole.communityで取りたい
+    @community = @hole.community.last
     case @community.aasm_state
     when 'preflop'
       current_player.chip -= 1
@@ -74,9 +73,9 @@ class CommunityChannel < ApplicationCable::Channel
 
   def winner_get_chips
     player = Player.find_by(name: @winners[0])
-    player.holes.last.out_come = true
-    number_of_losers = Hole.select()# ホールがステイのプレイヤーの数をかける
-    player.chip += 15 * number_of_losers #勝利プレイヤーのチップ数が加わる
+    @community.holes.find_by(player_id: player.id).update_column(:out_come, true)
+    number_of_losers = @community.holes.count{|hole| hole.stay?}  # ホールがステイのプレイヤーの数を算出する
+    player.chip += 15 * (number_of_losers + 1)  #勝利プレイヤーのチップ数が加わる
     player.save
   end
   def loser_lose_chips
