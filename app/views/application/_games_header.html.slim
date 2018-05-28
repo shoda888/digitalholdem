@@ -1,0 +1,15 @@
+nav.main-header.navbar.navbar-expand.bg-white.navbar-light.border-bottom
+  ul.navbar-nav
+    li.nav-item
+      a.nav-link[data-widget="pushmenu" href="#"]
+        i.fa.fa-bars
+    li#hello.nav-item.d-none.d-sm-inline-block
+      a.nav-link[href="#"]
+        | {{ message }}
+    li.nav-item.d-none.d-sm-inline-block
+      a.nav-link[href="#"]
+        = @current_player.name
+    li.nav-item.d-none.d-sm-inline-block
+      = link_to session_path(@current_player), method: :delete, class: 'nav-link' do
+        i.fa.fa-sign-out[aria-hidden="true"]
+          | ログアウト
