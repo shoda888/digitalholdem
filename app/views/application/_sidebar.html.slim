@@ -1,0 +1,25 @@
+a.brand-link[href="index3.html"]
+  span.brand-text.font-weight-light
+    | Digital Holdem
+.sidebar
+  .user-panel.mt-3.pb-3.mb-3.d-flex
+    .info
+      a.d-block[href=player_path(@current_player)]
+        = @current_player.name
+  .user-panel.mt-3.pb-3.mb-3.d-flex
+    .info
+      a.d-block[href="/admin/games"]
+        | ゲーム一覧
+  .user-panel.mt-3.pb-3.mb-3.d-flex
+    .info
+      a.d-block[href="/admin/players"]
+        | プレイヤー一覧
+  .user-panel.mt-3.pb-3.mb-3.d-flex
+    .info
+      = link_to session_path(@current_player), method: :delete, class: 'd-block' do
+        i.fas.fa-sign-out-alt[aria-hidden="true"]
+          | ログアウト
+  .user-panel.mt-3.pb-3.mb-3.d-flex
+    .info
+      a.d-block[href="/games"]
+        | 一般ロビーへ

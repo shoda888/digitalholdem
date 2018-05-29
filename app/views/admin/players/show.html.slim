@@ -1,0 +1,27 @@
+.content-header
+  .container-fluid
+    .row.mb-2
+      .col-sm-6
+        h1.m-0.text-dark
+          | プレイヤー詳細
+      .col-sm-6
+        = link_to '管理者になる', player_path, method: :put, class: "btn btn-success", data: { confirm: 'Are you sure?' } unless @player.admin?
+.content
+  .container-fluid
+    .row
+      .card-body
+        .col-lg-12
+          table.table.table-striped
+            tbody
+              tr
+                th プレイヤー名
+                td = @player.name
+              tr
+                th プレイヤー種別
+                td = @player.role
+              tr
+                th チップ数
+                td = @player.chip
+              tr
+                th 戦績
+                td

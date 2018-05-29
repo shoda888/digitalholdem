@@ -7,9 +7,9 @@ nav.main-header.navbar.navbar-expand.bg-white.navbar-light.border-bottom
       a.nav-link[href="#"]
         | {{ message }}
     li.nav-item.d-none.d-sm-inline-block
-      a.nav-link[href="#"]
+      a.nav-link[href=player_path(@current_player)]
         = @current_player.name
-    li.nav-item.d-none.d-sm-inline-block
-      = link_to session_path(@current_player), method: :delete, class: 'nav-link' do
-        i.fas.fa-sign-out-alt[aria-hidden="true"]
-          | ログアウト
+    - if flash[:notice]
+      li.nav-item.d-none.d-sm-inline-block
+        .nav-link
+          = flash[:notice]

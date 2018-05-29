@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
       flash[:notice] = "ログインしました"
       redirect_to games_path
     else
-      @error_message = "メールアドレスまたはパスワードが間違っています"
+      @error_message = "ユーザー名またはパスワードが間違っています"
       render new_session_path, name:params[:name]
     end
   end

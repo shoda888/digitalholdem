@@ -4,10 +4,6 @@
       .col-sm-6
         h1.m-0.text-dark
           | Game Table
-      - if flash[:notice]
-        .col-sm-6
-          .alert.alert-info.alert-dismissible
-            = flash[:notice]
 .content
   .container-fluid
     .row
@@ -22,5 +18,5 @@
             - @games.each do |game|
               tr role="row"
                 td = game.id
-                td = link_to(game.name, game_path(game))
+                td = link_to(game.name, admin_game_path(game))
                 td

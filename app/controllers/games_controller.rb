@@ -6,6 +6,7 @@ class GamesController < ApplicationController
   end
   def show
     @game = Game.find(params[:id])
+    @players = @game.players
   end
   def new
     @game = Game.new

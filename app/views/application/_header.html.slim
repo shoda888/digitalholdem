@@ -1,0 +1,15 @@
+nav.main-header.navbar.navbar-expand.bg-white.navbar-light.border-bottom
+  ul.navbar-nav
+    li.nav-item
+      a.nav-link[data-widget="pushmenu" href="#"]
+        i.fa.fa-bars
+    li.nav-item.d-none.d-sm-inline-block
+      a.nav-link[href="#"]
+        | 管理画面
+    li.nav-item.d-none.d-sm-inline-block
+      a.nav-link[href=admin_player_path(@current_player)]
+        = @current_player.name
+    - if flash[:notice]
+      li.nav-item.d-none.d-sm-inline-block
+        .nav-link
+          = flash[:notice]

@@ -1,0 +1,31 @@
+body.hold-transition.sidebar-mini
+  .wrapper
+    = render 'games_header'
+    = render 'games_sidebar'
+    .content-wrapper
+      .content-header
+        .container-fluid
+          .row.mb-2
+            .col-sm-6
+              h1.m-0.text-dark
+                | プレイヤー詳細
+            .col-sm-6
+              = link_to '管理者になる', player_path, method: :put, class: "btn btn-success", data: { confirm: 'Are you sure?' }  unless @current_player.admin?
+      .content
+        .container-fluid
+          .row
+            .card-body
+              .col-lg-12
+                table.table.table-striped
+                  tbody
+                    tr
+                      th プレイヤー名
+                      td = @current_player.name
+                    tr
+                      th プレイヤー種別
+                      td = @current_player.role
+                    tr
+                      th 戦績
+                      td
+
+    = render 'games_footer'

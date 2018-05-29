@@ -4,6 +4,8 @@ class Admin::GamesController < Admin::ApplicationController
     @games = Game.all
   end
   def show
+    @game = Game.find(params[:id])
+    @players = @game.players
   end
   def new
     @game = Game.new
@@ -12,12 +14,14 @@ class Admin::GamesController < Admin::ApplicationController
   def edit
   end
   def update
+    @current_player.update(game_id: params[:id])
+    redirect_to new_community_path
   end
 
   def create
     @game = Game.new(game_params)
     if @game.save
-      redirect_to games_path
+      redirect_to admin_games_path
     else
       render :new
     end

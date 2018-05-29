@@ -14,9 +14,19 @@ class PlayersController < ApplicationController
       render new_player_path
     end
   end
+
+  def show
+  end
+
+  def update
+    @current_player.update(role: 'admin')
+    flash[:notice] = "管理者登録されました。ゲームに参加の際はディーラーとしてゲームを開始してください。"
+    redirect_to player_path(@current_player)
+  end
+
   private
 
   def player_params
-    params.require(:player).permit(:name, :password)
+    params.require(:player).permit(:name, :password, :role)
   end
 end
