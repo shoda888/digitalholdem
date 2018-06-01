@@ -1,0 +1,24 @@
+aside.main-sidebar.sidebar-dark-primary.elevation-4
+  a.brand-link[href="games"]
+    span.brand-text.font-weight-light
+      | Digital Holdem
+  .sidebar
+    .user-panel.mt-3.pb-3.mb-3.d-flex
+      .info
+        a.d-block[href=player_path(@current_player)]
+          = @current_player.name
+    nav.mt-2
+      ul.nav.nav-pills.nav-sidebar.flex-column[data-widget="treeview" role="menu" data-accordion="false"]
+        li.nav-item
+          a.nav-link[href="#"]
+            i.nav-icon.fas.fa-book-open.fa-fw
+              = " ルール"
+        li.nav-item
+          = link_to session_path(@current_player), method: :delete, class: 'nav-link' do
+            i.nav-icon.fas.fa-sign-out-alt
+              = " ログアウト"
+        li.nav-item
+          - if @current_player.admin?
+            a.nav-link[href=admin_games_path]
+              i.nav-icon.fas.fa-lock.fa-fw
+                = ' 管理者ページ'

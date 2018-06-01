@@ -56,11 +56,11 @@ class CommunityChannel < ApplicationCable::Channel
     when 'preflop'
       current_player.chip -= 1
     when 'flop'
-      current_player.chip -= 3
+      current_player.chip -= 2
     when 'turn'
-      current_player.chip -= 6
+      current_player.chip -= 4
     when 'river'
-      current_player.chip -= 10
+      current_player.chip -= 8
     else
     end
     current_player.save
@@ -75,13 +75,13 @@ class CommunityChannel < ApplicationCable::Channel
     player = Player.find_by(name: @winners[0])
     @community.holes.find_by(player_id: player.id).update_column(:out_come, true)
     number_of_losers = @community.holes.count{|hole| hole.stay?}  # ホールがステイのプレイヤーの数を算出する
-    player.chip += 15 * (number_of_losers + 1)  #勝利プレイヤーのチップ数が加わる
+    player.chip += 16 * (number_of_losers + 1)  #勝利プレイヤーのチップ数が加わる
     player.save
   end
   def loser_lose_chips
     @losers.each do |loser|
       player = Player.find_by(name: loser)
-      player.chip -= 15 #敗者プレイヤーのチップ数が減る
+      player.chip -= 16 #敗者プレイヤーのチップ数が減る
       player.save
     end
   end

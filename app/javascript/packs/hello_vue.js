@@ -10,7 +10,7 @@ import Vue from 'vue/dist/vue.esm'
 const app = new Vue({
   el: '#hello',
   data: {
-    message: "プレイヤーロビーへようこそ"
+    message: "プレイヤーロビーへようこそ!"
   }
 })
 
