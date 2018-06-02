@@ -16,3 +16,7 @@
 
 @import 'admin-lte/plugins/bootstrap/css/bootstrap.min';
 @import 'admin-lte/dist/css/adminlte.min';
+
+body {
+  background-color: #FACAC8;
+}

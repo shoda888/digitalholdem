@@ -1,8 +1,33 @@
 .container
-  h2.text-center
-    | コミュニティカード
+  .dealer-action.text-center
+    .row
+      - if @current_player.admin?
+        .col-sm-4
+          .dealer_btn.btn.btn-block.btn-danger
+           | アクション
+        .col-sm-4
+          .admin_start_btn
+            = button_to '次のラウンドへ', communities_path, method: :post, class:'btn btn-block btn-success'
+      - else
+        .col-sm-8
+          .player_start_btn
+            = button_to '次のラウンドへ', communities_path, method: :post, class:'btn btn-block btn-success'
+      .col-sm-4
+        = button_to 'ロビーへ戻る', community_path, method: :delete, class:'btn btn-block btn-success'
 
   .text-center
+      .player_field
+        .player_hole_card
+          = @admin_name
+        .player_chip_number
+          i.fas.fa-coins
+            = @admin.chip
+        div id="#{@admin_name}_card_field" class='hole_card_field'
+          h5.show_hand_name
+            = @admin_hole.hand
+          = render 'admin_action_field'
+
+  .text-center.communities_card_field
     .community_card_field
       - @community.cards.each_with_index do |card, index|
         .community_card
@@ -10,29 +35,9 @@
           div id="card#{index}" class="show_community_card"
             img src="/#{card.suit}#{card.number}.png" width="70" height="105"
 
-  / ディーラーアクション
-  .dealer-action.text-center
-    .row
-      .col-sm-3
-        .drop_btn.btn.btn-block.btn-danger
-         | 降りる
-      - if @current_player.admin?
-        .col-sm-3
-          .dealer_btn.btn.btn-block.btn-danger
-           | アクション
-        .col-sm-3
-          .admin_start_btn
-            = button_to '次のラウンドへ', communities_path, method: :post, class:'btn btn-block btn-success'
-      - else
-        .col-sm-6
-          .player_start_btn
-            = button_to '次のラウンドへ', communities_path, method: :post, class:'btn btn-block btn-success'
-      .col-sm-3
-        = button_to 'ロビーへ戻る', community_path, method: :delete, class:'btn btn-block btn-success'
-
-  .text-center
-    - @holes.each do |hole|
-      .player_field
+  .text-center.row
+    - @player_holes.each do |hole|
+      .col-lg-3.col-md-4.col-sm-6.col-xs-12.player_field
         .player_hole_card
           = hole.player.name
         .player_chip_number
@@ -41,14 +46,4 @@
         div id="#{hole.player.name}_card_field" class='hole_card_field'
           h5.show_hand_name
             = hole.hand
-          - hole.cards.each do |card|
-            - if hole.player == @current_player
-              .hole_card
-                img src="/z02.png" width="70" height="105"
-                .show_hole_card
-                  img src="/#{card.suit}#{card.number}.png" width="70" height="105"
-            - else
-              .hole_card
-                img src="/z02.png" width="70" height="105"
-                .others_hole_card
-                  img src="/#{card.suit}#{card.number}.png" width="70" height="105"
+          = render 'player_action_field', player: hole.player, player_name: hole.player.name, player_cards: hole.cards

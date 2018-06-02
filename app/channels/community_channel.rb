@@ -50,8 +50,9 @@ class CommunityChannel < ApplicationCable::Channel
   end
 
   def drop
+    pp '<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<'
     @hole = current_player.holes.last
-    @community = @hole.community.last
+    @community = @hole.community
     case @community.aasm_state
     when 'preflop'
       current_player.chip -= 1
@@ -67,6 +68,10 @@ class CommunityChannel < ApplicationCable::Channel
     @hole.drop
     @hole.save
     CommunityChannel.broadcast_to(current_player.game, { message: 'drop', player: current_player.name })
+  end
+
+  def check
+    CommunityChannel.broadcast_to(current_player.game, { message: 'check', player: current_player.name })
   end
 
   private

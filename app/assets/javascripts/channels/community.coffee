@@ -14,6 +14,8 @@ App.community = App.cable.subscriptions.create "CommunityChannel",
         $('.player_start_btn').show(500)
       when 'drop'
         $("##{data['player']}_card_field").slideUp(500)
+      when 'check'
+        $("##{data['player']}_call_btn").slideUp(500)
       when "flop"
         $('#card4').show(1000)
         $('#card3').show(1000)
@@ -40,3 +42,6 @@ App.community = App.cable.subscriptions.create "CommunityChannel",
 
   drop: ->
     @perform 'drop'
+
+  check: ->
+    @perform 'check'

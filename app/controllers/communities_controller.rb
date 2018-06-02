@@ -39,9 +39,16 @@ class CommunitiesController < ApplicationController
 
   def show
     @community = Community.find(params[:id])
-    @holes = []
+    @player_holes = []
     @community.holes.each do |hole|
-      @holes << hole
+      if hole.player.admin?
+        @admin_hole = hole
+        @admin = @admin_hole.player
+        @admin_cards = @admin_hole.cards
+        @admin_name = @admin.name
+      else
+        @player_holes << hole
+      end
     end
   end
   def update
