@@ -16,6 +16,12 @@ class PlayersController < ApplicationController
   end
 
   def show
+    @player = @current_player
+    @holes = @player.holes
+    @win_holes = @holes.select{|hole| hole.out_come == true}
+    @stay_holes = @holes.select{|hole| hole.stay? }
+    @max_hand = @win_holes.max{|a, b| a.hand_before_type_cast <=> b.hand_before_type_cast}.hand
+    @win_rate = @win_holes.length/@stay_holes.length.to_f * 100
   end
 
   def update
