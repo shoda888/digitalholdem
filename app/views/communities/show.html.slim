@@ -16,19 +16,22 @@
         = button_to 'ロビーへ戻る', community_path, method: :delete, class:'btn btn-block btn-success'
 
   .text-center
-      .player_field
-        .player_hole_card
-          = @admin_name
-        .player_chip_number
-          i.fas.fa-coins
-            = @admin.chip
-        div id="#{@admin_name}_card_field" class='hole_card_field'
-          h5.show_hand_name
-            = @admin_hole.hand
-          = render 'admin_action_field'
+    .player_field
+      .player_hole_card
+        = @admin_name
+      .player_chip_number
+        i.fas.fa-coins
+          input.chip_num[value=@admin.chip disabled='']
+      div id="#{@admin_name}_card_field" class='hole_card_field'
+        h5.show_hand_name
+          = @admin_hole.hand
+        = render 'admin_action_field'
 
   .text-center.communities_card_field
     .community_card_field
+      .pod_chip_number
+        i.fas.fa-coins
+          input.chip_num[value=@community.pod disabled='']
       - @community.cards.each_with_index do |card, index|
         .community_card
           img src="/z02.png" width="70" height="105"
@@ -42,7 +45,7 @@
           = hole.player.name
         .player_chip_number
           i.fas.fa-coins
-            = hole.player.chip
+            input.chip_num[value=hole.player.chip disabled='']
         div id="#{hole.player.name}_card_field" class='hole_card_field'
           h5.show_hand_name
             = hole.hand

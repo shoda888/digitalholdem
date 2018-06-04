@@ -13,14 +13,22 @@
 .dealer-action{
   padding-bottom: 24px;
 }
-
+.chip_num{
+  background-color: #FACAC8;
+  width: 50px;
+  border: none;
+  color: black;
+}
+.pod_chip_number{
+  margin-bottom: 20px;
+}
 .player_start_btn{
   display: none;
 }
 .community_card_field{
   padding: 70px 0px;
   border-style: outset;
-  border-radius: 35px;
+  border-radius: 70px;
   background-color: #FA9996;
 }
 .show_community_card{

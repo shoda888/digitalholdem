@@ -3,5 +3,9 @@
 #
 # Examples:
 #
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+
+game = Game.create(:name => "テキサスホールデム")
+
+5.times do |no|
+  Player.create(:name => "player#{no}", :password => 'password', :game_id => game.id)
+end

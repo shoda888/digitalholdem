@@ -14,7 +14,6 @@ $(document).ready(function() {
     App.community.drop();
   });
   $('.call_field').click(function(){
-    // $(this).hide();
     App.community.check();
   });
   $('.hole_card_field').mouseout(function(){

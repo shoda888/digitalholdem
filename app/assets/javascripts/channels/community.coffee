@@ -17,6 +17,8 @@ App.community = App.cable.subscriptions.create "CommunityChannel",
         # $("##{data['player']}_card_field").find('.player_action_field').css('visibility', 'hidden')
       when 'check'
         $("##{data['player']}_call_btn").parent().css('visibility', 'hidden')
+        $("##{data['player']}_card_field").siblings().find('input').val("#{data['chip']}")
+        $(".pod_chip_number").find('input').val("#{data['pod']}")
       when "flop"
         $('.player_action_field').css('visibility', 'visible')
         $('#card4').show(1000)
