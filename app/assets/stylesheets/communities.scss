@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
 .show_hand_name{
   display: none;
   color: red;
@@ -10,11 +11,25 @@
   padding-bottom: 15px;
 }
 .dealer-action{
-  padding-bottom: 30px;
+  padding-bottom: 24px;
 }
-
+.chip_num{
+  background-color: #FACAC8;
+  width: 50px;
+  border: none;
+  color: black;
+}
+.pod_chip_number{
+  margin-bottom: 20px;
+}
 .player_start_btn{
   display: none;
+}
+.community_card_field{
+  padding: 70px 0px;
+  border-style: outset;
+  border-radius: 70px;
+  background-color: #FA9996;
 }
 .show_community_card{
   display: inline-block;

@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20180429025507) do
   create_table "communities", force: :cascade do |t|
     t.string "aasm_state"
     t.integer "game_id"
+    t.integer "pod", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

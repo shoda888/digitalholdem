@@ -27,6 +27,9 @@ module HandJudgement
 
   private
   def highHand(targetcards)
+    targetcards.each do |card|
+      @highcard = 1 if card.number == 1
+    end
     @highcard = targetcards.max {|a, b| a.number <=> b.number }.number
     return select_highcard
   end
@@ -35,7 +38,18 @@ module HandJudgement
     targetcards.each do |card|
       suits[card.suit.to_sym] += 1
     end
-    suits.each { |key, value| if value >= 5 then return targetcards.select{ |card| card.suit == key.to_s }.max {|a, b| a.number <=> b.number }.number end }
+    suits.each do |key, value|
+      if value >= 5
+        same_number_cards = targetcards.select{ |card| card.suit == key.to_s }
+        max_number = same_number_cards.max {|a, b| a.number <=> b.number }.number
+        min_number = same_number_cards.min {|a, b| a.number <=> b.number }.number
+        if min_number == 1
+          return 1
+        else
+          return max_number
+        end
+      end
+    end
 	  return false
   end
 
@@ -56,7 +70,13 @@ module HandJudgement
     13.times do |i|
       same_count[numbers[i + 1]] += 1
     end
-    return numbers.select{|k, v| v == 2 }.keys.max if same_count[2] >= 2
+    if same_count[2] >= 2
+      if numbers[1] == 2
+        return 1
+      else
+        return numbers.select{|k, v| v == 2 }.keys.max
+      end
+    end
     return false
   end
   def isFull_house(targetcards)
@@ -68,7 +88,13 @@ module HandJudgement
     13.times do |i|
       same_count[numbers[i + 1]] += 1
     end
-    return numbers.select{|k, v| v == 3 }.keys.max  if (same_count[2] >= 1 && same_count[3] >= 1) || same_count[3] >= 2
+    if (same_count[2] >= 1 && same_count[3] >= 1) || same_count[3] >= 2
+      if numbers[1] == 3
+        return 1
+      else
+        return numbers.select{|k, v| v == 3 }.keys.max
+      end
+    end
     return false
   end
   def isStraight(targetcards)
