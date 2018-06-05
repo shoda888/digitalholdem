@@ -1,7 +1,7 @@
 .container
   .dealer-action.text-center
     .row
-      - if @current_player.admin?
+      - if !@current_player.normal?
         .col-sm-4
           .dealer_btn.btn.btn-block.btn-danger
            | アクション

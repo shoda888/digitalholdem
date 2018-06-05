@@ -3,7 +3,7 @@
     .row.mb-2
       .col-sm-6
         h1.m-0.text-dark
-          | Game Table
+          | ロビー
 .content
   .container-fluid
     .row
@@ -11,8 +11,8 @@
         table.table.table-bordered.table-striped.dataTable role="grid"
           thead
             tr role="row"
-              th ID
-              th タイトル
+              th テーブル番号
+              th テーブル名
               th = link_to '+', new_admin_game_path, class: "btn btn-success"
           tbody
             - @games.each do |game|

@@ -10,7 +10,14 @@ body.hold-transition.sidebar-mini
               h1.m-0.text-dark
                 | プレイヤー詳細
             .col-sm-6
-              = link_to '管理者になる', player_path, method: :put, class: "btn btn-success", data: { confirm: 'Are you sure?' }  unless @player.admin?
+              - if @player.normal?
+                = link_to 'ディーラーモードへ', player_path(become: 'dealer'), method: :put, class: "btn btn-danger", data: { confirm: 'ディーラー登録されますがよろしいですか?' }
+              - elsif @player.dealer?
+                = link_to 'プレイヤーモードへ', player_path(become: 'normal'), method: :put, class: "btn btn-success", data: { confirm: 'プレイヤー登録されますがよろしいですか?' }
+              - else
+                = link_to 'プレイヤーモードへ', player_path(become: 'normal'), method: :put, class: "btn btn-success", data: { confirm: 'プレイヤー登録されますがよろしいですか?' }
+                = link_to 'ディーラーモードへ', player_path(become: 'dealer'), method: :put, class: "btn btn-danger", data: { confirm: 'ディーラー登録されますがよろしいですか?' }
+
       .content
         .container-fluid
           .row
@@ -44,4 +51,4 @@ body.hold-transition.sidebar-mini
                       .col-md-6
                       .col-md-6
                         | 勝率
-                    th = "#{@win_rate.round(1)} %"
+                    th = number_to_percentage(@win_rate)

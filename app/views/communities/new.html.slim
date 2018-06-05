@@ -7,7 +7,7 @@
     = "#{@current_player.name} is in #{@game.name}"
 
   .text-center
-    - if @current_player.admin?
+    - if !@current_player.normal?
       .admin_start_btn
         = button_to "ゲーム開始", communities_path, method: :post, class:'btn btn-success'
     - else

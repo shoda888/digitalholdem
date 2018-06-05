@@ -5,5 +5,5 @@ class Player < ApplicationRecord
   validates :name, presence: true
   validates :password, presence: true
 
-  enum role: { admin: 1, normal: 2 }
+  enum role: { admin: 1, normal: 2, dealer: 3 }
 end

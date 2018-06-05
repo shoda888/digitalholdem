@@ -1,25 +1,31 @@
 .content-header
   .container-fluid
     .row.mb-2
-      .col-sm-6
-        h1.m-0.text-dark
-          | ゲーム詳細
-      .col-sm-6
-        = link_to 'このゲームに参加する', admin_game_path, method: :put, class: "btn btn-success"
+      .col-lg-4
+        h3.m-0.text-dark
+          = @game.name
+      .col-lg-3
+        = link_to 'このテーブルに参加する', game_path, method: :put, class: "btn btn-success"
 .content
   .container-fluid
     .row
       .card-body
-        .col-lg-12
+        .col-lg-6
           table.table.table-striped
+            thead
+              tr role="row"
+                th 現在参加しているプレイヤー
+                th
+                  = @game.players.count{|player| player.normal?}
             tbody
-              tr
-                th ゲーム名
-                td = @game.name
               - @game.players.each do |player|
                 tr
-                  - if player.admin?
-                    th ディーラー ID:#{player.id}
+                  - if !player.normal?
+                    th
+                      i.far.fa-user
+                        | 　ディーラー
                   - else
-                    th 参加プレイヤー ID:#{player.id}
+                    th
+                      i.fas.fa-user
+                        | 　参加プレイヤー
                   td = player.name

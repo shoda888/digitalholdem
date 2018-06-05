@@ -1,19 +1,18 @@
-.content-wrapper
-  .content-header
-    .container-fluid
-      .row.mb-2
-        .col-sm-6
-          h1.m-0.text-dark
-            | create new game
-  .content
-    .container-fluid
-      .row
-        .col-lg-12
-          .form-body
-            = form_for(@game, url: admin_games_path) do |f|
-              - @game.errors.full_messages.each do |message|
-                .form-error
-                  = message
-              .form-group
-                = f.text_field :name, class: 'form-control', placeholder: 'ゲーム名'
-              = f.submit "登録", class: 'btn btn-info'
+.content-header
+  .container-fluid
+    .row.mb-2
+      .col-sm-6
+        h3.m-0.text-dark
+          | 新規テーブル登録
+.content
+  .container-fluid
+    .row
+      .col-lg-6
+        .form-body
+          = form_for(@game, url: admin_games_path) do |f|
+            - @game.errors.full_messages.each do |message|
+              .form-error
+                = message
+            .form-group
+              = f.text_field :name, class: 'form-control', placeholder: 'テーブル名'
+            = f.submit "登録", class: 'btn btn-info'

@@ -1,25 +1,39 @@
-a.brand-link[href="index3.html"]
+a.brand-link[href="/admin/games"]
   span.brand-text.font-weight-light
-    | Digital Holdem
+    | 　　Digital Holdem
 .sidebar
   .user-panel.mt-3.pb-3.mb-3.d-flex
     .info
       a.d-block[href=player_path(@current_player)]
-        = @current_player.name
+        - if @current_player.normal?
+          i.nav-icon.fas.fa-user
+            = "　#{@current_player.name}"
+        - else
+          i.nav-icon.far.fa-user
+            = "　#{@current_player.name}"
   .user-panel.mt-3.pb-3.mb-3.d-flex
     .info
       a.d-block[href="/admin/games"]
-        | ゲーム一覧
+        i.nav-icon.fas.fa-trophy
+          | 　ロビー
   .user-panel.mt-3.pb-3.mb-3.d-flex
     .info
-      a.d-block[href="/admin/players"]
-        | プレイヤー一覧
+      a.d-block[href="/admin/games/new"]
+        i.nav-icon.fas.fa-plus
+          | 　テーブル作成
+  .user-panel.mt-3.pb-3.mb-3.d-flex
+    - if @current_player.admin?
+      .info
+        a.d-block[href="/admin/players"]
+          i.nav-icon.fas.fa-users
+            | 　プレイヤー一覧
   .user-panel.mt-3.pb-3.mb-3.d-flex
     .info
       = link_to session_path(@current_player), method: :delete, class: 'd-block' do
         i.fas.fa-sign-out-alt[aria-hidden="true"]
-          | ログアウト
+          | 　ログアウト
   .user-panel.mt-3.pb-3.mb-3.d-flex
     .info
       a.d-block[href="/games"]
-        | 一般ロビーへ
+       i.nav-icon.fas.fa-door-open
+         | 　一般ロビーへ

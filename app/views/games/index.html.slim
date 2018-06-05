@@ -8,8 +8,8 @@ body.hold-transition.sidebar-mini
         .container-fluid
           .row.mb-2
             .col-sm-6
-              h1.m-0.text-dark
-                | Game Table
+              h3.m-0.text-dark
+                | ロビー
       .content
         .container-fluid
           .row
@@ -17,8 +17,8 @@ body.hold-transition.sidebar-mini
               table.table.table-bordered.table-striped.dataTable role="grid"
                 thead
                   tr role="row"
-                    th ID
-                    th タイトル
+                    th テーブル番号
+                    th テーブル名
                 tbody
                   - @games.each do |game|
                     tr role="row"
