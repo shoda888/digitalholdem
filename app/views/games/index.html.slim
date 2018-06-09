@@ -19,8 +19,15 @@ body.hold-transition.sidebar-mini
                   tr role="row"
                     th テーブル番号
                     th テーブル名
+                    th 参加人数
                 tbody
                   - @games.each do |game|
                     tr role="row"
                       td = game.id
                       td = link_to(game.name, game_path(game))
+                      td
+                        - game.players.each do |player|
+                          -if player.normal?
+                            i.fas.fa-user
+                          -else
+                            i.far.fa-user

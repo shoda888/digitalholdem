@@ -3,9 +3,6 @@
     | ディーラーの指示をおまちください
 
 
-  h4.text-center
-    = "#{@current_player.name} is in #{@game.name}"
-
   .text-center
     - if !@current_player.normal?
       .admin_start_btn
@@ -13,4 +10,4 @@
     - else
       .player_start_btn
         = button_to "ゲーム開始", communities_path, method: :post, class:'btn btn-success'
-    = link_to "ロビーへ戻る", games_path, class:'btn btn-primary'
+    = button_to 'ロビーへ戻る', community_path(@game), method: :delete, class:'btn btn-success', data: { confirm: '退出しますがよろしいですか?' }
