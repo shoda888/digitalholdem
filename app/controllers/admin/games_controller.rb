@@ -26,6 +26,11 @@ class Admin::GamesController < Admin::ApplicationController
       render :new
     end
   end
+  def destroy
+    @game = Game.find(params[:id])
+    @game.delete
+    redirect_to 'index'
+  end
 
   private
 

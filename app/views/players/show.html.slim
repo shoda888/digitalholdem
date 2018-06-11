@@ -10,23 +10,45 @@ body.hold-transition.sidebar-mini
               h1.m-0.text-dark
                 | プレイヤー詳細
             .col-sm-6
-              = link_to '管理者になる', player_path, method: :put, class: "btn btn-success", data: { confirm: 'Are you sure?' }  unless @current_player.admin?
+              - if @player.normal?
+                = link_to 'ディーラーモードへ', player_path(become: 'dealer'), method: :put, class: "btn btn-danger", data: { confirm: 'ディーラー登録されますがよろしいですか?' }
+              - elsif @player.dealer?
+                = link_to 'プレイヤーモードへ', player_path(become: 'normal'), method: :put, class: "btn btn-success", data: { confirm: 'プレイヤー登録されますがよろしいですか?' }
+              - else
+                = link_to 'プレイヤーモードへ', player_path(become: 'normal'), method: :put, class: "btn btn-success", data: { confirm: 'プレイヤー登録されますがよろしいですか?' }
+                = link_to 'ディーラーモードへ', player_path(become: 'dealer'), method: :put, class: "btn btn-danger", data: { confirm: 'ディーラー登録されますがよろしいですか?' }
+
       .content
         .container-fluid
           .row
             .card-body
-              .col-lg-12
-                table.table.table-striped
-                  tbody
-                    tr
-                      th プレイヤー名
-                      td = @current_player.name
-                    tr
-                      th プレイヤー種別
-                      td = @current_player.role
-                    tr
-                      th チップ数
-                      td = @current_player.chip
-                    tr
-                      th 戦績
-                      td
+              table.table.table-striped
+                tbody
+                  tr
+                    th プレイヤー名
+                    th = @player.name
+                  tr
+                    th プレイヤー種別
+                    th = @player.role
+                  tr
+                    th 現在のチップ数
+                    th = @player.chip
+                  tr
+                    th.row
+                      .col-md-6
+                        | 戦績
+                      .col-md-6
+                        | 参加したラウンド数
+                    th = @holes.length
+                  tr
+                    th.row
+                      .col-md-6
+                      .col-md-6
+                        | 最高あがりハンド
+                    th = @max_hand
+                  tr
+                    th.row
+                      .col-md-6
+                      .col-md-6
+                        | 勝率
+                    th = number_to_percentage(@win_rate)

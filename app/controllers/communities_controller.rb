@@ -12,7 +12,7 @@ class CommunitiesController < ApplicationController
 
   def create
     @game = @current_player.game
-    if @current_player.admin?
+    if !@current_player.normal?
       @community = @game.communities.create#コミュニティー作成
       @cards = shuffle(build) #シャッフルされた52枚のカード
 
@@ -41,7 +41,7 @@ class CommunitiesController < ApplicationController
     @community = Community.find(params[:id])
     @player_holes = []
     @community.holes.each do |hole|
-      if hole.player.admin?
+      if !hole.player.normal?
         @admin_hole = hole
         @admin = @admin_hole.player
         @admin_cards = @admin_hole.cards

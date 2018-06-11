@@ -12,6 +12,13 @@ class GamesController < ApplicationController
     @game = Game.new
   end
   def update
+    unless @current_player.normal?
+      @game = Game.find(params[:id])
+      if @game.players.any?{|player| !player.normal? && player != @current_player}
+        redirect_to game_path(@game), notice: '1テーブルにつき1ディーラーです'
+        return
+      end
+    end
     @current_player.update(game_id: params[:id])
     redirect_to new_community_path
   end

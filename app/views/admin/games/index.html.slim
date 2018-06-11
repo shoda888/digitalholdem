@@ -3,7 +3,9 @@
     .row.mb-2
       .col-sm-6
         h1.m-0.text-dark
-          | Game Table
+          | ロビー
+      .col-sm-6
+        = link_to '新規テーブル追加', new_admin_game_path, class: "btn btn-success"
 .content
   .container-fluid
     .row
@@ -11,12 +13,14 @@
         table.table.table-bordered.table-striped.dataTable role="grid"
           thead
             tr role="row"
-              th ID
-              th タイトル
-              th = link_to '+', new_admin_game_path, class: "btn btn-success"
+              th テーブル番号
+              th テーブル名
+              th
           tbody
             - @games.each do |game|
               tr role="row"
                 td = game.id
                 td = link_to(game.name, admin_game_path(game))
                 td
+                  -if @current_player.admin?
+                    = link_to '削除', admin_game_path(game), method: :delete, class: "btn btn-danger"
