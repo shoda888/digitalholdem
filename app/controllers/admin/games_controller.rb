@@ -29,7 +29,7 @@ class Admin::GamesController < Admin::ApplicationController
   def destroy
     @game = Game.find(params[:id])
     @game.delete
-    redirect_to 'index'
+    redirect_to admin_games_path
   end
 
   private

@@ -1,5 +1,12 @@
-body {
+@import 'admin-lte/plugins/bootstrap/css/bootstrap.min';
+@import 'admin-lte/dist/css/adminlte.min';
+
+/* body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 24px;
+} */
+
+body {
+  background-color: yellow;
 }
