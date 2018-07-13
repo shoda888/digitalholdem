@@ -14,8 +14,8 @@ class GamesController < ApplicationController
   def update
     unless @current_player.normal?
       @game = Game.find(params[:id])
-      if @game.players.any?{|player| !player.normal? && player != @current_player}
-        redirect_to game_path(@game), notice: '1テーブルにつき1ディーラーです'
+      if @game.players.any?{|player| player.admin? && player != @current_player}
+        redirect_to game_path(@game), notice: '1テーブルにつき1管理者です'
         return
       end
     end

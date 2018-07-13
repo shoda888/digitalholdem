@@ -21,8 +21,18 @@ module CreateDeck
     cards
   end
 
-  def drawCard(number)
-    @cards.pop(number)
+  def drawCard(num)
+    if num.class == Integer
+      @cards.pop(num)
+    else
+      @total_draw = []
+      num.each do |n|
+        draw = @cards.select{|card| card.suit == n[0] && card.number == n[1]}
+        @cards.reject!{|card| card == draw[0]}
+        @total_draw << draw[0]
+      end
+      @total_draw
+    end
   end
 
 end
