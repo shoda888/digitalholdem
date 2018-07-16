@@ -5,8 +5,8 @@ class Player < ApplicationRecord
   validates :name, presence: true
   validates :password, presence: true
 
-  enum role: { admin: 1, normal: 2, dealer: 3 }
+  enum role: { admin: 1, participants: 2, tester: 3 }
   # admin: 実験管理者
-  # dealer: サクラ
-  # normal: 被験者
+  # participants: サクラ
+  # tester: 被験者
 end

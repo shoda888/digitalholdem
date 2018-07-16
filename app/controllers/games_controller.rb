@@ -12,7 +12,7 @@ class GamesController < ApplicationController
     @game = Game.new
   end
   def update
-    unless @current_player.normal?
+    unless @current_player.tester?
       @game = Game.find(params[:id])
       if @game.players.any?{|player| player.admin? && player != @current_player}
         redirect_to game_path(@game), notice: '1テーブルにつき1管理者です'

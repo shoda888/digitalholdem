@@ -27,7 +27,7 @@ body.hold-transition.sidebar-mini
                       td = link_to(game.name, game_path(game))
                       td
                         - game.players.each do |player|
-                          -if player.normal?
-                            i.fas.fa-user
-                          -else
+                          -if player.admin?
                             i.far.fa-user
+                          -else
+                            i.fas.fa-user

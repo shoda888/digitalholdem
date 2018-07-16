@@ -15,15 +15,15 @@ class CommunitiesController < ApplicationController
     if @current_player.admin?
       @community = @game.communities.create#コミュニティー作成
       @cards = shuffle(build) #シャッフルされた52枚のカード
-      
+
       community_cards = drawCard(decide_community_cards(@community.id)) #コミュニティカード作成 #指定
       # community_cards = drawCard(5) #コミュニティカード作成 #ランダム
       community_cards.each do |c|
         @community.cards.create(suit:c.suit, number:c.number)
       end
       #被験者のホールカード決定
-      @normal = @game.players.find_by(role: 'normal')
-      @hole = @normal.holes.create(community_id: @community.id)
+      @tester = @game.players.find_by(role: 'tester')
+      @hole = @tester.holes.create(community_id: @community.id)
       hole_cards = drawCard([['s',4],['s',2]]) #ホールカード作成
       hole_cards.each do |c|
         @hole.cards.create(suit:c.suit, number:c.number)
@@ -34,7 +34,7 @@ class CommunitiesController < ApplicationController
 
       #サクラのホールカード決定
       @game.players.each do |player|
-        next if !player.dealer?
+        next if !player.participants?
         @hole = player.holes.create(community_id: @community.id)
         hole_cards = drawCard(2) #ホールカード作成
         hole_cards.each do |c|

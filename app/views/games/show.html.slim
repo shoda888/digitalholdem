@@ -21,11 +21,11 @@ body.hold-transition.sidebar-mini
                     tr role="row"
                       th 現在参加しているプレイヤーの数
                       th
-                        = @game.players.count{|player| player.normal?}
+                        = @game.players.count{|player| !player.admin?}
                   tbody
                     - @game.players.each do |player|
                       tr
-                        - if !player.normal?
+                        - if player.admin?
                           th
                             i.far.fa-user
                               | 　ディーラー

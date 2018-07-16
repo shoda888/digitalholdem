@@ -16,11 +16,11 @@
               tr role="row"
                 th 現在参加しているプレイヤー
                 th
-                  = @game.players.count{|player| player.normal?}
+                  = @game.players.count{|player| !player.admin?}
             tbody
               - @game.players.each do |player|
                 tr
-                  - if !player.normal?
+                  - if player.admin?
                     th
                       i.far.fa-user
                         | 　ディーラー

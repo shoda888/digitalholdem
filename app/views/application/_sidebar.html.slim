@@ -5,11 +5,11 @@ a.brand-link[href="/admin/games"]
   .user-panel.mt-3.pb-3.mb-3.d-flex
     .info
       a.d-block[href=player_path(@current_player)]
-        - if @current_player.normal?
-          i.nav-icon.fas.fa-user
+        - if @current_player.admin?
+          i.nav-icon.far.fa-user
             = "　#{@current_player.name}"
         - else
-          i.nav-icon.far.fa-user
+          i.nav-icon.fas.fa-user
             = "　#{@current_player.name}"
   .user-panel.mt-3.pb-3.mb-3.d-flex
     .info

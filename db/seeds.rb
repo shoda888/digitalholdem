@@ -7,8 +7,9 @@
 game = Game.create(:name => "テキサスホールデム")
 
 Player.create(:name => "admin", :password => 'password', :game_id => game.id, :role => 1)
+Player.create(:name => "tester", :password => 'password', :game_id => game.id, :role => 3)
 2.times do |no|
-  Player.create(:name => "player#{no}", :password => 'password', :game_id => game.id, :role => 3)
+  Player.create(:name => "player#{no}", :password => 'password', :game_id => game.id, :role => 2)
 end
 
 # 10.times do |no|

@@ -10,13 +10,13 @@ body.hold-transition.sidebar-mini
               h1.m-0.text-dark
                 | プレイヤー詳細
             .col-sm-6
-              - if @player.normal?
-                = link_to 'ディーラーモードへ', player_path(become: 'dealer'), method: :put, class: "btn btn-danger", data: { confirm: 'ディーラー登録されますがよろしいですか?' }
-              - elsif @player.dealer?
-                = link_to 'プレイヤーモードへ', player_path(become: 'normal'), method: :put, class: "btn btn-success", data: { confirm: 'プレイヤー登録されますがよろしいですか?' }
+              - if @player.tester?
+                = link_to 'プレイヤーモードへ', player_path(become: 'participants'), method: :put, class: "btn btn-danger", data: { confirm: 'ディーラー登録されますがよろしいですか?' }
+              - elsif @player.participants?
+                = link_to '被験者モードへ', player_path(become: 'tester'), method: :put, class: "btn btn-success", data: { confirm: '実験協力者登録されますがよろしいですか?' }
               - else
-                = link_to 'プレイヤーモードへ', player_path(become: 'normal'), method: :put, class: "btn btn-success", data: { confirm: 'プレイヤー登録されますがよろしいですか?' }
-                = link_to 'ディーラーモードへ', player_path(become: 'dealer'), method: :put, class: "btn btn-danger", data: { confirm: 'ディーラー登録されますがよろしいですか?' }
+                = link_to '被験者モードへ', player_path(become: 'tester'), method: :put, class: "btn btn-success", data: { confirm: '実験協力者登録されますがよろしいですか?' }
+                = link_to 'プレイヤーモードへ', player_path(become: 'participants'), method: :put, class: "btn btn-danger", data: { confirm: 'ディーラー登録されますがよろしいですか?' }
 
       .content
         .container-fluid
