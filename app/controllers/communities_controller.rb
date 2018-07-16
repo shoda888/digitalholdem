@@ -12,11 +12,11 @@ class CommunitiesController < ApplicationController
 
   def create
     @game = @current_player.game
-    if !@current_player.normal?
+    if @current_player.admin?
       @community = @game.communities.create#コミュニティー作成
       @cards = shuffle(build) #シャッフルされた52枚のカード
-
-      community_cards = drawCard([['s',1],['c',7],['s',3],['c',9],['s',5]]) #コミュニティカード作成 #指定
+      
+      community_cards = drawCard(decide_community_cards(@community.id)) #コミュニティカード作成 #指定
       # community_cards = drawCard(5) #コミュニティカード作成 #ランダム
       community_cards.each do |c|
         @community.cards.create(suit:c.suit, number:c.number)
@@ -24,7 +24,7 @@ class CommunitiesController < ApplicationController
       #被験者のホールカード決定
       @normal = @game.players.find_by(role: 'normal')
       @hole = @normal.holes.create(community_id: @community.id)
-      hole_cards = drawCard([['s',4],['s',2]]) #ホールカード作成 #ランダム
+      hole_cards = drawCard([['s',4],['s',2]]) #ホールカード作成
       hole_cards.each do |c|
         @hole.cards.create(suit:c.suit, number:c.number)
       end
@@ -55,14 +55,7 @@ class CommunitiesController < ApplicationController
     @community = Community.find(params[:id])
     @player_holes = []
     @community.holes.each do |hole|
-      # if !hole.player.normal?
-      #   @admin_hole = hole
-      #   @admin = @admin_hole.player
-      #   @admin_cards = @admin_hole.cards
-      #   @admin_name = @admin.name
-      # else
       @player_holes << hole
-      # end
     end
   end
   def update
@@ -72,4 +65,31 @@ class CommunitiesController < ApplicationController
     @current_player.save
     redirect_to games_path
   end
+
+  private
+  def decide_community_cards(id)
+    case id % 10
+    when 1
+      return [['s',1],['c',7],['h',3],['c',9],['d',5]]
+    when 2
+      return [['s',1],['c',7],['s',3],['c',9],['s',5]]
+    when 3
+      return [['s',1],['c',7],['h',3],['c',9],['d',5]]
+    when 4
+      return [['s',1],['c',7],['s',3],['c',9],['s',5]]
+    when 5
+      return [['s',1],['c',7],['h',3],['c',9],['d',5]]
+    when 6
+      return [['s',1],['c',7],['s',3],['c',9],['s',5]]
+    when 7
+      return [['s',1],['c',7],['h',3],['c',9],['d',5]]
+    when 8
+      return [['s',1],['c',7],['s',3],['c',9],['s',5]]
+    when 9
+      return [['s',1],['c',7],['h',3],['c',9],['d',5]]
+    when 0
+      return [['s',1],['c',7],['s',3],['c',9],['s',5]]
+    end
+  end
+
 end

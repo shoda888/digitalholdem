@@ -1,7 +1,7 @@
 .container
   .dealer-action.text-center
     .row
-      - if !@current_player.normal?
+      - if @current_player.admin?
         .col-sm-4
           .dealer_btn.btn.btn-block.btn-danger
            | アクション
@@ -14,18 +14,6 @@
             = button_to '次のラウンドへ', communities_path, method: :post, class:'btn btn-block btn-success'
       .col-sm-4
         = button_to 'ロビーへ戻る', community_path, method: :delete, class:'btn btn-block btn-success'
-
-  / .text-center
-  /   .player_field
-  /     .player_hole_card
-  /       = @admin_name
-  /     .player_chip_number
-  /       i.fas.fa-coins
-  /         input.chip_num[value=@admin.chip disabled='']
-  /     div id="#{@admin_name}_card_field" class='hole_card_field'
-  /       h5.show_hand_name
-  /         = @admin_hole.hand
-  /       = render 'admin_action_field'
 
   .text-center.communities_card_field
     .community_card_field
