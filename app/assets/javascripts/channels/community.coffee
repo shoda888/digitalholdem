@@ -20,17 +20,21 @@ App.community = App.cable.subscriptions.create "CommunityChannel",
         $("##{data['player']}_card_field").siblings().find('input').val("#{data['chip']}")
         $(".pod_chip_number").find('input').val("#{data['pod']}")
       when "flop"
+        $('p.state_text').text('フロップです。コールには３枚のチップが必要です。')
         $('.player_action_field').css('visibility', 'visible')
         $('#card4').show(1000)
         $('#card3').show(1000)
         $('#card2').show(1000)
       when "turn"
+        $('p.state_text').text('ターンです。コールには９枚のチップが必要です。')
         $('.player_action_field').css('visibility', 'visible')
         $('#card1').show(1000)
       when "river"
+        $('p.state_text').text('リバーです。コールには２７枚のチップが必要です。')
         $('.player_action_field').css('visibility', 'visible')
         $('#card0').show(1000)
       when 'showdown'
+        $('p.state_text').text('ショーダウンです。')
         $('.player_action_field').css('visibility', 'hidden')
         $('.show_hand_name').show(1000)
         $('.show_hole_card').show(1000)

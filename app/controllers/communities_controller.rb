@@ -24,7 +24,8 @@ class CommunitiesController < ApplicationController
       #被験者のホールカード決定
       @tester = @game.players.find_by(role: 'tester')
       @hole = @tester.holes.create(community_id: @community.id)
-      hole_cards = drawCard([['s',4],['s',2]]) #ホールカード作成
+      # hole_cards = drawCard([['s',4],['s',2]]) #ホールカード作成
+      hole_cards = drawCard(decide_tester_cards(@community.id)) #ホールカード作成
       hole_cards.each do |c|
         @hole.cards.create(suit:c.suit, number:c.number)
       end
@@ -89,6 +90,31 @@ class CommunitiesController < ApplicationController
       return [['s',1],['c',7],['h',3],['c',9],['d',5]]
     when 0
       return [['s',1],['c',7],['s',3],['c',9],['s',5]]
+    end
+  end
+
+  def decide_tester_cards(id)
+    case id % 10
+    when 1
+      return [['s',4],['s',3]]
+    when 2
+      return [['s',4],['s',2]]
+    when 3
+      return [['s',4],['s',3]]
+    when 4
+      return [['s',4],['s',2]]
+    when 5
+      return [['s',4],['s',3]]
+    when 6
+      return [['s',4],['s',2]]
+    when 7
+      return [['s',4],['s',3]]
+    when 8
+      return [['s',4],['s',2]]
+    when 9
+      return [['s',4],['s',2]]
+    when 0
+      return [['s',4],['s',2]]
     end
   end
 
