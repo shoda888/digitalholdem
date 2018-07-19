@@ -14,10 +14,13 @@ class CommunityChannel < ApplicationCable::Channel
     case @community.aasm_state
     when 'preflop'
       @community.to_flop
+      who_is_stayer
     when 'flop'
       @community.to_turn
+      who_is_stayer
     when 'turn'
       @community.to_river
+      who_is_stayer
     when 'river'
       @community.open
     when 'showdown'
@@ -38,19 +41,21 @@ class CommunityChannel < ApplicationCable::Channel
     else
     end
     @community.save
+
     if @community.finished?
       CommunityChannel.broadcast_to(current_player.game, { message: 'finished', winner: @winners })
     else
-      CommunityChannel.broadcast_to(current_player.game, { message: @community.aasm_state })
+      CommunityChannel.broadcast_to(current_player.game, { message: @community.aasm_state, stayers: @stayers.reverse })
     end
-
   end
 
   def drop
     @hole = current_player.holes.last
+    @community = @hole.community
+    who_is_stayer
     @hole.drop
     @hole.save
-    CommunityChannel.broadcast_to(current_player.game, { message: 'drop', player: current_player.name })
+    CommunityChannel.broadcast_to(current_player.game, { message: 'drop', player: current_player.name, stayers: @stayers.reverse })
   end
 
   def check
@@ -68,11 +73,20 @@ class CommunityChannel < ApplicationCable::Channel
     else
     end
     @community.save
+    who_is_stayer
     current_player.save
-    CommunityChannel.broadcast_to(current_player.game, { message: 'check', player: current_player.name, chip: current_player.chip, pod: @community.pod})
+    CommunityChannel.broadcast_to(current_player.game, { message: 'check', player: current_player.name, stayers: @stayers.reverse, chip: current_player.chip, pod: @community.pod})
   end
 
   private
+
+  def who_is_stayer
+    @stay_holes = @community.holes.select{|hole| hole.stay? }
+    @stayers = []
+    @stay_holes.each do |hole|
+      @stayers << hole.player.name
+    end
+  end
 
   def winner_get_chips
     player = Player.find_by(name: @winners[0])
