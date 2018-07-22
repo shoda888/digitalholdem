@@ -1,4 +1,6 @@
 .container
+  p.state_text.text-center
+    | プリフロップです。コールには１枚のチップが必要です。
   .dealer-action.text-center
     .row
       - if @current_player.admin?
@@ -8,12 +10,12 @@
         .col-sm-4
           .admin_start_btn
             = button_to '次のラウンドへ', communities_path, method: :post, class:'btn btn-block btn-success'
+        .col-sm-4
+          = button_to 'ロビーへ戻る', community_path, method: :delete, class:'btn btn-block btn-success'
       - else
-        .col-sm-8
+        .col-sm-12
           .player_start_btn
             = button_to '次のラウンドへ', communities_path, method: :post, class:'btn btn-block btn-success'
-      .col-sm-4
-        = button_to 'ロビーへ戻る', community_path, method: :delete, class:'btn btn-block btn-success'
 
   .text-center.communities_card_field
     .community_card_field
@@ -28,7 +30,7 @@
 
   .text-center.row
     - @player_holes.each do |hole|
-      .col-lg-3.col-md-4.col-sm-6.col-xs-12.player_field
+      .col-4.player_field
         .player_hole_card
           = hole.player.name
         .player_chip_number

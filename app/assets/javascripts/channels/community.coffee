@@ -14,23 +14,42 @@ App.community = App.cable.subscriptions.create "CommunityChannel",
         $('.player_start_btn').show(500)
       when 'drop'
         $("##{data['player']}_card_field").hide()
-        # $("##{data['player']}_card_field").find('.player_action_field').css('visibility', 'hidden')
+        if data['player'] == "#{data['stayers'][0]}"
+          $("##{data['stayers'][1]}_call_btn").parent().css('visibility', 'visible')
+        else if data['player'] == "#{data['stayers'][1]}"
+          $("##{data['stayers'][2]}_call_btn").parent().css('visibility', 'visible')
+        else
       when 'check'
-        $("##{data['player']}_call_btn").parent().css('visibility', 'hidden')
-        $("##{data['player']}_card_field").siblings().find('input').val("#{data['chip']}")
-        $(".pod_chip_number").find('input').val("#{data['pod']}")
+        if data['player'] == "#{data['stayers'][0]}"
+          $("##{data['player']}_call_btn").parent().css('visibility', 'hidden')
+          $("##{data['player']}_card_field").siblings().find('input').val("#{data['chip']}")
+          $(".pod_chip_number").find('input').val("#{data['pod']}")
+          $("##{data['stayers'][1]}_call_btn").parent().css('visibility', 'visible')
+        else if data['player'] == "#{data['stayers'][1]}"
+          $("##{data['player']}_call_btn").parent().css('visibility', 'hidden')
+          $("##{data['player']}_card_field").siblings().find('input').val("#{data['chip']}")
+          $(".pod_chip_number").find('input').val("#{data['pod']}")
+          $("##{data['stayers'][2]}_call_btn").parent().css('visibility', 'visible')
+        else
+          $("##{data['player']}_call_btn").parent().css('visibility', 'hidden')
+          $("##{data['player']}_card_field").siblings().find('input').val("#{data['chip']}")
+          $(".pod_chip_number").find('input').val("#{data['pod']}")
       when "flop"
-        $('.player_action_field').css('visibility', 'visible')
+        $("##{data['stayers'][0]}_call_btn").parent().css('visibility', 'visible');
+        $('p.state_text').text('フロップです。コールには３枚のチップが必要です。')
         $('#card4').show(1000)
         $('#card3').show(1000)
         $('#card2').show(1000)
       when "turn"
-        $('.player_action_field').css('visibility', 'visible')
+        $("##{data['stayers'][0]}_call_btn").parent().css('visibility', 'visible');
+        $('p.state_text').text('ターンです。コールには９枚のチップが必要です。')
         $('#card1').show(1000)
       when "river"
-        $('.player_action_field').css('visibility', 'visible')
+        $("##{data['stayers'][0]}_call_btn").parent().css('visibility', 'visible');
+        $('p.state_text').text('リバーです。コールには２７枚のチップが必要です。')
         $('#card0').show(1000)
       when 'showdown'
+        $('p.state_text').text('ショーダウンです。')
         $('.player_action_field').css('visibility', 'hidden')
         $('.show_hand_name').show(1000)
         $('.show_hole_card').show(1000)
