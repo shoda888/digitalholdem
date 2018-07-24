@@ -2,6 +2,7 @@ class Community < ApplicationRecord
   has_many :cards, :as => :cardable
   has_many :holes
   belongs_to :game
+  include AasmHistory
   include AASM
 
   aasm do
