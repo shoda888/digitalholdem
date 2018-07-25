@@ -13,18 +13,18 @@ class CommunityChannel < ApplicationCable::Channel
     @community = @game.communities.last
     case @community.aasm_state
     when 'preflop'
-      @community.to_flop
+      @community.to_flop!
       who_is_stayer
     when 'flop'
-      @community.to_turn
+      @community.to_turn!
       who_is_stayer
     when 'turn'
-      @community.to_river
+      @community.to_river!
       who_is_stayer
     when 'river'
-      @community.open
+      @community.open!
     when 'showdown'
-      @community.finish
+      @community.finish!
       #holeがstayのプレイヤーのhole.handが一番大きいのが勝ち
       @handlist = {}
       @community.holes.each do |hole|
@@ -40,7 +40,6 @@ class CommunityChannel < ApplicationCable::Channel
       winner_get_chips
     else
     end
-    @community.save
 
     if @community.finished?
       CommunityChannel.broadcast_to(current_player.game, { message: 'finished', winner: @winners })
@@ -53,8 +52,7 @@ class CommunityChannel < ApplicationCable::Channel
     @hole = current_player.holes.last
     @community = @hole.community
     who_is_stayer
-    @hole.drop
-    @hole.save
+    @hole.drop!
     CommunityChannel.broadcast_to(current_player.game, { message: 'drop', player: current_player.name, stayers: @stayers.reverse })
   end
 
