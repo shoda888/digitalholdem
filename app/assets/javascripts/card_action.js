@@ -1,5 +1,6 @@
 $(document).ready(function() {
   $('.hole_card').show(1000);
+  $('.show_hole_card').show()
   $('.player_action_field').css('visibility', 'hidden');
   $('#player1_call_btn').parent().css('visibility', 'visible');
   $('.dealer_btn').click(function(){
@@ -17,11 +18,5 @@ $(document).ready(function() {
   });
   $('.call_field').click(function(){
     App.community.check();
-  });
-  // $('.hole_card_field').mouseout(function(){
-  //   $(this).find('.show_hole_card').hide()
-  // });
-  $('.hole_card_field').mouseover(function(){
-    $(this).find('.show_hole_card').show()
   });
 });

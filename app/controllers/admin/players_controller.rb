@@ -5,7 +5,7 @@ class Admin::PlayersController < Admin::ApplicationController
     @players = Player.all.order('created_at desc')
   end
   def show
-    @player = @current_player
+    @player = Player.find(params[:id])
     @holes = @player.holes
     @win_holes = @holes.select{|hole| hole.out_come == true}
     @stay_holes = @holes.select{|hole| hole.stay? }

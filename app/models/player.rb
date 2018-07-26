@@ -2,7 +2,7 @@ class Player < ApplicationRecord
   belongs_to :game, optional: true
   has_many :holes
 
-  validates :name, presence: true
+  validates :name, presence: true, uniqueness: true
   validates :password, presence: true
 
   enum role: { admin: 1, participants: 2, tester: 3 }

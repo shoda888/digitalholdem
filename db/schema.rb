@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180429025507) do
+ActiveRecord::Schema.define(version: 20180724042647) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,6 +55,22 @@ ActiveRecord::Schema.define(version: 20180429025507) do
     t.integer "game_id"
     t.integer "chip", default: 500
     t.integer "role", default: 3
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "community_id"
+    t.integer "confidence"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "state_histories", force: :cascade do |t|
+    t.string "state"
+    t.string "previous_state"
+    t.integer "stateable_id"
+    t.string "stateable_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
