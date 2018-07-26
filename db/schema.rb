@@ -60,6 +60,8 @@ ActiveRecord::Schema.define(version: 20180724042647) do
   end
 
   create_table "reviews", force: :cascade do |t|
+    t.integer "community_id"
+    t.integer "confidence"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

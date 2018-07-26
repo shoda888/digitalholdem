@@ -1,0 +1,41 @@
+.container
+  h3
+    | どう感じたか答えてください
+
+  = form_for [@community, @review] do |f|
+    - @review.errors.full_messages.each do |message|
+      .form-error
+        = message
+    .form-group
+      label.form-check-label
+        = f.radio_button :confidence, 1
+        |　プリフロップ(自分の２枚のカードだけが見える時)の時点で勝てそうだったので降りなかった
+    .form-group
+      label.form-check-label
+        = f.radio_button :confidence, 2
+        |　フロップ(場の３枚のカードがめくれた時)の時点で勝てそうだったので降りなかった
+    .form-group
+      label.form-check-label
+        = f.radio_button :confidence, 3
+        |　ターン(場の４枚のカードがめくれた時)の時点で勝てそうだったので降りなかった
+    .form-group
+      label.form-check-label
+        = f.radio_button :confidence, 4
+        |　リバー(場の５枚のカードがめくれた時)の時点で勝てそうだったので降りなかった
+    .form-group
+      label.form-check-label
+        = f.radio_button :confidence, 5
+        |　前半では勝てそうだったが、後半は負けるかもしれないと思ったが降りなかった
+    .form-group
+      label.form-check-label
+        = f.radio_button :confidence, 6
+        |　前半では勝てそうだったが、後半は負けるかもしれないと思ったから降りた
+    .form-group
+      label.form-check-label
+        = f.radio_button :confidence, 7
+        |　勝てる気はせず、負けるかもしれないと思ったから降りた
+    .form-group
+      label.form-check-label
+        = f.radio_button :confidence, 8
+        |　よくわからない
+    = f.submit "次のラウンドへ", class: 'btn btn-default'
