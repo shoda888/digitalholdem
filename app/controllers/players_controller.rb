@@ -34,8 +34,8 @@ class PlayersController < ApplicationController
 
   def update
     @current_player.update(role: params[:become])
-    flash[:notice] = "実験参加者登録されました。" if params[:become] == 'participants'
-    flash[:notice] = "プレイヤー登録されました。" if params[:become] == 'tester'
+    flash[:notice] = "実験協力者登録されました。" if params[:become] == 'participants'
+    flash[:notice] = "被験者登録されました。" if params[:become] == 'tester'
     redirect_to player_path(@current_player)
   end
 
