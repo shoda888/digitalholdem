@@ -11,12 +11,22 @@ $(document).ready(function() {
     var selected = $(this).attr('id');
     App.community.speak(selected);
   });
-  $('.drop_btn').click(function(){
-    $(this).hide();
-    console.log('drop');
-    App.community.drop();
+  $(document).keydown(function(e){
+    switch(e.which){
+      case 13: // Key[Enter]
+      App.community.drop();
+      break;
+      case 32: // Key[Space]
+      App.community.check();
+      break;
+    }
   });
-  $('.call_field').click(function(){
-    App.community.check();
-  });
+  // click操作無効
+  // $('.drop_btn').click(function(){
+  //   console.log('drop');
+  //   App.community.drop();
+  // });
+  // $('.call_field').click(function(){
+  //   App.community.check();
+  // });
 });

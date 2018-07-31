@@ -13,7 +13,7 @@ App.community = App.cable.subscriptions.create "CommunityChannel",
       when 'start'
         $('.player_start_btn').show(500)
       when 'drop'
-        $("##{data['player']}_card_field").hide()
+        $("##{data['player']}_card_field").hide(100)
         if data['player'] == "#{data['stayers'][0]}"
           $("##{data['stayers'][1]}_call_btn").parent().css('visibility', 'visible')
         else if data['player'] == "#{data['stayers'][1]}"
