@@ -71,50 +71,50 @@ class CommunitiesController < ApplicationController
   def decide_community_cards(id)
     case id % 10
     when 1
-      return [['s',1],['c',7],['h',3],['c',9],['d',5]]
+      return [['s',4],['c',9],['h',3],['c',13],['d',5]]
     when 2
-      return [['s',1],['c',7],['s',3],['c',9],['s',5]]
+      return [['s',1],['h',8],['s',9],['c',13],['s',12]]
     when 3
-      return [['s',1],['c',7],['h',3],['c',9],['d',5]]
+      return [['s',1],['k',12],['h',3],['c',9],['d',5]]
     when 4
-      return [['s',1],['c',7],['s',3],['c',9],['s',5]]
+      return [['h',2],['c',7],['s',3],['s',12],['c',5]]
     when 5
-      return [['s',1],['c',7],['h',3],['c',9],['d',5]]
+      return [['s',1],['c',7],['h',10],['c',9],['d',6]]
     when 6
-      return [['s',1],['c',7],['s',3],['c',9],['s',5]]
+      return [['s',10],['c',7],['s',3],['c',4],['s',5]]
     when 7
-      return [['s',1],['c',7],['h',3],['c',9],['d',5]]
+      return [['s',2],['c',7],['h',3],['c',9],['d',1]]
     when 8
-      return [['s',1],['c',7],['s',3],['c',9],['s',5]]
+      return [['s',8],['c',2],['s',9],['c',6],['d',8]]
     when 9
-      return [['s',1],['c',7],['h',3],['c',9],['d',5]]
+      return [['s',13],['c',13],['h',3],['c',10],['d',5]]
     when 0
-      return [['s',1],['c',7],['s',3],['c',9],['s',5]]
+      return [['d',10],['c',2],['s',3],['s',1],['s',5]]
     end
   end
 
   def decide_tester_cards(id)
     case id % 10
     when 1
-      return [['s',4],['s',3]]
+      return [['s',13],['h',13]] #Kのスリーカード(フロップ)
     when 2
-      return [['s',4],['s',2]]
+      return [['d',4],['s',2]] #ノーペア
     when 3
-      return [['s',4],['s',3]]
+      return [['s',11],['c',3]] #ワンペア
     when 4
-      return [['s',4],['s',2]]
+      return [['c',12],['d',12]] #Qのスリーカード(フロップ)
     when 5
-      return [['s',4],['s',3]]
+      return [['s',7],['h',8]] #ストレート(フロップ)
     when 6
-      return [['s',4],['s',2]]
+      return [['h',4],['d',9]] #ワンペア
     when 7
-      return [['s',4],['s',3]]
+      return [['s',1],['h',1]] #Aのスリーカード(フロップ)
     when 8
-      return [['s',4],['s',2]]
+      return [['c',7],['h',10]] #ストレート(フロップ)
     when 9
-      return [['s',4],['s',2]]
+      return [['d',7],['c',2]] #ノーペア
     when 0
-      return [['s',4],['s',2]]
+      return [['s',8],['s',11]] #フラッシュ(フロップ)
     end
   end
 

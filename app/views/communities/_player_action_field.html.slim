@@ -5,10 +5,8 @@
         img src="/#{card.suit}#{card.number}.png" width="70" height="105"
   .player_action_field
     div id="#{player_name}_call_btn" class='call_field'
-      .btn.btn-block.btn-warning
-        | コール
-    .drop_btn.btn.btn-block.btn-danger
-      | 降りる
+      .btn.btn-block.btn-danger.active
+        | アクション
 - else
   - player_cards.each do |card|
     .hole_card
@@ -17,7 +15,5 @@
         img src="/#{card.suit}#{card.number}.png" width="70" height="105"
   .player_action_field
     div id="#{player_name}_call_btn" class='others_call_field'
-      .btn.btn-block.btn-warning.disabled
-        | コール
-    .btn.btn-block.btn-danger.disabled
-      | 降りる
+      .btn.btn-block.btn-danger.disabled
+        | アクション
