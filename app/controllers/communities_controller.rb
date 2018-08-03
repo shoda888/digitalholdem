@@ -85,7 +85,7 @@ class CommunitiesController < ApplicationController
     when 7
       return [['s',2],['c',7],['h',3],['c',9],['d',1]]
     when 8
-      return [['s',1],['c',2],['s',9],['c',6],['d',8]]
+      return [['s',8],['c',2],['s',9],['c',6],['d',8]]
     when 9
       return [['s',13],['c',13],['h',3],['c',10],['d',5]]
     when 0
