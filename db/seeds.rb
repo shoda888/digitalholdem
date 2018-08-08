@@ -4,78 +4,10 @@
 # Examples:
 #
 
-game = Game.create(:name => "テキサスホールデム")
+game = Game.create(:name => "テスト用", :id => 0)
 
 Player.create(:name => "admin", :password => 'password', :game_id => game.id, :role => 1)
 Player.create(:name => "tester", :password => 'password', :game_id => game.id, :role => 3)
 2.times do |no|
   Player.create(:name => "player#{no}", :password => 'password', :game_id => game.id, :role => 2)
 end
-
-# 10.times do |no|
-#   community = game.communities.create(id: (no + 1) * 10)#コミュニティー作成
-#
-#   #コミュニティカード作成 #指定
-#   case no
-#   when 0 then
-#     community.cards.create(suit:'s', number:1)
-#     community.cards.create(suit:'c', number:7)
-#     community.cards.create(suit:'s', number:3)
-#     community.cards.create(suit:'c', number:9)
-#     community.cards.create(suit:'s', number:5)
-#   when 1 then
-#     community.cards.create(suit:'s', number:1)
-#     community.cards.create(suit:'c', number:7)
-#     community.cards.create(suit:'s', number:3)
-#     community.cards.create(suit:'c', number:9)
-#     community.cards.create(suit:'s', number:5)
-#   when 2 then
-#     community.cards.create(suit:'s', number:1)
-#     community.cards.create(suit:'c', number:7)
-#     community.cards.create(suit:'s', number:3)
-#     community.cards.create(suit:'c', number:9)
-#     community.cards.create(suit:'s', number:5)
-#   when 3 then
-#     community.cards.create(suit:'s', number:1)
-#     community.cards.create(suit:'c', number:7)
-#     community.cards.create(suit:'s', number:3)
-#     community.cards.create(suit:'c', number:9)
-#     community.cards.create(suit:'s', number:5)
-#   when 4 then
-#     community.cards.create(suit:'s', number:1)
-#     community.cards.create(suit:'c', number:7)
-#     community.cards.create(suit:'s', number:3)
-#     community.cards.create(suit:'c', number:9)
-#     community.cards.create(suit:'s', number:5)
-#   when 5 then
-#     community.cards.create(suit:'s', number:1)
-#     community.cards.create(suit:'c', number:7)
-#     community.cards.create(suit:'s', number:3)
-#     community.cards.create(suit:'c', number:9)
-#     community.cards.create(suit:'s', number:5)
-#   when 6 then
-#     community.cards.create(suit:'s', number:1)
-#     community.cards.create(suit:'c', number:7)
-#     community.cards.create(suit:'s', number:3)
-#     community.cards.create(suit:'c', number:9)
-#     community.cards.create(suit:'s', number:5)
-#   when 7 then
-#     community.cards.create(suit:'s', number:1)
-#     community.cards.create(suit:'c', number:7)
-#     community.cards.create(suit:'s', number:3)
-#     community.cards.create(suit:'c', number:9)
-#     community.cards.create(suit:'s', number:5)
-#   when 8 then
-#     community.cards.create(suit:'s', number:1)
-#     community.cards.create(suit:'c', number:7)
-#     community.cards.create(suit:'s', number:3)
-#     community.cards.create(suit:'c', number:9)
-#     community.cards.create(suit:'s', number:5)
-#   when 9 then
-#     community.cards.create(suit:'s', number:1)
-#     community.cards.create(suit:'c', number:7)
-#     community.cards.create(suit:'s', number:3)
-#     community.cards.create(suit:'c', number:9)
-#     community.cards.create(suit:'s', number:5)
-#   end
-# end

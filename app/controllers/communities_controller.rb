@@ -16,16 +16,21 @@ class CommunitiesController < ApplicationController
       @community = @game.communities.create#コミュニティー作成
       @cards = shuffle(build) #シャッフルされた52枚のカード
 
-      community_cards = drawCard(decide_community_cards(@community.id)) #コミュニティカード作成 #指定
-      # community_cards = drawCard(5) #コミュニティカード作成 #ランダム
+      if @game.id == 0
+        community_cards = drawCard(5) #コミュニティカード作成 #ランダム
+        hole_cards = drawCard(2) #ホールカード作成
+      else
+        community_cards = drawCard(decide_community_cards(@community.id)) #コミュニティカード作成 #指定
+        hole_cards = drawCard(decide_tester_cards(@community.id)) #ホールカード作成
+      end
+      pp community_cards
       community_cards.each do |c|
         @community.cards.create(suit:c.suit, number:c.number)
       end
       #被験者のホールカード決定
       @tester = @game.players.find_by(role: 'tester')
       @hole = @tester.holes.create(community_id: @community.id)
-      # hole_cards = drawCard([['s',4],['s',2]]) #ホールカード作成
-      hole_cards = drawCard(decide_tester_cards(@community.id)) #ホールカード作成
+
       hole_cards.each do |c|
         @hole.cards.create(suit:c.suit, number:c.number)
       end
@@ -75,11 +80,11 @@ class CommunitiesController < ApplicationController
     when 2
       return [['s',1],['h',8],['s',9],['c',13],['s',12]]
     when 3
-      return [['s',1],['k',12],['h',3],['c',9],['d',5]]
+      return [['c',1],['d',12],['d',3],['c',9],['d',5]]
     when 4
       return [['h',2],['c',7],['s',3],['s',12],['c',5]]
     when 5
-      return [['s',1],['c',7],['h',10],['c',9],['d',6]]
+      return [['d',1],['c',7],['h',10],['c',9],['d',6]]
     when 6
       return [['s',10],['c',7],['s',3],['c',4],['s',5]]
     when 7
@@ -112,7 +117,7 @@ class CommunitiesController < ApplicationController
     when 8
       return [['c',7],['h',10]] #ストレート(フロップ)
     when 9
-      return [['d',7],['c',2]] #ノーペア
+      return [['d',7],['c',2]] #ノーペア(フロップ〜ターン)
     when 0
       return [['s',8],['s',11]] #フラッシュ(フロップ)
     end
