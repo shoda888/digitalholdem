@@ -27,6 +27,12 @@ class Admin::PlayersController < Admin::ApplicationController
     redirect_to player_path(@current_player)
   end
 
+  def proxy
+    session[:player_id] = params[:id]
+    flash[:notice] = "代理ログインしました"
+    redirect_to games_path
+  end
+
   private
 
   def player_params
