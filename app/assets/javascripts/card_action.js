@@ -12,13 +12,15 @@ $(document).ready(function() {
     App.community.speak(selected);
   });
   $(document).keydown(function(e){
-    switch(e.which){
-      case 13: // Key[Enter]
-      App.community.drop();
-      break;
-      case 32: // Key[Space]
-      App.community.check();
-      break;
+    if ( $('.call_field').parent().css('visibility') == 'visible' ){
+      switch(e.which){
+        case 13: // Key[Enter]
+        App.community.drop();
+        break;
+        case 32: // Key[Space]
+        App.community.check();
+        break;
+      }
     }
   });
   // click操作無効
