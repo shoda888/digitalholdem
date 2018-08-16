@@ -44,7 +44,7 @@ class CommunityChannel < ApplicationCable::Channel
     if @community.finished?
       CommunityChannel.broadcast_to(current_player.game, { message: 'finished', winner: @winners })
     else
-      CommunityChannel.broadcast_to(current_player.game, { message: @community.aasm_state, stayers: @stayers.reverse })
+      CommunityChannel.broadcast_to(current_player.game, { message: @community.aasm_state, stayers: @stayers })
     end
   end
 
@@ -53,7 +53,7 @@ class CommunityChannel < ApplicationCable::Channel
     @community = @hole.community
     who_is_stayer
     @hole.drop!
-    CommunityChannel.broadcast_to(current_player.game, { message: 'drop', player: current_player.name, stayers: @stayers.reverse })
+    CommunityChannel.broadcast_to(current_player.game, { message: 'drop', player: current_player.name, stayers: @stayers })
   end
 
   def check
@@ -73,7 +73,7 @@ class CommunityChannel < ApplicationCable::Channel
     @community.save
     who_is_stayer
     current_player.save
-    CommunityChannel.broadcast_to(current_player.game, { message: 'check', player: current_player.name, stayers: @stayers.reverse, chip: current_player.chip, pod: @community.pod})
+    CommunityChannel.broadcast_to(current_player.game, { message: 'check', player: current_player.name, stayers: @stayers, chip: current_player.chip, pod: @community.pod})
   end
 
   private
@@ -82,8 +82,11 @@ class CommunityChannel < ApplicationCable::Channel
     @stay_holes = @community.holes.select{|hole| hole.stay? }
     @stayers = []
     @stay_holes.each do |hole|
-      @stayers << hole.player.name
+      @stayers[2] = hole.player.name if hole.player.tester?
+      @stayers[1] = 'player0' if hole.player.name == 'player0'
+      @stayers[0] = 'player1' if hole.player.name == 'player1'
     end
+    @stayers.compact!
   end
 
   def winner_get_chips
