@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  var $player_action_btn = $('.call_field').parent();
   $('.hole_card').show(1000);
   $('.show_hole_card').show()
   $('.player_action_field').css('visibility', 'hidden');
@@ -18,6 +19,7 @@ $(document).ready(function() {
         App.community.drop();
         break;
         case 32: // Key[Space]
+        $player_action_btn.css('visibility', 'hidden');
         App.community.check();
         break;
       }
