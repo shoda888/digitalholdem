@@ -1,9 +1,9 @@
 - if player == @current_player
   - player_cards.each do |card|
     .hole_card
-      .show_hole_card
+      .show_hole_card[style='display:inline-block;']
         img src="/#{card.suit}#{card.number}.png" width="70" height="105"
-  .player_action_field
+  .player_action_field[style="visibility: hidden;"]
     div id="#{player_name}_call_btn" class='call_field'
       .btn.btn-block.btn-danger.active
         | アクション
@@ -13,7 +13,7 @@
       img src="/z02.png" width="70" height="105"
       .others_hole_card
         img src="/#{card.suit}#{card.number}.png" width="70" height="105"
-  .player_action_field
+  .player_action_field[style="visibility: hidden;"]
     div id="#{player_name}_call_btn" class='others_call_field'
       .btn.btn-block.btn-danger.disabled
         | アクション

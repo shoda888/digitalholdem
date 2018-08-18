@@ -21,14 +21,17 @@ App.community = App.cable.subscriptions.create "CommunityChannel",
         else
       when 'check'
         if data['player'] == "#{data['stayers'][0]}"
+          $("##{data['stayers'][0]}_call_btn").parent().css('visibility', 'hidden');
           $("##{data['player']}_card_field").siblings().find('input').val("#{data['chip']}")
           $(".pod_chip_number").find('input').val("#{data['pod']}")
           $("##{data['stayers'][1]}_call_btn").parent().css('visibility', 'visible')
         else if data['player'] == "#{data['stayers'][1]}"
+          $("##{data['stayers'][1]}_call_btn").parent().css('visibility', 'hidden');
           $("##{data['player']}_card_field").siblings().find('input').val("#{data['chip']}")
           $(".pod_chip_number").find('input').val("#{data['pod']}")
           $("##{data['stayers'][2]}_call_btn").parent().css('visibility', 'visible')
         else
+          $("##{data['stayers'][2]}_call_btn").parent().css('visibility', 'hidden');
           $("##{data['player']}_card_field").siblings().find('input').val("#{data['chip']}")
           $(".pod_chip_number").find('input').val("#{data['pod']}")
       when "flop"

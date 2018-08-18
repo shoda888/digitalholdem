@@ -61,11 +61,10 @@ class CommunitiesController < ApplicationController
     @community = Community.find(params[:id])
     @player_holes = []
     @community.holes.each do |hole|
-      @player_holes[0] = hole if hole.player.tester?
+      @player_holes[2] = hole if hole.player.tester?
       @player_holes[1] = hole if hole.player.name == 'player0'
-      @player_holes[2] = hole if hole.player.name == 'player1'
+      @player_holes[0] = hole if hole.player.name == 'player1'
     end
-    pp @player_holes
   end
   def update
   end

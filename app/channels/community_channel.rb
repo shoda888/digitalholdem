@@ -82,9 +82,9 @@ class CommunityChannel < ApplicationCable::Channel
     @stay_holes = @community.holes.select{|hole| hole.stay? }
     @stayers = []
     @stay_holes.each do |hole|
-      @stayers[2] = hole.player.name if hole.player.tester?
+      @stayers[0] = hole.player.name if hole.player.tester?
       @stayers[1] = 'player0' if hole.player.name == 'player0'
-      @stayers[0] = 'player1' if hole.player.name == 'player1'
+      @stayers[2] = 'player1' if hole.player.name == 'player1'
     end
     @stayers.compact!
   end
