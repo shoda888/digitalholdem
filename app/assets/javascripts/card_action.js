@@ -14,6 +14,7 @@ $(document).ready(function() {
       switch(e.which){
         case 13: // Key[Enter]
         App.community.drop();
+        $player_action_btn.css('visibility', 'hidden')
         break;
         case 32: // Key[Space]
         App.community.check();
