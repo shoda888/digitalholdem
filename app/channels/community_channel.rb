@@ -54,6 +54,17 @@ class CommunityChannel < ApplicationCable::Channel
     who_is_stayer
     @hole.drop!
     CommunityChannel.broadcast_to(current_player.game, { message: 'drop', player: current_player.name, stayers: @stayers })
+    if @stayers.length == 2
+      @hole = current_player.holes.last
+      @community = @hole.community
+      who_is_stayer
+      @community.open!
+      CommunityChannel.broadcast_to(current_player.game, { message: @community.aasm_state, stayers: @stayers })
+      @community.finish!
+      @winners = @stayers
+      winner_get_chips  if @winners.length == 1
+      CommunityChannel.broadcast_to(current_player.game, { message: 'finished', winner: @winners })
+    end
   end
 
   def check
