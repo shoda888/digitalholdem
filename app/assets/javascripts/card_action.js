@@ -13,10 +13,11 @@ $(document).ready(function() {
     if ( $player_action_btn.css('visibility') == 'visible' ){
       switch(e.which){
         case 13: // Key[Enter]
-        App.community.drop();
         $player_action_btn.css('visibility', 'hidden')
+        App.community.drop();
         break;
         case 32: // Key[Space]
+        $player_action_btn.css('visibility', 'hidden');
         App.community.check();
         break;
       }
