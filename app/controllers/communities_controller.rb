@@ -23,7 +23,6 @@ class CommunitiesController < ApplicationController
         community_cards = drawCard(decide_community_cards(@community.id)) #コミュニティカード作成 #指定
         hole_cards = drawCard(decide_tester_cards(@community.id)) #ホールカード作成
       end
-      pp community_cards
       community_cards.each do |c|
         @community.cards.create(suit:c.suit, number:c.number)
       end
