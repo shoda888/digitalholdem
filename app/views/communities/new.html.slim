@@ -11,3 +11,4 @@
       .player_start_btn
         = button_to "ゲーム開始", communities_path, method: :post, class:'btn btn-success'
     = button_to 'ロビーへ戻る', community_path(@game), method: :delete, class:'btn btn-success', data: { confirm: '退出しますがよろしいですか?' }
+    = link_to 'ロビーへ立ち寄る', games_path, class:'btn btn-success', data: { confirm: '立ち寄りますか?' }
