@@ -12,13 +12,7 @@ class CommunityChannel < ApplicationCable::Channel
     @game = current_player.game
     @community = @game.communities.last
     case @community.aasm_state
-    when 'preflop'
-      @community.to_flop!
-      who_is_stayer
     when 'flop'
-      @community.to_turn!
-      who_is_stayer
-    when 'turn'
       @community.to_river!
       who_is_stayer
     when 'river'
@@ -65,6 +59,14 @@ class CommunityChannel < ApplicationCable::Channel
       winner_get_chips  if @winners.length == 1
       CommunityChannel.broadcast_to(current_player.game, { message: 'finished', winner: @winners })
     end
+  end
+
+  def raise
+    CommunityChannel.broadcast_to(current_player.game, { message: 'raise', player: current_player.name })
+  end
+
+  def bet
+    CommunityChannel.broadcast_to(current_player.game, { message: 'bet', player: current_player.name })
   end
 
   def check

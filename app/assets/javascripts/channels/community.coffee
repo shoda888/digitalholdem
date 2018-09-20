@@ -12,50 +12,52 @@ App.community = App.cable.subscriptions.create "CommunityChannel",
     switch data['message']
       when 'start'
         $('.player_start_btn').show(500)
-      when 'drop'
+      when 'raise'
         current_player = data['player']
-        $("##{current_player}_card_field").hide(100)
-        if current_player == data['stayers'][0]
-          $second_player_action_field = $("##{data['stayers'][1]}_call_btn").parent()
-          $second_player_action_field.css('visibility', 'visible')
-        else if current_player == data['stayers'][1]
-          $last_player_action_field = $("##{data['stayers'][2]}_call_btn").parent()
-          $last_player_action_field.css('visibility', 'visible')
-        else
-      when 'check'
+        $my_pod = $("##{current_player}_card_field").siblings(".player_chip_number").find('input')
+        $my_raise_field = $("##{current_player}_card_field").siblings(".player_raise_field").find('input')
+        $my_raise_field.val("#{parseInt($my_raise_field.val()) + 1}")  #raiseフィールドに+1
+        $my_pod.val("#{parseInt($my_pod.val()) - 1}") #my_podが-1
+      when 'bet'
         current_player = data['player']
-        $current_player_action_field = $("##{current_player}_call_btn").parent()
-        $my_pod = $("##{current_player}_card_field").siblings().find('input')
+        $my_raise_field = $("##{current_player}_card_field").siblings(".player_raise_field").find('input')
         $table_pod = $(".pod_chip_number").find('input')
-        $current_player_action_field.css('visibility', 'hidden');
-        $my_pod.val("#{data['chip']}")
-        $table_pod.val("#{data['pod']}")
-        if current_player == data['stayers'][0]
-          $second_player_action_field = $("##{data['stayers'][1]}_call_btn").parent()
-          $second_player_action_field.css('visibility', 'visible')
-        else if current_player == data['stayers'][1]
-          $last_player_action_field = $("##{data['stayers'][2]}_call_btn").parent()
+        $player_action_btn = $("##{current_player}_call_btn").parent()
+        $player_action_btn.css('visibility', 'hidden')
+
+        $second_player_action_field = $("#player0_call_btn").parent()
+        $second_player_action_field.css('visibility', 'visible')
+        setTimeout (->
+          $second_player_pod = $("#player0_card_field").siblings(".player_chip_number").find('input')
+          $second_player_raise_field = $("#player0_card_field").siblings(".player_raise_field").find('input')
+          $second_player_raise_field.val("#{parseInt($my_raise_field.val())}")  #testerにコール
+          $second_player_pod.val("#{parseInt($second_player_pod.val()) - parseInt($second_player_raise_field.val())}")
+          $second_player_action_field.css('visibility', 'hidden')
+
+          $last_player_action_field = $("#player1_call_btn").parent()
           $last_player_action_field.css('visibility', 'visible')
-        else
-      when "flop"
-        $first_player_action_field = $("##{data['stayers'][0]}_call_btn").parent()
-        $first_player_action_field.css('visibility', 'visible');
-        $('p.state_text').text('フロップです。コールには３枚のチップが必要です。')
-        $('#card4').show(1000)
-        $('#card3').show(1000)
-        $('#card2').show(1000)
-      when "turn"
-        $first_player_action_field = $("##{data['stayers'][0]}_call_btn").parent()
-        $first_player_action_field.css('visibility', 'visible');
-        $('p.state_text').text('ターンです。コールには９枚のチップが必要です。')
-        $('#card1').show(1000)
+          setTimeout (->
+            $last_player_pod = $("#player1_card_field").siblings(".player_chip_number").find('input')
+            $last_player_raise_field = $("#player1_card_field").siblings(".player_raise_field").find('input')
+            $last_player_raise_field.val("#{parseInt($my_raise_field.val())}")  #testerにコール
+            $last_player_pod.val("#{parseInt($last_player_pod.val()) - parseInt($last_player_raise_field.val())}")
+            $last_player_action_field.css('visibility', 'hidden')
+            setTimeout (->
+              $table_pod.val("#{parseInt($table_pod.val()) + 3 * parseInt($my_raise_field.val())}")
+              $my_raise_field.val(0) #ベットが終わり、テーブルに回収される
+              $second_player_raise_field.val(0) #ベットが終わり、テーブルに回収される
+              $last_player_raise_field.val(0) #ベットが終わり、テーブルに回収される
+            ), 1000
+          ), 1000
+        ), 1000
       when "river"
         $first_player_action_field = $("##{data['stayers'][0]}_call_btn").parent()
         $first_player_action_field.css('visibility', 'visible');
-        $('p.state_text').text('リバーです。コールには２７枚のチップが必要です。')
+        $('p.state_text').text('リバーです。')
+        $('#card1').show(1000)
         $('#card0').show(1000)
       when 'showdown'
-        $('p.state_text').text('ショーダウンです。')
+        $('p.state_text').text('オープン')
         $('.player_action_field').css('visibility', 'hidden')
         $('.show_hand_name').show(1000)
         $('.show_hole_card').show(1000)
@@ -74,5 +76,8 @@ App.community = App.cable.subscriptions.create "CommunityChannel",
   drop: ->
     @perform 'drop'
 
-  check: ->
-    @perform 'check'
+  raise: ->
+    @perform 'raise'
+
+  bet: ->
+    @perform 'bet'
