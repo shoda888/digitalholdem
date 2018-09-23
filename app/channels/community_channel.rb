@@ -13,9 +13,11 @@ class CommunityChannel < ApplicationCable::Channel
     @community = @game.communities.last
     case @community.aasm_state
     when 'flop'
+      @community.flop_pod = data['message']
       @community.to_river!
       who_is_stayer
     when 'river'
+      @community.river_pod = data['message'] - @community.flop_pod
       @community.open!
     when 'showdown'
       @community.finish!
@@ -42,51 +44,14 @@ class CommunityChannel < ApplicationCable::Channel
     end
   end
 
-  def drop
-    @hole = current_player.holes.last
-    @community = @hole.community
-    who_is_stayer
-    @hole.drop!
-    CommunityChannel.broadcast_to(current_player.game, { message: 'drop', player: current_player.name, stayers: @stayers })
-    if @stayers.length == 2
-      @hole = current_player.holes.last
-      @community = @hole.community
-      who_is_stayer
-      @community.open!
-      CommunityChannel.broadcast_to(current_player.game, { message: @community.aasm_state, stayers: @stayers })
-      @community.finish!
-      @winners = @stayers
-      winner_get_chips  if @winners.length == 1
-      CommunityChannel.broadcast_to(current_player.game, { message: 'finished', winner: @winners })
-    end
-  end
-
   def raise
     CommunityChannel.broadcast_to(current_player.game, { message: 'raise', player: current_player.name })
   end
 
-  def bet
-    CommunityChannel.broadcast_to(current_player.game, { message: 'bet', player: current_player.name })
-  end
-
-  def check
-    @hole = current_player.holes.last
-    @community = @hole.community
-    case @community.aasm_state
-    when 'preflop'
-      chips_to_pod(1)
-    when 'flop'
-      chips_to_pod(3)
-    when 'turn'
-      chips_to_pod(9)
-    when 'river'
-      chips_to_pod(27)
-    else
-    end
-    @community.save
-    who_is_stayer
+  def bet(data)
+    chips_to_pod(data['value'])
     current_player.save
-    CommunityChannel.broadcast_to(current_player.game, { message: 'check', player: current_player.name, stayers: @stayers, chip: current_player.chip, pod: @community.pod})
+    CommunityChannel.broadcast_to(current_player.game, { message: 'bet', player: current_player.name })
   end
 
   private
@@ -105,12 +70,13 @@ class CommunityChannel < ApplicationCable::Channel
   def winner_get_chips
     player = Player.find_by(name: @winners[0])
     @community.holes.find_by(player_id: player.id).update_column(:out_come, true)
-    player.chip += @community.pod  #勝利プレイヤーのチップ数が加わる
+    # player.chip += @community.pod  #勝利プレイヤーのチップ数が加わる
+    player.chip += @community.flop_pod + @community.river_pod
     player.save
   end
 
   def chips_to_pod(num)
     current_player.chip -= num
-    @community.pod += num
+    # @community.pod += num
   end
 end

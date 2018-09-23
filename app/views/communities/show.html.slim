@@ -19,7 +19,7 @@
       - else
         .col-sm-12
           .player_start_btn
-            = link_to '次へ', new_community_reviews_path(@community), class:'btn btn-block btn-success'
+            = link_to '次のラウンドへ', communities_path, method: :post, class:'btn btn-block btn-success'
 
   .text-center.communities_card_field
     .community_card_field

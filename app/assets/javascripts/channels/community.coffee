@@ -47,26 +47,26 @@ App.community = App.cable.subscriptions.create "CommunityChannel",
               $my_raise_field.val(0) #ベットが終わり、テーブルに回収される
               $second_player_raise_field.val(0) #ベットが終わり、テーブルに回収される
               $last_player_raise_field.val(0) #ベットが終わり、テーブルに回収される
-            ), 1000
+            ), 500
           ), 1000
         ), 1000
       when "river"
         $first_player_action_field = $("##{data['stayers'][0]}_call_btn").parent()
         $first_player_action_field.css('visibility', 'visible');
         $('p.state_text').text('リバーです。')
-        $('#card1').show(1000)
-        $('#card0').show(1000)
+        $('#card1').show()
+        $('#card0').show()
       when 'showdown'
         $('p.state_text').text('オープン')
         $('.player_action_field').css('visibility', 'hidden')
-        $('.show_hand_name').show(1000)
-        $('.show_hole_card').show(1000)
-        $('.others_hole_card').show(1000)
+        $('.show_hand_name').show()
+        $('.show_hole_card').show()
+        $('.others_hole_card').show()
       else
         for val, i in data['winner']
           if data['winner'].length == 1
             $("##{data['winner'][0]}_card_field").find('.show_hand_name').append('<div><i class="fas fa-trophy fa-2x faa-wrench animated"></i></div>')
-            $('.hole_card_field').not("##{data['winner'][0]}_card_field").slideUp(500)
+            $('.hole_card_field').not("##{data['winner'][0]}_card_field").slideUp()
           else
             $("##{data['winner'][i]}_card_field").append("<div id='#{data['winner'][i]}', class='select_winner'><div class='btn btn-warning'>select a winner</div></div>")
 
@@ -79,5 +79,5 @@ App.community = App.cable.subscriptions.create "CommunityChannel",
   raise: ->
     @perform 'raise'
 
-  bet: ->
-    @perform 'bet'
+  bet: (value)->
+    @perform 'bet', value: value
