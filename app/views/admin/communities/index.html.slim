@@ -1,0 +1,30 @@
+.content-header
+  .container-fluid
+    .row.mb-2
+      .col-sm-6
+        h1.m-0.text-dark
+          = @game.name
+      .col-sm-6
+
+.content
+  .container-fluid
+    .row
+      .col-lg-12
+        table.table.table-bordered.table-striped.dataTable role="grid"
+          thead
+            tr role="row"
+              th id
+              th flop開始時間
+              th river開始時間
+              th river終了時間
+              th flop_pod
+              th river_pod
+          tbody
+            - @communities.each do |community|
+              tr role="row"
+                td = community.id
+                td = community.created_at.instance_eval { '%s.%03d' % [strftime('%Y/%m/%d %H:%M:%S'), (usec / 1000.0).round] }
+                td = community.state_histories.find_by(state: 'river')&.created_at&.instance_eval { '%s.%03d' % [strftime('%Y/%m/%d %H:%M:%S'), (usec / 1000.0).round] }
+                td = community.state_histories.find_by(state: 'showdown')&.created_at&.instance_eval { '%s.%03d' % [strftime('%Y/%m/%d %H:%M:%S'), (usec / 1000.0).round] }
+                td = community.flop_pod
+                td = community.river_pod

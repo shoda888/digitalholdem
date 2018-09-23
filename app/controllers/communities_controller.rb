@@ -52,6 +52,8 @@ class CommunitiesController < ApplicationController
       CommunityChannel.broadcast_to(@current_player.game, { message: 'start' })
     else
       @community = @game.communities.last
+      @community.created_at = Time.now
+      @community.save
     end
     redirect_to community_path(@community)
   end

@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   post 'proxy', to: 'admin/players#proxy'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   namespace :admin do
+    resources :games do
+      resources :communities
+    end
     resources :games
     resources :players
   end
