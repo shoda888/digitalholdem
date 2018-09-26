@@ -6,6 +6,8 @@
           = @game.name
       .col-lg-3
         = link_to 'このテーブルに参加する', game_path, method: :put, class: "btn btn-success"
+      .col-lg-5
+        = link_to 'ログを見る', admin_game_communities_path(@game), class: "btn btn-warning"
 .content
   .container-fluid
     .row

@@ -1,6 +1,6 @@
 .container
   p.state_text.text-center[style='margin-top:150px;']
-    | プリフロップです。コールには１枚のチップが必要です。
+    | フロップです。
   .dealer-action.text-center
     .row
       - if @current_player.admin?
@@ -19,7 +19,7 @@
       - else
         .col-sm-12
           .player_start_btn
-            = link_to '次へ', new_community_reviews_path(@community), class:'btn btn-block btn-success'
+            = link_to '次のラウンドへ', communities_path, method: :post, class:'btn btn-block btn-success'
 
   .text-center.communities_card_field
     .community_card_field
@@ -35,6 +35,9 @@
   .text-center.row
     - @player_holes.each do |hole|
       .col-4.player_field
+        .player_raise_field
+          i.fas.fa-coins
+            input.chip_num[value=0 disabled='']
         .player_hole_card
           = hole.player.name
         .player_chip_number

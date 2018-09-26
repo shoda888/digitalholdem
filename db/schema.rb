@@ -29,6 +29,8 @@ ActiveRecord::Schema.define(version: 20180724042647) do
     t.string "aasm_state"
     t.integer "game_id"
     t.integer "pod", default: 0
+    t.integer "flop_pod", default: 0
+    t.integer "river_pod", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -61,7 +63,7 @@ ActiveRecord::Schema.define(version: 20180724042647) do
 
   create_table "reviews", force: :cascade do |t|
     t.integer "community_id"
-    t.integer "confidence"
+    t.integer "confidence", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
