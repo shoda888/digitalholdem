@@ -14,11 +14,16 @@ class CommunityChannel < ApplicationCable::Channel
     case @community.aasm_state
     when 'flop'
       @community.flop_pod = data['message']
+      pp @community.flop_pod
+      pp data['message']
       @community.to_river!
       who_is_stayer
+      @community.save
     when 'river'
       @community.river_pod = data['message'] - @community.flop_pod
+      pp @community.river_pod
       @community.open!
+      @community.save
     when 'showdown'
       @community.finish!
       #holeがstayのプレイヤーのhole.handが一番大きいのが勝ち
