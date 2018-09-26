@@ -73,9 +73,6 @@ App.community = App.cable.subscriptions.create "CommunityChannel",
   speak: (message)->
     @perform 'speak', message: message
 
-  drop: ->
-    @perform 'drop'
-
   raise: ->
     @perform 'raise'
 
