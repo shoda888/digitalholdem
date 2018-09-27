@@ -22,6 +22,10 @@ $(document).ready(function() {
           if(value > 0){
             $player_action_btn.css('visibility', 'hidden');
             App.community.bet(value);
+            setTimeout( function() {
+              console.log(parseInt($('.pod_chip_number').find('input').val()));
+              App.community.speak(parseInt($('.pod_chip_number').find('input').val()));
+          	}, 3500);
           }
           break;
         case 32: // Key[Space]
