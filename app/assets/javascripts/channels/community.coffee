@@ -53,7 +53,8 @@ App.community = App.cable.subscriptions.create "CommunityChannel",
           ), 1000
         ), 1000
       when "river"
-        $first_player_action_field = $("##{data['stayers'][0]}_call_btn").parent()
+        current_player = data['player']
+        $first_player_action_field = $("##{current_player}_call_btn").parent()
         $first_player_action_field.css('visibility', 'visible');
         $('p.state_text').text('リバーです。')
         $('#card1').show()

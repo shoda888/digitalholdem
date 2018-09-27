@@ -15,7 +15,6 @@ class CommunityChannel < ApplicationCable::Channel
     when 'flop'
       @community.flop_pod = data['message']
       @community.to_river!
-      who_is_stayer
       @community.save
     when 'river'
       @community.river_pod = data['message'] - @community.flop_pod
@@ -42,7 +41,7 @@ class CommunityChannel < ApplicationCable::Channel
     if @community.finished?
       CommunityChannel.broadcast_to(current_player.game, { message: 'finished', winner: @winners })
     else
-      CommunityChannel.broadcast_to(current_player.game, { message: @community.aasm_state, stayers: @stayers })
+      CommunityChannel.broadcast_to(current_player.game, { message: @community.aasm_state, player: current_player.name })
     end
   end
 
@@ -57,17 +56,6 @@ class CommunityChannel < ApplicationCable::Channel
   end
 
   private
-
-  def who_is_stayer
-    @stay_holes = @community.holes.select{|hole| hole.stay? }
-    @stayers = []
-    @stay_holes.each do |hole|
-      @stayers[0] = hole.player.name if hole.player.tester?
-      @stayers[1] = 'player0' if hole.player.name == 'player0'
-      @stayers[2] = 'player1' if hole.player.name == 'player1'
-    end
-    @stayers.compact!
-  end
 
   def winner_get_chips
     player = Player.find_by(name: @winners[0])

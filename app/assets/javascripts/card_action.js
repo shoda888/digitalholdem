@@ -25,7 +25,7 @@ $(document).ready(function() {
             setTimeout( function() {
               console.log(parseInt($('.pod_chip_number').find('input').val()));
               App.community.speak(parseInt($('.pod_chip_number').find('input').val()));
-          	}, 3500);
+          	}, 5000);
           }
           break;
         case 32: // Key[Space]
