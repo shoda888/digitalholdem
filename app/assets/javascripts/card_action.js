@@ -18,14 +18,15 @@ $(document).ready(function() {
     if ( $player_action_btn.css('visibility') == 'visible' ){
       switch(e.which){
         case 13: // Key[Enter]
-        $player_action_btn.css('visibility', 'hidden');
-        value = parseInt($player_action_btn.parents('.hole_card_field').siblings('.player_raise_field').find('input').val());
-        console.log(value);
-        App.community.bet(value);
-        break;
+          value = parseInt($player_action_btn.parents('.hole_card_field').siblings('.player_raise_field').find('input').val());
+          if(value > 0){
+            $player_action_btn.css('visibility', 'hidden');
+            App.community.bet(value);
+          }
+          break;
         case 32: // Key[Space]
-        App.community.raise();
-        break;
+          App.community.raise();
+          break;
       }
     }
   });

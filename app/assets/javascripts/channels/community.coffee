@@ -16,8 +16,10 @@ App.community = App.cable.subscriptions.create "CommunityChannel",
         current_player = data['player']
         $my_pod = $("##{current_player}_card_field").siblings(".player_chip_number").find('input')
         $my_raise_field = $("##{current_player}_card_field").siblings(".player_raise_field").find('input')
-        $my_raise_field.val("#{parseInt($my_raise_field.val()) + 1}")  #raiseフィールドに+1
-        $my_pod.val("#{parseInt($my_pod.val()) - 1}") #my_podが-1
+        $my_raise_field_value = parseInt($my_raise_field.val())
+        if $my_raise_field_value < 10
+          $my_raise_field.val("#{$my_raise_field_value + 1}")  #raiseフィールドに+1
+          $my_pod.val("#{parseInt($my_pod.val()) - 1}") #my_podが-1
       when 'bet'
         current_player = data['player']
         $my_raise_field = $("##{current_player}_card_field").siblings(".player_raise_field").find('input')
