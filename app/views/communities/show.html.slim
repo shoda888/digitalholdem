@@ -1,4 +1,5 @@
 .container
+  = hidden_field_tag :id, @community.game.id, class:'game-number'
   p.state_text.text-center[style='margin-top:150px;']
     | フロップです。
   .dealer-action.text-center

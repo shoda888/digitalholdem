@@ -51,7 +51,6 @@ class CommunityChannel < ApplicationCable::Channel
 
   def bet(data)
     chips_to_pod(data['value'])
-    current_player.save
     CommunityChannel.broadcast_to(current_player.game, { message: 'bet', player: current_player.name })
   end
 
@@ -60,13 +59,13 @@ class CommunityChannel < ApplicationCable::Channel
   def winner_get_chips
     player = Player.find_by(name: @winners[0])
     @community.holes.find_by(player_id: player.id).update_column(:out_come, true)
-    # player.chip += @community.pod  #勝利プレイヤーのチップ数が加わる
-    player.chip += @community.flop_pod + @community.river_pod
+    player.chip += 2 * (@community.flop_pod + @community.river_pod) / 3 if player.role == 'participants'
+    player.chip += @community.flop_pod + @community.river_pod if player.role == 'tester'
     player.save
   end
 
   def chips_to_pod(num)
     current_player.chip -= num
-    # @community.pod += num
+    current_player.save
   end
 end

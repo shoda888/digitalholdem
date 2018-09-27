@@ -1,5 +1,8 @@
 $(document).ready(function() {
   var $player_action_btn = $('.call_field').parent();
+  if($('.game-number').val() == 0){
+    $('.player_chip_number').css('visibility', 'visible');
+  }
   $(".player_action_field:not(:has('#player1_call_btn,#player0_call_btn'))").css('visibility', 'visible');
   $('#card4').show(10)
   $('#card3').show(10)
