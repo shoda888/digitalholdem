@@ -23,8 +23,9 @@
             - @communities.each do |community|
               tr role="row"
                 td = community.id
-                td = community.created_at.instance_eval { '%s.%03d' % [strftime('%Y/%m/%d %H:%M:%S'), (usec / 1000.0).round] }
-                td = community.state_histories.find_by(state: 'river')&.created_at&.instance_eval { '%s.%03d' % [strftime('%Y/%m/%d %H:%M:%S'), (usec / 1000.0).round] }
-                td = community.state_histories.find_by(state: 'showdown')&.created_at&.instance_eval { '%s.%03d' % [strftime('%Y/%m/%d %H:%M:%S'), (usec / 1000.0).round] }
+                td = community.created_at.instance_eval { '%s.%03d' % [strftime('%H:%M:%S'), (usec / 1000.0).round] }
+                td = community.state_histories.find_by(state: 'river')&.created_at&.instance_eval { '%s.%03d' % [strftime('%H:%M:%S'), (usec / 1000.0).round] }
+                td = community.state_histories.find_by(state: 'showdown')&.created_at&.instance_eval { '%s.%03d' % [strftime('%H:%M:%S'), (usec / 1000.0).round] }
                 td = community.flop_pod
                 td = community.river_pod
+                / 日付取得時は %Y/%m/%d を加える

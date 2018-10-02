@@ -6,7 +6,6 @@
           | プレイヤー詳細
       .col-sm-6
         = link_to '代理ログイン', proxy_path(id: "#{@player.id}"), method: :post, class: "btn btn-danger", data: { confirm: '代理ログインしても良いですか?' }
-      /   = link_to 'プレイヤーモードへ', player_path(become: 'tester'), method: :put, class: "btn btn-success", data: { confirm: 'プレイヤー登録されますがよろしいですか?' }
 
 .content
   .container-fluid

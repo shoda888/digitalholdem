@@ -103,7 +103,7 @@ module HandJudgement
       numbers[card.number] += 1
     end
   	#1から始まるストレート～9から始まるストレートを判定する
-    9.times do |i|
+    8.downto(0) do |i|
   		if numbers[i+1]>=1 && numbers[i+2]>=1 && numbers[i+3]>=1 && numbers[i+4]>=1 && numbers[i+5]>=1
   			return i + 5
   		end
