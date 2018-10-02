@@ -77,52 +77,72 @@ class CommunitiesController < ApplicationController
 
   private
   def decide_community_cards(id)
-    case id % 10
-    when 1
-      return [['s',4],['c',9],['h',3],['c',13],['d',5]]
-    when 2
-      return [['s',1],['h',8],['s',9],['c',13],['s',12]]
-    when 3
-      return [['c',1],['d',12],['d',3],['c',9],['d',5]]
-    when 4
-      return [['h',2],['c',7],['s',3],['s',12],['c',5]]
-    when 5
-      return [['d',1],['c',7],['h',10],['c',9],['d',6]]
-    when 6
-      return [['s',10],['c',7],['s',3],['c',4],['s',5]]
-    when 7
-      return [['s',2],['c',7],['h',3],['c',9],['d',1]]
-    when 8
-      return [['s',8],['c',2],['s',9],['c',6],['d',8]]
-    when 9
-      return [['s',13],['c',13],['h',3],['c',10],['d',5]]
-    when 0
-      return [['d',10],['c',2],['s',3],['s',1],['s',5]]
+    case id % 15
+    when 1 # 3ワンペア
+      return [['h',13],['d',3],['h',7],['s',5],['s',3]]
+    when 2 # ノーペア
+      return [['d',7],['h',11],['h',1],['h',6],['s',13]]
+    when 3 # ノーペア
+      return [['h',1],['d',5],['c',8],['d',4],['s',13]]
+    when 4 # 4 ワンペア
+      return [['h',7],['h',1],['c',6],['c',8],['s',2]]
+    when 5 # 3 10 ツーペア
+      return [['c',11],['s',3],['s',10],['c',9],['d',6]]
+    when 6 # 4 ワンペア
+      return [['c',11],['s',9],['d',13],['c',4],['s',5]]
+    when 7 # ノーペア
+      return [['d',2],['s',5],['s',11],['c',9],['d',1]]
+    when 8 # 5 7 ツーペア
+      return [['d',13],['h',7],['h',5],['d',5],['h',4]]
+    when 9 # 2 ワンペア
+      return [['s',12],['s',2],['s',3],['d',2],['h',1]]
+    when 10 # 8ハイフルハウス
+      return [['d',8],['c',5],['c',8],['s',1],['s',5]]
+    when 11 # 11 ワンペア
+      return [['h',4],['h',11],['d',11],['h',7],['d',6]]
+    when 12 # 9 ストレート
+      return [['h',9],['c',9],['d',11],['d',7],['h',6]]
+    when 13 # ノーペア
+      return [['s',12],['h',2],['d',5],['h',7],['c',11]]
+    when 14 #ダイヤフラッシュ
+      return [['h',12],['d',3],['d',6],['d',13],['c',6]]
+    when 0 # 10 ワンペア
+      return [['h',4],['s',3],['d',12],['d',5],['s',10]]
     end
   end
 
   def decide_tester_cards(id)
-    case id % 10
+    case id % 15
     when 1
-      return [['s',13],['h',13]] #Kのスリーカード(フロップ)
+      return [['h',1],['h',9]]
     when 2
-      return [['d',4],['s',2]] #ノーペア
+      return [['h',4],['c',10]]
     when 3
-      return [['s',11],['c',3]] #ワンペア
+      return [['s',10],['h',12]]
     when 4
-      return [['c',12],['d',12]] #Qのスリーカード(フロップ)
+      return [['h',4],['c',4]]
     when 5
-      return [['s',7],['h',8]] #ストレート(フロップ)
+      return [['d',3],['c',10]]
     when 6
-      return [['h',4],['d',9]] #ワンペア
+      return [['s',4],['c',7]]
     when 7
-      return [['s',1],['h',1]] #Aのスリーカード(フロップ)
+      return [['d',7],['h',3]]
     when 8
-      return [['c',7],['h',10]] #ストレート(フロップ)
+      return [['c',7],['s',10]]
     when 9
-      return [['d',7],['c',2]] #ノーペア(フロップ〜ターン)
+      return [['c',4],['c',10]]
+    when 10
+      return [['s',12],['h',8]]
+    when 11
+      return [['d',9],['c',3]]
+    when 12
+      return [['c',5],['d',8]]
+    when 13
+      return [['d',10],['d',8]]
+    when 14
+      return [['d',12],['d',11]]
     when 0
-      return [['s',8],['s',11]] #フラッシュ(フロップ)
+      return [['c',10],['d',7]]
     end
   end
 

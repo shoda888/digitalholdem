@@ -12,6 +12,7 @@
           thead
             tr role="row"
               th ID
+              th GAME_ID
               th プレイヤー名
               th 種別
               th チップ数
@@ -19,6 +20,13 @@
             - @players.each do |player|
               tr role="row"
                 td = player.id
+                td = player.game_id
                 td = link_to(player.name, admin_player_path(player))
                 td = player.role
                 td = player.chip
+
+      .col-lg-6
+        = form_tag refresh_path, :method => :post do
+          = label_tag :game_id
+          = number_field_tag :game_id
+          = submit_tag "指定ゲームへplayerを移動させる"

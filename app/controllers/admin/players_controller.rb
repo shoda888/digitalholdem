@@ -27,6 +27,18 @@ class Admin::PlayersController < Admin::ApplicationController
     redirect_to player_path(@current_player)
   end
 
+  def refresh
+    p1 = Player.find_by(name: 'player1')
+    p1.game_id = params[:game_id]
+    p1.chip = 500
+    p1.save
+    p0 = Player.find_by(name: 'player0')
+    p0.game_id = params[:game_id]
+    p0.chip = 500
+    p0.save
+    redirect_to admin_games_path
+  end
+
   def proxy
     session[:player_id] = params[:id]
     flash[:notice] = "代理ログインしました"
