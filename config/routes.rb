@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :games do
       resources :communities
+      get 'api', to: '/admin/communities#api'
     end
     resources :games
     resources :players
