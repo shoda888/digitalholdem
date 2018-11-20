@@ -99,9 +99,9 @@ class CommunitiesController < ApplicationController
     when 10 # 8ハイフルハウス
       return [['d',8],['c',5],['c',8],['s',1],['s',5]]
     when 11 # 11 ワンペア
-      return [['h',4],['h',11],['d',11],['h',7],['d',6]]
+      return [['h',4],['h',11],['h',7],['d',11],['d',6]]
     when 12 # 9 ストレート
-      return [['h',9],['c',9],['d',11],['d',7],['h',6]]
+      return [['h',6],['c',9],['d',11],['d',7],['h',9]]
     when 13 # ノーペア
       return [['s',12],['h',2],['d',5],['h',7],['c',11]]
     when 14 #ダイヤフラッシュ
