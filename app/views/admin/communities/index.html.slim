@@ -19,6 +19,7 @@
               th river終了時間
               th flop_pod
               th river_pod
+              th ラウンド終了
           tbody
             - @communities.each do |community|
               tr role="row"
@@ -28,4 +29,5 @@
                 td = community.state_histories.find_by(state: 'showdown')&.created_at&.instance_eval { '%s.%03d' % [strftime('%H:%M:%S'), (usec / 1000.0).round] }
                 td = community.flop_pod
                 td = community.river_pod
+                td = community.state_histories.find_by(state: 'finished')&.created_at&.instance_eval { '%s.%03d' % [strftime('%H:%M:%S'), (usec / 1000.0).round] }
                 / 日付取得時は %Y/%m/%d を加える

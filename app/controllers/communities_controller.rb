@@ -14,21 +14,22 @@ class CommunitiesController < ApplicationController
     @game = @current_player.game
     if @current_player.admin?
       @community = @game.communities.create#コミュニティー作成
+      @id = @community.id
       @cards = shuffle(build) #シャッフルされた52枚のカード
 
       if @game.id == 0
         community_cards = drawCard(5) #コミュニティカード作成 #ランダム
         hole_cards = drawCard(2) #ホールカード作成
       else
-        community_cards = drawCard(decide_community_cards(@community.id)) #コミュニティカード作成 #指定
-        hole_cards = drawCard(decide_tester_cards(@community.id)) #ホールカード作成
+        community_cards = drawCard(decide_community_cards(@id)) #コミュニティカード作成 #指定
+        hole_cards = drawCard(decide_tester_cards(@id)) #ホールカード作成
       end
       community_cards.each do |c|
         @community.cards.create(suit:c.suit, number:c.number)
       end
       #被験者のホールカード決定
       @tester = @game.players.find_by(role: 'tester')
-      @hole = @tester.holes.create(community_id: @community.id)
+      @hole = @tester.holes.create(community_id: @id)
 
       hole_cards.each do |c|
         @hole.cards.create(suit:c.suit, number:c.number)
@@ -40,8 +41,12 @@ class CommunitiesController < ApplicationController
       #サクラのホールカード決定
       @game.players.each do |player|
         next if !player.participants?
-        @hole = player.holes.create(community_id: @community.id)
-        hole_cards = drawCard(2) #ホールカード作成
+        @hole = player.holes.create(community_id: @id)
+        if player.name == 'player0'
+          hole_cards = drawCard(decide_player0_cards(@id)) #ホールカード作成
+        elsif player.name == 'player1'
+          hole_cards = drawCard(decide_player1_cards(@id)) #ホールカード作成
+        end
         hole_cards.each do |c|
           @hole.cards.create(suit:c.suit, number:c.number)
         end
@@ -76,6 +81,74 @@ class CommunitiesController < ApplicationController
   end
 
   private
+  def decide_player0_cards(id)
+    case id % 15
+    when 1 # 3ワンペア
+      return [['s',4],['h',11]]
+    when 2 # ノーペア
+      return [['h',10],['s',12]]
+    when 3 # ノーペア
+      return [['c',5],['h',2]]
+    when 4 # 4 ワンペア
+      return [['h',11],['s',7]]
+    when 5 # 3 10 ツーペア
+      return [['h',12],['c',2]]
+    when 6 # 4 ワンペア
+      return [['d',9],['h',4]]
+    when 7 # ノーペア
+      return [['c',1],['s',10]]
+    when 8 # 5 7 ツーペア
+      return [['d',10],['d',3]]
+    when 9 # 2 ワンペア
+      return [['c',7],['s',7]]
+    when 10 # 8ハイフルハウス
+      return [['c',10],['h',10]]
+    when 11 # 11 ワンペア
+      return [['h',8],['s',11]]
+    when 12 # 9 ストレート
+      return [['h',13],['s',6]]
+    when 13 # ノーペア
+      return [['d',1],['h',13]]
+    when 14 #ダイヤフラッシュ
+      return [['c',8],['s',2]]
+    when 0 # 10 ワンペア
+      return [['h',3],['h',2]]
+    end
+  end
+  def decide_player1_cards(id)
+    case id % 15
+    when 1 # 3ワンペア
+      return [['c',6],['d',10]]
+    when 2 # ノーペア
+      return [['c',7],['s',6]]
+    when 3 # ノーペア
+      return [['s',8],['h',11]]
+    when 4 # 4 ワンペア
+      return [['d',2],['d',5]]
+    when 5 # 3 10 ツーペア
+      return [['d',4],['h',6]]
+    when 6 # 4 ワンペア
+      return [['h',12],['s',10]]
+    when 7 # ノーペア
+      return [['d',9],['d',13]]
+    when 8 # 5 7 ツーペア
+      return [['c',4],['c',9]]
+    when 9 # 2 ワンペア
+      return [['h',12],['h',2]]
+    when 10 # 8ハイフルハウス
+      return [['c',12],['d',6]]
+    when 11 # 11 ワンペア
+      return [['c',2],['c',5]]
+    when 12 # 9 ストレート
+      return [['s',8],['d',10]]
+    when 13 # ノーペア
+      return [['h',9],['s',7]]
+    when 14 #ダイヤフラッシュ
+      return [['d',1],['d',5]]
+    when 0 # 10 ワンペア
+      return [['c',11],['c',1]]
+    end
+  end
   def decide_community_cards(id)
     case id % 15
     when 1 # 3ワンペア
@@ -110,15 +183,14 @@ class CommunitiesController < ApplicationController
       return [['h',4],['s',3],['d',12],['d',5],['s',10]]
     end
   end
-
   def decide_tester_cards(id)
     case id % 15
     when 1
-      return [['h',1],['h',9]]
+      return [['h',5],['h',9]]
     when 2
       return [['h',4],['c',10]]
     when 3
-      return [['s',10],['h',12]]
+      return [['s',6],['h',13]]
     when 4
       return [['h',4],['c',4]]
     when 5
