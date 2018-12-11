@@ -15,9 +15,10 @@ class CommunitiesController < ApplicationController
     if @current_player.admin?
       @community = @game.communities.create#コミュニティー作成
       @id = @community.id
+      @game_id = @game.id
       @cards = shuffle(build) #シャッフルされた52枚のカード
 
-      if @game.id == 0
+      if @game_id == 0
         community_cards = drawCard(5) #コミュニティカード作成 #ランダム
         hole_cards = drawCard(2) #ホールカード作成
       else
@@ -42,10 +43,14 @@ class CommunitiesController < ApplicationController
       @game.players.each do |player|
         next if !player.participants?
         @hole = player.holes.create(community_id: @id)
-        if player.name == 'player0'
-          hole_cards = drawCard(decide_player0_cards(@id)) #ホールカード作成
-        elsif player.name == 'player1'
-          hole_cards = drawCard(decide_player1_cards(@id)) #ホールカード作成
+        if @game_id == 0
+          hole_cards = drawCard(2)
+        else
+          if player.name == 'player0'
+            hole_cards = drawCard(decide_player0_cards(@id)) #ホールカード作成
+          elsif player.name == 'player1'
+            hole_cards = drawCard(decide_player1_cards(@id)) #ホールカード作成
+          end
         end
         hole_cards.each do |c|
           @hole.cards.create(suit:c.suit, number:c.number)
